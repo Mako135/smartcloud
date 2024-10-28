@@ -29,7 +29,7 @@ export const service_list = [
     label: "Kaspersky",
     desc: "«Лаборатория Касперского» предлагает современные решения для защиты вашего бизнеса от киберугроз, позволяя вам сосредоточиться на его развитии.",
     icon: LaptopMinimal,
-    link: "/cloud-services/kaspersky",
+    link: "/kaspersky",
   },
   {
     label: "Virtual Network Firewall – полный модуль защиты",

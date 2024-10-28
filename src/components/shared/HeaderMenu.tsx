@@ -18,7 +18,7 @@ export default function HeaderMenu() {
             <NavigationMenuTrigger className="bg-transparent">
               {item.label}
             </NavigationMenuTrigger>
-            <NavigationMenuContent draggable>
+            <NavigationMenuContent>
               <nav className="grid grid-cols-2 p-4 gap-2 w-[500px] 2xl:w-[600px]">
                 {item.links.map((link) => (
                   <NavigationMenuLink
