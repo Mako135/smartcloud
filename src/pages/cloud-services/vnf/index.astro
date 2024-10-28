@@ -1,0 +1,37 @@
+---
+import AboutSection from "@/components/shared/AboutSection.astro";
+import AdvantageCard from "@/components/shared/AdvantageCard.astro";
+import Layout from "@/layouts/Layout.astro";
+import { smartcloudAdvantages } from "@/lib/data/homeData";
+import Container from "@/widgets/Container.astro";
+import Hero from "@/widgets/Hero.astro";
+---
+
+<Layout title="Smartcloud - VNF">
+  <Container>
+    <Hero>
+      <h1 class="text-3xl font-medium lg:text-5xl">
+        <span class="text-blue-500">Virtual Network Firewall</span>
+        – межсетевой экран следующего поколения
+      </h1>
+      <p class="text-xl mt-6">
+        Мощные облачные технологии для бесперебойной работы и масштабирования
+        вашей инфраструктуры.
+      </p>
+    </Hero>
+
+    <AboutSection title="Что такое Virtual Network Firewall?" >
+      <p>
+        Наряду с поддержкой функций межсетевого экрана и проверки состояния
+        сети, обладает возможностями более глубокой проверки содержимого.
+        Блокирует вредоносные программы и включает возможности для будущих
+        обновлений, обеспечивая гибкость развития при расширении спектра угроз и
+        защищая сеть при возникновении новых угроз.
+      </p>
+    </AboutSection>
+    <AdvantageCard
+      title="Преимущества Virtual Network Firewall"
+      data={smartcloudAdvantages}
+    />
+  </Container>
+</Layout>

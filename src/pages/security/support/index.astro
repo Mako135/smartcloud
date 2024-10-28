@@ -1,0 +1,54 @@
+---
+import AboutSection from "@/components/shared/AboutSection.astro";
+import AdvantageCard from "@/components/shared/AdvantageCard.astro";
+import AdvantageCardWithIcon from "@/components/shared/AdvantageCardWithIcon.astro";
+import { SecurityAccordion } from "@/components/shared/SecurityAccordion";
+import Layout from "@/layouts/Layout.astro";
+import {
+  securitySupportData,
+  securitySupportData2,
+} from "@/lib/data/securitySupportData";
+import { socAccordionData, socAdvantages2 } from "@/lib/data/socData";
+import Container from "@/widgets/Container.astro";
+import Hero from "@/widgets/Hero.astro";
+---
+
+<Layout title="Smartcloud - Security Support">
+  <Container>
+    <Hero>
+      <h1 class="text-3xl font-medium lg:text-5xl">
+        Профессиональная<span class="text-blue-500"> Поддержка ИБ </span>
+        <br /> Мониторинг и Управление Безопасностью
+      </h1>
+      <p class="text-xl mt-6">
+        Наш сервис предоставляет комплексную техническую поддержку ИБ, включая
+        мониторинг, анализ проблем и разработку персональных программ управления
+        информационной безопасностью для максимальной защиты ваших данных.
+      </p>
+    </Hero>
+
+    <AdvantageCard title="Преимущества аренды SOC" data={securitySupportData} />
+
+    <AboutSection title="Наше уникальное предложение" className="my-40">
+      <p>
+        Для наших клиентов информационная безопасность в Казахстане
+        поддерживается по строгим международным стандартам и нормативам. В
+        сервисе задействованы физические и информационные ресурсы провайдера и
+        актуальные технологии. Мы помогаем создать и поддерживать максимально
+        возможный уровень защиты рабочих операций и процессов без непосильных
+        инвестиций. Многоэлементная защита выстраивается с учетом уязвимостей
+        физического оборудования, человеческого фактора и
+        информационно-технологической архитектуры IT-системы.
+      </p>
+    </AboutSection>
+  </Container>
+  <AdvantageCardWithIcon
+    cardClassName="xl:grid-cols-3"
+    title="Что вы получаете с этой услугой?"
+    data={securitySupportData2}
+  />
+
+  <Container>
+    <SecurityAccordion data={socAccordionData} client:load />
+  </Container>
+</Layout>

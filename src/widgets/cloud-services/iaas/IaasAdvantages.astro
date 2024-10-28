@@ -1,0 +1,19 @@
+---
+import { iaas_advantages } from "@/lib/data/iaasData";
+---
+
+<div class="my-40">
+  <h2 class="text-center text-4xl font-medium mb-20">Наша преимущества</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    {
+      iaas_advantages.map((item) => (
+        <div class="relative flex items-center justify-center">
+          <span class="text-[124px] italic text-stroke">{item.id}</span>
+          <p class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-lg font-bold">
+            {item.title}
+          </p>
+        </div>
+      ))
+    }
+  </div>
+</div>

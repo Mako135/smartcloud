@@ -1,0 +1,38 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Services from "@/widgets/homepage/Services.astro";
+import AboutUs from "@/widgets/homepage/AboutUs.astro";
+import Hero from "@/widgets/Hero.astro";
+import Container from "@/widgets/Container.astro";
+import AdvantageCard from "@/components/shared/AdvantageCard.astro";
+import { smartcloudAdvantages } from "@/lib/data/homeData";
+---
+
+<Layout title="Home">
+  <Container>
+    <Hero>
+      <h1 class="text-3xl font-bold leading-none lg:text-4xl">
+        Добро пожаловать в SMART<span class="text-blue-500">CLOUD</span>
+      </h1>
+      <h1 class="text-4xl font-bold leading-none lg:text-5xl xl:text-6xl">
+        Маркетплейс облачных услуг
+      </h1>
+      <p class="text-md mt-2 lg:mt-10 lg:text-xl">
+        Все необходимые инструменты для бизнеса в одном облаке! Быстрый старт,
+        меньше расходов, высокая надежность! <br /> Оплачивайте услуги онлайн и запускайте
+        свои виртуальные машины за 3 минуты с настроенной операционной системой!
+      </p>
+    </Hero>
+
+    <Services />
+  </Container>
+
+  <AboutUs />
+
+  <Container>
+    <AdvantageCard
+      title="Преимущества Virtual Network Firewall"
+      data={smartcloudAdvantages}
+    />
+  </Container>
+</Layout>

@@ -1,0 +1,53 @@
+---
+import AboutSection from "@/components/shared/AboutSection.astro";
+import AdvantageCard from "@/components/shared/AdvantageCard.astro";
+import AdvantageCardWithIcon from "@/components/shared/AdvantageCardWithIcon.astro";
+import { SecurityAccordion } from "@/components/shared/SecurityAccordion";
+import Layout from "@/layouts/Layout.astro";
+import {
+  pentestAccordionData,
+  pentestAdvantages2,
+} from "@/lib/data/pentestData";
+import { wafAdvantages } from "@/lib/data/wafData";
+import Container from "@/widgets/Container.astro";
+import Hero from "@/widgets/Hero.astro";
+---
+
+<Layout title="Smartcloud - Защита от DDoS атак">
+  <Container>
+    <Hero>
+      <h1 class="text-3xl font-medium lg:text-5xl">
+        Надежная Защита Веб-приложений с <span class="text-blue-500">WAF</span>
+      </h1>
+      <p class="text-sm mt-2 lg:text-xl">
+        Наш Web Application Firewall (WAF) анализирует веб-трафик в реальном
+        времени, обнаруживая и блокируя вредоносные активности для надежной
+        защиты ваших веб-приложений.
+      </p>
+    </Hero>
+
+    <AdvantageCard
+      title="Преимущества тестирования на проникновение"
+      data={wafAdvantages}
+      cardClassName="mt-0"
+    />
+
+    <AboutSection title="Наше уникальное предложение" className="my-40">
+      Проведение внешнего/внутреннего сканирования специализированным ПО на
+      наличие уязвимостей в сети клиента, а также тестирование на проникновение.
+      Приобретя необходимое количество часов и указав периодичность
+      сканирования, вы получаете детальные отчеты и рекомендации. Длительность
+      сканирования и метод зависят от количества информационных систем и
+      выделенных IP-адресов.
+    </AboutSection>
+  </Container>
+
+  <AdvantageCardWithIcon
+    title="Что вы получаете с этой услугой?"
+    data={pentestAdvantages2}
+  />
+
+  <Container>
+    <SecurityAccordion data={pentestAccordionData} client:load />
+  </Container>
+</Layout>

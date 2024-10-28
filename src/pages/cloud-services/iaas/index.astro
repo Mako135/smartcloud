@@ -1,0 +1,34 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Container from "@/widgets/Container.astro";
+import IaasAdvantages from "@/widgets/cloud-services/iaas/IaasAdvantages.astro";
+import IaaSConfigurator from "@/widgets/cloud-services/iaas/IaaSConfigurator";
+import Hero from "@/widgets/Hero.astro";
+import AboutSection from "@/components/shared/AboutSection.astro";
+---
+
+<Layout title="IaaS on Openstack">
+  <Container>
+    <Hero>
+      <h1 class="text-3xl font-medium lg:text-5xl">
+        Надежные <span class="text-blue-500">IaaS</span> решения для роста <br
+        /> вашего предприятия
+      </h1>
+      <p class="text-sm mt-2 lg:text-xl">
+        Мощные облачные технологии для бесперебойной работы и масштабирования
+        вашей инфраструктуры.
+      </p>
+    </Hero>
+
+    <AboutSection title="Что такое IaaS?">
+      <p>
+        IaaS (инфраструктура как услуга) – это гибкое облачное решение, которое
+        позволяет самостоятельно создавать и клонировать виртуальные сервера,
+        менять их конфигурацию, а также управлять настройками
+      </p>
+    </AboutSection>
+    
+    <IaaSConfigurator client:load />
+    <IaasAdvantages />
+  </Container>
+</Layout>

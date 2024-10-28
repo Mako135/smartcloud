@@ -1,0 +1,17 @@
+---
+import clsx from "clsx";
+
+interface Props {
+  title: string;
+  className?: string;
+}
+
+const { title, className } = Astro.props;
+---
+
+<div class={clsx("grid lg:grid-cols-6 gap-10 mb-40", className)}>
+  <h2 class="col-span-2 text-4xl font-medium">{title}</h2>
+  <div class="col-span-4 text-2xl mt-10 lg:mt-0">
+    <slot />
+  </div>
+</div>

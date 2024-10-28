@@ -1,0 +1,33 @@
+---
+import clsx from "clsx";
+import NumberCard from "./NumberCard.astro";
+
+interface Props {
+  title: string;
+  data: { title: string; description?: string }[];
+  cardClassName?: string;
+}
+
+const { data, title, cardClassName } = Astro.props;
+---
+
+<div>
+  <h2 class="text-center text-4xl font-medium mt-40 lg:mt-0">{title}</h2>
+
+  <div
+    class={clsx(
+      "grid grid-cols-1 md:grid-cols-2 items-stretch gap-10 mt-20",
+      cardClassName
+    )}
+  >
+    {
+      data.map((item, index) => (
+        <NumberCard
+          number={++index}
+          title={item.title}
+          description={item.description}
+        />
+      ))
+    }
+  </div>
+</div>

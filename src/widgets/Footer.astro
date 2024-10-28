@@ -1,0 +1,87 @@
+---
+import { headerData } from "@/lib/data/headerData";
+import Container from "./Container.astro";
+import { Send, Instagram } from "lucide-react";
+import { ContactDialog } from "@/components/shared/ContactDialog";
+---
+
+<div class="mt-40 py-10 bg-slate-100 dark:bg-[#0f172a80]">
+  <div class="text-center m-4">
+    <h2 class="text-2xl font-medium lg:text-4xl">10 дней бесплатно – без обязательств!</h2>
+    <p class="mt-4 mb-8">
+      Погрузитесь в использование нашего сервиса без затрат. <br /> Активируйте бесплатный
+      период и оцените преимущества уже сегодня!
+    </p>
+    <ContactDialog client:load />
+  </div>
+
+  <footer class="mt-20">
+    <Container>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div class="flex flex-col">
+          <h2 class="font-bold h-10 text-sm">Контакты</h2>
+          <ul class="flex flex-col gap-2">
+            <li class="ml-1">+998 95 195 75 75</li>
+            <li class="ml-1">+998 90 359 89 67</li>
+            <li class="ml-1">info@smartcloud.uz</li>
+          </ul>
+        </div>
+        <div class="flex flex-col">
+          <h2 class="font-bold h-10 text-sm">Адреса</h2>
+          <ul class="flex flex-col gap-2">
+            <li class="ml-1">
+              100070, г. Ташкент, Яккасарайский район, ул. Шота Руставели, 12
+            </li>
+            <li class="ml-1">
+              100187, г. Ташкент, Карасу-3, улица Мингбулок, 38
+            </li>
+          </ul>
+        </div>
+        {
+          headerData.map((item) => (
+            <div class="flex flex-col">
+              <h2 class="font-bold h-10 text-sm">{item.label}</h2>
+              <ul class="flex flex-col gap-2">
+                {item.links.map((link) => (
+                  <li class="ml-1">
+                    <a href={link.href}>
+                      <h3>{link.label}</h3>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+    </Container>
+    <div class="border-[1px] border-gray-300/50 mb-10 mt-20"></div>
+    <Container>
+      <div class="flex justify-between items-center">
+        <p class="text-sm text-gray-400">
+          © 2021 SmartCloud. All rights reserved.
+        </p>
+        <ul class="flex gap-2">
+          <li>
+            <a
+              href="/send"
+              aria-label="Отправить сообщение"
+              title="Отправить сообщение"
+            >
+              <Send size={20} />
+            </a>
+          </li>
+          <li>
+            <a
+              href="/"
+              aria-label="Наш Instagram"
+              title="Следуйте за нами в Instagram"
+            >
+              <Instagram size={20} />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </Container>
+  </footer>
+</div>

@@ -1,0 +1,44 @@
+---
+import { Send, Instagram } from "lucide-react";
+import "@/styles/globals.css";
+import HeaderMenu from "@/components/shared/HeaderMenu";
+import { ToggleTheme } from "@/components/shared/ToggleTheme";
+import { darkLogo, lightLogo } from "../../assets";
+---
+
+<nav class="fixed top-0 z-10 w-full hidden lg:block">
+  <div
+    class="flex justify-between h-16 max-w-7xl m-4 mt-0 xl:mx-auto p-4 px-8 items-center bg-slate-500 w-full bg-opacity-10 backdrop-blur-lg rounded-b-md hover:backdrop-blur"
+  >
+    <a
+      href="/"
+      class="font-bold tracking-wider text-2xl h-[40px] w-40 bg-no-repeat bg-center bg-contain"
+      id="logo"
+    >
+    </a>
+    <div class="flex items-center gap-5">
+      <HeaderMenu client:load />
+      <ul class="flex gap-2">
+        <li>
+          <a
+            href="/send"
+            aria-label="Отправить сообщение"
+            title="Отправить сообщение"
+          >
+            <Send size={20} />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://instagram.com/yourprofile"
+            aria-label="Наш Instagram"
+            title="Следуйте за нами в Instagram"
+          >
+            <Instagram size={20} />
+          </a>
+        </li>
+      </ul>
+      <ToggleTheme client:load />
+    </div>
+  </div>
+</nav>

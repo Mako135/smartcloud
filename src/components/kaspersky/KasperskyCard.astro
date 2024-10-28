@@ -1,0 +1,48 @@
+---
+import { CircleCheck } from "lucide-react";
+import { ContactDialog } from "../shared/ContactDialog";
+import clsx from "clsx";
+
+interface Props {
+  title: string;
+  desc: string;
+  list: string[];
+  cardClassName?: string;
+  buttonClassName?: string;
+  listClassName?: string;
+}
+
+const { title, desc, list, cardClassName, buttonClassName, listClassName } =
+  Astro.props as Props;
+---
+
+<div
+  class={clsx(
+    "p-5 rounded-xl border flex flex-col justify-between",
+    cardClassName
+  )}
+>
+  <div>
+    <h3 class="text-xl font-medium h-10 mb-5">{title}</h3>
+    <p class="text-sm">{desc}</p>
+  </div>
+
+  <div class="mt-5">
+    <ul class={clsx("", listClassName)}>
+      {
+        list.map((item) => (
+          <li class="text-sm mt-2 list-none flex gap-2 ">
+            <div class="w-5 h-5">
+              <CircleCheck color="#3b82f6" className="h-5 w-5" />
+            </div>
+            {item}
+          </li>
+        ))
+      }
+    </ul>
+    <ContactDialog
+      client:load
+      className={clsx("w-full rounded-md mt-5", buttonClassName)}
+    />
+  </div>
+</div>

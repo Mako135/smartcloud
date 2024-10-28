@@ -1,0 +1,58 @@
+---
+import AboutSection from "@/components/shared/AboutSection.astro";
+import AdvantageCard from "@/components/shared/AdvantageCard.astro";
+import AdvantageCardWithIcon from "@/components/shared/AdvantageCardWithIcon.astro";
+import { SecurityAccordion } from "@/components/shared/SecurityAccordion";
+import Layout from "@/layouts/Layout.astro";
+import {
+  socAccordionData,
+  socAdvantages,
+  socAdvantages2,
+} from "@/lib/data/socData";
+import Container from "@/widgets/Container.astro";
+import Hero from "@/widgets/Hero.astro";
+---
+
+<Layout title="Smartcloud - SOC">
+  <Container>
+    <Hero>
+      <h1 class="text-3xl font-medium lg:text-5xl">
+        <span class="text-blue-500">SOC</span>
+        – Комплексная Защита Ваших Цифровых Активов
+      </h1>
+      <p class="text-xl mt-6">
+        Наш Центр Операционной Безопасности (SOC) обеспечивает круглосуточный
+        мониторинг, анализ и противодействие сетевым атакам, защищая ваши
+        цифровые данные в режиме реального времени.
+      </p>
+    </Hero>
+
+    <AdvantageCard title="Преимущества аренды SOC" data={socAdvantages} />
+
+    <AboutSection title="Как работает SOC?" className="my-40">
+      <p>
+        Центр оперативного реагирования решает комплекс задач по оптимизации
+        системы менеджмента ИБ компании за счет:
+      </p>
+      <ul>
+        <li>- регулярной коррекции и дополнения мер защиты;</li>
+        <li>
+          - уменьшения времени реакции на атаки и инциденты инфобезопасности за
+          счет использования готовых сценариев реагирования;
+        </li>
+        <li>
+          - внедрения средств автоматизации для выявления инцидентов
+          информационной безопасности и реагирования.
+        </li>
+      </ul>
+    </AboutSection>
+  </Container>
+  <AdvantageCardWithIcon
+    title="Преимущества защиты от DDoS атак"
+    data={socAdvantages2}
+  />
+
+  <Container>
+    <SecurityAccordion data={socAccordionData} client:load />
+  </Container>
+</Layout>

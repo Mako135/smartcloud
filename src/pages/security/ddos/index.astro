@@ -1,0 +1,51 @@
+---
+import AboutSection from "@/components/shared/AboutSection.astro";
+import AdvantageCard from "@/components/shared/AdvantageCard.astro";
+import AdvantageCardWithIcon from "@/components/shared/AdvantageCardWithIcon.astro";
+import { SecurityAccordion } from "@/components/shared/SecurityAccordion";
+import Layout from "@/layouts/Layout.astro";
+import { ddosAccordionData, ddosData, ddosData2 } from "@/lib/data/ddosData";
+import Container from "@/widgets/Container.astro";
+import Hero from "@/widgets/Hero.astro";
+---
+
+<Layout title="Smartcloud - Защита от DDoS атак">
+  <Container>
+    <Hero>
+      <h1 class="text-3xl font-medium lg:text-5xl">
+        Не Дайте <span class="text-blue-500">DDoS </span>
+        Атаке Остановить Ваш Бизнес!
+      </h1>
+      <p class="text-sm mt-2 lg:text-xl">
+        Передовые решения для защиты ваших ресурсов от DDoS атак на уровнях L3,
+        L4 и L7 модели OSI. Обеспечьте непрерывную работу сервиса и доступность
+        для клиентов с нашими надежными услугами
+      </p>
+    </Hero>
+
+    <AdvantageCard title="Преимущества Хранилище данных" data={ddosData} />
+
+    <AboutSection title="Защита от DDOS атак сервера" className="my-40">
+      <p>
+        Осуществляется в виде защищенного IP-транзита для комплексной
+        безопасности сети (сервера) клиента. В рамках услуги предоставляется
+        защита:
+      </p>
+      <br />
+      <ul>
+        <li>- Каналов клиента</li>
+        <li>- Коммутационного оборудования</li>
+        <li>- Онлайн-сервисов, вне зависимости от используемых протоколов.</li>
+      </ul>
+    </AboutSection>
+  </Container>
+
+  <AdvantageCardWithIcon
+    title="Преимущества защиты от DDoS атак"
+    data={ddosData2}
+  />
+
+  <Container>
+    <SecurityAccordion data={ddosAccordionData} client:load />
+  </Container>
+</Layout>

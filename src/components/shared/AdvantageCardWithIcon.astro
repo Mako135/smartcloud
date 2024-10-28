@@ -1,0 +1,39 @@
+---
+import Container from "@/widgets/Container.astro";
+import clsx from "clsx";
+import { CircleCheck } from "lucide-react";
+
+interface Props {
+  title: string;
+  data: string[];
+  cardClassName?: string;
+}
+
+const { data, title, cardClassName } = Astro.props;
+---
+
+<div class="bg-slate-100 dark:bg-[#0f172a80] py-10">
+  <Container>
+    <h2 class="text-center text-4xl font-medium">
+      {title}
+    </h2>
+
+    <div
+      class={clsx(
+        "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mt-20",
+        cardClassName
+      )}
+    >
+      {
+        data.map((desc) => (
+          <div class="flex gap-2">
+            <div>
+              <CircleCheck size={36} color="#3b82f6" />
+            </div>
+            {desc}
+          </div>
+        ))
+      }
+    </div>
+  </Container>
+</div>

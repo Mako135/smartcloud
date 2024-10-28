@@ -1,0 +1,63 @@
+---
+import KasperskyCard from "@/components/kaspersky/KasperskyCard.astro";
+import {
+  kasperskyEnterprise,
+  kasperskyIndividual,
+  kasperskyMsb,
+} from "@/lib/data/kaspersky";
+---
+
+<div>
+  <h2 class="text-center text-2xl font-medium mb-20 lg:text-4xl">
+    Передовые решения <br /> для защиты малого и среднего бизнеса
+  </h2>
+
+  <div class="grid grid-cols-1 gap-5 lg:grid-cols-3">
+    {
+      kasperskyMsb.map((item) => (
+        <KasperskyCard
+          title={item.title}
+          desc={item.desc}
+          list={item.list}
+          listClassName="h-[130px]"
+        />
+      ))
+    }
+  </div>
+
+  <h2 class="text-center text-2xl font-medium mb-20 mt-40 lg:text-4xl">
+    Индивидуальные решения <br /> для крупного предпринимательства
+  </h2>
+
+  <div class="grid grid-cols-1 gap-5 lg:grid-cols-3">
+    {
+      kasperskyEnterprise.map((item) => (
+        <KasperskyCard
+          title={item.title}
+          desc={item.desc}
+          list={item.list}
+          listClassName="h-[130px]"
+        />
+      ))
+    }
+  </div>
+
+  <h2 class="text-center text-2xl font-medium mb-20 mt-40 lg:text-4xl">
+    Подберите решение для вашего бизнеса
+  </h2>
+
+  <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+    {
+      kasperskyIndividual.map((item) => (
+        <KasperskyCard
+          title={item.title}
+          desc={item.desc}
+          list={item.list}
+          buttonClassName="border-[#3b82f6]/50"
+          listClassName="h-[240px]"
+          cardClassName="border-[#3b82f6]/50"
+        />
+      ))
+    }
+  </div>
+</div>

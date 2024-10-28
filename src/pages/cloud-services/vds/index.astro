@@ -1,0 +1,39 @@
+---
+import AboutSection from "@/components/shared/AboutSection.astro";
+import AdvantageCard from "@/components/shared/AdvantageCard.astro";
+import Layout from "@/layouts/Layout.astro";
+import { smartcloudAdvantages } from "@/lib/data/homeData";
+import Container from "@/widgets/Container.astro";
+import Hero from "@/widgets/Hero.astro";
+---
+
+<Layout title="Smarcloud - VDS">
+  <Container>
+    <Hero>
+      <h1 class="text-3xl font-medium lg:text-5xl">
+        <span class="text-blue-500">VDS</span> – виртуальный выделенный сервер
+      </h1>
+      <p class="text-xl mt-6">
+        Мощные облачные технологии для бесперебойной работы и масштабирования
+        вашей инфраструктуры.
+      </p>
+    </Hero>
+
+    <AboutSection title="Что такое VDS?" >
+      <p>
+        Виртуальные выделенные серверы (Virtual Dedicated Server или Virtual
+        Private Server) — это тип хостинга, при котором физический сервер
+        провайдера делится на несколько виртуальных, изолированных друг от
+        друга, сегментов, предоставляемых в пользование клиентам. Возможности
+        VDS полностьюсопоставимы с функционалом реального физического сервера.
+        Мощный старт любого бизнеса и оптимизация расходов на IT одновременно.
+      </p>
+    </AboutSection>
+
+    <AdvantageCard
+      title="Преимущества Хранилище данных"
+      data={smartcloudAdvantages}
+      cardClassName="lg:grid-cols-3"
+    />
+  </Container>
+</Layout>
