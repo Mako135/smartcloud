@@ -9,23 +9,54 @@ import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export function ToggleTheme() {
-  const [theme, setThemeState] = useState<"theme-light" | "dark" | "system">(
-    "theme-light"
+  const [theme, setThemeState] = useState<"light" | "dark" | "system">(
+    "system"
   );
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
+  // Инициализация темы из localStorage или системных настроек
   useEffect(() => {
-    const isDarkMode = document.documentElement.classList.contains("dark");
-    setThemeState(isDarkMode ? "dark" : "theme-light");
+    const storedTheme = localStorage.getItem("theme") as
+      | "light"
+      | "dark"
+      | "system"
+      | null;
+    if (storedTheme) {
+      setThemeState(storedTheme);
+      applyTheme(storedTheme);
+    } else {
+      setThemeState("system");
+      applyTheme("system");
+    }
   }, []);
 
+  // Применение темы и обновление localStorage
   useEffect(() => {
-    const isDark =
-      theme === "dark" ||
-      (theme === "system" &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches);
-    document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+    applyTheme(theme);
+    localStorage.setItem("theme", theme);
   }, [theme]);
+
+  // Функция для применения темы
+  const applyTheme = (theme: "light" | "dark" | "system") => {
+    const root = document.documentElement;
+    if (theme === "dark") {
+      root.classList.add("dark");
+    } else if (theme === "light") {
+      root.classList.remove("dark");
+    } else if (theme === "system") {
+      const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      root.classList.toggle("dark", isDark);
+
+      // Обработка изменений системных настроек
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", (e) => {
+          if (localStorage.getItem("theme") === "system") {
+            root.classList.toggle("dark", e.matches);
+          }
+        });
+    }
+  };
 
   return (
     <DropdownMenu
@@ -44,8 +75,8 @@ export function ToggleTheme() {
           <span className="sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="start" >
-        <DropdownMenuItem onClick={() => setThemeState("theme-light")}>
+      <DropdownMenuContent align="start">
+        <DropdownMenuItem onClick={() => setThemeState("light")}>
           Light
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setThemeState("dark")}>
