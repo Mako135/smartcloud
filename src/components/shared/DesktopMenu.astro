@@ -6,7 +6,7 @@ import { ToggleTheme } from "@/components/shared/ToggleTheme";
 ---
 
 <nav
-  class="fixed top-0 z-20 w-full hidden lg:block bg-slate-500 bg-opacity-10 backdrop-blur-lg hover:backdrop-blur"
+  class="fixed top-0 z-20 w-full hidden lg:block bg-[#0C94D4] dark:bg-opacity-10 dark:backdrop-blur-lg dark:hover:backdrop-blur"
 >
   <div class="flex justify-between h-16 max-w-7xl mx-auto py-4 items-center">
     <a
@@ -15,7 +15,7 @@ import { ToggleTheme } from "@/components/shared/ToggleTheme";
       id="logo"
     >
     </a>
-    <div class="flex items-center gap-5">
+    <div class="flex items-center gap-2">
       <HeaderNavigationMenu client:load />
       <ul class="flex gap-2">
         <li>
@@ -25,7 +25,7 @@ import { ToggleTheme } from "@/components/shared/ToggleTheme";
             title="Отправить сообщение"
             target="_blank"
           >
-            <Send size={20} />
+            <Send size={20} color="#fff" />
           </a>
         </li>
         <li>
@@ -35,7 +35,7 @@ import { ToggleTheme } from "@/components/shared/ToggleTheme";
             title="Следуйте за нами в Instagram"
             target="_blank"
           >
-            <Instagram size={20} />
+            <Instagram size={20} color="#fff" />
           </a>
         </li>
       </ul>

@@ -15,17 +15,17 @@ export default function HeaderNavigationMenu() {
       <NavigationMenuList>
         {headerData.map((item) => (
           <NavigationMenuItem key={item.label}>
-            <NavigationMenuTrigger className="bg-transparent">
+            <NavigationMenuTrigger className="bg-transparent text-white">
               {item.label}
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <nav className="grid grid-cols-2 p-4 gap-2 w-[500px] 2xl:w-[600px]">
+              <nav className="grid grid-cols-2 p-4 gap-2 w-[500px] 2xl:w-[600px] ">
                 {item.links.map((link) => (
                   <NavigationMenuLink
                     href={link.href}
                     key={link.label}
                     className={cn(
-                      "flex flex-col p-2 hover:text-red-500 hover:bg-slate-100 rounded-sm ",
+                      "flex flex-col p-2 hover:text-red-500 hover:bg-slate-100 rounded-sm  ",
                       link.href === "/security/support"
                         ? "col-span-2 text-left"
                         : ""

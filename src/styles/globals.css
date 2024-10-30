@@ -108,11 +108,7 @@ input::-webkit-inner-spin-button {
   pointer-events: auto;
 }
 
-.dark #logo {
-  background-image: url("../assets/logo_dark-1.svg");
-}
-
 /* По умолчанию */
 #logo {
-  background-image: url("../assets/logo_dark.svg");
+  background-image: url("../assets/logo_dark-1.svg");
 }
