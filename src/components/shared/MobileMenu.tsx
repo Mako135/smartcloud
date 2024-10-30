@@ -34,7 +34,7 @@ const MobileMenu = () => {
       {/* Мобильное меню */}
       <div
         className={`fixed inset-0 z-20 bg-slate-300/50 dark:bg-black/90 backdrop-blur-lg transition-all duration-500 ease-in-out transform ${
-          menuOpen ? "translate-y-0" : "-translate-y-full"
+          menuOpen ? "-translate-x-0" : "translate-x-full"
         }`}
       >
         <div className="relative h-full overflow-y-auto">
