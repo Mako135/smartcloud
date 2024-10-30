@@ -18,7 +18,7 @@ const MobileMenu = () => {
 
   return (
     <header className="relative block lg:hidden">
-      <div className="fixed flex justify-between h-16 max-w-7xl p-4 px-8 items-center bg-slate-500 w-full bg-opacity-10 backdrop-blur-lg rounded-b-md hover:backdrop-blur">
+      <div className="fixed flex justify-between h-16 max-w-7xl p-4 px-8 items-center bg-slate-500 w-full bg-opacity-10 backdrop-blur-lg rounded-b-md hover:backdrop-blur z-20">
         <a href="/" className="font-bold tracking-wider text-2xl">
           SMART<span className="text-secondary">CLOUD</span>
         </a>
@@ -33,7 +33,7 @@ const MobileMenu = () => {
 
       {/* Мобильное меню */}
       <div
-        className={`fixed inset-0 z-2 bg-slate-300/50 dark:bg-black/90 backdrop-blur-lg transition-all duration-500 ease-in-out transform ${
+        className={`fixed inset-0 z-20 bg-slate-300/50 dark:bg-black/90 backdrop-blur-lg transition-all duration-500 ease-in-out transform ${
           menuOpen ? "translate-y-0" : "-translate-y-full"
         }`}
       >
