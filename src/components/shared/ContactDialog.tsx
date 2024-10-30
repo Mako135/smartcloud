@@ -44,7 +44,7 @@ export function ContactDialog({ className }: ContactDialogProps) {
       <DialogTrigger asChild>
         <Button
           variant="outline"
-          className={clsx("rounded-3xl bg-transparent border-blue-500 hover:bg-blue-500", className)}
+          className={clsx("rounded-3xl bg-transparent border-secondary hover:bg-secondary", className)}
         >
           Оставить заявку
         </Button>

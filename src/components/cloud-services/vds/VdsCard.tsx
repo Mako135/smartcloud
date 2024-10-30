@@ -23,7 +23,7 @@ export default function VdsCard({
   period,
 }: Props) {
   return (
-    <div className="shadow-lg rounded-lg border border-blue-500/30 px-6 py-4 hover:border-blue-500 duration-150">
+    <div className="shadow-lg rounded-lg border border-secondary/30 px-6 py-4 hover:border-secondary duration-150">
       <div>
         <h1 className="font-bold text-xl mb-2">{title}</h1>
         <p className=" text-base">
@@ -56,7 +56,7 @@ export default function VdsCard({
           <p className=" text-base">Internet: {internet}</p>
         </div>
       </div>
-      <Button className="w-full font-bold hover:bg-blue-500 border-blue-500/30" variant="outline">Попробовать</Button>
+      <Button className="w-full font-bold hover:bg-secondary border-secondary/30" variant="outline">Попробовать</Button>
     </div>
   );
 }

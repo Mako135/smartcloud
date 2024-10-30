@@ -20,7 +20,7 @@ const MobileMenu = () => {
     <header className="relative block lg:hidden">
       <div className="fixed flex justify-between h-16 max-w-7xl p-4 px-8 items-center bg-slate-500 w-full bg-opacity-10 backdrop-blur-lg rounded-b-md hover:backdrop-blur">
         <a href="/" className="font-bold tracking-wider text-2xl">
-          SMART<span className="text-blue-500">CLOUD</span>
+          SMART<span className="text-secondary">CLOUD</span>
         </a>
         <Button
           onClick={() => setMenuOpen(true)}
@@ -53,7 +53,7 @@ const MobileMenu = () => {
             </div>
             {headerData.map((section, idx) => (
               <div key={idx} className="mb-8">
-                <h2 className="mb-4 text-xl font-bold text-blue-500">
+                <h2 className="mb-4 text-xl font-bold text-secondary">
                   {section.label}
                 </h2>
                 <ul className="space-y-4">

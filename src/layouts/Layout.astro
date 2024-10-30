@@ -21,6 +21,8 @@ const { title } = Astro.props;
       : "light";
   };
   const isDark = getThemePreference() === "dark";
+
+  console.log("isDark", isDark);
   document.documentElement.classList[isDark ? "add" : "remove"]("dark");
 
   if (typeof localStorage !== "undefined") {
