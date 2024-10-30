@@ -4,16 +4,25 @@ import { ContactDialog } from "@/components/shared/ContactDialog";
 
 <!-- bg-[radial-gradient(ellipse_at_top,_#C3CBDC_0%,_#fff_54%)] -->
 <div
-  class="h-screen items-center justify-center flex dark:bg-[radial-gradient(ellipse_at_top,_rgba(32,39,57,255)_0%,_rgba(0,0,0,1)_50%)] text-center flex-col gap-4"
+  class="h-screen items-center justify-center flex dark:bg-[radial-gradient(ellipse_at_top,_rgba(32,39,57,255)_0%,_rgba(0,0,0,1)_50%)] text-center lg:text-left flex-col gap-4"
 >
-  <slot />
-  <div class="flex justify-center mt-10 flex-col gap-4 md:flex-row">
-    <ContactDialog client:load />
-    <a
-      href="https://portal.smartcloud.uz/index.php?/products/"
-      target="_blank"
-      class="h-9 flex items-center justify-center px-6 bg-white text-black rounded-3xl font-medium text-sm"
-      rel="noopener noreferrer">Перейти к заказу</a
-    >
+  <div class="grid grid-cols-5">
+    <div class="col-span-5 lg:col-span-3">
+      <slot />
+      <div class="flex mt-10 justify-center lg:justify-start flex-col gap-4 md:flex-row">
+        <ContactDialog client:load />
+        <a
+          href="https://portal.smartcloud.uz/index.php?/products/"
+          target="_blank"
+          class="h-9 flex items-center justify-center px-6 bg-white text-black rounded-3xl font-medium text-sm"
+          rel="noopener noreferrer">Перейти к заказу</a
+        >
+      </div>
+    </div>
+    <img
+      src="https://bootstrapmade.com/content/demo/FlexStart/assets/img/hero-img.png"
+      alt=""
+      class="w-full hidden lg:block col-span-2"
+    />
   </div>
 </div>
