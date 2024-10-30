@@ -4,11 +4,9 @@ import { cn } from "@/lib/utils";
 import Container from "../Container.astro";
 ---
 
-<div>
+<Container>
   <h2 class="text-center text-4xl font-medium mb-20">Наши услуги</h2>
-  <Container
-    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
-  >
+  <Container className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
     {
       service_list.map((service) => (
         <a
@@ -25,4 +23,4 @@ import Container from "../Container.astro";
       ))
     }
   </Container>
-</div>
+</Container>
