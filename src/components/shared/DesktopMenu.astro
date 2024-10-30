@@ -1,7 +1,7 @@
 ---
 import { Send, Instagram } from "lucide-react";
 import "@/styles/globals.css";
-import HeaderMenu from "@/components/shared/HeaderMenu";
+import HeaderNavigationMenu from "@/components/shared/HeaderNavigationMenu";
 import { ToggleTheme } from "@/components/shared/ToggleTheme";
 ---
 
@@ -16,7 +16,7 @@ import { ToggleTheme } from "@/components/shared/ToggleTheme";
     >
     </a>
     <div class="flex items-center gap-5">
-      <HeaderMenu client:load />
+      <HeaderNavigationMenu client:load />
       <ul class="flex gap-2">
         <li>
           <a

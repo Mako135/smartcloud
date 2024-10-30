@@ -3,6 +3,7 @@ import AboutSection from "@/components/shared/AboutSection.astro";
 import AdvantageCard from "@/components/shared/AdvantageCard.astro";
 import Layout from "@/layouts/Layout.astro";
 import { smartcloudAdvantages } from "@/lib/data/homeData";
+import VdsCards from "@/widgets/cloud-services/vds/VdsCards";
 import Container from "@/widgets/Container.astro";
 import Hero from "@/widgets/Hero.astro";
 ---
@@ -29,6 +30,8 @@ import Hero from "@/widgets/Hero.astro";
         Мощный старт любого бизнеса и оптимизация расходов на IT одновременно.
       </p>
     </AboutSection>
+
+    <VdsCards client:load />
 
     <AdvantageCard
       title="Преимущества Хранилище данных"

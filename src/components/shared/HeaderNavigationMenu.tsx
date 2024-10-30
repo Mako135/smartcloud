@@ -9,7 +9,7 @@ import {
 import { headerData } from "@/lib/data/headerData";
 import { cn } from "@/lib/utils";
 
-export default function HeaderMenu() {
+export default function HeaderNavigationMenu() {
   return (
     <NavigationMenu delayDuration={0}>
       <NavigationMenuList>
