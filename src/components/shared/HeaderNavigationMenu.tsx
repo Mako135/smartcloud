@@ -25,7 +25,7 @@ export default function HeaderNavigationMenu() {
                     href={link.href}
                     key={link.label}
                     className={cn(
-                      "flex flex-col p-2 hover:text-red-500 hover:bg-slate-100 rounded-sm  ",
+                      "flex flex-col p-2 hover:text-secondary  rounded-sm  ",
                       link.href === "/security/support"
                         ? "col-span-2 text-left"
                         : ""

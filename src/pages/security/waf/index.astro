@@ -26,12 +26,6 @@ import Hero from "@/widgets/Hero.astro";
       </p>
     </Hero>
 
-    <AdvantageCard
-      title="Преимущества тестирования на проникновение"
-      data={wafAdvantages}
-      cardClassName="mt-0"
-    />
-
     <AboutSection title="Наше уникальное предложение" className="my-40">
       Проведение внешнего/внутреннего сканирования специализированным ПО на
       наличие уязвимостей в сети клиента, а также тестирование на проникновение.
@@ -40,6 +34,12 @@ import Hero from "@/widgets/Hero.astro";
       сканирования и метод зависят от количества информационных систем и
       выделенных IP-адресов.
     </AboutSection>
+
+    <AdvantageCard
+      title="Преимущества тестирования на проникновение"
+      data={wafAdvantages}
+      cardClassName="mt-0"
+    />
   </Container>
 
   <AdvantageCardWithIcon
