@@ -23,6 +23,7 @@ export function ContactDialog({ className }: ContactDialogProps) {
   const [phone, setPhone] = useState<string>("");
   const [name, setName] = useState<string>("");
   const [company, setCompany] = useState<string>("");
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -33,18 +34,18 @@ export function ContactDialog({ className }: ContactDialogProps) {
     }
 
     toast.success("В скором времени с вами свяжется наш менеджер");
-
-    console.log("Имя:", name);
-    console.log("Компания:", company);
-    console.log("Телефон:", phone);
+    setIsOpen(false); // Close the modal after successful submission
   };
 
   return (
-    <Dialog>
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
         <Button
           variant="outline"
-          className={clsx("rounded-3xl bg-transparent border-secondary hover:bg-secondary", className)}
+          className={clsx(
+            "rounded-3xl bg-transparent border-secondary hover:bg-secondary",
+            className
+          )}
         >
           Оставить заявку
         </Button>

@@ -1,6 +1,7 @@
 ---
 import clsx from "clsx";
 import NumberCard from "./NumberCard.astro";
+import Container from "@/widgets/Container.astro";
 
 interface Props {
   title: string;
@@ -11,7 +12,7 @@ interface Props {
 const { data, title, cardClassName } = Astro.props;
 ---
 
-<div class="my-40">
+<Container className='pt-40'>
   <h2 class="text-center text-4xl font-medium mt-40 lg:mt-0">{title}</h2>
 
   <div
@@ -30,4 +31,4 @@ const { data, title, cardClassName } = Astro.props;
       ))
     }
   </div>
-</div>
+</Container>

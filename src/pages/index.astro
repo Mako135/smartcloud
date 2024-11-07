@@ -26,9 +26,15 @@ import { smartcloudAdvantages } from "@/lib/data/homeData";
   </Container>
   <AboutUs />
 
-  <Services />
+  <div
+    class="dark:bg-[radial-gradient(ellipse_at_bottom_right,_rgba(32,49,77,255)_0%,_rgba(0,0,0,1)_50%)]"
+  >
+    <Services />
+  </div>
 
-  <Container>
+  <div
+    class="dark:bg-[radial-gradient(ellipse_at_top_right,_rgba(32,49,77,255)_0%,_rgba(0,0,0,1)_50%)]"
+  >
     <AdvantageCard title="Наши преимущества" data={smartcloudAdvantages} />
-  </Container>
+  </div>
 </Layout>
