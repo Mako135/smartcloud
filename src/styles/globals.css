@@ -5,6 +5,7 @@
 @font-face {
   font-family: "Neo Sans";
   src: url("../fonts/NeoSansProRegular.woff") format("woff");
+  font-display: swap;
 }
 
 body {
