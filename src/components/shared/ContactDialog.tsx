@@ -20,21 +20,32 @@ interface ContactDialogProps {
 }
 
 export function ContactDialog({ className }: ContactDialogProps) {
-  const [phone, setPhone] = useState<string>("");
-  const [name, setName] = useState<string>("");
-  const [company, setCompany] = useState<string>("");
+  const [inputs, setInputs] = useState({
+    name: "",
+    company: "",
+    phone: "",
+  });
+
   const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputs((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (isNumber(phone)) {
+    if (!isNumber(inputs.phone)) {
       toast.error("Введите корректный номер телефона");
       return;
     }
 
     toast.success("В скором времени с вами свяжется наш менеджер");
-    setIsOpen(false); // Close the modal after successful submission
+    setIsOpen(false); // Закрываем модальное окно
+    setInputs({ name: "", company: "", phone: "" }); // Обнуляем данные формы
   };
 
   return (
@@ -55,7 +66,7 @@ export function ContactDialog({ className }: ContactDialogProps) {
           <DialogTitle>Получить консультацию</DialogTitle>
         </DialogHeader>
         <DialogDescription>
-          Оставьте заявку и наш менеджер свяжется с вами в ближайшее время
+          Оставьте заявку, и наш менеджер свяжется с вами в ближайшее время
         </DialogDescription>
         <form onSubmit={handleSubmit}>
           <div className="grid gap-4 py-4">
@@ -65,12 +76,13 @@ export function ContactDialog({ className }: ContactDialogProps) {
               </Label>
               <Input
                 id="name"
+                name="name"
                 required
-                placeholder="Kazteleport"
+                placeholder="Ваше имя"
                 type="text"
                 autoComplete="off"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                value={inputs.name}
+                onChange={handleChange}
               />
             </div>
             <div>
@@ -79,12 +91,13 @@ export function ContactDialog({ className }: ContactDialogProps) {
               </Label>
               <Input
                 id="company"
+                name="company"
                 required
-                placeholder="Smartcloud"
+                placeholder="Название компании"
                 type="text"
                 autoComplete="off"
-                value={company}
-                onChange={(e) => setCompany(e.target.value)}
+                value={inputs.company}
+                onChange={handleChange}
               />
             </div>
             <div>
@@ -93,13 +106,14 @@ export function ContactDialog({ className }: ContactDialogProps) {
               </Label>
               <Input
                 id="phone"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                className="w-full"
+                name="phone"
                 required
                 placeholder="+380123456789"
                 type="tel"
                 autoComplete="off"
+                value={inputs.phone}
+                onChange={handleChange}
+                className="w-full"
               />
             </div>
           </div>
