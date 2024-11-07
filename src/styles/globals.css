@@ -1,18 +1,21 @@
-@font-face {
-  font-family: "Neo Sans";
-  src: URL("neosanspro_medium.ttf") format("truetype");
-}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Neo Sans";
+  src: url("../fonts/NeoSansProRegular.woff") format("woff");
+}
+
+body {
+  font-family: "Neo Sans";
+}
+
 html,
 body {
   overscroll-behavior: none;
-  /* Для поддержки старых браузеров можно добавить префиксы */
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
-  scrollbar-width: none; /* Firefox */
-  font-family: "Neo Sans";
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* Скрыть скроллбар для Webkit-браузеров */
