@@ -9,10 +9,10 @@ import IaasCart from "../../../components/cloud-services/iaas/IaasCart";
 const IaaSConfigurator = () => {
   return (
     <div className="my-40">
-      <h1 className="text-4xl font-medium">
+      <h1 className="text-2xl md:text-4xl font-medium">
         Рассчитайте стоимость аренды IaaS
       </h1>
-      <p className="text-xl mt-4">
+      <p className="text-md mt-5 md:text-2xl md:mt-0">
         Стоимость IaaS зависит от конфигурации вашей системы. Посекундная
         тарификация, входящий трафик и запросы — бесплатно.
       </p>

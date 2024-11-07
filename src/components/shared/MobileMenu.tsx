@@ -3,6 +3,7 @@ import { headerData } from "@/lib/data/headerData";
 import { Menu, X } from "lucide-react";
 import { Button } from "../ui/button";
 import { ToggleTheme } from "./ToggleTheme";
+import { cn } from "@/lib/utils";
 
 const MobileMenu = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -33,14 +34,15 @@ const MobileMenu = () => {
 
       {/* Мобильное меню */}
       <div
-        className={`fixed inset-0 z-20 bg-slate-300/50 dark:bg-black/90 backdrop-blur-lg transition-all duration-500 ease-in-out transform ${
-          menuOpen ? "-translate-x-0" : "translate-x-full"
-        }`}
+        className={cn(
+          "fixed inset-0 z-30 bg-slate-300/50 dark:bg-black/90 backdrop-blur-lg transition-all duration-500 ease-in-out",
+          menuOpen ? "opacity-100 z-30" : "opacity-0 z-10"
+        )}
       >
         <div className="relative h-full overflow-y-auto">
           <Button
             onClick={() => setMenuOpen(false)}
-            className="absolute top-4 right-4 p-2"
+            className="absolute top-4 right-8 p-2"
             variant="ghost"
           >
             <X size={28} strokeWidth={3} />

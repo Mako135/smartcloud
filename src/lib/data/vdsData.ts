@@ -50,7 +50,7 @@ export const vdsDataSsd = [
     period: "месяц",
   },
   {
-    title: "VDS-5",
+    title: "VDS-6",
     price: 50000,
     cpu: "5 ядер",
     ram: "5 ГБ",
@@ -113,7 +113,7 @@ export const vdsDataHdd = [
     period: "месяц",
   },
   {
-    title: "VDS-5",
+    title: "VDS-6",
     price: 50000,
     cpu: "5 ядер",
     ram: "5 ГБ",
