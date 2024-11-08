@@ -2,47 +2,47 @@
 import Container from "../Container.astro";
 ---
 
-<div class="mb-40 p-10 bg-slate-100 dark:bg-slate-900/50">
+<div class="mb-40 p-10 bg-slate-100 dark:bg-slate-900/50" id="aboutUsContainer">
   <Container
     className="grid grid-cols-1 lg:grid-cols-2 gap-20 justify-between "
   >
     <div class="flex flex-col gap-5">
-      <h2 class="text-4xl font-medium">О компании</h2>
-      <p>
+      <h2 class="text-4xl font-medium" id="aboutUsTitle">О компании</h2>
+      <p id="aboutUsDesc">
         Команда SmartCLoud – входит в состав международного провайдера ИКТ —
         инфраструктуры для бизнеса и предоставляет на территории Узбекистана
         услуги облачных вычислений, хранения и резервирования данных, а также —
         кибербезопаcности.
-      </p>
-      <p>
-        Отказоустойчивая физическая и виртуальная инфраструктура,
-        профессиональная команда инженеров, вариативный стек технологий
-        позволяют нашим клиентам быть уверенными в непрерывности и доступности
-        всех критичных процессов и удобном масштабировании бизнеса в любое
-        время.
+        <br />
+        <br />
+        Отказоустойчивая физическая и виртуальная инфраструктура, профессиональная
+        команда инженеров, вариативный стек технологий позволяют нашим клиентам быть
+        уверенными в непрерывности и доступности всех критичных процессов и удобном
+        масштабировании бизнеса в любое время.
       </p>
     </div>
     <div
       class="grid grid-cols-1 items-stretch justify-center gap-5 sm:grid-cols-2"
     >
-      <div class="p-5 grid gap-4 rounded-md">
+      <div class="p-5 grid gap-4 rounded-md about-us">
         <h2 class="text-6xl font-medium">
           20<span class="text-secondary">+</span>
         </h2>
         <p>лет опыта в сфере ИКТ</p>
       </div>
-      <div class="p-5 grid gap-4 rounded-md">
+      <div class="p-5 grid gap-4 rounded-md about-us">
         <h2 class="text-6xl font-medium">
           100<span class="text-secondary">+</span>
         </h2>
         <p>проверенных партнеров</p>
       </div>
-      <div class="p-5 grid gap-4 rounded-md">
+      <div class="p-5 grid gap-4 rounded-md about-us">
         <h2 class="text-6xl font-medium">
           200<span class="text-secondary">+</span>
         </h2>
         <p>постоянных заказчиков доверяют нам</p>
-      </div><div class="p-5 grid gap-4 rounded-md">
+      </div>
+      <div class="p-5 grid gap-4 rounded-md about-us">
         <h2 class="text-6xl font-medium">
           160<span class="text-secondary">+</span>
         </h2>
@@ -51,3 +51,40 @@ import Container from "../Container.astro";
     </div>
   </Container>
 </div>
+
+<script>
+  import { gsapTrigger } from "@/lib/gsapTrigger";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".about-us");
+    const aboutUsContainer = document.getElementById("aboutUsContainer");
+    const aboutUsTitle = document.getElementById("aboutUsTitle");
+    const aboutUsDesc = document.getElementById("aboutUsDesc");
+
+    if (aboutUsContainer && aboutUsTitle && cards.length && aboutUsDesc) {
+      const tl = gsapTrigger(aboutUsContainer);
+      tl.fromTo(
+        aboutUsTitle,
+        { y: 50, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.5 }
+      );
+      tl.fromTo(
+        aboutUsDesc,
+        { y: 50, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.5 },
+        "<0.2" // Start 200 ms after the previous animations begin
+      );
+      cards.forEach((card) => {
+        tl.fromTo(
+          card,
+          { y: 50, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.3,
+          }
+        );
+      });
+    }
+  });
+</script>

@@ -12,9 +12,9 @@ interface Props {
 const { data, title, cardClassName } = Astro.props;
 ---
 
-<div class="bg-slate-100 dark:bg-[#0f172a80] py-10">
+<div class="bg-slate-100 dark:bg-[#0f172a80] py-10" id="advIconCardsContainer">
   <Container>
-    <h2 class="text-center text-4xl font-medium">
+    <h2 class="text-center text-4xl font-medium" id="advIconsTitle">
       {title}
     </h2>
 
@@ -26,7 +26,7 @@ const { data, title, cardClassName } = Astro.props;
     >
       {
         data.map((desc) => (
-          <div class="flex gap-2">
+          <div class="flex gap-2 advIconCards">
             <div>
               <CircleCheck size={36} color="#3b82f6" />
             </div>
@@ -37,3 +37,35 @@ const { data, title, cardClassName } = Astro.props;
     </div>
   </Container>
 </div>
+
+<script>
+  import { gsapTrigger } from "@/lib/gsapTrigger";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".advIconCards");
+    const advantageSectionContainer = document.getElementById(
+      "advIconCardsContainer"
+    );
+    const advantageTitle = document.getElementById("advIconsTitle");
+
+    if (advantageSectionContainer) {
+      const tl = gsapTrigger(advantageSectionContainer);
+      tl.fromTo(
+        advantageTitle,
+        { y: 50, opacity: 0, scale: 0.8 },
+        { y: 0, opacity: 1, duration: 0.5, scale: 1 }
+      );
+      cards.forEach((card) => {
+        tl.fromTo(
+          card,
+          { y: 50, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.2,
+          }
+        );
+      });
+    }
+  });
+</script>

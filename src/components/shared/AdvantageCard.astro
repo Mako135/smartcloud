@@ -12,14 +12,15 @@ interface Props {
 const { data, title, cardClassName } = Astro.props;
 ---
 
-<Container className='my-40'>
-  <h2 class="text-center text-4xl font-medium">{title}</h2>
+<Container className="my-40">
+  <h2 class="text-center text-4xl font-medium" id="advantageTitle">{title}</h2>
 
   <div
     class={clsx(
       "grid grid-cols-1 md:grid-cols-2 items-stretch gap-10 mt-20",
       cardClassName
     )}
+    id="advantageCards"
   >
     {
       data.map((item, index) => (
@@ -32,3 +33,33 @@ const { data, title, cardClassName } = Astro.props;
     }
   </div>
 </Container>
+
+<script>
+  import { gsapTrigger } from "@/lib/gsapTrigger";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".number-card");
+    const advantageSectionContainer = document.getElementById("advantageCards");
+    const advantageTitle = document.getElementById("advantageTitle");
+
+    if (advantageSectionContainer && advantageTitle && cards.length) {
+      const tl = gsapTrigger(advantageSectionContainer);
+      tl.fromTo(
+        advantageTitle,
+        { y: 50, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.5 }
+      );
+      cards.forEach((card) => {
+        tl.fromTo(
+          card,
+          { y: 50, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.2,
+          },
+        );
+      });
+    }
+  });
+</script>

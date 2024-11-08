@@ -4,15 +4,17 @@ import { cn } from "@/lib/utils";
 import Container from "../Container.astro";
 ---
 
-<Container>
-  <h2 class="text-center text-4xl font-medium mb-20">Наши услуги</h2>
+<div id="services">
+  <h2 class="text-center text-4xl font-medium mb-20" id="servicesTitle">
+    Наши услуги
+  </h2>
   <Container className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
     {
       service_list.map((service) => (
         <a
           href={service.link}
           class={cn(
-            "group p-10 border-[1px] rounded-md border-gray-800 hover:border-secondary  hover:bg-gradient-to-tl from-slate-100 transition-all dark:from-[rgba(32,39,57,255)] relative overflow-hidden",
+            "service-card group p-10 border-[1px] rounded-md border-gray-800 hover:border-secondary  hover:bg-gradient-to-tl from-slate-100 transition-all dark:from-[rgba(32,39,57,255)] relative overflow-hidden",
             service.label.includes("информационной") && "md:col-span-2"
           )}
         >
@@ -27,4 +29,30 @@ import Container from "../Container.astro";
       ))
     }
   </Container>
-</Container>
+</div>
+<script>
+  import { gsapTrigger } from "@/lib/gsapTrigger";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".service-card");
+    const services = document.getElementById("services");
+    const servicesTitle = document.getElementById("servicesTitle");
+
+    if (services && servicesTitle && cards.length) {
+      const tl = gsapTrigger(services);
+      tl.fromTo(
+        servicesTitle,
+        { y: 50, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.3 }
+      ).fromTo(
+        cards,
+        { y: 50, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          stagger: 0.2,
+        }
+      );
+    }
+  });
+</script>
