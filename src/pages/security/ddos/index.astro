@@ -7,11 +7,13 @@ import Layout from "@/layouts/Layout.astro";
 import { ddosAccordionData, ddosData, ddosData2 } from "@/lib/data/ddosData";
 import Container from "@/widgets/Container.astro";
 import Hero from "@/widgets/Hero.astro";
+
+import ddosImg from "@/assets/ddos.png";
 ---
 
 <Layout title="Smartcloud - Защита от DDoS атак">
   <Container>
-    <Hero>
+    <Hero imgSrc={ddosImg.src}>
       <h1 class="text-3xl font-medium lg:text-5xl">
         Не Дайте <span class="text-secondary">DDoS </span>
         Атаке Остановить Ваш Бизнес!

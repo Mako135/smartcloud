@@ -5,11 +5,13 @@ import Layout from "@/layouts/Layout.astro";
 import { smartcloudAdvantages } from "@/lib/data/homeData";
 import Container from "@/widgets/Container.astro";
 import Hero from "@/widgets/Hero.astro";
+
+import vnf from "@/assets/vnf.webp";
 ---
 
 <Layout title="Smartcloud - VNF">
   <Container>
-    <Hero>
+    <Hero imgSrc={vnf.src}>
       <h1 class="text-3xl font-medium lg:text-5xl">
         <span class="text-secondary">Virtual Network Firewall</span>
         – межсетевой экран следующего поколения
@@ -20,7 +22,7 @@ import Hero from "@/widgets/Hero.astro";
       </p>
     </Hero>
 
-    <AboutSection title="Что такое Virtual Network Firewall?" >
+    <AboutSection title="Что такое Virtual Network Firewall?">
       <p>
         Наряду с поддержкой функций межсетевого экрана и проверки состояния
         сети, обладает возможностями более глубокой проверки содержимого.

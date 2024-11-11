@@ -8,16 +8,19 @@ import {
   securitySupportData,
   securitySupportData2,
 } from "@/lib/data/securitySupportData";
-import { socAccordionData, socAdvantages2 } from "@/lib/data/socData";
+import { socAccordionData } from "@/lib/data/socData";
 import Container from "@/widgets/Container.astro";
 import Hero from "@/widgets/Hero.astro";
+
+import securitySupportImg from "@/assets/support.png";
 ---
 
 <Layout title="Smartcloud - Security Support">
   <Container>
-    <Hero>
+    <Hero imgSrc={securitySupportImg.src}>
       <h1 class="text-3xl font-medium lg:text-5xl">
-        Профессиональная<span class="text-secondary"> Поддержка ИБ </span>
+        Профессиональная <br />
+        <span class="text-secondary"> Поддержка ИБ </span>
         <br /> Мониторинг и Управление Безопасностью
       </h1>
       <p class="text-xl mt-6 hidden sm:block">

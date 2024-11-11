@@ -9,7 +9,9 @@ import AboutSection from "@/components/shared/AboutSection.astro";
 
 <Layout title="IaaS on Openstack">
   <Container>
-    <Hero>
+    <Hero
+      imgSrc="https://bootstrapmade.com/content/demo/FlexStart/assets/img/hero-img.png"
+    >
       <h1 class="text-3xl font-medium lg:text-5xl">
         Надежные <span class="text-secondary">IaaS</span> решения для роста <br
         /> вашего предприятия
@@ -27,7 +29,7 @@ import AboutSection from "@/components/shared/AboutSection.astro";
         менять их конфигурацию, а также управлять настройками
       </p>
     </AboutSection>
-    
+
     <IaaSConfigurator client:load />
     <IaasAdvantages />
   </Container>

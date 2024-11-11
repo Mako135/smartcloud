@@ -8,7 +8,6 @@ export const gsapTrigger = (trigger: HTMLElement) => {
     scrollTrigger: {
       trigger: trigger,
       start: "top 70%",
-      markers: true, 
     },
   });
   return tl;

@@ -1,33 +1,31 @@
 ---
 import { ContactDialog } from "@/components/shared/ContactDialog";
+
+interface Props {
+  imgSrc: string;
+}
+
+const { imgSrc } = Astro.props;
 ---
 
-<!-- bg-[radial-gradient(ellipse_at_top,_#C3CBDC_0%,_#fff_54%)] -->
-<div
-  class="h-screen items-center justify-center flex text-center lg:text-left flex-col gap-4"
->
-  <div class="grid grid-cols-5">
-    <div class="col-span-5 lg:col-span-3">
-      <slot />
-      <div
-        class="flex mt-10 justify-center lg:justify-start flex-col gap-4 md:flex-row"
+<div class="h-screen grid grid-cols-5 items-center gap-10">
+  <div class="col-span-5 lg:col-span-3">
+    <slot />
+    <div
+      class="flex mt-10 justify-center lg:justify-start flex-col gap-4 md:flex-row"
+    >
+      <ContactDialog client:load />
+      <a
+        href="https://portal.smartcloud.uz/index.php?/products/"
+        target="_blank"
+        class="h-9 flex items-center justify-center px-6 bg-white text-black rounded-3xl font-medium text-sm"
+        rel="noopener noreferrer">Перейти к заказу</a
       >
-        <ContactDialog client:load />
-        <a
-          href="https://portal.smartcloud.uz/index.php?/products/"
-          target="_blank"
-          class="h-9 flex items-center justify-center px-6 bg-white text-black rounded-3xl font-medium text-sm"
-          rel="noopener noreferrer">Перейти к заказу</a
-        >
-      </div>
     </div>
-    <picture class="w-full hidden lg:block col-span-2">
-      <source
-        media="(min-width: 1024px)"
-        srcset="https://bootstrapmade.com/content/demo/FlexStart/assets/img/hero-img.png"
-      />
-      <!-- Пустой img для поддержки браузеров, которые не понимают <picture> -->
-      <img src="" alt="" />
-    </picture>
   </div>
+  <picture class="w-full hidden lg:block col-span-2">
+    <source media="(min-width: 1024px)" srcset={imgSrc} />
+    <!-- Пустой img для поддержки браузеров, которые не понимают <picture> -->
+    <img src="" alt="" />
+  </picture>
 </div>
