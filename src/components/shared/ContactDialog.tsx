@@ -118,7 +118,7 @@ export function ContactDialog({ className }: ContactDialogProps) {
           </div>
           <DialogFooter>
             <Button type="submit" className="w-full">
-              Отправить заявку
+              Перезвоните мне
             </Button>
           </DialogFooter>
         </form>
