@@ -64,9 +64,9 @@ export const ShadcnPhone = React.memo(
     return (
       <div className="flex items-center">
         <Select value={country.iso2} onValueChange={handleCountryChange}>
-          <SelectTrigger className="w-[80px] rounded-r-none">
+          <SelectTrigger className="w-auto rounded-r-none pr-[2px] justify-normal gap-1">
             <SelectValue placeholder="Выберите страну">
-              <FlagImage iso2={country.iso2} className="mr-2" />
+              <FlagImage iso2={country.iso2} />
             </SelectValue>
           </SelectTrigger>
           <SelectContent>
