@@ -10,10 +10,11 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { isNumber } from "@/lib/isNumber";
+import { isValidPhoneNumber } from "@/lib/isNumber";
 import clsx from "clsx";
 import { useState } from "react";
 import { toast } from "sonner";
+import { ShadcnPhone } from "./CustomPhoneInput";
 
 interface ContactDialogProps {
   className?: string;
@@ -28,6 +29,13 @@ export function ContactDialog({ className }: ContactDialogProps) {
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
+  const handlePhoneChange = (phone: string) => {
+    setInputs((prev) => ({
+      ...prev,
+      phone: phone,
+    }));
+  };
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputs((prev) => ({
       ...prev,
@@ -37,8 +45,9 @@ export function ContactDialog({ className }: ContactDialogProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    console.log(inputs);
 
-    if (!isNumber(inputs.phone)) {
+    if (!isValidPhoneNumber(inputs.phone)) {
       toast.error("Введите корректный номер телефона");
       return;
     }
@@ -104,17 +113,7 @@ export function ContactDialog({ className }: ContactDialogProps) {
               <Label htmlFor="phone" className="text-right">
                 Контактный телефон*
               </Label>
-              <Input
-                id="phone"
-                name="phone"
-                required
-                placeholder="+380123456789"
-                type="tel"
-                autoComplete="off"
-                value={inputs.phone}
-                onChange={handleChange}
-                className="w-full"
-              />
+              <ShadcnPhone value={inputs.phone} onChange={handlePhoneChange} />
             </div>
           </div>
           <DialogFooter>

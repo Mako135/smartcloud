@@ -1,3 +1,3 @@
-export const isNumber = (text: string) => {
-  return /[A-Za-zА-Яа-я]/.test(text);
+export const isValidPhoneNumber = (phoneNumber: string) => {
+  return /^\+?[0-9]{10,15}$/.test(phoneNumber);
 };
