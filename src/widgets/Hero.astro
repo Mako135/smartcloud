@@ -26,6 +26,6 @@ const { imgSrc } = Astro.props;
   <picture class="w-full hidden lg:block col-span-2">
     <source media="(min-width: 1024px)" srcset={imgSrc} />
     <!-- Пустой img для поддержки браузеров, которые не понимают <picture> -->
-    <img src="" alt="" />
+    <img src="" alt="" loading="lazy" />
   </picture>
 </div>

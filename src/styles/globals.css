@@ -19,13 +19,6 @@ body {
   scrollbar-width: none;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  /* display: none; <- Crashes Chrome on hover */
-  -webkit-appearance: none;
-  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
-}
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -92,21 +85,11 @@ input::-webkit-inner-spin-button {
   }
 }
 
-.header-nav {
-  background-color: hsl(var(--background) / 0.6);
-}
-
 .text-stroke {
   -webkit-text-stroke: 1px #3b82f6; /* Толщина и цвет обводки */
   color: transparent; /* Цвет текста внутри обводки */
 }
 
-.menu.open {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* По умолчанию */
 #logo {
   background-image: url("../assets/logo_light.svg");
 }

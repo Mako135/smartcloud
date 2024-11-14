@@ -11,12 +11,14 @@ import {
 } from "@/lib/data/socData";
 import Container from "@/widgets/Container.astro";
 import Hero from "@/widgets/Hero.astro";
+
+import socImg from "@/assets/waf.svg";
 ---
 
 <Layout title="Smartcloud - SOC">
   <Container>
     <Hero
-      imgSrc="https://synectiks.com/static/cloud-backup-service-119c7173527cc746de8ba50d2d294154.svg"
+      imgSrc={socImg.src}
     >
       <h1 class="text-3xl font-medium lg:text-5xl">
         <span class="text-secondary">SOC</span>

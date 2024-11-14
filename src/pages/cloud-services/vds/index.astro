@@ -6,11 +6,13 @@ import { smartcloudAdvantages } from "@/lib/data/homeData";
 import VdsCards from "@/widgets/cloud-services/vds/VdsCards";
 import Container from "@/widgets/Container.astro";
 import Hero from "@/widgets/Hero.astro";
+
+import vdsImg from "@/assets/vds.svg";
 ---
 
 <Layout title="Smarcloud - VDS">
   <Container>
-    <Hero imgSrc="https://www.betahost247.com/img/beta/vdserver1.svg">
+    <Hero imgSrc={vdsImg.src}>
       <h1 class="text-3xl font-medium lg:text-5xl">
         <span class="text-secondary">VDS</span> – виртуальный выделенный сервер
       </h1>

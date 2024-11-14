@@ -5,12 +5,14 @@ import Layout from "@/layouts/Layout.astro";
 import { smartcloudAdvantages } from "@/lib/data/homeData";
 import Container from "@/widgets/Container.astro";
 import Hero from "@/widgets/Hero.astro";
+
+import storageImg from "@/assets/storage.webp"
 ---
 
 <Layout title="Smartcloud - Storage">
   <Container>
     <Hero
-      imgSrc="https://cdn-cnekb.nitrocdn.com/tcxNzLphnaITHzvqTMBrqGOHJtbzDjle/assets/images/optimized/rev-03793ea/stonefly.com/wp-content/uploads/2022/05/Back-up-Any-Device-Anytime.png"
+      imgSrc={storageImg.src}
     >
       <h1 class="text-3xl font-medium lg:text-5xl">
         <span class="text-secondary">Хранилище данных</span> – дисковое пространство

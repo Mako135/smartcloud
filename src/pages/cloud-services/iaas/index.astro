@@ -5,12 +5,14 @@ import IaasAdvantages from "@/widgets/cloud-services/iaas/IaasAdvantages.astro";
 import IaaSConfigurator from "@/widgets/cloud-services/iaas/IaaSConfigurator";
 import Hero from "@/widgets/Hero.astro";
 import AboutSection from "@/components/shared/AboutSection.astro";
+
+import iaasImg from "@/assets/iaas.png";
 ---
 
 <Layout title="IaaS on Openstack">
   <Container>
     <Hero
-      imgSrc="https://bootstrapmade.com/content/demo/FlexStart/assets/img/hero-img.png"
+      imgSrc={iaasImg.src}
     >
       <h1 class="text-3xl font-medium lg:text-5xl">
         Надежные <span class="text-secondary">IaaS</span> решения для роста <br

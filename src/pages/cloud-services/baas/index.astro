@@ -5,12 +5,14 @@ import AdvantageCard from "@/components/shared/AdvantageCard.astro";
 import { smartcloudAdvantages } from "@/lib/data/homeData";
 import AboutSection from "@/components/shared/AboutSection.astro";
 import Hero from "@/widgets/Hero.astro";
+
+import baasImg from "@/assets/baas.png"
 ---
 
 <Layout title="Резервное копирование - BaaS">
   <Container>
     <Hero
-      imgSrc="https://dhsupcloud.com/uploads/BACKUP-AS-A-SERVICE-01_1675663124.png"
+      imgSrc={baasImg.src}
     >
       <h1 class="text-3xl font-medium lg:text-5xl">
         Надежные <span class="text-secondary">BaaS</span> решения для роста <br

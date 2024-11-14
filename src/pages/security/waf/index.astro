@@ -11,12 +11,14 @@ import {
 import { wafAdvantages } from "@/lib/data/wafData";
 import Container from "@/widgets/Container.astro";
 import Hero from "@/widgets/Hero.astro";
+
+import wafImg from "@/assets/waf.svg";
 ---
 
 <Layout title="Smartcloud - Защита от DDoS атак">
   <Container>
     <Hero
-      imgSrc="https://synectiks.com/static/cloud-backup-service-119c7173527cc746de8ba50d2d294154.svg"
+      imgSrc={wafImg.src}
     >
       <h1 class="text-3xl font-medium lg:text-5xl">
         Надежная Защита Веб-приложений с <span class="text-secondary">WAF</span>
