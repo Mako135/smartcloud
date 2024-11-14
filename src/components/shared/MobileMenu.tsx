@@ -51,7 +51,7 @@ const MobileMenu = () => {
           <nav className="p-8">
             <div className="flex gap-2 items-center mb-5">
               <h2>Выбрать тему</h2>
-              {/* <ToggleTheme /> */}
+              <ToggleTheme />
             </div>
             {headerData.map((section, idx) => (
               <div key={idx} className="mb-8">

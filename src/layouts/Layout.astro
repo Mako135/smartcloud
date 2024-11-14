@@ -13,29 +13,29 @@ const { title } = Astro.props;
 ---
 
 <script is:inline>
-  // const getThemePreference = () => {
-  //   if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-  //     return localStorage.getItem("theme");
-  //   }
-  //   return window.matchMedia("(prefers-color-scheme: dark)").matches
-  //     ? "dark"
-  //     : "light";
-  // };
-  // const isDark = getThemePreference() === "dark";
+  const getThemePreference = () => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  };
+  const isDark = getThemePreference() === "dark";
 
-  // console.log("isDark", isDark);
-  document.documentElement.classList["add"]("dark");
+  console.log("isDark", isDark);
+  document.documentElement.classList[isDark ? "add" : "remove"]("dark");
 
-  // if (typeof localStorage !== "undefined") {
-  //   const observer = new MutationObserver(() => {
-  //     const isDark = document.documentElement.classList.contains("dark");
-  //     localStorage.setItem("theme", isDark ? "dark" : "light");
-  //   });
-  //   observer.observe(document.documentElement, {
-  //     attributes: true,
-  //     attributeFilter: ["class"],
-  //   });
-  // }
+  if (typeof localStorage !== "undefined") {
+    const observer = new MutationObserver(() => {
+      const isDark = document.documentElement.classList.contains("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+  }
 </script>
 
 <html lang="en">
@@ -53,9 +53,15 @@ const { title } = Astro.props;
     >
     </div>
     <div
-      class="absolute left-0 right-0 lg:top-[-10%] h-screen lg:w-[70vw] rounded-full bg-[radial-gradient(ellipse_at_top,_rgba(32,49,77,255)_0%,_rgba(0,0,0,1)_50%)] lg:bg-[radial-gradient(circle_400px_at_50%_300px,#20314d,#000)] -z-20"
+      class="absolute -z-20 left-0 right-0 h-screen w-screen
+            bg-[radial-gradient(ellipse_at_top,_#C3CBDC_0%,_#fff_54%)]
+            dark:bg-[radial-gradient(ellipse_at_top,_rgba(32,49,77,255)_0%,_rgba(0,0,0,1)_50%)]
+            sm:w-[90vw] sm:h-[90vh] sm:rounded-3xl
+            md:w-[80vw] md:h-[80vh] md:rounded-full
+            lg:w-[70vw] lg:top-[-10%] lg:rounded-full"
     >
     </div>
+
     <Toaster client:load richColors />
     <Header />
     <slot />
