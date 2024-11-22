@@ -2,18 +2,16 @@
 import Layout from "@/layouts/Layout.astro";
 import Container from "@/widgets/Container.astro";
 import AdvantageCard from "@/components/shared/AdvantageCard.astro";
-import { smartcloudAdvantages } from "@/lib/data/homeData";
 import AboutSection from "@/components/shared/AboutSection.astro";
 import Hero from "@/widgets/Hero.astro";
 
-import baasImg from "@/assets/baas.png"
+import baasImg from "@/assets/baas.png";
+import { baasAdvantages } from "@/lib/data/baasData";
 ---
 
 <Layout title="Резервное копирование - BaaS">
   <Container>
-    <Hero
-      imgSrc={baasImg.src}
-    >
+    <Hero imgSrc={baasImg.src}>
       <h1 class="text-3xl font-medium lg:text-5xl">
         Надежные <span class="text-secondary">BaaS</span> решения для роста <br
         /> вашего предприятия
@@ -24,20 +22,13 @@ import baasImg from "@/assets/baas.png"
       </p>
     </Hero>
 
-    <AboutSection title="Что такое BaaS?">
+    <AboutSection title="Backup as a Service">
       <p>
-        BaaS – это «страховка» для бизнеса. Компания помещает резервную копию в
-        надежное и универсальное облачное хранилище, а в случае необходимости
-        проводит аварийное восстановление данных. У сервиса множество полезных
-        функций – служебное планирование частоты и времени копирования, механизм
-        восстановления и интуитивно понятное управление. <br />
-        <br />
-        Копирования информации возможно из локальной, виртуальной, облачной рабочей
-        среды. Для бизнеса – это снижение рисков потери данных за необременительную
-        стоимость плюс максимальная скорость восстановления рабочей IT-системы
+        Подключите облачное хранение копий виртуальных машин для быстрого
+        восстановления первичной информации независимо от причины сбоя.
       </p>
     </AboutSection>
 
-    <AdvantageCard title="Преимущества BaaS" data={smartcloudAdvantages} />
+    <AdvantageCard title="Преимущества BaaS" data={baasAdvantages} />
   </Container>
 </Layout>

@@ -2,18 +2,16 @@
 import AboutSection from "@/components/shared/AboutSection.astro";
 import AdvantageCard from "@/components/shared/AdvantageCard.astro";
 import Layout from "@/layouts/Layout.astro";
-import { smartcloudAdvantages } from "@/lib/data/homeData";
 import Container from "@/widgets/Container.astro";
 import Hero from "@/widgets/Hero.astro";
 
-import storageImg from "@/assets/storage.webp"
+import storageImg from "@/assets/storage.webp";
+import { storageAdvantages } from "@/lib/data/storageData";
 ---
 
 <Layout title="Smartcloud - Storage">
   <Container>
-    <Hero
-      imgSrc={storageImg.src}
-    >
+    <Hero imgSrc={storageImg.src}>
       <h1 class="text-3xl font-medium lg:text-5xl">
         <span class="text-secondary">Хранилище данных</span> – дисковое пространство
         для хранения данных
@@ -37,7 +35,7 @@ import storageImg from "@/assets/storage.webp"
     </AboutSection>
     <AdvantageCard
       title="Преимущества Хранилище данных"
-      data={smartcloudAdvantages}
+      data={storageAdvantages}
       cardClassName="lg:grid-cols-3"
     />
   </Container>

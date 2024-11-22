@@ -1,10 +1,10 @@
 ---
 import AboutSection from "@/components/shared/AboutSection.astro";
-import AdvantageCard from "@/components/shared/AdvantageCard.astro";
 import Layout from "@/layouts/Layout.astro";
-import { smartcloudAdvantages } from "@/lib/data/homeData";
+import { vnfAdvantages } from "@/lib/data/vnfData";
 import Container from "@/widgets/Container.astro";
 import Hero from "@/widgets/Hero.astro";
+import NumberedHighlight from "@/components/shared/NumberedHighlight.astro";
 
 import vnf from "@/assets/vnf.webp";
 ---
@@ -31,9 +31,8 @@ import vnf from "@/assets/vnf.webp";
         защищая сеть при возникновении новых угроз.
       </p>
     </AboutSection>
-    <AdvantageCard
-      title="Преимущества Virtual Network Firewall"
-      data={smartcloudAdvantages}
+    <NumberedHighlight
+      data={vnfAdvantages}
     />
   </Container>
 </Layout>

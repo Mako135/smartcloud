@@ -1,19 +1,18 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Container from "@/widgets/Container.astro";
-import IaasAdvantages from "@/widgets/cloud-services/iaas/IaasAdvantages.astro";
 import IaaSConfigurator from "@/widgets/cloud-services/iaas/IaaSConfigurator";
 import Hero from "@/widgets/Hero.astro";
 import AboutSection from "@/components/shared/AboutSection.astro";
 
 import iaasImg from "@/assets/iaas.png";
+import NumberedHighlight from "@/components/shared/NumberedHighlight.astro";
+import { iaas_advantages } from "@/lib/data/iaasData";
 ---
 
 <Layout title="IaaS on Openstack">
   <Container>
-    <Hero
-      imgSrc={iaasImg.src}
-    >
+    <Hero imgSrc={iaasImg.src}>
       <h1 class="text-3xl font-medium lg:text-5xl">
         Надежные <span class="text-secondary">IaaS</span> решения для роста <br
         /> вашего предприятия
@@ -33,6 +32,6 @@ import iaasImg from "@/assets/iaas.png";
     </AboutSection>
 
     <IaaSConfigurator client:load />
-    <IaasAdvantages />
+    <NumberedHighlight data={iaas_advantages} />
   </Container>
 </Layout>

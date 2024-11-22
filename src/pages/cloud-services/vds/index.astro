@@ -8,6 +8,7 @@ import Container from "@/widgets/Container.astro";
 import Hero from "@/widgets/Hero.astro";
 
 import vdsImg from "@/assets/vds.svg";
+import { vdsAdvantages } from "@/lib/data/vdsData";
 ---
 
 <Layout title="Smarcloud - VDS">
@@ -37,7 +38,7 @@ import vdsImg from "@/assets/vds.svg";
 
     <AdvantageCard
       title="Преимущества Хранилище данных"
-      data={smartcloudAdvantages}
+      data={vdsAdvantages}
       cardClassName="lg:grid-cols-3"
     />
   </Container>

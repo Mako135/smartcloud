@@ -1,0 +1,59 @@
+---
+interface Props {
+  data: string[];
+}
+
+const { data } = Astro.props;
+---
+
+<div class="my-40" id="numberedHighlight">
+  <h2
+    class="text-center text-4xl font-medium mb-20"
+    id="numberedHighlightTitle"
+  >
+    Наша преимущества
+  </h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    {
+      data.map((item, index) => (
+        <div class="group relative flex items-center justify-center numberedHighlightCard">
+          <span class="text-[124px] italic text-stroke transition-all group-hover:skew-y-6 group-hover:rotate-12">
+            {index + 1}
+          </span>
+          <p class="absolute z-[2] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-lg font-bold">
+            {item}
+          </p>
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<script>
+  import { gsapTrigger } from "@/lib/gsapTrigger";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".numberedHighlightCard");
+    const numberedHighlight = document.getElementById("numberedHighlight");
+    const numberedHighlightTitle = document.getElementById(
+      "numberedHighlightTitle"
+    );
+
+    if (numberedHighlight && numberedHighlightTitle && cards.length) {
+      const tl = gsapTrigger(numberedHighlight);
+      tl.fromTo(
+        numberedHighlightTitle,
+        { y: 50, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.3 }
+      ).fromTo(
+        cards,
+        { y: 50, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          stagger: 0.2,
+        }
+      );
+    }
+  });
+</script>

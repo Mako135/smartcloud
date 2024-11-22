@@ -17,20 +17,11 @@ export const headerData = [
         label: "VDS",
         desc: "Виртуальный выделенный сервер, который позволяет арендовать отдельный физический сервер, разделенный на несколько виртуальных.",
       },
-      {
-        href: "/cloud-services/vnf",
-        label: "Virtual Network Firewall",
-        desc: "Сервис, который позволяет создавать и управлять виртуальными сетевыми брандмауэрами.",
-      },
+
       {
         href: "/cloud-services/storage",
         label: "Дисковое хранилище",
         desc: "Сервис, который позволяет хранить данные в HDD/SSD.",
-      },
-      {
-        href: "/kaspersky",
-        label: "Kaspersky",
-        desc: "Сервис, который позволяет защитить ваши данные от вирусов и других угроз.",
       },
     ],
   },
@@ -57,6 +48,16 @@ export const headerData = [
         href: "/security/soc",
         label: "Security Оperations Сenter",
         desc: "Сервис, который позволяет мониторить вашу систему на предмет угроз.",
+      },
+      {
+        href: "/security/vnf",
+        label: "Virtual Network Firewall",
+        desc: "Сервис, который позволяет создавать и управлять виртуальными сетевыми брандмауэрами.",
+      },
+      {
+        href: "/kaspersky",
+        label: "Kaspersky",
+        desc: "Сервис, который позволяет защитить ваши данные от вирусов и других угроз.",
       },
       {
         href: "/security/support",
