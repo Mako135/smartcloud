@@ -12,11 +12,7 @@ import { smartcloudAdvantages } from "@/lib/data/homeData";
   >
     {
       smartcloudAdvantages.map((item, index) => (
-        <NumberCard
-          number={++index}
-          title={item.title}
-          description={item.description}
-        />
+        <NumberCard number={++index} title={item.title} />
       ))
     }
   </div>
