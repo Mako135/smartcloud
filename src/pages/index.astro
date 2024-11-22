@@ -12,15 +12,14 @@ import { smartcloudAdvantages } from "@/lib/data/homeData";
   <Container>
     <Hero imgSrc="https://www.it-cnp.com/sites/default/files/data-center.png">
       <h1 class="text-[5vw] font-bold leading-none lg:text-[2vw]">
-        Добро пожаловать в SMART<span class="text-secondary">CLOUD</span>
+        Добро пожаловать в Smart<span class="text-secondary">Cloud</span>
       </h1>
       <h1 class="text-4xl font-bold leading-none lg:text-[3vw] mt-4">
-        Маркетплейс <br class="hidden lg:block" /> облачных услуг
+        - Ваш маркетплейс облачных услуг!
       </h1>
       <p class="text-md mt-2 lg:mt-10 lg:text-xl">
-        Все необходимые инструменты для бизнеса в одном облаке! Быстрый старт,
-        меньше расходов, высокая надежность! <br /> Оплачивайте услуги онлайн и запускайте
-        свои виртуальные машины за 3 минуты с настроенной операционной системой!
+        Создавайте ИТ-решения с использованием проверенных облачных технологий!
+        Быстрый старт, меньше расходов, высокая надежность!
       </p>
     </Hero>
   </Container>
@@ -28,5 +27,8 @@ import { smartcloudAdvantages } from "@/lib/data/homeData";
 
   <Services />
 
-  <AdvantageCard title="Наши преимущества" data={smartcloudAdvantages} />
+  <AdvantageCard
+    title="Почему именно SmartCloud?"
+    data={smartcloudAdvantages}
+  />
 </Layout>
