@@ -13,20 +13,32 @@ import {
   operatingSystemsWithProgram,
 } from "@/lib/data/vdsData";
 import TabNavigation from "@/widgets/cloud-services/vds/TabNavigation";
+import { MoveRight } from "lucide-react";
 ---
 
 <Layout title="Smarcloud - VDS">
   <Container>
     <Hero imgSrc={vdsImg.src}>
-      <h1 class="text-3xl font-medium lg:text-5xl">
-        <span class="text-secondary">Virtual Dedicated Server</span> – виртуальный
-        выделенный сервер
-      </h1>
-      <p class="text-xl mt-6">
-        Получите полный контроль над сервером, изолированную инфраструктуру и
-        поддержку 24/7. Экономьте на оборудовании и управляйте своим сервером
-        удаленно. Надежность, скорость и безопасность для вашего проекта!
-      </p>
+      <div>
+        <a href="https://portal.smartcloud.uz/index.php?/cart/vds-ssd-/" class="group inline-block" target="_blank">
+          <div
+            class="p-2 px-6 bg-secondary/10 flex items-center gap-2 hover:bg-secondary/50 rounded-md"
+          >
+            Получите бесплатный доступ к мощной облачной инфраструктуре на 14
+            дней
+            <MoveRight className="group-hover:translate-x-2 transition-all" />
+          </div>
+        </a>
+        <h1 class="text-3xl font-medium lg:text-5xl mt-10">
+          <span class="text-secondary">Virtual Dedicated Server</span> – виртуальный
+          выделенный сервер
+        </h1>
+        <p class="text-xl mt-6">
+          Получите полный контроль над сервером, изолированную инфраструктуру и
+          поддержку 24/7. Экономьте на оборудовании и управляйте своим сервером
+          удаленно. Надежность, скорость и безопасность для вашего проекта!
+        </p>
+      </div>
     </Hero>
 
     <AboutSection title="Возможности VDS">

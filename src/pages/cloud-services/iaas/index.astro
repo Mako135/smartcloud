@@ -9,19 +9,29 @@ import iaasImg from "@/assets/iaas.png";
 import NumberedHighlight from "@/components/shared/NumberedHighlight.astro";
 import { iaas_advantages, iaas_advantages_2 } from "@/lib/data/iaasData";
 import AdvantageCard from "@/components/shared/AdvantageCard.astro";
+import { MoveRight } from "lucide-react";
 ---
 
 <Layout title="IaaS on Openstack">
   <Container>
     <Hero imgSrc={iaasImg.src}>
-      <h1 class="text-3xl font-medium lg:text-5xl">
-        <span class="text-secondary">IaaS</span> (инфраструктура как услуга)
-      </h1>
-      <p class="text-sm mt-2 lg:text-xl">
-        бизнес-модель, позволяющая в облачной среде самостоятельно создавать и
-        клонировать виртуальные серверы, менять их конфигурацию, управлять
-        настройками
-      </p>
+      <div>
+        <a href="https://portal.smartcloud.uz/index.php?/cart/iaas-ssd/" class="group inline-block" target="_blank">
+          <div class="p-2 px-6 bg-secondary/10 flex items-center gap-2 hover:bg-secondary/50 rounded-md">
+            Получите бесплатный доступ к мощной облачной инфраструктуре на 14
+            дней
+            <MoveRight className="group-hover:translate-x-2 transition-all" />
+          </div>
+        </a>
+        <h1 class="text-3xl font-medium lg:text-5xl mt-10">
+          <span class="text-secondary">IaaS</span> (инфраструктура как услуга)
+        </h1>
+        <p class="text-sm mt-2 lg:text-xl">
+          бизнес-модель, позволяющая в облачной среде самостоятельно создавать и
+          клонировать виртуальные серверы, менять их конфигурацию, управлять
+          настройками
+        </p>
+      </div>
     </Hero>
 
     <AboutSection title="Что такое IaaS?">
