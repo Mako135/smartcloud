@@ -43,6 +43,8 @@ const IaasCart = () => {
     const formatter = new Intl.NumberFormat("ru-RU", {
       style: "currency",
       currency: "UZS",
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
     });
     return (value: number) => formatter.format(value);
   }, []);

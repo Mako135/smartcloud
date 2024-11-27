@@ -7,19 +7,20 @@ import AboutSection from "@/components/shared/AboutSection.astro";
 
 import iaasImg from "@/assets/iaas.png";
 import NumberedHighlight from "@/components/shared/NumberedHighlight.astro";
-import { iaas_advantages } from "@/lib/data/iaasData";
+import { iaas_advantages, iaas_advantages_2 } from "@/lib/data/iaasData";
+import AdvantageCard from "@/components/shared/AdvantageCard.astro";
 ---
 
 <Layout title="IaaS on Openstack">
   <Container>
     <Hero imgSrc={iaasImg.src}>
       <h1 class="text-3xl font-medium lg:text-5xl">
-        Надежные <span class="text-secondary">IaaS</span> решения для роста <br
-        /> вашего предприятия
+        <span class="text-secondary">IaaS</span> (инфраструктура как услуга)
       </h1>
       <p class="text-sm mt-2 lg:text-xl">
-        Мощные облачные технологии для бесперебойной работы и масштабирования
-        вашей инфраструктуры.
+        бизнес-модель, позволяющая в облачной среде самостоятельно создавать и
+        клонировать виртуальные серверы, менять их конфигурацию, управлять
+        настройками
       </p>
     </Hero>
 
@@ -31,7 +32,15 @@ import { iaas_advantages } from "@/lib/data/iaasData";
       </p>
     </AboutSection>
 
+    <AdvantageCard
+      title="IaaS vs собственная инфраструктура: в чем выгода?"
+      data={iaas_advantages_2}
+    />
+
     <IaaSConfigurator client:load />
-    <NumberedHighlight data={iaas_advantages} />
+    <NumberedHighlight
+      data={iaas_advantages}
+      title="Сценарии использования IaaS"
+    />
   </Container>
 </Layout>

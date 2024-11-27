@@ -107,12 +107,107 @@ export const vdsDataHdd = [
 export const vdsAdvantages = [
   {
     title:
-      "Возможности VDS полностью сопоставимы с функционалом реального физического сервера",
+      "Возможности VDS полностью соответствуют функционалу физического сервера",
   },
   {
-    title: "Управлять услугой просто через удобный портал самообслуживания",
+    title: "Аренда виртуального сервера дешевле, чем покупка оборудования",
   },
   {
-    title: "Доступ к VDS можно получить в любое время и из любой точки мира",
+    title: "Готовые настройки",
+  },
+  {
+    title: "Создание сервера в течение минуты",
+  },
+  {
+    title: "Высокая производительность и безопасное хранение данных",
+  },
+  {
+    title: "Доступ к VDS 24/7 из любой точки мира",
+  },
+  {
+    title: "Регулируемая мощность и соответствующая ей оплата",
+  },
+  {
+    title:
+      "Подключение VDS, управление и онлайн-оплата через портал самообслуживания",
+  },
+  {
+    title: "Гибкость и простота управления",
+  },
+  {
+    title: "Возможность выбора ОС",
+  },
+];
+
+export const operatingSystems = [
+  {
+    title: "Ubuntu",
+    version: ["Версия 20.04", "Версия 22.04"],
+    icon: "https://cdn-icons-png.flaticon.com/512/888/888879.png",
+  },
+  {
+    title: "CentOS",
+    version: ["Версия 7", "Версия 8", "Версия 8-Stream", "Версия 9-Stream"],
+    icon: "https://cdn-icons-png.flaticon.com/512/5969/5969091.png",
+  },
+  {
+    title: "Debian",
+    version: ["Версия 10", "Версия 11"],
+    icon: "https://cdn-icons-png.flaticon.com/512/246/246118.png",
+  },
+  {
+    title: "Windows Server",
+    version: [
+      "Версия 2016-x64-Eng-DRIVERS.iso",
+      "Версия 2016-x64-Rus-DRIVERS.iso",
+      "Версия 2019-x64-Eng-DRIVERS.iso",
+      "Версия 2019-x64-Rus-DRIVERS.iso",
+      "Версия 2022-x64-Eng-DRIVERS.iso",
+      "Версия 2022-x64-Rus-DRIVERS.iso",
+    ],
+    icon: "https://cdn-icons-png.flaticon.com/512/732/732225.png",
+  },
+  {
+    title: "Mikrotik",
+    version: ["Версия CHR7", "Версия CHR"],
+    icon: "https://www.mywifinetworks.com/wp-content/uploads/2019/03/microtik-logo.svg",
+  },
+];
+
+export const operatingSystemsWithProgram = [
+  {
+    title: "Gitlab",
+    version: "Ubuntu22.04",
+    icon: "https://cdn-icons-png.flaticon.com/512/5968/5968853.png",
+  },
+  {
+    title: "Node.js",
+    version: "Ubuntu22.04",
+    icon: "https://cdn-icons-png.flaticon.com/512/5968/5968322.png",
+  },
+  {
+    title: "Django",
+    version: "Ubuntu22.04",
+    icon: "https://cdn-icons-png.flaticon.com/512/1387/1387537.png",
+  },
+  {
+    title: "MySQL",
+    version: "Ubuntu22.04",
+    icon: "https://cdn-icons-png.flaticon.com/512/15457/15457926.png",
+  },
+  {
+    title: "Postgres",
+    version: "Ubuntu22.04",
+    icon: "https://cdn-icons-png.flaticon.com/512/5968/5968342.png",
+  },
+  {
+    title: "Redis",
+    version: "Ubuntu22.04",
+    icon: "https://cdn4.iconfinder.com/data/icons/redis-2/1451/Untitled-2-512.png",
+  },
+  {
+    title: "RabbitMQ",
+    version: "Ubuntu22.04",
+    icon: "https://cdn.iconscout.com/icon/free/png-256/free-rabbitmq-logo-brand-download-svg-png-gif-flat-icon-logos-world-brand-logos-vol-1-pack-rabbitmq-logo-icon-282296.png",
   },
 ];

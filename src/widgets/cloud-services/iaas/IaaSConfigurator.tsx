@@ -1,12 +1,12 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import StorageType from "../../../components/cloud-services/iaas/StorageType";
-import CpuInput from "../../../components/cloud-services/iaas/CpuInput";
-import BackupInput from "../../../components/cloud-services/iaas/BackupInput";
-import StorageInput from "../../../components/cloud-services/iaas/StorageInput";
-import RamInput from "../../../components/cloud-services/iaas/RamInput";
-import IpInput from "../../../components/cloud-services/iaas/IpInput";
-import IaasCart from "../../../components/cloud-services/iaas/IaasCart";
+import CpuInput from "@/components/cloud-services/iaas/CpuInput";
+import RamInput from "@/components/cloud-services/iaas/RamInput";
+import StorageType from "@/components/cloud-services/iaas/StorageType";
+import StorageInput from "@/components/cloud-services/iaas/StorageInput";
+import BackupInput from "@/components/cloud-services/iaas/BackupInput";
+import IpInput from "@/components/cloud-services/iaas/IpInput";
+import IaasCart from "@/components/cloud-services/iaas/IaasCart";
 
 const IaaSConfigurator = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -71,7 +71,7 @@ const IaaSConfigurator = () => {
             <StorageType />
             <StorageInput />
             <BackupInput />
-            <IpInput /> 
+            <IpInput />
           </div>
         </div>
         <IaasCart />

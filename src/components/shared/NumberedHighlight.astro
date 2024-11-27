@@ -1,9 +1,10 @@
 ---
 interface Props {
   data: string[];
+  title?: string;
 }
 
-const { data } = Astro.props;
+const { data, title } = Astro.props;
 ---
 
 <div class="my-40" id="numberedHighlight">
@@ -11,7 +12,7 @@ const { data } = Astro.props;
     class="text-center text-4xl font-medium mb-20"
     id="numberedHighlightTitle"
   >
-    Наша преимущества
+    {title ? title : "Наша преимущества"}
   </h2>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
     {

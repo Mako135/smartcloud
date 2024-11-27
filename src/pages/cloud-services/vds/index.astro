@@ -7,38 +7,50 @@ import Container from "@/widgets/Container.astro";
 import Hero from "@/widgets/Hero.astro";
 
 import vdsImg from "@/assets/vds.svg";
-import { vdsAdvantages } from "@/lib/data/vdsData";
+import {
+  operatingSystems,
+  vdsAdvantages,
+  operatingSystemsWithProgram,
+} from "@/lib/data/vdsData";
+import TabNavigation from "@/widgets/cloud-services/vds/TabNavigation";
 ---
 
 <Layout title="Smarcloud - VDS">
   <Container>
     <Hero imgSrc={vdsImg.src}>
       <h1 class="text-3xl font-medium lg:text-5xl">
-        <span class="text-secondary">VDS</span> – виртуальный выделенный сервер
+        <span class="text-secondary">Virtual Dedicated Server</span> – виртуальный
+        выделенный сервер
       </h1>
-      <p class="text-sm mt-6">
-        Мощные облачные технологии для бесперебойной работы и масштабирования
-        вашей инфраструктуры.
+      <p class="text-xl mt-6">
+        Получите полный контроль над сервером, изолированную инфраструктуру и
+        поддержку 24/7. Экономьте на оборудовании и управляйте своим сервером
+        удаленно. Надежность, скорость и безопасность для вашего проекта!
       </p>
     </Hero>
 
-    <AboutSection title="Что такое VDS?">
+    <AboutSection title="Возможности VDS">
       <p>
-        Виртуальные выделенные серверы (Virtual Dedicated Server или Virtual
-        Private Server) — это тип хостинга, при котором физический сервер
-        провайдера делится на несколько виртуальных, изолированных друг от
-        друга, сегментов, предоставляемых в пользование клиентам. Возможности
-        VDS полностьюсопоставимы с функционалом реального физического сервера.
-        Мощный старт любого бизнеса и оптимизация расходов на IT одновременно.
+        VDS справляется с разными задачами – от хостинга сайтов-визиток до
+        размещения веб-порталов, требующих значительных технических ресурсов.
+        Благодаря гибкости масштабирования VDS позволяет строить
+        IТ-инфраструктуру быстро и экономично, что подходит для крупных
+        компаний, стартапов, разработчиков, DevOps-инженеров
       </p>
     </AboutSection>
 
-    <VdsCards client:load />
+    <TabNavigation
+      operatingSystems={operatingSystems}
+      operatingSystemsWithProgram={operatingSystemsWithProgram}
+      client:load
+    />
 
     <AdvantageCard
       title="Преимущества Хранилище данных"
       data={vdsAdvantages}
       cardClassName="lg:grid-cols-3"
     />
+
+    <VdsCards client:load />
   </Container>
 </Layout>

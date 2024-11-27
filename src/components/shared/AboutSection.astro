@@ -43,12 +43,12 @@ const { title, className } = Astro.props;
       const tl = gsapTrigger(aboutSectionContainer);
       tl.fromTo(
         aboutSectionTitle,
-        { y: 50, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.5 }
+        { y: 50, opacity: 0, scale: 0.8 },
+        { y: 0, opacity: 1, scale: 1, duration: 0.5 }
       ).fromTo(
         aboutSectionChildren,
-        { y: 50, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.5 },
+        { y: 50, opacity: 0, scale: 0.8 },
+        { y: 0, opacity: 1, scale: 1, duration: 0.5 },
         "<"
       );
     }
