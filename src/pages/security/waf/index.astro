@@ -2,26 +2,21 @@
 import AboutSection from "@/components/shared/AboutSection.astro";
 import AdvantageCard from "@/components/shared/AdvantageCard.astro";
 import AdvantageCardWithIcon from "@/components/shared/AdvantageCardWithIcon.astro";
-import { SecurityAccordion } from "@/components/shared/SecurityAccordion";
 import Layout from "@/layouts/Layout.astro";
-import {
-  pentestAccordionData,
-  pentestAdvantages2,
-} from "@/lib/data/pentestData";
-import { wafAdvantages } from "@/lib/data/wafData";
+import { wafAdvantages, wafAdvantages2, wafUseCases } from "@/lib/data/wafData";
 import Container from "@/widgets/Container.astro";
 import Hero from "@/widgets/Hero.astro";
 
 import wafImg from "@/assets/waf.svg";
+import IaasUseCaseCard from "@/components/cloud-services/iaas/IaasUseCaseCard.astro";
+import WafAccodtion from "@/widgets/waf/WafAccodtion";
 ---
 
-<Layout title="Smartcloud - Защита от DDoS атак">
+<Layout title="WAF - Надежная защита веб-приложений">
   <Container>
-    <Hero
-      imgSrc={wafImg.src}
-    >
+    <Hero imgSrc={wafImg.src}>
       <h1 class="text-3xl font-medium lg:text-5xl">
-        Надежная Защита Веб-приложений с <span class="text-secondary">WAF</span>
+        <span class="text-secondary">WAF</span> - Надежная защита <br /> веб-приложений
       </h1>
       <p class="text-sm mt-2 lg:text-xl">
         Наш Web Application Firewall (WAF) анализирует веб-трафик в реальном
@@ -29,31 +24,45 @@ import wafImg from "@/assets/waf.svg";
         защиты ваших веб-приложений.
       </p>
     </Hero>
-    
 
     <AboutSection title="Наше уникальное предложение">
-      Проведение внешнего/внутреннего сканирования специализированным ПО на
-      наличие уязвимостей в сети клиента, а также тестирование на проникновение.
-      Приобретя необходимое количество часов и указав периодичность
-      сканирования, вы получаете детальные отчеты и рекомендации. Длительность
-      сканирования и метод зависят от количества информационных систем и
-      выделенных IP-адресов.
+      Обеспечьте всестороннюю защиту вашего веб-приложения от широкого спектра
+      угроз с помощью нашего WAF. Наша система работает на уровне приложений,
+      анализируя весь трафик и блокируя опасные запросы еще до того, как они
+      достигнут вашего сервера. Гибкая настройка политик позволяет адаптировать
+      защиту под ваши уникальные потребности.
     </AboutSection>
 
     <AdvantageCard
-      title="Преимущества тестирования на проникновение"
-      data={wafAdvantages}
+      title="Надежная Защита Веб-приложений с WAF"
+      dataArray={wafAdvantages}
       cardClassName="mt-0"
     />
+
+    <section class="my-80">
+      <h1 class="text-2xl md:text-4xl font-medium text-center mb-20">
+        Cферы применения WAF
+      </h1>
+
+      <div class="grid grid-cols-3 gap-10">
+        {
+          wafUseCases.map((item) => (
+            <IaasUseCaseCard
+              title={item.title}
+              description={item.description}
+            />
+          ))
+        }
+      </div>
+    </section>
   </Container>
 
   <AdvantageCardWithIcon
     title="Что вы получаете с этой услугой?"
-    data={pentestAdvantages2}
+    data={wafAdvantages2}
   />
 
-  
   <Container>
-    <SecurityAccordion data={pentestAccordionData} client:load />
+    <WafAccodtion client:load />
   </Container>
 </Layout>

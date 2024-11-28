@@ -1,22 +1,17 @@
 ---
 interface NumberCardProps {
-  number: number;
-  title: string;
+  title?: string;
   description?: string;
 }
-const { number, title, description } = Astro.props as NumberCardProps;
+const { title, description } = Astro.props as NumberCardProps;
 ---
 
 <div
-  class="p-10 border-[1px] border-secondary/30 rounded-md hover:-translate-y-2 hover:border-secondary duration-200 number-card"
-  >
-  <h2 class="text-4xl text-secondary font-semibold">{number}.</h2>
-  <h3
-    class="mt-2 mb-6 text-2xl font-semibold break-words hyphens-manual"
-    lang="ru"
-  >
+  class="p-5 border-[1px] border-secondary/30 rounded-md hover:-translate-y-2 hover:border-secondary duration-200 number-card"
+>
+  <h3 class="mt-2 mb-6 text-xl font-semibold break-words hyphens-manual">
     {title}
-  </h4>
+  </h3>
   <p>
     {description}
   </p>

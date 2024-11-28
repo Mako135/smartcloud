@@ -93,3 +93,8 @@ body {
 #logo {
   background-image: url("../assets/logo_light.svg");
 }
+
+ol > li > strong,
+ul > li > strong {
+  color: #0c94d4;
+}

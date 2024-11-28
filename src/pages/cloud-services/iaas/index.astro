@@ -6,20 +6,28 @@ import Hero from "@/widgets/Hero.astro";
 import AboutSection from "@/components/shared/AboutSection.astro";
 
 import iaasImg from "@/assets/iaas.png";
-import NumberedHighlight from "@/components/shared/NumberedHighlight.astro";
 import { iaas_advantages, iaas_advantages_2 } from "@/lib/data/iaasData";
+import IaasCard from "@/components/cloud-services/iaas/IaasCard.astro";
+import IaasUseCaseCard from "@/components/cloud-services/iaas/IaasUseCaseCard.astro";
 import AdvantageCard from "@/components/shared/AdvantageCard.astro";
+import { smartcloudAdvantages } from "@/lib/data/homeData";
+import TrialSection from "@/widgets/TrialSection.astro";
 import { MoveRight } from "lucide-react";
 ---
 
-<Layout title="IaaS on Openstack">
+<Layout title="IaaS (инфраструктура как услуга)">
   <Container>
     <Hero imgSrc={iaasImg.src}>
       <div>
-        <a href="https://portal.smartcloud.uz/index.php?/cart/iaas-ssd/" class="group inline-block" target="_blank">
-          <div class="p-2 px-6 bg-secondary/10 flex items-center gap-2 hover:bg-secondary/50 rounded-md">
-            Получите бесплатный доступ к мощной облачной инфраструктуре на 14
-            дней
+        <a
+          href="https://portal.smartcloud.uz/index.php?/cart/vds-ssd-/"
+          class="group inline-block"
+          target="_blank"
+        >
+          <div
+            class="p-2 px-6 bg-secondary/10 flex items-center gap-2 hover:bg-secondary/50 rounded-md"
+          >
+            14 дней бесплатного доступа к мощной облачной инфраструктуре
             <MoveRight className="group-hover:translate-x-2 transition-all" />
           </div>
         </a>
@@ -42,15 +50,37 @@ import { MoveRight } from "lucide-react";
       </p>
     </AboutSection>
 
-    <AdvantageCard
-      title="IaaS vs собственная инфраструктура: в чем выгода?"
-      data={iaas_advantages_2}
-    />
+    <div class="my-80 md:my-80">
+      <h1 class="text-2xl md:text-4xl font-medium text-center mb-20">
+        IaaS vs собственная инфраструктура: в чем выгода?
+      </h1>
+      <div class="grid grid-cols-3 gap-10">
+        {
+          iaas_advantages_2.map((item) => (
+            <IaasCard title={item.title} Icon={item.icon} />
+          ))
+        }
+      </div>
+    </div>
 
     <IaaSConfigurator client:load />
-    <NumberedHighlight
-      data={iaas_advantages}
-      title="Сценарии использования IaaS"
+
+    <h1 class="text-2xl md:text-4xl font-medium text-center mb-20">
+      Сценарии использования IaaS
+    </h1>
+
+    <div class="grid grid-cols-2 gap-10">
+      {
+        iaas_advantages.map((item, index) => (
+          <IaasUseCaseCard title={item} count={++index} />
+        ))
+      }
+    </div>
+    <AdvantageCard
+      title="Преимущества SmartCloud"
+      dataArray={smartcloudAdvantages}
+      cardClassName="xl:grid-cols-3"
     />
   </Container>
+  <TrialSection days={14} />
 </Layout>

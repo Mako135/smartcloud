@@ -5,14 +5,15 @@ import Container from "@/widgets/Container.astro";
 
 interface Props {
   title: string;
-  data: { title: string; description?: string }[];
+  dataArray: { title: string; description?: string }[];
+  data: string[];
   cardClassName?: string;
 }
 
-const { data, title, cardClassName } = Astro.props;
+const { dataArray, title, cardClassName, data } = Astro.props;
 ---
 
-<Container className="my-40">
+<Container className="my-80">
   <h2 class="text-center text-4xl font-medium" id="advantageTitle">{title}</h2>
 
   <div
@@ -23,14 +24,12 @@ const { data, title, cardClassName } = Astro.props;
     id="advantageCards"
   >
     {
-      data.map((item, index) => (
-        <NumberCard
-          number={++index}
-          title={item.title}
-          description={item.description}
-        />
-      ))
+      dataArray &&
+        dataArray.map((item) => (
+          <NumberCard title={item.title} description={item.description} />
+        ))
     }
+    {data && data.map((item) => <NumberCard title={item} />)}
   </div>
 </Container>
 
@@ -57,7 +56,7 @@ const { data, title, cardClassName } = Astro.props;
             y: 0,
             opacity: 1,
             duration: 0.2,
-          },
+          }
         );
       });
     }

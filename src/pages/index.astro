@@ -4,8 +4,6 @@ import Services from "@/widgets/homepage/Services.astro";
 import AboutUs from "@/widgets/homepage/AboutUs.astro";
 import Hero from "@/widgets/Hero.astro";
 import Container from "@/widgets/Container.astro";
-import AdvantageCard from "@/components/shared/AdvantageCard.astro";
-import { smartcloudAdvantages } from "@/lib/data/homeData";
 ---
 
 <Layout title="Home">
@@ -24,9 +22,4 @@ import { smartcloudAdvantages } from "@/lib/data/homeData";
   <AboutUs />
 
   <Services />
-
-  <AdvantageCard
-    title="Почему именно SmartCloud?"
-    data={smartcloudAdvantages}
-  />
 </Layout>

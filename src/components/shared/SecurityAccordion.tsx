@@ -11,7 +11,7 @@ interface AccordionProps {
 
 export function SecurityAccordion({ data }: AccordionProps) {
   return (
-    <div className="my-40">
+    <div className="my-80">
       <h2 className="text-center text-4xl font-medium">Для кого подходит?</h2>
       <Accordion type="single" collapsible className="w-full mt-20">
         {data.map((item, index) => (

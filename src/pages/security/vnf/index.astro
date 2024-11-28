@@ -7,9 +7,12 @@ import Hero from "@/widgets/Hero.astro";
 import NumberedHighlight from "@/components/shared/NumberedHighlight.astro";
 
 import vnf from "@/assets/vnf.webp";
+import AdvantageCard from "@/components/shared/AdvantageCard.astro";
 ---
 
-<Layout title="Smartcloud - VNF">
+<Layout
+  title="Virtual Network Firewall – межсетевой экран следующего поколения"
+>
   <Container>
     <Hero imgSrc={vnf.src}>
       <h1 class="text-3xl font-medium lg:text-5xl">
@@ -17,22 +20,21 @@ import vnf from "@/assets/vnf.webp";
         – межсетевой экран следующего поколения
       </h1>
       <p class="text-xl mt-6">
-        Мощные облачные технологии для бесперебойной работы и масштабирования
-        вашей инфраструктуры.
+        Полный контроль над вашей сетью. Минимизируйте риски, максимизируйте
+        производительность
       </p>
     </Hero>
 
-    <AboutSection title="Что такое Virtual Network Firewall?">
+    <AboutSection title="Что такое Virtual Network Firewall">
       <p>
-        Наряду с поддержкой функций межсетевого экрана и проверки состояния
-        сети, обладает возможностями более глубокой проверки содержимого.
-        Блокирует вредоносные программы и включает возможности для будущих
-        обновлений, обеспечивая гибкость развития при расширении спектра угроз и
-        защищая сеть при возникновении новых угроз.
+        Виртуальный сетевой брандмауэр, который обеспечивает передовую защиту от
+        широкого спектра сетевых угроз. Он позволяет вам применять согласованные
+        политики безопасности в частных, публичных облаках через создание
+        индивидуальных правил фильтрации.
       </p>
     </AboutSection>
-    <NumberedHighlight
-      data={vnfAdvantages}
-    />
+    <AdvantageCard title="Virtual Network Firewall" data={vnfAdvantages} />
+
+    <NumberedHighlight data={vnfAdvantages} />
   </Container>
 </Layout>

@@ -50,7 +50,7 @@ const IaaSConfigurator = () => {
   }, []);
 
   return (
-    <div className="my-40" ref={ref}>
+    <div className="my-80" ref={ref}>
       <h1 className="text-2xl md:text-4xl font-medium" id="iaasConfTitle">
         Рассчитайте стоимость аренды IaaS
       </h1>

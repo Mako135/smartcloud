@@ -6,7 +6,7 @@ export default function VdsCards() {
   return (
     <div>
       <h1 className="text-center text-4xl font-medium mb-20">
-        Достуаные конфигурации
+        Доступные конфигурации
       </h1>
       <Tabs defaultValue="ssd" className="flex flex-col mb-40">
         <TabsList className="w-full  grid grid-cols-2 max-w-[400px] mb-10 mx-auto">

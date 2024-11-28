@@ -36,17 +36,17 @@ export const headerData = [
       },
       {
         href: "/security/pentest",
-        label: "Пентестинг",
+        label: "Тест на проникновение (Pentest)",
         desc: "Сервис, который позволяет проверить вашу систему на уязвимости.",
       },
       {
         href: "/security/waf",
-        label: "Защита веб приложений",
+        label: "Защита веб приложений (WAF)",
         desc: "Сервис, который позволяет защитить ваше веб-приложение от атак.",
       },
       {
         href: "/security/soc",
-        label: "Security Оperations Сenter",
+        label: "Security Оperations Сenter (SOC)",
         desc: "Сервис, который позволяет мониторить вашу систему на предмет угроз.",
       },
       {

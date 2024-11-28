@@ -14,9 +14,10 @@ import {
 } from "@/lib/data/vdsData";
 import TabNavigation from "@/widgets/cloud-services/vds/TabNavigation";
 import { MoveRight } from "lucide-react";
+import TrialSection from "@/widgets/TrialSection.astro";
 ---
 
-<Layout title="Smarcloud - VDS">
+<Layout title="Virtual Dedicated Server – виртуальный выделенный сервер">
   <Container>
     <Hero imgSrc={vdsImg.src}>
       <div>
@@ -24,8 +25,7 @@ import { MoveRight } from "lucide-react";
           <div
             class="p-2 px-6 bg-secondary/10 flex items-center gap-2 hover:bg-secondary/50 rounded-md"
           >
-            Получите бесплатный доступ к мощной облачной инфраструктуре на 14
-            дней
+            10 дней бесплатного доступа к мощной облачной инфраструктуре
             <MoveRight className="group-hover:translate-x-2 transition-all" />
           </div>
         </a>
@@ -65,4 +65,6 @@ import { MoveRight } from "lucide-react";
 
     <VdsCards client:load />
   </Container>
+  <TrialSection days={10} />
+
 </Layout>
