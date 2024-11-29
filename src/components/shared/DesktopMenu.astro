@@ -16,7 +16,7 @@ import { ToggleTheme } from "@/components/shared/ToggleTheme";
     >
     </a>
     <div class="flex items-center gap-2">
-      <HeaderNavigationMenu client:idle />
+      <HeaderNavigationMenu client:visible  />
       <ul class="flex gap-2">
         
         <li>
@@ -40,7 +40,7 @@ import { ToggleTheme } from "@/components/shared/ToggleTheme";
           </a>
         </li>
       </ul>
-      <ToggleTheme client:idle />
+      <ToggleTheme client:load  />
     </div>
   </div>
 </nav>
