@@ -58,10 +58,10 @@ import TrialSection from "@/widgets/TrialSection.astro";
     <TabNavigation
       operatingSystems={operatingSystems}
       operatingSystemsWithProgram={operatingSystemsWithProgram}
-      client:load
+      client:idle
     />
 
-    <VdsCards client:load />
+    <VdsCards client:idle />
 
     <AdvantageCard
       title="Преимущества VDS"
