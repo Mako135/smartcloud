@@ -2,12 +2,15 @@
 import { defineConfig } from "astro/config";
 
 import react from "@astrojs/react";
-
+import node from '@astrojs/node';
 import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
   output: 'server',
+  adapter: node({
+    mode: 'standalone',
+  }),
   vite: {
     build: {
       minify: "esbuild",
@@ -19,5 +22,5 @@ export default defineConfig({
       applyBaseStyles: true,
     }),
   ],
-  server: { port: 3000, host: true },
+  server: { port: 4000, host: true },
 });
