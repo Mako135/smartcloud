@@ -48,7 +48,7 @@ const TabsComponent = ({
           </div>
         ))}
       </div>
-      <div className="grid grid-cols-5 gap-5">
+      <div className="grid md:grid-cols-3 xl:grid-cols-5 gap-5">
         {activeTab === "Образы ОС" &&
           operatingSystems.map((os) => (
             <OsCard
