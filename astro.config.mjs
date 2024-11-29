@@ -7,6 +7,12 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
+  vite: {
+    build: {
+      minify: "esbuild",
+      target: "esnext", // Указание цели для компиляции
+    },
+  },
   integrations: [
     react(),
     tailwind({
