@@ -24,7 +24,7 @@ const TabsComponent = ({
   };
 
   return (
-    <section className="my-80">
+    <section className="my-60">
       <h1 className="text-center text-4xl font-medium mb-20">
         Образы, оптимизированные для развертывания
       </h1>

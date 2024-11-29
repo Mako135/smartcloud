@@ -2,17 +2,16 @@
 import AboutSection from "@/components/shared/AboutSection.astro";
 import AdvantageCard from "@/components/shared/AdvantageCard.astro";
 import AdvantageCardWithIcon from "@/components/shared/AdvantageCardWithIcon.astro";
-import { SecurityAccordion } from "@/components/shared/SecurityAccordion";
 import Layout from "@/layouts/Layout.astro";
 import {
   securitySupportData,
   securitySupportData2,
 } from "@/lib/data/securitySupportData";
-import { socAccordionData } from "@/lib/data/socData";
 import Container from "@/widgets/Container.astro";
 import Hero from "@/widgets/Hero.astro";
 
 import securitySupportImg from "@/assets/support.png";
+import SupportAccordion from "@/widgets/security/support/SupportAccordion";
 ---
 
 <Layout title="Комплексная техническая поддержка">
@@ -26,7 +25,7 @@ import securitySupportImg from "@/assets/support.png";
       <p class="text-xl mt-6 hidden sm:block">
         Наш сервис предоставляет комплексную техническую поддержку ИБ, включая
         мониторинг, анализ проблем и разработку персональных программ управления
-        информационной безопасностью для максимальной защиты ваших данных.
+        информационной безопасностью для максимальной защиты ваших данных
       </p>
     </Hero>
 
@@ -39,7 +38,7 @@ import securitySupportImg from "@/assets/support.png";
         возможный уровень защиты рабочих операций и процессов без непосильных
         инвестиций. Многоэлементная защита выстраивается с учетом уязвимостей
         физического оборудования, человеческого фактора и
-        информационно-технологической архитектуры IT-системы.
+        информационно-технологической архитектуры IT-системы
       </p>
     </AboutSection>
 
@@ -55,6 +54,6 @@ import securitySupportImg from "@/assets/support.png";
   />
 
   <Container>
-    <SecurityAccordion data={socAccordionData} client:load />
+    <SupportAccordion client:load />
   </Container>
 </Layout>

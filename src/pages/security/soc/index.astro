@@ -2,10 +2,8 @@
 import AboutSection from "@/components/shared/AboutSection.astro";
 import AdvantageCard from "@/components/shared/AdvantageCard.astro";
 import AdvantageCardWithIcon from "@/components/shared/AdvantageCardWithIcon.astro";
-import { SecurityAccordion } from "@/components/shared/SecurityAccordion";
 import Layout from "@/layouts/Layout.astro";
 import {
-  socAccordionData,
   socAdvantages,
   socAdvantages2,
 } from "@/lib/data/socData";
@@ -13,6 +11,7 @@ import Container from "@/widgets/Container.astro";
 import Hero from "@/widgets/Hero.astro";
 
 import socImg from "@/assets/waf.svg";
+import SocAccordion from "@/widgets/security/soc/SocAccordion";
 ---
 
 <Layout title="SOC - Центр Операционной Безопасности ">
@@ -22,12 +21,12 @@ import socImg from "@/assets/waf.svg";
     >
       <h1 class="text-3xl font-medium lg:text-5xl">
         <span class="text-secondary">SOC</span>
-        – комплексная защита Ваших цифровых фктивов
+        – комплексная защита Ваших цифровых активов
       </h1>
       <p class="text-sm mt-2 lg:text-xl">
         Наш Центр Операционной Безопасности (SOC) обеспечивает круглосуточный
         мониторинг, анализ и противодействие сетевым атакам, защищая ваши
-        цифровые данные в режиме реального времени.
+        цифровые данные в режиме реального времени
       </p>
     </Hero>
 
@@ -44,7 +43,7 @@ import socImg from "@/assets/waf.svg";
         </li>
         <li>
           - внедрения средств автоматизации для выявления инцидентов
-          информационной безопасности и реагирования.
+          информационной безопасности и реагирования
         </li>
       </ul>
     </AboutSection>
@@ -57,6 +56,6 @@ import socImg from "@/assets/waf.svg";
   />
 
   <Container>
-    <SecurityAccordion data={socAccordionData} client:load />
+    <SocAccordion client:load />
   </Container>
 </Layout>

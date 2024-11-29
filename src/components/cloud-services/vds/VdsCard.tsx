@@ -38,7 +38,7 @@ export default function VdsCard({
       <div className=" flex flex-col gap-5 my-8">
         <div className="flex gap-2">
           <Cpu />
-          <p className=" text-base font-bold">{cpu}</p>
+          <p className=" text-base">vCPU: {cpu}</p>
         </div>
         <div className="flex gap-2">
           <MemoryStick />
@@ -46,11 +46,11 @@ export default function VdsCard({
         </div>
         <div className="flex gap-2">
           <HardDrive />
-          <p className=" text-base">Storage: {storage}</p>
+          <p className=" text-base">Дисковое хранилище: {storage}</p>
         </div>
         <div className="flex gap-2">
           <LocateFixed />
-          <p className=" text-base">IP: {ip}</p>
+          <p className=" text-base">Публичный IP: {ip}</p>
         </div>
         <div className="flex gap-2">
           <Gauge />

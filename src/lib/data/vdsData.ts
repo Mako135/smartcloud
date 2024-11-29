@@ -2,7 +2,7 @@ export const vdsDataSsd = [
   {
     title: "VDS Linux SSD 1-2-30",
     price: 256480,
-    cpu: "1 ядро",
+    cpu: "1",
     ram: "2 ГБ",
     storage: "30 ГБ",
     ip: "1 IPv4",
@@ -12,7 +12,7 @@ export const vdsDataSsd = [
   {
     title: "VDS Linux SSD 2-2-40",
     price: 348320,
-    cpu: "2 ядра",
+    cpu: "2",
     ram: "2 ГБ",
     storage: "40 ГБ",
     ip: "1 IPv4",
@@ -22,7 +22,7 @@ export const vdsDataSsd = [
   {
     title: "VDS Linux SSD 4-4-80",
     price: 648480,
-    cpu: "4 ядра",
+    cpu: "4",
     ram: "4 ГБ",
     storage: "80 ГБ",
     ip: "1 IPv4",
@@ -32,7 +32,7 @@ export const vdsDataSsd = [
   {
     title: "VDS Linux SSD 4-8-160",
     price: 1011360,
-    cpu: "4 ядра",
+    cpu: "4",
     ram: "8 ГБ",
     storage: "160 ГБ",
     ip: "1 IPv4",
@@ -42,7 +42,7 @@ export const vdsDataSsd = [
   {
     title: "VDS Linux SSD 8-16-160",
     price: 1434720,
-    cpu: "8 ядер",
+    cpu: "8",
     ram: "16 ГБ",
     storage: "160 ГБ",
     ip: "1 IPv4",
@@ -55,7 +55,7 @@ export const vdsDataHdd = [
   {
     title: "VDS Linux HDD 1-2-30",
     price: 174000,
-    cpu: "1 ядро",
+    cpu: "1",
     ram: "2 ГБ",
     storage: "30 ГБ",
     ip: "1 IPv4",
@@ -65,7 +65,7 @@ export const vdsDataHdd = [
   {
     title: "VDS Linux HDD 2-2-40",
     price: 239000,
-    cpu: "2 ядра",
+    cpu: "2",
     ram: "2 ГБ",
     storage: "40 ГБ",
     ip: "1 IPv4",
@@ -75,7 +75,7 @@ export const vdsDataHdd = [
   {
     title: "VDS Linux HDD 4-4-80 ",
     price: 429000,
-    cpu: "4 ядра",
+    cpu: "4",
     ram: "4 ГБ",
     storage: "80 ГБ",
     ip: "1 IPv4",
@@ -85,7 +85,7 @@ export const vdsDataHdd = [
   {
     title: "VDS Linux HDD 4-8-160",
     price: 575000,
-    cpu: "4 ядра",
+    cpu: "4",
     ram: "8 ГБ",
     storage: "160 ГБ",
     ip: "1 IPv4",
@@ -95,7 +95,7 @@ export const vdsDataHdd = [
   {
     title: "VDS Linux HDD 8-16-160",
     price: 998000,
-    cpu: "8 ядер",
+    cpu: "8",
     ram: "16 ГБ",
     storage: "160 ГБ",
     ip: "1 IPv4",
@@ -107,14 +107,10 @@ export const vdsDataHdd = [
 export const vdsAdvantages = [
   "Возможности VDS полностью соответствуют функционалу физического сервера",
   "Аренда виртуального сервера дешевле, чем покупка оборудования",
-  "Готовые настройки",
   "Создание сервера в течение минуты",
   "Высокая производительность и безопасное хранение данных",
-  "Доступ к VDS 24/7 из любой точки мира",
-  "Регулируемая мощность и соответствующая ей оплата",
   "Подключение VDS, управление и онлайн-оплата через портал самообслуживания",
   "Гибкость и простота управления",
-  "Возможность выбора ОС",
 ];
 
 export const operatingSystems = [

@@ -21,7 +21,11 @@ import TrialSection from "@/widgets/TrialSection.astro";
   <Container>
     <Hero imgSrc={vdsImg.src}>
       <div>
-        <a href="https://portal.smartcloud.uz/index.php?/cart/vds-ssd-/" class="group inline-block" target="_blank">
+        <a
+          href="https://portal.smartcloud.uz/index.php?/cart/vds-ssd-/"
+          class="group inline-block"
+          target="_blank"
+        >
           <div
             class="p-2 px-6 bg-secondary/10 flex items-center gap-2 hover:bg-secondary/50 rounded-md"
           >
@@ -57,14 +61,13 @@ import TrialSection from "@/widgets/TrialSection.astro";
       client:load
     />
 
+    <VdsCards client:load />
+
     <AdvantageCard
-      title="Преимущества Хранилище данных"
+      title="Преимущества VDS"
       data={vdsAdvantages}
       cardClassName="lg:grid-cols-3"
     />
-
-    <VdsCards client:load />
   </Container>
   <TrialSection days={10} />
-
 </Layout>

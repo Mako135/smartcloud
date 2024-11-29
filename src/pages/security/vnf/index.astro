@@ -25,16 +25,14 @@ import AdvantageCard from "@/components/shared/AdvantageCard.astro";
       </p>
     </Hero>
 
-    <AboutSection title="Что такое Virtual Network Firewall">
+    <AboutSection title="Что такое Virtual Network Firewall?">
       <p>
         Виртуальный сетевой брандмауэр, который обеспечивает передовую защиту от
         широкого спектра сетевых угроз. Он позволяет вам применять согласованные
         политики безопасности в частных, публичных облаках через создание
-        индивидуальных правил фильтрации.
+        индивидуальных правил фильтрации
       </p>
     </AboutSection>
-    <AdvantageCard title="Virtual Network Firewall" data={vnfAdvantages} />
-
-    <NumberedHighlight data={vnfAdvantages} />
+    <AdvantageCard title="Virtual Network Firewall" data={vnfAdvantages} cardClassName="xl:grid-cols-3" />
   </Container>
 </Layout>

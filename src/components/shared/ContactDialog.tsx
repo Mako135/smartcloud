@@ -53,8 +53,8 @@ export function ContactDialog({ className }: ContactDialogProps) {
     }
 
     toast.success("В скором времени с вами свяжется наш менеджер");
-    setIsOpen(false); // Закрываем модальное окно
-    setInputs({ name: "", company: "", phone: "" }); // Обнуляем данные формы
+    setIsOpen(false);
+    setInputs({ name: "", company: "", phone: "" });
   };
 
   return (

@@ -50,13 +50,13 @@ const IaaSConfigurator = () => {
   }, []);
 
   return (
-    <div className="my-80" ref={ref}>
+    <div className="my-60" ref={ref}>
       <h1 className="text-2xl md:text-4xl font-medium" id="iaasConfTitle">
         Рассчитайте стоимость аренды IaaS
       </h1>
       <p className="text-md mt-5 md:text-2xl md:mt-0" id="iaasDescTitle">
         Стоимость IaaS зависит от конфигурации вашей системы. Посекундная
-        тарификация, входящий трафик и запросы — бесплатно.
+        тарификация, входящий трафик и запросы — бесплатно
       </p>
 
       <div

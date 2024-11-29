@@ -7,13 +7,13 @@ const IaasCart = () => {
 
   const items = useMemo(
     () => [
-      { label: "CPU", count: cpu, price: iaasPrice.cpu },
-      { label: "RAM", count: ram, price: iaasPrice.ram, unit: "GB" },
+      { label: "vCPU", count: cpu, price: iaasPrice.cpu },
+      { label: "RAM", count: ram, price: iaasPrice.ram, unit: "ГБ" },
       {
         label: `Дисковое хранилище ${type.toUpperCase()}`,
         count: storage,
         price: type === "ssd" ? iaasPrice.ssd : iaasPrice.hdd,
-        unit: "GB",
+        unit: "ГБ",
       },
       ...(backup > 0
         ? [
@@ -21,12 +21,12 @@ const IaasCart = () => {
               label: "Резервное копирование",
               count: backup,
               price: iaasPrice.backup,
-              unit: "GB",
+              unit: "ГБ",
             },
           ]
         : []),
       {
-        label: "Дополнительный IP адрес",
+        label: "Публичный IP адрес",
         count: ip,
         price: iaasPrice.ipAdress,
       },
@@ -56,8 +56,8 @@ const IaasCart = () => {
       <div className="grid gap-2 my-4">
         {items.map(({ label, count, price, unit }) => (
           <div key={label} className="flex justify-between items-center">
-            <p className=" text-[12px] max-w-20 md:max-w-40 font-[500]">
-              {label} {count} {unit || ""} * {price}
+            <p className=" text-sm max-w-20 md:max-w-40 font-[500]">
+              {label} * {count} {unit || ""}
             </p>
             <p>{formatCurrency(count * price)}</p>
           </div>
@@ -66,7 +66,7 @@ const IaasCart = () => {
 
       <div>
         <div className="flex justify-between items-center mb-4">
-          <p className="font-bold text-[12px] max-w-20 md:max-w-40">
+          <p className="font-bold text-sm max-w-20 md:max-w-40">
             Цена за месяц
           </p>
           <p className="text-xl font-medium">{formatCurrency(total)}</p>
