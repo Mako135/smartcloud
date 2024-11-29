@@ -3,7 +3,6 @@ import { Toaster } from "@/components/ui/sonner";
 import "@/styles/globals.css";
 import Footer from "@/widgets/Footer.astro";
 import Header from "@/widgets/Header.astro";
-import TrialSection from "@/widgets/TrialSection.astro";
 
 interface Props {
   title: string;
@@ -23,7 +22,6 @@ const { title } = Astro.props;
   };
   const isDark = getThemePreference() === "dark";
 
-  console.log("isDark", isDark);
   document.documentElement.classList[isDark ? "add" : "remove"]("dark");
 
   if (typeof localStorage !== "undefined") {
@@ -62,7 +60,7 @@ const { title } = Astro.props;
     >
     </div>
 
-    <Toaster client:load richColors />
+    <Toaster client:idle richColors />
     <Header />
     <slot />
     <Footer />

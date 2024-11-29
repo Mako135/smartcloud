@@ -10,7 +10,7 @@ export default defineConfig({
   integrations: [
     react(),
     tailwind({
-      applyBaseStyles: false,
+      applyBaseStyles: true,
     }),
   ],
   server: { port: 3000, host: true },

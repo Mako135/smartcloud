@@ -11,7 +11,6 @@ export function ToggleTheme() {
   }, []);
 
   useEffect(() => {
-    console.log(theme);
     const isDark =
       theme === "dark" ||
       (theme === "system" &&
