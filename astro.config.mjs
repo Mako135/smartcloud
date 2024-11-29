@@ -10,7 +10,6 @@ export default defineConfig({
   vite: {
     build: {
       minify: "esbuild",
-      target: "esnext", // Указание цели для компиляции
     },
   },
   integrations: [
