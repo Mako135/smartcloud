@@ -12,30 +12,28 @@ interface Props {
 const { data, title, cardClassName } = Astro.props;
 ---
 
-<div class="bg-slate-100 dark:bg-[#0f172a80] py-10" id="advIconCardsContainer">
-  <Container>
-    <h2 class="text-center text-4xl font-medium" id="advIconsTitle">
-      {title}
-    </h2>
+<div class="bg-slate-100 dark:bg-[#0f172a80] p-10 rounded-xl" id="advIconCardsContainer">
+  <h2 class="text-center text-4xl font-medium" id="advIconsTitle">
+    {title}
+  </h2>
 
-    <div
-      class={clsx(
-        "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mt-20",
-        cardClassName
-      )}
-    >
-      {
-        data.map((desc) => (
-          <div class="flex gap-2 advIconCards">
-            <div>
-              <CircleCheck size={36} color="#3b82f6" />
-            </div>
-            {desc}
+  <div
+    class={clsx(
+      "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mt-20",
+      cardClassName
+    )}
+  >
+    {
+      data.map((desc) => (
+        <div class="flex gap-2 advIconCards">
+          <div>
+            <CircleCheck size={36} color="#3b82f6" />
           </div>
-        ))
-      }
-    </div>
-  </Container>
+          {desc}
+        </div>
+      ))
+    }
+  </div>
 </div>
 
 <script>

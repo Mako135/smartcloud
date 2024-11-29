@@ -1,6 +1,7 @@
 ---
 import { Toaster } from "@/components/ui/sonner";
 import "@/styles/globals.css";
+import Container from "@/widgets/Container.astro";
 import Footer from "@/widgets/Footer.astro";
 import Header from "@/widgets/Header.astro";
 
@@ -62,7 +63,9 @@ const { title } = Astro.props;
 
     <Toaster client:idle richColors />
     <Header />
-    <slot />
+    <Container>
+      <slot />
+    </Container>
     <Footer />
   </body>
 </html>

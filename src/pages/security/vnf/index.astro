@@ -2,10 +2,7 @@
 import AboutSection from "@/components/shared/AboutSection.astro";
 import Layout from "@/layouts/Layout.astro";
 import { vnfAdvantages } from "@/lib/data/vnfData";
-import Container from "@/widgets/Container.astro";
 import Hero from "@/widgets/Hero.astro";
-import NumberedHighlight from "@/components/shared/NumberedHighlight.astro";
-
 import vnf from "@/assets/vnf.webp";
 import AdvantageCard from "@/components/shared/AdvantageCard.astro";
 ---
@@ -13,26 +10,28 @@ import AdvantageCard from "@/components/shared/AdvantageCard.astro";
 <Layout
   title="Virtual Network Firewall – межсетевой экран следующего поколения"
 >
-  <Container>
-    <Hero imgSrc={vnf.src}>
-      <h1 class="text-3xl font-medium lg:text-5xl">
-        <span class="text-secondary">Virtual Network Firewall</span>
-        – межсетевой экран следующего поколения
-      </h1>
-      <p class="text-xl mt-6">
-        Полный контроль над вашей сетью. Минимизируйте риски, максимизируйте
-        производительность
-      </p>
-    </Hero>
+  <Hero imgSrc={vnf.src}>
+    <h1 class="text-3xl font-medium lg:text-5xl">
+      <span class="text-secondary">Virtual Network Firewall</span>
+      – межсетевой экран следующего поколения
+    </h1>
+    <p class="text-xl mt-6">
+      Полный контроль над вашей сетью. Минимизируйте риски, максимизируйте
+      производительность
+    </p>
+  </Hero>
 
-    <AboutSection title="Что такое Virtual Network Firewall?">
-      <p>
-        Виртуальный сетевой брандмауэр, который обеспечивает передовую защиту от
-        широкого спектра сетевых угроз. Он позволяет вам применять согласованные
-        политики безопасности в частных, публичных облаках через создание
-        индивидуальных правил фильтрации
-      </p>
-    </AboutSection>
-    <AdvantageCard title="Преимущества Virtual Network Firewall" data={vnfAdvantages} cardClassName="xl:grid-cols-3" />
-  </Container>
+  <AboutSection title="Что такое Virtual Network Firewall?">
+    <p>
+      Виртуальный сетевой брандмауэр, который обеспечивает передовую защиту от
+      широкого спектра сетевых угроз. Он позволяет вам применять согласованные
+      политики безопасности в частных, публичных облаках через создание
+      индивидуальных правил фильтрации
+    </p>
+  </AboutSection>
+  <AdvantageCard
+    title="Преимущества Virtual Network Firewall"
+    data={vnfAdvantages}
+    cardClassName="xl:grid-cols-3"
+  />
 </Layout>

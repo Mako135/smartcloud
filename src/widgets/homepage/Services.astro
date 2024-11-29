@@ -1,14 +1,13 @@
 ---
 import { service_list } from "@/lib/data/service-list";
 import { cn } from "@/lib/utils";
-import Container from "../Container.astro";
 ---
 
-<div id="services" class="my-60">
+<section id="services" class="my-60">
   <h2 class="text-center text-4xl font-medium mb-20" id="servicesTitle">
     Наши услуги
   </h2>
-  <Container className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
     {
       service_list.map((service) => (
         <a
@@ -28,8 +27,8 @@ import Container from "../Container.astro";
         </a>
       ))
     }
-  </Container>
-</div>
+  </div>
+</section>
 <script>
   import { gsapTrigger } from "@/lib/gsapTrigger";
 

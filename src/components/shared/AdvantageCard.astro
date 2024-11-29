@@ -1,7 +1,6 @@
 ---
 import clsx from "clsx";
 import NumberCard from "./NumberCard.astro";
-import Container from "@/widgets/Container.astro";
 
 interface Props {
   title: string;
@@ -13,7 +12,7 @@ interface Props {
 const { dataArray, title, cardClassName, data } = Astro.props;
 ---
 
-<Container className="my-60">
+<section class="my-60">
   <h2 class="text-center text-4xl font-medium" id="advantageTitle">{title}</h2>
 
   <div
@@ -31,7 +30,7 @@ const { dataArray, title, cardClassName, data } = Astro.props;
     }
     {data && data.map((item) => <NumberCard title={item} />)}
   </div>
-</Container>
+</section>
 
 <script>
   import { gsapTrigger } from "@/lib/gsapTrigger";

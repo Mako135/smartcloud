@@ -1,11 +1,8 @@
----
-import Container from "../Container.astro";
----
-
-<div class="mb-40 p-10 bg-slate-100 dark:bg-slate-900/50" id="aboutUsContainer">
-  <Container
-    className="grid grid-cols-1 lg:grid-cols-2 gap-20 justify-between "
-  >
+<div
+  class="mb-40 p-10 bg-slate-100 dark:bg-slate-900/50 rounded-xl"
+  id="aboutUsContainer"
+>
+  <section class="grid grid-cols-1 lg:grid-cols-2 gap-20 justify-between">
     <div class="flex flex-col gap-5">
       <h2 class="text-4xl font-medium" id="aboutUsTitle">О компании</h2>
       <p id="aboutUsDesc">
@@ -49,7 +46,7 @@ import Container from "../Container.astro";
         <p>сертифицированных сотрудников</p>
       </div>
     </div>
-  </Container>
+  </section>
 </div>
 
 <script>
@@ -72,7 +69,7 @@ import Container from "../Container.astro";
         aboutUsDesc,
         { y: 50, opacity: 0 },
         { y: 0, opacity: 1, duration: 0.5 },
-        "<0.2" // Start 200 ms after the previous animations begin
+        "<0.2"
       );
       cards.forEach((card) => {
         tl.fromTo(

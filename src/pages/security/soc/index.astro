@@ -3,11 +3,7 @@ import AboutSection from "@/components/shared/AboutSection.astro";
 import AdvantageCard from "@/components/shared/AdvantageCard.astro";
 import AdvantageCardWithIcon from "@/components/shared/AdvantageCardWithIcon.astro";
 import Layout from "@/layouts/Layout.astro";
-import {
-  socAdvantages,
-  socAdvantages2,
-} from "@/lib/data/socData";
-import Container from "@/widgets/Container.astro";
+import { socAdvantages, socAdvantages2 } from "@/lib/data/socData";
 import Hero from "@/widgets/Hero.astro";
 
 import socImg from "@/assets/waf.svg";
@@ -15,47 +11,41 @@ import SocAccordion from "@/widgets/security/soc/SocAccordion";
 ---
 
 <Layout title="SOC - Центр Операционной Безопасности ">
-  <Container>
-    <Hero
-      imgSrc={socImg.src}
-    >
-      <h1 class="text-3xl font-medium lg:text-5xl">
-        <span class="text-secondary">SOC</span>
-        – комплексная защита Ваших цифровых активов
-      </h1>
-      <p class="text-sm mt-2 lg:text-xl">
-        Наш Центр Операционной Безопасности (SOC) обеспечивает круглосуточный
-        мониторинг, анализ и противодействие сетевым атакам, защищая ваши
-        цифровые данные в режиме реального времени
-      </p>
-    </Hero>
+  <Hero imgSrc={socImg.src}>
+    <h1 class="text-3xl font-medium lg:text-5xl">
+      <span class="text-secondary">SOC</span>
+      – комплексная защита Ваших цифровых активов
+    </h1>
+    <p class="text-sm mt-2 lg:text-xl">
+      Наш Центр Операционной Безопасности (SOC) обеспечивает круглосуточный
+      мониторинг, анализ и противодействие сетевым атакам, защищая ваши цифровые
+      данные в режиме реального времени
+    </p>
+  </Hero>
 
-    <AboutSection title="Как работает SOC?">
-      <p>
-        Центр оперативного реагирования решает комплекс задач по оптимизации
-        системы менеджмента ИБ компании за счет:
-      </p>
-      <ul>
-        <li>- регулярной коррекции и дополнения мер защиты;</li>
-        <li>
-          - уменьшения времени реакции на атаки и инциденты инфобезопасности за
-          счет использования готовых сценариев реагирования;
-        </li>
-        <li>
-          - внедрения средств автоматизации для выявления инцидентов
-          информационной безопасности и реагирования
-        </li>
-      </ul>
-    </AboutSection>
+  <AboutSection title="Как работает SOC?">
+    <p>
+      Центр оперативного реагирования решает комплекс задач по оптимизации
+      системы менеджмента ИБ компании за счет:
+    </p>
+    <ul>
+      <li>- регулярной коррекции и дополнения мер защиты;</li>
+      <li>
+        - уменьшения времени реакции на атаки и инциденты инфобезопасности за
+        счет использования готовых сценариев реагирования;
+      </li>
+      <li>
+        - внедрения средств автоматизации для выявления инцидентов
+        информационной безопасности и реагирования
+      </li>
+    </ul>
+  </AboutSection>
 
-    <AdvantageCard title="Преимущества аренды SOC" data={socAdvantages} />
-  </Container>
+  <AdvantageCard title="Преимущества аренды SOC" data={socAdvantages} />
   <AdvantageCardWithIcon
     title="Что вы получаете с этой услугой"
     data={socAdvantages2}
   />
 
-  <Container>
-    <SocAccordion client:idle  />
-  </Container>
+  <SocAccordion client:idle />
 </Layout>

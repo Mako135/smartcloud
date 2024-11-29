@@ -2,7 +2,6 @@
 import AboutSection from "@/components/shared/AboutSection.astro";
 import AdvantageCard from "@/components/shared/AdvantageCard.astro";
 import Layout from "@/layouts/Layout.astro";
-import Container from "@/widgets/Container.astro";
 import Hero from "@/widgets/Hero.astro";
 
 import storageImg from "@/assets/storage.webp";
@@ -10,32 +9,28 @@ import { storageAdvantages } from "@/lib/data/storageData";
 ---
 
 <Layout title="Хранилище данных">
-  <Container>
-    <Hero imgSrc={storageImg.src}>
-      <h1 class="text-3xl font-medium lg:text-5xl">
-        <span class="text-secondary">Хранилище данных</span> – дисковое пространство
-        для хранения данных
-      </h1>
-      <p class="text-xl mt-6">
-        Уверенная защита от сбоев дисков.
-      </p>
-    </Hero>
+  <Hero imgSrc={storageImg.src}>
+    <h1 class="text-3xl font-medium lg:text-5xl">
+      <span class="text-secondary">Хранилище данных</span> – дисковое пространство
+      для хранения данных
+    </h1>
+    <p class="text-xl mt-6">Уверенная защита от сбоев дисков.</p>
+  </Hero>
 
-    <AboutSection title="Что такое Хранилище данных?">
-      <p>
-        Услуга предоставляет доступ к удалённому дисковому пространству через
-        Интернет. Она позволяет сгруппировать несколько физических дисков (два и
-        более) в пул носителей, а затем использовать их ёмкость для создания
-        виртуальных дисков –— дисковых пространств. <br /><br />
-        В дисковых пространствах обычнохранятся две копии данных, поэтому в случае
-        сбоя одного из дисков у вас по-прежнему будет неповреждённая копия. Если
-        ёмкость заканчивается, в пул носителей можно просто добавить другие диски.
-      </p>
-    </AboutSection>
-    <AdvantageCard
-      title="Преимущества Хранилища данных"
-      data={storageAdvantages}
-      cardClassName="lg:grid-cols-3"
-    />
-  </Container>
+  <AboutSection title="Что такое Хранилище данных?">
+    <p>
+      Услуга предоставляет доступ к удалённому дисковому пространству через
+      Интернет. Она позволяет сгруппировать несколько физических дисков (два и
+      более) в пул носителей, а затем использовать их ёмкость для создания
+      виртуальных дисков –— дисковых пространств. <br /><br />
+      В дисковых пространствах обычнохранятся две копии данных, поэтому в случае
+      сбоя одного из дисков у вас по-прежнему будет неповреждённая копия. Если ёмкость
+      заканчивается, в пул носителей можно просто добавить другие диски.
+    </p>
+  </AboutSection>
+  <AdvantageCard
+    title="Преимущества Хранилища данных"
+    data={storageAdvantages}
+    cardClassName="lg:grid-cols-3"
+  />
 </Layout>

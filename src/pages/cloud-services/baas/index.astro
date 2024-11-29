@@ -1,6 +1,5 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import Container from "@/widgets/Container.astro";
 import AdvantageCard from "@/components/shared/AdvantageCard.astro";
 import AboutSection from "@/components/shared/AboutSection.astro";
 import Hero from "@/widgets/Hero.astro";
@@ -11,52 +10,50 @@ import IaasUseCaseCard from "@/components/cloud-services/iaas/IaasUseCaseCard.as
 ---
 
 <Layout title="Резервное копирование - BaaS">
-  <Container>
-    <Hero imgSrc={baasImg.src}>
-      <h1 class="text-3xl font-medium lg:text-5xl">
-        Надежные <span class="text-secondary">BaaS</span> решения для роста вашего
-        предприятия
-      </h1>
-      <p class="text-sm mt-2 lg:text-xl">
-        Надёжный облачный сервис для размещения резервных копий ИТ-инфраструктуры
-      </p>
-    </Hero>
-
-    <h1 class="text-2xl md:text-4xl font-medium text-center mb-20">
-      Сценарии использования BaaS
+  <Hero imgSrc={baasImg.src}>
+    <h1 class="text-3xl font-medium lg:text-5xl">
+      Надежные <span class="text-secondary">BaaS</span> решения для роста вашего
+      предприятия
     </h1>
+    <p class="text-sm mt-2 lg:text-xl">
+      Надёжный облачный сервис для размещения резервных копий ИТ-инфраструктуры
+    </p>
+  </Hero>
 
-    <div class="grid md:grid-cols-2 gap-10">
-      {
-        baasUseCases.map((item) => (
-          <IaasUseCaseCard title={item} />
-        ))
-      }
+  <h1 class="text-2xl md:text-4xl font-medium text-center mb-20">
+    Сценарии использования BaaS
+  </h1>
+
+  <div class="grid md:grid-cols-2 gap-10">
+    {baasUseCases.map((item) => <IaasUseCaseCard title={item} />)}
+  </div>
+
+  <AdvantageCard
+    cardClassName="xl:grid-cols-3"
+    title="Преимущества BaaS"
+    data={baasAdvantages}
+  />
+  <AboutSection title="Наше уникальное предложение" className="my-60">
+    <div>
+      <h1 class="font-bold">Проверенные решения</h1>
+      <p class="text-[21px]">
+        От лидеров в области резервного копирования, репликации и восстановления
+        данных
+      </p>
     </div>
-
-    <AdvantageCard cardClassName="xl:grid-cols-3" title="Преимущества BaaS" data={baasAdvantages} />
-    <AboutSection title="Наше уникальное предложение" className="my-60">
-      <div>
-        <h1 class="font-bold">Проверенные решения</h1>
-        <p class="text-[21px]">
-          От лидеров в области резервного копирования, репликации и
-          восстановления данных
-        </p>
-      </div>
-      <div class="my-10">
-        <h1 class="font-bold">Надежная инфраструктура</h1>
-        <p class="text-[21px]">
-          Резервные копии хранятся в дата-центрах уровня Tier II Tier III в
-          Алматы и Астана
-        </p>
-      </div>
-      <div>
-        <h1 class="font-bold">Всегда на связи</h1>
-        <p class="text-[21px]">
-          Индивидуальная консультация и обслуживание, круглосуточная техническая
-          поддержка
-        </p>
-      </div>
-    </AboutSection>
-  </Container>
+    <div class="my-10">
+      <h1 class="font-bold">Надежная инфраструктура</h1>
+      <p class="text-[21px]">
+        Резервные копии хранятся в дата-центрах уровня Tier II Tier III в Алматы
+        и Астана
+      </p>
+    </div>
+    <div>
+      <h1 class="font-bold">Всегда на связи</h1>
+      <p class="text-[21px]">
+        Индивидуальная консультация и обслуживание, круглосуточная техническая
+        поддержка
+      </p>
+    </div>
+  </AboutSection>
 </Layout>
