@@ -1,6 +1,6 @@
 ---
 import { ContactDialog } from "@/components/shared/ContactDialog";
-
+import { Image } from "astro:assets";
 interface Props {
   imgSrc: string;
 }
@@ -20,12 +20,19 @@ const { imgSrc } = Astro.props;
         class="h-9 flex items-center justify-center px-6 bg-secondary text-white dark:bg-white dark:text-black rounded-3xl font-medium text-sm"
         >Перейти к заказу</a
       >
-      <ContactDialog client:idle  />
+      <ContactDialog client:idle />
     </div>
   </div>
-  <picture class="w-full hidden lg:block col-span-2">
-    <source media="(min-width: 1024px)" srcset={imgSrc}  />
-    <!-- Пустой img для поддержки браузеров, которые не понимают <picture> -->
-    <img src="" alt="" loading="lazy" class="max-h-[480px]" />
-  </picture>
+
+  <div class="w-full hidden lg:block col-span-2">
+    <Image
+      src={imgSrc}
+      alt="Описание изображения"
+      loading="lazy"
+      class="max-h-[480px]"
+      width={500}
+      height={500}
+      format="webp"
+    />
+  </div>
 </div>

@@ -1,10 +1,3 @@
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useIaasStore } from "@/store/iaasStore";
 
@@ -20,15 +13,6 @@ const StorageType = () => {
   return (
     <div className="col-span-2">
       Тип диска
-      {/* <Select onValueChange={setType}>
-        <SelectTrigger className="mt-5">
-          <SelectValue placeholder="Выберите тип диска" />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectItem value="ssd">SSD</SelectItem>
-          <SelectItem value="hdd">HDD</SelectItem>
-        </SelectContent>
-      </Select> */}
       <Tabs
         defaultValue="account"
         value={type}

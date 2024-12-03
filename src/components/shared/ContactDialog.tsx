@@ -15,6 +15,7 @@ import clsx from "clsx";
 import { useState } from "react";
 import { toast } from "sonner";
 import { ShadcnPhone } from "./CustomPhoneInput";
+import { sendEmail } from "@/api";
 
 interface ContactDialogProps {
   className?: string;
@@ -26,8 +27,6 @@ export function ContactDialog({ className }: ContactDialogProps) {
     company: "",
     phone: "",
   });
-
-  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const handlePhoneChange = (phone: string) => {
     setInputs((prev) => ({
@@ -43,22 +42,28 @@ export function ContactDialog({ className }: ContactDialogProps) {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(inputs);
 
     if (!isValidPhoneNumber(inputs.phone)) {
       toast.error("Введите корректный номер телефона");
       return;
     }
 
-    toast.success("В скором времени с вами свяжется наш менеджер");
-    setIsOpen(false);
+    try {
+      const data = await sendEmail(JSON.stringify(inputs))
+      if (data.ok) {
+        toast.success("В скором времени с вами свяжется наш менеджер");
+      }
+    } catch (error) {
+      toast.error("Произошла ошибка сервера, попробуйте позже");
+    }
+
     setInputs({ name: "", company: "", phone: "" });
   };
 
   return (
-    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+    <Dialog>
       <DialogTrigger asChild>
         <Button
           variant="outline"
