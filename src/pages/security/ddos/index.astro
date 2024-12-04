@@ -2,16 +2,16 @@
 import AboutSection from "@/components/shared/AboutSection.astro";
 import AdvantageCard from "@/components/shared/AdvantageCard.astro";
 import AdvantageCardWithIcon from "@/components/shared/AdvantageCardWithIcon.astro";
-import { SecurityAccordion } from "@/components/shared/SecurityAccordion";
 import Layout from "@/layouts/Layout.astro";
-import { ddosAccordionData, ddosData, ddosData2 } from "@/lib/data/ddosData";
+import { ddosData, ddosData2 } from "@/lib/data/ddosData";
 import Hero from "@/widgets/Hero.astro";
 
 import ddosImg from "@/assets/ddos.png";
+import DdosAccordion from "@/widgets/security/ddos/DdosAccordion";
 ---
 
 <Layout title="Защита от DDoS-атак">
-  <Hero imgSrc={ddosImg.src}>
+  <Hero imgSrc={ddosImg}>
     <h1 class="text-3xl font-medium lg:text-5xl">
       Не дайте <span class="text-secondary">DDoS</span>-атаке остановить Ваш
       бизнес!
@@ -41,5 +41,5 @@ import ddosImg from "@/assets/ddos.png";
     data={ddosData2}
   />
 
-  <SecurityAccordion data={ddosAccordionData} client:idle />
+  <DdosAccordion client:idle />
 </Layout>
