@@ -3,10 +3,12 @@ import Layout from "../layouts/Layout.astro";
 import Services from "@/widgets/homepage/Services.astro";
 import AboutUs from "@/widgets/homepage/AboutUs.astro";
 import Hero from "@/widgets/Hero.astro";
+
+import main from "@/assets/main.png";
 ---
 
 <Layout title="Home">
-  <Hero imgSrc="https://www.it-cnp.com/sites/default/files/data-center.png">
+  <Hero imgSrc={main.src}>
     <h1 class="text-[5vw] font-bold leading-none lg:text-[2vw]">
       Добро пожаловать в Smart<span class="text-secondary">Cloud</span>
       - Ваш маркетплейс облачных услуг!
