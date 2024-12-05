@@ -51,7 +51,11 @@ export function ContactDialog({ className }: ContactDialogProps) {
     }
 
     try {
-      const data = await sendEmail(JSON.stringify(inputs))
+      const data = await sendEmail({
+        name: inputs.name,
+        company: inputs.company,
+        phone: inputs.phone,
+      });
       if (data.ok) {
         toast.success("В скором времени с вами свяжется наш менеджер");
       }

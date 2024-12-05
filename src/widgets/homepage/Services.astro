@@ -13,17 +13,19 @@ import { cn } from "@/lib/utils";
         <a
           href={service.link}
           class={cn(
-            "service-card group p-10 border-[1px] rounded-md border-gray-800 hover:border-secondary  hover:bg-gradient-to-tl from-slate-100 transition-all dark:from-[rgba(32,39,57,255)] relative overflow-hidden",
+            "service-card group p-10 border-[1px] rounded-md border-gray-800 hover:border-secondary  hover:bg-gradient-to-tl from-slate-100 transition-all dark:from-[rgba(32,39,57,255)] relative overflow-hidden ",
             service.label.includes("информационной") && "md:col-span-2"
           )}
         >
           <service.icon className="mb-4" color="#0c94d4" size={36} />
           <service.icon
-            className="absolute -z-120 -right-2 -bottom-10 h-52 w-52 opacity-10 group-hover:opacity-70 rotate-12"
+            className="absolute -z-120 -right-2 -bottom-10 h-52 w-52 opacity-10 group-hover:opacity-50 rotate-12"
             color="#0c94d4"
           />
           <span class="text-xl font-bold">{service.label}</span>
-          <p class="mt-2 text-gray-400">{service.desc}</p>
+          <p class="mt-2 text-gray-400 group-hover:text-black dark:group-hover:text-white">
+            {service.desc}
+          </p>
         </a>
       ))
     }

@@ -29,6 +29,7 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
+
 @layer base {
   :root {
     --background: 0 0% 100%;
