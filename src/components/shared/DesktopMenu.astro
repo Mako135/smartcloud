@@ -8,7 +8,9 @@ import { ToggleTheme } from "@/components/shared/ToggleTheme";
 <nav
   class="fixed top-0 z-20 w-full hidden lg:block bg-[#0C94D4] dark:bg-opacity-10 dark:backdrop-blur-lg dark:hover:backdrop-blur"
 >
-  <div class="flex justify-between h-20 max-w-7xl mx-auto py-4 px-4 xl:px-0 items-center">
+  <div
+    class="flex justify-between h-20 max-w-7xl mx-auto py-4 px-4 xl:px-0 items-center"
+  >
     <a
       href="/"
       class="font-bold tracking-wider h-20 text-2xl w-28 bg-no-repeat bg-left bg-contain"
@@ -16,9 +18,8 @@ import { ToggleTheme } from "@/components/shared/ToggleTheme";
     >
     </a>
     <div class="flex items-center gap-2">
-      <HeaderNavigationMenu client:idle  />
+      <HeaderNavigationMenu client:idle />
       <ul class="flex gap-2">
-        
         <li>
           <a
             href="https://t.me/muradibragimov"
@@ -31,7 +32,7 @@ import { ToggleTheme } from "@/components/shared/ToggleTheme";
         </li>
         <li>
           <a
-            href="https://instagram.com/smartcloud.kz/"
+            href="https://www.instagram.com/smartcloud.uz?igsh=MTRrY2UwbXFjdmpodQ=="
             aria-label="Наш Instagram"
             title="Следуйте за нами в Instagram"
             target="_blank"
@@ -40,7 +41,7 @@ import { ToggleTheme } from "@/components/shared/ToggleTheme";
           </a>
         </li>
       </ul>
-      <ToggleTheme client:idle  />
+      <ToggleTheme client:idle />
     </div>
   </div>
 </nav>
