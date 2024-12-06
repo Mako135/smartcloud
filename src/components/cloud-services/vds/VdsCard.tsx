@@ -58,7 +58,7 @@ export default function VdsCard({
         </div>
       </div>
       <Button
-        className="w-full font-bold hover:bg-secondary border-secondary/30 hover:text-white"
+        className="w-full hover:bg-secondary border-secondary/30 hover:text-white"
         variant="outline"
         asChild
       >

@@ -31,7 +31,7 @@ export default function HeaderNavigationMenu() {
                         : ""
                     )}
                   >
-                    <h3 className="font-bold">{link.label}</h3>
+                    <h3>{link.label}</h3>
                     <p className="text-sm">{link.desc}</p>
                   </NavigationMenuLink>
                 ))}

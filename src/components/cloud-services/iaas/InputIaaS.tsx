@@ -21,9 +21,9 @@ const InputIaaS = ({
 }: Props) => {
   return (
     <div className="col-span-2">
-      <label htmlFor="cpu" className="font-bold">{label}</label>
+      <label htmlFor="cpu">{label}</label>
       <div className="flex items-center relative mt-5">
-        <p className="absolute -top-[19px] text-[12px] left-2 font-bold">
+        <p className="absolute -top-[19px] text-[12px] left-2">
           {min}
         </p>
         <button className="absolute left-3" onClick={decreaseData}>
@@ -32,14 +32,14 @@ const InputIaaS = ({
         <Input
           id="cpu"
           value={data}
-          className="text-center px-6 focus:outline-0 font-bold"
+          className="text-center px-6 focus:outline-0"
           type="number"
           onChange={(e) => setData(Number(e.target.value))}
         />
         <button className="absolute right-3" onClick={increaseData}>
           <Plus className="h-4 w-4" />
         </button>
-        <p className="absolute -top-[19px] text-[12px] right-2 font-bold">
+        <p className="absolute -top-[19px] text-[12px] right-2">
           {max}
         </p>
       </div>

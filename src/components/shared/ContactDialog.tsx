@@ -72,7 +72,7 @@ export function ContactDialog({ className }: ContactDialogProps) {
         <Button
           variant="outline"
           className={clsx(
-            "rounded-3xl bg-transparent border-secondary hover:bg-secondary hover:text-white",
+            "rounded-3xl bg-transparent border-secondary hover:bg-secondary hover:text-white text-md",
             className
           )}
         >

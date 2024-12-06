@@ -1,4 +1,4 @@
-  ---
+---
 import { headerData } from "@/lib/data/headerData";
 import Container from "./Container.astro";
 import { Send, Instagram } from "lucide-react";
@@ -8,7 +8,7 @@ import { Send, Instagram } from "lucide-react";
   <Container>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
       <div class="flex flex-col">
-        <h2 class="font-bold h-10 text-sm">Контакты</h2>
+        <h2 class="h-10 text-sm">Контакты</h2>
         <ul class="flex flex-col gap-2">
           <li class="ml-1">+998 95 195 75 75</li>
           <li class="ml-1">+998 90 359 89 67</li>
@@ -16,7 +16,7 @@ import { Send, Instagram } from "lucide-react";
         </ul>
       </div>
       <div class="flex flex-col">
-        <h2 class="font-bold h-10 text-sm">Адреса</h2>
+        <h2 class="h-10 text-sm">Адреса</h2>
         <ul class="flex flex-col gap-2">
           <li class="ml-1">
             100070, г. Ташкент, Яккасарайский район, ул. Шота Руставели, 12
@@ -29,7 +29,7 @@ import { Send, Instagram } from "lucide-react";
       {
         headerData.map((item) => (
           <div class="flex flex-col">
-            <h2 class="font-bold h-10 text-sm">{item.label}</h2>
+            <h2 class="h-10 text-sm">{item.label}</h2>
             <ul class="flex flex-col gap-2">
               {item.links.map((link) => (
                 <li class="ml-1">

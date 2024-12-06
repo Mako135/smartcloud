@@ -66,7 +66,7 @@ const IaasCart = () => {
 
       <div>
         <div className="flex justify-between items-center mb-4">
-          <p className="font-bold text-sm max-w-20 md:max-w-40">
+          <p className="text-sm max-w-20 md:max-w-40">
             Цена за месяц
           </p>
           <p className="text-xl font-medium">{formatCurrency(total)}</p>
