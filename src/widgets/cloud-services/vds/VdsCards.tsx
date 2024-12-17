@@ -1,5 +1,5 @@
 import VdsCard from "@/components/cloud-services/vds/VdsCard";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui";
 import { vdsDataHdd, vdsDataSsd } from "@/lib/data/vdsData";
 
 export default function VdsCards() {

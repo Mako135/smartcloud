@@ -1,5 +1,3 @@
-
-
 interface emailProps {
     name: string;
     company: string;

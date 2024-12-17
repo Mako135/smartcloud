@@ -5,7 +5,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
+} from "@/components/ui";
 import { headerData } from "@/lib/data/headerData";
 import { cn } from "@/lib/utils";
 

@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui";
 import { Cpu, Gauge, HardDrive, LocateFixed, MemoryStick } from "lucide-react";
 
 interface Props {

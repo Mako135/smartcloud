@@ -8,15 +8,15 @@ import {
   usePhoneInput,
 } from "react-international-phone";
 
-import { Input } from "@/components/ui/input";
 import {
+  Input,
   Select,
   SelectTrigger,
   SelectValue,
   SelectContent,
   SelectGroup,
   SelectItem,
-} from "@/components/ui/select";
+} from "@/components/ui";
 
 interface ShadcnPhoneProps {
   value: string;
