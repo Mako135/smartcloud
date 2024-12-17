@@ -81,15 +81,15 @@ export function ContactDialog({ className }: ContactDialogProps) {
       </DialogTrigger>
       <DialogContent className="max-w-[320px] sm:max-w-[425px] ">
         <DialogHeader>
-          <DialogTitle>Получить консультацию</DialogTitle>
+          <DialogTitle className="text-xl">Получить консультацию</DialogTitle>
         </DialogHeader>
-        <DialogDescription>
+        <DialogDescription className="text-md">
           Оставьте заявку, и наш менеджер свяжется с вами в ближайшее время
         </DialogDescription>
         <form onSubmit={handleSubmit}>
           <div className="grid gap-4 py-4">
             <div>
-              <Label htmlFor="name" className="text-right">
+              <Label htmlFor="name" className="text-right text-md">
                 Ваше имя*
               </Label>
               <Input
@@ -104,7 +104,7 @@ export function ContactDialog({ className }: ContactDialogProps) {
               />
             </div>
             <div>
-              <Label htmlFor="company" className="text-right">
+              <Label htmlFor="company" className="text-right text-md">
                 Название компании*
               </Label>
               <Input
@@ -119,14 +119,14 @@ export function ContactDialog({ className }: ContactDialogProps) {
               />
             </div>
             <div>
-              <Label htmlFor="phone" className="text-right">
+              <Label htmlFor="phone" className="text-right text-md">
                 Контактный телефон*
               </Label>
               <ShadcnPhone value={inputs.phone} onChange={handlePhoneChange} />
             </div>
           </div>
           <DialogFooter>
-            <Button type="submit" className="w-full">
+            <Button type="submit" className="w-full text-md" variant="default">
               Перезвоните мне
             </Button>
           </DialogFooter>
