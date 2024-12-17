@@ -12,6 +12,7 @@ export default function ContactForm() {
     name: "",
     company: "",
     phone: "",
+    isLoading: false,
   });
 
   const handlePhoneChange = (phone: string) => {
@@ -31,6 +32,16 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    setInputs((prev) => ({
+      ...prev,
+      isLoading: true,
+    }));
+
+    if (!inputs.name || !inputs.company || !inputs.phone) {
+      toast.error("Заполните все поля");
+      return;
+    }
+
     if (!isValidPhoneNumber(inputs.phone)) {
       toast.error("Введите корректный номер телефона");
       return;
@@ -49,7 +60,7 @@ export default function ContactForm() {
       toast.error("Произошла ошибка сервера, попробуйте позже");
     }
 
-    setInputs({ name: "", company: "", phone: "" });
+    setInputs({ name: "", company: "", phone: "", isLoading: false });
   };
   return (
     <form onSubmit={handleSubmit}>
@@ -91,8 +102,13 @@ export default function ContactForm() {
           <ShadcnPhone value={inputs.phone} onChange={handlePhoneChange} />
         </div>
       </div>
-      <Button type="submit" className="w-full text-md" variant="default">
-        Перезвоните мне
+      <Button
+        type="submit"
+        className="w-full text-md"
+        variant="default"
+        disabled={inputs.isLoading}
+      >
+        {inputs.isLoading ? "Отправка..." : "Перезвоните мне"}
       </Button>
     </form>
   );
