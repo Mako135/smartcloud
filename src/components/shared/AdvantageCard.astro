@@ -45,7 +45,7 @@ const { dataArray, title, cardClassName, data } = Astro.props;
       tl.fromTo(
         advantageTitle,
         { y: 50, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.5 }
+        { y: 0, opacity: 1, duration: 0.3 }
       );
       cards.forEach((card) => {
         tl.fromTo(
@@ -54,7 +54,7 @@ const { dataArray, title, cardClassName, data } = Astro.props;
           {
             y: 0,
             opacity: 1,
-            duration: 0.2,
+            duration: 0.1,
           }
         );
       });

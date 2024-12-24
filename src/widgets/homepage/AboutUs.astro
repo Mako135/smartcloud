@@ -71,7 +71,7 @@
         aboutUsDesc,
         { y: 50, opacity: 0 },
         { y: 0, opacity: 1, duration: 0.5 },
-        "<0.2"
+        "<"
       );
       cards.forEach((card) => {
         tl.fromTo(
@@ -80,7 +80,8 @@
           {
             y: 0,
             opacity: 1,
-            duration: 0.3,
+            duration: 0.2,
+            stagger: 0.2,
           }
         );
       });

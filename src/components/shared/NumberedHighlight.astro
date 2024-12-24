@@ -18,7 +18,7 @@ const { data, title } = Astro.props;
     {
       data.map((item, index) => (
         <div class="group relative flex items-center justify-center numberedHighlightCard">
-          <span class="text-[124px] italic text-stroke transition-all group-hover:skew-y-6 group-hover:rotate-12">
+          <span class="text-[124px] italic text-stroke group-hover:skew-y-6 group-hover:rotate-12">
             {index + 1}
           </span>
           <p class="absolute z-[2] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-lg font-bold">

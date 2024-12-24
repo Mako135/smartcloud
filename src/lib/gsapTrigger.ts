@@ -7,7 +7,8 @@ export const gsapTrigger = (trigger: HTMLElement) => {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: trigger,
-      start: "top 70%",
+      start: "top bottom",
+      markers: true,
     },
   });
   return tl;
