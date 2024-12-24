@@ -1,0 +1,53 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import AdvantageCard from "@/components/shared/AdvantageCard.astro";
+import AboutSection from "@/components/shared/AboutSection.astro";
+import Hero from "@/widgets/Hero.astro";
+
+import aspImg from "@/assets/asp.svg";
+import { aspAdvantages, aspUseCases } from "@/lib/data/aspData";
+import AdvantageCardWithIcon from "@/components/shared/AdvantageCardWithIcon.astro";
+---
+
+<Layout title="Аренда программного обеспечения">
+  <Hero imgSrc={aspImg}>
+    <h1 class="text-3xl font-medium lg:text-5xl">
+      Снизьте ИТ-расходы с помощью аренды программного обеспечения
+    </h1>
+    <p class="text-sm mt-2 lg:text-xl">
+      Аренда программного обеспечения предоставляется по методу лицензирования
+      Microsoft CSP (Cloud Solution Provider). Microsoft Office, Windows,
+      Exchange, SQL Server, Power BI можно арендовать на гибких условиях для
+      любых нужд. Масштабируйте ресурсы по мере роста вашего бизнеса
+    </p>
+  </Hero>
+
+  <AboutSection
+    title="Легитимный доступ и квалифицированное сопровождение"
+    className="mb-60"
+  >
+    <div>
+      <strong>
+        C CSP-моделью лицензирования Microsoft ваша компания получает
+        официальные лицензии на программное обеспечение Microsoft. Это
+        гарантирует, что вы используете ПО в соответствии с лицензионными
+        соглашениями, что важно для соблюдения юридических норм.
+      </strong>
+    </div>
+    <p class="my-10">
+      Быстрое получение доступа к лицензиям, а также большое количество
+      продуктов, включая MS Office, Off 365, Exchange Server, Sharepoint,
+      Biztalk, MS Dynamics, Power BI, Azure, Azure Stack Hub. Некогда дорогие
+      продукты доступные только для покупки, доступны для аренды по CSP.
+      Включает в себя техническую поддержку, консультации по лицензированию и
+      помощь в разрешении проблем с программным обеспечением.
+    </p>
+  </AboutSection>
+
+  <AdvantageCard title="Преимущества" dataArray={aspUseCases} />
+
+  <AdvantageCardWithIcon
+    title="Что вы получаете с этой услугой?"
+    data={aspAdvantages}
+  />
+</Layout>

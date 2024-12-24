@@ -28,6 +28,11 @@ export const headerData = [
         label: "Kaspersky",
         desc: "Антивирус для защиты от вирусов, вредоносных программ и киберугроз в реальном времени.",
       },
+      {
+        href: "/cloud-services/asp",
+        label: "Аренда программного обеспечения",
+        desc: "Microsoft CSP (Cloud Solution Provider) это гибкая и экономичная модель лицензирования.",
+      },
     ],
   },
   {
