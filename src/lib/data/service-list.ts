@@ -1,4 +1,5 @@
 import {
+  AppWindow,
   BotMessageSquare,
   DatabaseBackup,
   DoorOpen,
@@ -78,5 +79,11 @@ export const service_list = [
     desc: "В рамках сервиса проводится мониторинг текущего состояния защищенности компании, ведение аналитики в режиме реального времени, поддержка комплексных защитных решений. Информационная безопасность поддерживается по строгим международным стандартам и нормативам.",
     icon: BotMessageSquare,
     link: "/security/support",
+  },
+  {
+    label: "Аренда программного обеспечения",
+    desc: "Аренда программного обеспечения предоставляется по методу лицензирования Microsoft CSP (Cloud Solution Provider). Microsoft Office, Windows, Exchange, SQL Server, Power BI можно арендовать на гибких условиях для любых нужд. Масштабируйте ресурсы по мере роста вашего бизнеса",
+    icon: AppWindow,
+    link: "/cloud-services/asp",
   },
 ] as const;
