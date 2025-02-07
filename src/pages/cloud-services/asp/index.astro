@@ -1,5 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import SEO from "@/components/seo/SEO.astro";
 import AdvantageCard from "@/components/shared/AdvantageCard.astro";
 import AboutSection from "@/components/shared/AboutSection.astro";
 import Hero from "@/widgets/Hero.astro";
@@ -7,9 +8,29 @@ import Hero from "@/widgets/Hero.astro";
 import aspImg from "@/assets/asp.svg";
 import { aspAdvantages, aspUseCases } from "@/lib/data/aspData";
 import AdvantageCardWithIcon from "@/components/shared/AdvantageCardWithIcon.astro";
+
+// SEO-данные для страницы
+const seoData = {
+  title: "Аренда ПО Microsoft (CSP) – Облачные лицензии Microsoft",
+  description:
+    "Аренда лицензий Microsoft через CSP (Cloud Solution Provider). Лицензионное ПО Microsoft Windows, Office, Azure по подписке.",
+  descriptionUz:
+    "Microsoft CSP – Office 365, Windows va Azure uchun litsenziyalarni ijaraga olish.",
+  keywords:
+    "Microsoft CSP, аренда лицензий, облачные лицензии, Office 365, Azure, Microsoft 365, SmartCloud",
+  keywordsUz:
+    "Microsoft CSP, litsenziya ijarasi, Office 365, Azure, Microsoft 365, SmartCloud",
+  url: "https://smartcloud.uz/cloud-services/asp/",
+  image: "https://smartcloud.uz/assets/asp.svg",
+  author: "SmartCloud",
+};
 ---
 
-<Layout title="Аренда программного обеспечения">
+<Layout title={seoData.title}>
+  <head slot="head">
+    <SEO {...seoData} />
+  </head>
+
   <Hero imgSrc={aspImg}>
     <h1 class="text-3xl font-medium lg:text-5xl">
       Снизьте ИТ-расходы с помощью аренды программного обеспечения
@@ -18,7 +39,7 @@ import AdvantageCardWithIcon from "@/components/shared/AdvantageCardWithIcon.ast
       Аренда программного обеспечения предоставляется по методу лицензирования
       Microsoft CSP (Cloud Solution Provider). Microsoft Office, Windows,
       Exchange, SQL Server, Power BI можно арендовать на гибких условиях для
-      любых нужд. Масштабируйте ресурсы по мере роста вашего бизнеса
+      любых нужд. Масштабируйте ресурсы по мере роста вашего бизнеса.
     </p>
   </Hero>
 
@@ -38,7 +59,7 @@ import AdvantageCardWithIcon from "@/components/shared/AdvantageCardWithIcon.ast
       Быстрое получение доступа к лицензиям, а также большое количество
       продуктов, включая MS Office, Off 365, Exchange Server, Sharepoint,
       Biztalk, MS Dynamics, Power BI, Azure, Azure Stack Hub. Некогда дорогие
-      продукты доступные только для покупки, доступны для аренды по CSP.
+      продукты, доступные только для покупки, теперь доступны для аренды по CSP.
       Включает в себя техническую поддержку, консультации по лицензированию и
       помощь в разрешении проблем с программным обеспечением.
     </p>

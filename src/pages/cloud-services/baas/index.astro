@@ -7,9 +7,28 @@ import Hero from "@/widgets/Hero.astro";
 import baasImg from "@/assets/baas.png";
 import { baasAdvantages, baasUseCases } from "@/lib/data/baasData";
 import IaasUseCaseCard from "@/components/cloud-services/iaas/IaasUseCaseCard.astro";
+import SEO from "@/components/seo/SEO.astro";
+
+const seoData = {
+  title: "BaaS – Облачные резервные копии от SmartCloud",
+  description:
+    "BaaS – автоматическое резервирование данных, защита от потерь и отказов, быстрый доступ к бэкапам в облаке.",
+  descriptionUz:
+    "BaaS – biznes uchun bulutli zaxira nusxalari. Ma'lumotlarni avtomatik saqlash va yoʻqotishdan himoya.",
+  keywords:
+    "BaaS, резервное копирование, облачное хранилище, backup, защита данных, SmartCloud, облачные технологии",
+  keywordsUz:
+    "BaaS, zaxira nusxalari, bulut xotirasi, backup, ma’lumotlarni himoya qilish, SmartCloud",
+  url: "https://smartcloud.uz/cloud-services/baas/",
+  image: "https://smartcloud.uz/assets/baas.svg",
+  author: "SmartCloud",
+};
 ---
 
 <Layout title="Резервное копирование - BaaS">
+  <head slot="head">
+    <SEO {...seoData} />
+  </head>
   <Hero imgSrc={baasImg}>
     <h1 class="text-3xl font-medium lg:text-5xl">
       Надежные <span class="text-secondary">BaaS</span> решения для роста вашего
