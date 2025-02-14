@@ -7,7 +7,6 @@ import Hero from "@/widgets/Hero.astro";
 import baasImg from "@/assets/baas.png";
 import { baasAdvantages, baasUseCases } from "@/lib/data/baasData";
 import IaasUseCaseCard from "@/components/cloud-services/iaas/IaasUseCaseCard.astro";
-import SEO from "@/components/seo/SEO.astro";
 
 const seoData = {
   title: "BaaS – Облачные резервные копии от SmartCloud",
@@ -25,10 +24,7 @@ const seoData = {
 };
 ---
 
-<Layout title="Резервное копирование - BaaS">
-  <head slot="head">
-    <SEO {...seoData} />
-  </head>
+<Layout {...seoData}>
   <Hero imgSrc={baasImg}>
     <h1 class="text-3xl font-medium lg:text-5xl">
       Надежные <span class="text-secondary">BaaS</span> решения для роста вашего

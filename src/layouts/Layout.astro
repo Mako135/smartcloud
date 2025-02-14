@@ -7,9 +7,25 @@ import Header from "@/widgets/Header.astro";
 
 interface Props {
   title: string;
+  description: string;
+  descriptionUz?: string;
+  keywords: string;
+  keywordsUz?: string;
+  url: string;
+  image?: string;
+  author?: string;
 }
 
-const { title } = Astro.props;
+const {
+  title,
+  description,
+  descriptionUz,
+  keywords,
+  keywordsUz,
+  url,
+  image,
+  author,
+} = Astro.props;
 ---
 
 <script is:inline>
@@ -41,8 +57,43 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <slot name="head" />
+    
+    <!-- Динамические мета-теги -->
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <link rel="canonical" href={url} />
+
+    <!-- Узбекские мета-теги -->
+    {descriptionUz && <meta name="description" lang="uz" content={descriptionUz} />}
+    {keywordsUz && <meta name="keywords" lang="uz" content={keywordsUz} />}
+
+    <!-- Open Graph (Facebook, LinkedIn) -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={url} />
+    {image && <meta property="og:image" content={image} />}
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {image && <meta name="twitter:image" content={image} />}
+    {author && <meta name="author" content={author} />}
+
+    <!-- JSON-LD структурированные данные -->
+    <script type="application/ld+json">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        url,
+        name: title,
+        description,
+      })}
+    </script>
+
+    <slot name="head" />
   </head>
   <body class="dark:bg-black">
     <div

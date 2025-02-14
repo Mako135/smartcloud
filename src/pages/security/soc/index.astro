@@ -8,9 +8,23 @@ import Hero from "@/widgets/Hero.astro";
 
 import socImg from "@/assets/waf.svg";
 import SocAccordion from "@/widgets/security/soc/SocAccordion";
+
+const seoData = {
+  title: "Security Operations Center (SOC) – Мониторинг и защита",
+  description:
+    "Центр безопасности (SOC) – круглосуточный мониторинг и реагирование на кибератаки. Комплексные услуги по защите бизнеса.",
+  descriptionUz: "SOC – kiberxavfsizlik monitoringi va 24/7 himoya.",
+  keywords:
+    "SOC, центр кибербезопасности, мониторинг атак, защита данных, SmartCloud",
+  keywordsUz:
+    "SOC, xavfsizlik markazi, hujum monitoringi, ma’lumotlarni himoya qilish, SmartCloud",
+  url: "https://smartcloud.uz/cloud-services/soc/",
+  image: "https://smartcloud.uz/assets/waf.svg",
+  author: "SmartCloud",
+};
 ---
 
-<Layout title="SOC - Центр Операционной Безопасности ">
+<Layout {...seoData}>
   <Hero imgSrc={socImg}>
     <h1 class="text-3xl font-medium lg:text-5xl">
       <span class="text-secondary">SOC</span>

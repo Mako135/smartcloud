@@ -5,9 +5,24 @@ import AboutUs from "@/widgets/homepage/AboutUs.astro";
 import Hero from "@/widgets/Hero.astro";
 
 import main from "@/assets/main.png";
+
+const seoData = {
+  title: "SmartCloud – Облачные технологии IaaS, VDS, BaaS, SaaS в Узбекистане",
+  description:
+    "Облачные сервисы в Узбекистане: IaaS, VDS, BaaS, S3-хранилище, антивирус Kaspersky, DDoS-защита, SOC. Надежные решения для бизнеса от SmartCloud.",
+  descriptionUz:
+    "Oʻzbekistonda bulut xizmatlari: IaaS, VDS, BaaS, S3-xotira, Kaspersky antivirus, DDoS himoyasi, SOC. SmartCloud’dan ishonchli biznes yechimlari.",
+  keywords:
+    "облако, облачные сервисы, IaaS, VDS, хостинг, VPS, SmartCloud, облачное хранилище, SaaS, безопасность, SOC, DDoS, firewall",
+  keywordsUz:
+    "bulut, bulut xizmatlari, IaaS, VDS, hosting, VPS, SmartCloud, bulut xotirasi, SaaS, xavfsizlik, SOC, DDoS, firewall",
+  url: "https://smartcloud.uz/",
+  image: "https://smartcloud.uz/assets/smartcloud.svg",
+  author: "SmartCloud",
+};
 ---
 
-<Layout title="Smartcloud">
+<Layout {...seoData}>
   <Hero imgSrc={main}>
     <h1 class="text-[5vw] font-bold leading-none lg:text-[2vw]">
       Добро пожаловать в Smart<span class="text-secondary">Cloud</span>

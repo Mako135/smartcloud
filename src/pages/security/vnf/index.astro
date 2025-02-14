@@ -5,11 +5,21 @@ import { vnfAdvantages } from "@/lib/data/vnfData";
 import Hero from "@/widgets/Hero.astro";
 import vnf from "@/assets/vnf.webp";
 import AdvantageCard from "@/components/shared/AdvantageCard.astro";
+const seoData = {
+  title: "Техническая поддержка SmartCloud – Поддержка 24/7",
+  description:
+    "Техническая поддержка облачных сервисов SmartCloud. Помощь в настройке, мониторинг, консультации 24/7.",
+  descriptionUz:
+    "SmartCloud texnik qo‘llab-quvvatlashi – 24/7 yordam, monitoring va maslahat.",
+  keywords: "техническая поддержка, IT-поддержка, помощь 24/7, SmartCloud",
+  keywordsUz: "texnik yordam, IT-yordam, 24/7 qo‘llab-quvvatlash, SmartCloud",
+  url: "https://smartcloud.uz/support/",
+  image: "https://smartcloud.uz/assets/support.svg",
+  author: "SmartCloud",
+};
 ---
 
-<Layout
-  title="Virtual Network Firewall – межсетевой экран следующего поколения"
->
+<Layout {...seoData}>
   <Hero imgSrc={vnf}>
     <h1 class="text-3xl font-medium lg:text-5xl">
       <span class="text-secondary">Virtual Network Firewall</span>

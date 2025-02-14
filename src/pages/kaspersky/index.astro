@@ -5,21 +5,35 @@ import Hero from "@/widgets/Hero.astro";
 import KasperskySolutions from "@/widgets/kaspersky/KasperskySolutions.astro";
 
 import kaspersky from "@/assets/kaspersky.webp";
+
+const seoData = {
+  title: "Kaspersky Security – Облачный антивирус для бизнеса",
+  description:
+    "Облачная защита от вирусов и киберугроз с Kaspersky Security. Антивирусные решения для бизнеса и серверов.",
+  descriptionUz:
+    "Kaspersky bulutli antivirus – biznesingiz uchun xavfsiz himoya.",
+  keywords:
+    "Kaspersky, антивирус, защита от вирусов, кибербезопасность, облачные технологии, SmartCloud",
+  keywordsUz: "Kaspersky, antivirus, kiberxavfsizlik, bulut texnologiyalari",
+  url: "https://smartcloud.uz/cloud-services/kaspersky-security/",
+  image: "https://smartcloud.uz/assets/kaspersky-security.svg",
+  author: "SmartCloud",
+};
 ---
 
-<Layout title="Kaspersky">
+<Layout {...seoData}>
   <Container>
     <Hero imgSrc={kaspersky}>
       <h1 class="text-3xl font-medium lg:text-5xl">
-        Решения <span class="text-secondary">Kaspersky</span> -
-        сосредоточьтесь на развитии бизнеса, мы позаботимся о безопасности
+        Решения <span class="text-secondary">Kaspersky</span> - сосредоточьтесь на
+        развитии бизнеса, мы позаботимся о безопасности
       </h1>
       <p class="text-sm mt-2 lg:text-xl">
-        «Лаборатория Касперского» предлагает передовые решения для защиты, позволяя
-        вам сосредоточиться на развитии без опасений
+        «Лаборатория Касперского» предлагает передовые решения для защиты,
+        позволяя вам сосредоточиться на развитии без опасений
       </p>
     </Hero>
-    
+
     <KasperskySolutions />
   </Container>
 </Layout>

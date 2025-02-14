@@ -6,9 +6,24 @@ import Hero from "@/widgets/Hero.astro";
 
 import storageImg from "@/assets/storage.webp";
 import { storageAdvantages } from "@/lib/data/storageData";
+
+const seoData = {
+  title: "Облачное хранилище в Узбекистане – S3 Storage от SmartCloud",
+  description:
+    "Масштабируемое облачное хранилище для безопасного хранения и обработки данных. Высокая скорость, надежность и доступность.",
+  descriptionUz:
+    "Bulutli saqlash xizmati – yuqori tezlik va ishonchli ma'lumotlarni saqlash.",
+  keywords:
+    "облачное хранилище, S3 storage, резервное копирование, SmartCloud, хранение данных, облако",
+  keywordsUz:
+    "bulutli saqlash, S3 storage, backup, SmartCloud, ma’lumotlar xotirasi",
+  url: "https://smartcloud.uz/cloud-services/s3-storage/",
+  image: "https://smartcloud.uz/assets/s3-storage.svg",
+  author: "SmartCloud",
+};
 ---
 
-<Layout title="Хранилище данных">
+<Layout {...seoData}>
   <Hero imgSrc={storageImg}>
     <h1 class="text-3xl font-medium lg:text-5xl">
       <span class="text-secondary">Хранилище данных</span> – дисковое пространство

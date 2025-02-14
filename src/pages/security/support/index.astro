@@ -11,9 +11,22 @@ import Hero from "@/widgets/Hero.astro";
 
 import securitySupportImg from "@/assets/support.png";
 import SupportAccordion from "@/widgets/security/support/SupportAccordion";
+
+const seoData = {
+  title: "Техническая поддержка SmartCloud – Поддержка 24/7",
+  description:
+    "Техническая поддержка облачных сервисов SmartCloud. Помощь в настройке, мониторинг, консультации 24/7.",
+  descriptionUz:
+    "SmartCloud texnik qo‘llab-quvvatlashi – 24/7 yordam, monitoring va maslahat.",
+  keywords: "техническая поддержка, IT-поддержка, помощь 24/7, SmartCloud",
+  keywordsUz: "texnik yordam, IT-yordam, 24/7 qo‘llab-quvvatlash, SmartCloud",
+  url: "https://smartcloud.uz/support/",
+  image: "https://smartcloud.uz/assets/support.svg",
+  author: "SmartCloud",
+};
 ---
 
-<Layout title="Комплексная техническая поддержка">
+<Layout {...seoData}>
   <Hero imgSrc={securitySupportImg}>
     <h1 class="text-3xl font-medium lg:text-5xl">
       Профессиональная <br />

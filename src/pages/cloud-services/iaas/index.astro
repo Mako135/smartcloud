@@ -12,9 +12,24 @@ import AdvantageCard from "@/components/shared/AdvantageCard.astro";
 import { smartcloudAdvantages } from "@/lib/data/homeData";
 import TrialSection from "@/widgets/TrialSection.astro";
 import { MoveRight } from "lucide-react";
+
+const seoData = {
+  title: "IaaS в Узбекистане – Виртуальная инфраструктура от SmartCloud",
+  description:
+    "IaaS – масштабируемые облачные ресурсы для бизнеса в Узбекистане. Гибкое управление серверами, высокая производительность, надежность.",
+  descriptionUz:
+    "IaaS – Oʻzbekistonda bulutli infratuzilma. Moslashuvchan server boshqaruvi, yuqori samaradorlik va ishonchlilik.",
+  keywords:
+    "IaaS, облачная инфраструктура, серверы, виртуальные машины, SmartCloud, облачные технологии, инфраструктура как услуга",
+  keywordsUz:
+    "IaaS, bulut infratuzilmasi, serverlar, virtual mashinalar, SmartCloud, bulut texnologiyalari",
+  url: "https://smartcloud.uz/cloud-services/iaas/",
+  image: "https://smartcloud.uz/assets/iaas.svg",
+  author: "SmartCloud",
+};
 ---
 
-<Layout title="IaaS (инфраструктура как услуга)">
+<Layout {...seoData}>
   <Hero imgSrc={iaasImg}>
     <div>
       <a

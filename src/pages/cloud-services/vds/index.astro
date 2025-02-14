@@ -14,9 +14,24 @@ import {
 import TabNavigation from "@/widgets/cloud-services/vds/TabNavigation";
 import { MoveRight } from "lucide-react";
 import TrialSection from "@/widgets/TrialSection.astro";
+
+const seoData = {
+  title: "VDS (VPS) в Узбекистане – Виртуальные серверы SmartCloud",
+  description:
+    "Виртуальные выделенные серверы (VDS/VPS) с высокой производительностью и SSD-накопителями. Оптимальное облачное решение для бизнеса.",
+  descriptionUz:
+    "VDS (VPS) – yuqori unumdorlikka ega virtual serverlar. SSD xotira bilan mustahkam bulutli yechim.",
+  keywords:
+    "VDS, VPS, виртуальные серверы, хостинг, облачные серверы, SmartCloud, аренда сервера, Linux, Windows",
+  keywordsUz:
+    "VDS, VPS, virtual serverlar, hosting, bulut serverlari, SmartCloud, Linux, Windows",
+  url: "https://smartcloud.uz/cloud-services/vds/",
+  image: "https://smartcloud.uz/assets/vds.svg",
+  author: "SmartCloud",
+};
 ---
 
-<Layout title="Virtual Dedicated Server – виртуальный выделенный сервер">
+<Layout {...seoData}>
   <Hero imgSrc={vdsImg}>
     <div>
       <a

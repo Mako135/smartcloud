@@ -8,9 +8,24 @@ import Hero from "@/widgets/Hero.astro";
 
 import ddosImg from "@/assets/ddos.png";
 import DdosAccordion from "@/widgets/security/ddos/DdosAccordion";
+
+const seoData = {
+  title: "DDoS Protection – Защита от DDoS-атак от SmartCloud",
+  description:
+    "Надежная защита от DDoS-атак. Фильтрация трафика, предотвращение атак на серверы и веб-приложения.",
+  descriptionUz:
+    "DDoS hujumlariga qarshi ishonchli himoya. Tarmoq trafigini filtrlash va hujumlarni oldini olish.",
+  keywords:
+    "DDoS-защита, кибербезопасность, защита серверов, анти-DDoS, безопасность сети, SmartCloud",
+  keywordsUz:
+    "DDoS himoyasi, kiberxavfsizlik, server himoyasi, tarmoq xavfsizligi, SmartCloud",
+  url: "https://smartcloud.uz/cloud-services/ddos-protection/",
+  image: "https://smartcloud.uz/assets/ddos-protection.svg",
+  author: "SmartCloud",
+};
 ---
 
-<Layout title="Защита от DDoS-атак">
+<Layout {...seoData}>
   <Hero imgSrc={ddosImg}>
     <h1 class="text-3xl font-medium lg:text-5xl">
       Не дайте <span class="text-secondary">DDoS</span>-атаке остановить Ваш

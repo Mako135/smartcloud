@@ -10,9 +10,24 @@ import Hero from "@/widgets/Hero.astro";
 import wafImg from "@/assets/waf.svg";
 import IaasUseCaseCard from "@/components/cloud-services/iaas/IaasUseCaseCard.astro";
 import WafAccodtion from "@/widgets/security/waf/WafAccodtion";
+
+const seoData = {
+  title: "WAF (Web Application Firewall) – Защита веб-приложений",
+  description:
+    "Облачный WAF – защита сайтов и веб-приложений от атак SQL-инъекций, XSS и других угроз. Обеспечьте безопасность вашего бизнеса.",
+  descriptionUz:
+    "Bulutli WAF – SQL-in'ektsiyalar va zararli trafikdan himoya. Sayt va ilovalar xavfsizligi uchun samarali yechim.",
+  keywords:
+    "WAF, Web Application Firewall, защита сайтов, кибербезопасность, SmartCloud",
+  keywordsUz:
+    "WAF, Web Application Firewall, veb xavfsizligi, kiberxavfsizlik, SmartCloud",
+  url: "https://smartcloud.uz/cloud-services/waf/",
+  image: "https://smartcloud.uz/assets/waf.svg",
+  author: "SmartCloud",
+};
 ---
 
-<Layout title="WAF - Надежная защита веб-приложений">
+<Layout {...seoData}>
   <Container>
     <Hero imgSrc={wafImg}>
       <h1 class="text-3xl font-medium lg:text-5xl">
@@ -63,6 +78,6 @@ import WafAccodtion from "@/widgets/security/waf/WafAccodtion";
   />
 
   <Container>
-    <WafAccodtion client:idle  />
+    <WafAccodtion client:idle />
   </Container>
 </Layout>

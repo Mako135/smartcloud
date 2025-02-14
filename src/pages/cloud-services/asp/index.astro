@@ -1,6 +1,5 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import SEO from "@/components/seo/SEO.astro";
 import AdvantageCard from "@/components/shared/AdvantageCard.astro";
 import AboutSection from "@/components/shared/AboutSection.astro";
 import Hero from "@/widgets/Hero.astro";
@@ -26,11 +25,7 @@ const seoData = {
 };
 ---
 
-<Layout title={seoData.title}>
-  <head slot="head">
-    <SEO {...seoData} />
-  </head>
-
+<Layout {...seoData}>
   <Hero imgSrc={aspImg}>
     <h1 class="text-3xl font-medium lg:text-5xl">
       Снизьте ИТ-расходы с помощью аренды программного обеспечения
