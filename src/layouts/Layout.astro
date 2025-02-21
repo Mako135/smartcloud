@@ -94,7 +94,7 @@ const {
     </script>
 
     <!-- Yandex.Metrika counter -->
-    <script type="text/javascript" >
+    <script type="text/javascript" is:inline>
       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
       m[i].l=1*new Date();
       for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
@@ -110,6 +110,19 @@ const {
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/99998614" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
+
+    <!-- Google tag (gtag.js) --> 
+     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MLT9M608GM"></script> 
+     <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        window.dataLayer.push(arguments);
+      }
+      // Пример вызова
+      gtag('js', new Date());
+      gtag('config', 'G-MLT9M608GM');
+
+     </script>
   </head>
   <body class="dark:bg-black">
     <div
