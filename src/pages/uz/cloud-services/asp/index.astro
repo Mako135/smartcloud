@@ -1,0 +1,70 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import AdvantageCard from "@/components/shared/AdvantageCard.astro";
+import AboutSection from "@/components/shared/AboutSection.astro";
+import Hero from "@/widgets/Hero.astro";
+
+import aspImg from "@/assets/asp.svg";
+import { aspAdvantages, aspUseCases } from "@/lib/dataUZ/aspData";
+import AdvantageCardWithIcon from "@/components/shared/AdvantageCardWithIcon.astro";
+
+
+
+// SEO-данные для страницы
+const seoData = {
+  title: "Аренда ПО Microsoft (CSP) – Облачные лицензии Microsoft",
+  description:
+    "Microsoft CSP – Office 365, Windows va Azure uchun litsenziyalarni ijaraga olish.",
+  keywords:
+    "Microsoft CSP, litsenziya ijarasi, Office 365, Azure, Microsoft 365, SmartCloud",
+  url: "https://smartcloud.uz/uz/cloud-services/asp/",
+  image: "https://smartcloud.uz/assets/asp.svg",
+  author: "SmartCloud",
+};
+
+
+
+---
+
+<Layout {...seoData}>
+  <Hero imgSrc={aspImg}>
+    <h1 class="text-3xl font-medium lg:text-5xl">
+      IT xarajatlarini dasturiy ta'minotni ijaraga olish orqali kamaytiring
+    </h1>
+    <p class="text-sm mt-2 lg:text-xl">
+      Dasturiy ta'minotni ijaraga olish Microsoft CSP (Cloud Solution Provider) litsenziyalash usuli 
+      orqali taqdim etiladi. Microsoft Office, Windows, Exchange, SQL Server va Power BI-ni har 
+      qanday ehtiyoj uchun moslashuvchan shartlarda ijaraga olish mumkin. Biznesingiz o‘sishi bilan 
+      resurslarni kengaytiring.
+    </p>
+  </Hero>
+
+  <AboutSection
+    title="Legitim kirish va malakali qo‘llab-quvvatlash"
+    className="mb-60"
+  >
+    <div>
+      <strong>
+        CSP litsenziyalash modeli yordamida sizning kompaniyangiz Microsoft dasturiy ta’minoti 
+        uchun rasmiy litsenziyalarga ega bo‘ladi. Bu sizning dasturiy ta’minotdan litsenziya 
+        shartnomalariga muvofiq foydalanishingizni kafolatlaydi, bu esa huquqiy normalarga 
+        rioya qilish uchun muhimdir.
+      </strong>
+    </div>
+    <p class="my-10">
+      Litsenziyalarga tezkor kirish, shuningdek, MS Office, Office 365, Exchange Server, 
+      SharePoint, BizTalk, MS Dynamics, Power BI, Azure, Azure Stack Hub kabi ko‘plab 
+      mahsulotlar. Ilgari faqat sotib olish mumkin bo‘lgan qimmat dasturiy mahsulotlar endi 
+      CSP orqali ijaraga olish uchun ham mavjud. Xizmat tarkibiga texnik qo‘llab-quvvatlash, 
+      litsenziyalash bo‘yicha maslahatlar va dasturiy ta’minot bilan bog‘liq muammolarni hal 
+      qilishga yordam berish kiradi.
+    </p>
+  </AboutSection>
+
+  <AdvantageCard title="Afzalliklar" dataArray={aspUseCases} />
+
+  <AdvantageCardWithIcon
+    title="Ushbu xizmat sizga nima beradi?"
+    data={aspAdvantages}
+  />
+</Layout>

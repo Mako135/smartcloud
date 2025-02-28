@@ -1,0 +1,91 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import IaaSConfigurator from "@/widgets/cloud-services/iaas/IaaSConfigurator";
+import Hero from "@/widgets/Hero.astro";
+import AboutSection from "@/components/shared/AboutSection.astro";
+
+import iaasImg from "@/assets/iaas.png";
+import { iaas_advantages, iaas_advantages_2 } from "@/lib/dataUZ/iaasData";
+import IaasCard from "@/components/cloud-services/iaas/IaasCard.astro";
+import IaasUseCaseCard from "@/components/cloud-services/iaas/IaasUseCaseCard.astro";
+import AdvantageCard from "@/components/shared/AdvantageCard.astro";
+import { smartcloudAdvantages } from "@/lib/dataUZ/homeData";
+import TrialSection from "@/widgets/TrialSection.astro";
+import { MoveRight } from "lucide-react";
+
+
+
+const seoData = {
+  title: "IaaS в Узбекистане – Виртуальная инфраструктура от SmartCloud",
+  description:
+    "IaaS – Oʻzbekistonda bulutli infratuzilma. Moslashuvchan server boshqaruvi, yuqori samaradorlik va ishonchlilik.",
+  keywords:
+    "IaaS, bulut infratuzilmasi, serverlar, virtual mashinalar, SmartCloud, bulut texnologiyalari",
+  url: "https://smartcloud.uz/uz/cloud-services/iaas/",
+  image: "https://smartcloud.uz/assets/iaas.svg",
+  author: "SmartCloud",
+};
+---
+
+<Layout {...seoData}>
+  <Hero imgSrc={iaasImg}>
+    <div>
+      <a
+        href="https://portal.smartcloud.uz/index.php?/cart/iaas-ssd/"
+        class="group inline-block"
+        target="_blank"
+      >
+        <div
+          class="p-2 px-6 bg-secondary/10 flex items-center gap-2 hover:bg-secondary/50 rounded-md"
+        >
+        14 kun davomida kuchli bulutli infratuzilmadan bepul foydalanish
+          <MoveRight className="group-hover:translate-x-2 transition-all" />
+        </div>
+      </a>
+      <h1 class="text-3xl font-medium lg:text-5xl mt-10">
+        <span class="text-secondary">IaaS</span> (xizmat sifatida infratuzilma)
+      </h1>
+      <p class="text-sm mt-2 lg:text-xl">
+        Bulutli muhitda mustaqil ravishda virtual serverlarni yaratish va klonlash, ularning 
+        konfiguratsiyasini o'zgartirish, sozlamalarni boshqarish imkonini beruvchi biznes modeli.
+      </p>
+    </div>
+  </Hero>
+
+  <AboutSection title="IaaS nima?">
+    <p>
+      IaaS (Infrastrukturia sifatida xizmat) – bu moslashuvchan bulutli yechim bo‘lib, u 
+      mustaqil ravishda virtual serverlarni yaratish va klonlash, ularning konfiguratsiyasini 
+      o‘zgartirish hamda sozlamalarni boshqarish imkonini beradi.
+    </p>
+  </AboutSection>
+
+  <div class="my-60 md:my-60">
+    <h1 class="text-2xl md:text-4xl font-medium text-center mb-20">
+      IaaS va o‘z infratuzilmasi: qanday foyda bor?
+    </h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
+      {
+        iaas_advantages_2.map((item) => (
+          <IaasCard title={item.title} Icon={item.icon} />
+        ))
+      }
+    </div>
+  </div>
+
+  <IaaSConfigurator client:idle />
+
+  <h1 class="text-2xl md:text-4xl font-medium text-center mb-20">
+    IaaS dan foydalanish ssenariylari
+  </h1>
+
+  <div class="grid md:grid-cols-2 gap-10">
+    {iaas_advantages.map((item) => <IaasUseCaseCard title={item} />)}
+  </div>
+  <AdvantageCard
+    title="IaaS SmartCloud’ning afzalliklari"
+    dataArray={smartcloudAdvantages}
+    cardClassName="xl:grid-cols-3"
+  />
+  <TrialSection days={14} />
+</Layout>

@@ -1,0 +1,43 @@
+---
+import AboutSection from "@/components/shared/AboutSection.astro";
+import Layout from "@/layouts/Layout.astro";
+import { vnfAdvantages } from "@/lib/dataUZ/vnfData";
+import Hero from "@/widgets/Hero.astro";
+import vnf from "@/assets/vnf.webp";
+import AdvantageCard from "@/components/shared/AdvantageCard.astro";
+const seoData = {
+  title: "Техническая поддержка SmartCloud – Поддержка 24/7",
+  description:
+    "SmartCloud texnik qo‘llab-quvvatlashi – 24/7 yordam, monitoring va maslahat.",
+  keywords: "texnik yordam, IT-yordam, 24/7 qo‘llab-quvvatlash, SmartCloud",
+  url: "https://smartcloud.uz/uz/support/",
+  image: "https://smartcloud.uz/assets/support.svg",
+  author: "SmartCloud",
+};
+---
+
+<Layout {...seoData}>
+  <Hero imgSrc={vnf}>
+    <h1 class="text-3xl font-medium lg:text-5xl">
+      <span class="text-secondary">Virtual Network Firewall</span>
+      – keyingi avlod tarmoq xavfsizlik devori
+    </h1>
+    <p class="text-xl mt-6">
+      Tarmog‘ingiz ustidan to‘liq nazorat. Xavflarni minimallashtiring, unumdorlikni oshiring.
+    </p>
+  </Hero>
+
+  <AboutSection title="Virtual Network Firewall nima?">
+    <p>
+      Virtual Network Firewall – keng turdagi tarmoq tahdidlaridan ilg‘or himoya ta’minlovchi 
+      virtual tarmoq devori. U xususiy va ommaviy bulutlarda xavfsizlik siyosatlarini 
+      muvofiqlashtirilgan tarzda qo‘llashga imkon beradi hamda individual filtratsiya 
+      qoidalarini yaratish imkoniyatini taqdim etadi.
+    </p>
+  </AboutSection>
+  <AdvantageCard
+    title="Virtual Network Firewall-ning afzalliklari"
+    data={vnfAdvantages}
+    cardClassName="xl:grid-cols-3"
+  />
+</Layout>

@@ -1,6 +1,12 @@
 ---
 import { ContactDialog } from "@/components/contactModal/ContactDialog";
 import Container from "./Container.astro";
+import { getTranslations } from "@/utils/i18n";
+
+const locale = Astro.url.pathname.startsWith('/uz') ? 'uz' : 'ru';
+const t = await getTranslations(locale, "trialSection");
+
+const currentPath = Astro.request.url.includes("uz");
 
 interface Props {
   days: number;
@@ -14,11 +20,10 @@ const { days } = Astro.props;
 >
   <div class="text-center m-4">
     <h2 class="text-3xl font-medium lg:text-4xl flex flex-wrap justify-center">
-      {days} дней бесплатно без обязательств!
+      {days} {t.title}
     </h2>
-    <p class="mt-4 mb-8">
-      Погрузитесь в использование нашего сервиса без затрат. <br /> Активируйте бесплатный
-      период и оцените преимущества уже сегодня!
+    <p class="mt-4 mb-8 whitespace-pre-line">
+      {t.descriptionFirstPart}
     </p>
     <ContactDialog client:idle />
   </div>

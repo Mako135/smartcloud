@@ -1,0 +1,23 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+// Определяем текущую локаль
+const currentLocale = Astro.url.pathname.startsWith('/uz') ? 'uz' : 'ru';
+
+// Определяем, куда переключать
+const switchTo = currentLocale === 'uz' ? 'ru' : 'uz';
+
+// Убираем текущий префикс локали, если он есть
+const newPath = Astro.url.pathname.replace(/^\/uz/, ''); 
+
+// Получаем новый путь с другой локалью
+const finalPath = switchTo === 'uz' ? `/uz${newPath}` : newPath || '/';
+
+console.log("Switching to:", switchTo, "URL:", finalPath);
+
+---
+
+<a href={finalPath} class="text-white">
+    {switchTo === 'uz' ? "O‘zbekcha" : "Русский"}
+  </a>
+  

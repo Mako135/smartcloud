@@ -1,0 +1,47 @@
+---
+import AboutSection from "@/components/shared/AboutSection.astro";
+import AdvantageCard from "@/components/shared/AdvantageCard.astro";
+import Layout from "@/layouts/Layout.astro";
+import Hero from "@/widgets/Hero.astro";
+
+import storageImg from "@/assets/storage.webp";
+import { storageAdvantages } from "@/lib/dataUZ/storageData";
+
+const seoData = {
+  title: "Облачное хранилище в Узбекистане – S3 Storage от SmartCloud",
+  description:
+    "Bulutli saqlash xizmati – yuqori tezlik va ishonchli ma'lumotlarni saqlash.",
+  keywords:
+    "bulutli saqlash, S3 storage, backup, SmartCloud, ma’lumotlar xotirasi",
+  url: "https://smartcloud.uz/uz/cloud-services/s3-storage/",
+  image: "https://smartcloud.uz/assets/s3-storage.svg",
+  author: "SmartCloud",
+};
+---
+
+<Layout {...seoData}>
+  <Hero imgSrc={storageImg}>
+    <h1 class="text-3xl font-medium lg:text-5xl">
+      <span class="text-secondary">Ma'lumotlar ombori</span> – ma'lumotlarni 
+      saqlash uchun disk maydoni
+    </h1>
+    <p class="text-xl mt-6">Disk nosozliklaridan ishonchli himoya.</p>
+  </Hero>
+
+  <AboutSection title="Ma'lumotlar ombori nima?">
+    <p>
+      Xizmat Internet orqali masofaviy disk maydoniga kirish imkoniyatini taqdim etadi. U bir 
+      nechta jismoniy disklarni (ikkita yoki undan ko‘p) birlashtirib, ombor havzasi yaratishga 
+      va ularning hajmidan foydalanib virtual disklarga – disk maydonlariga aylantirishga 
+      imkon beradi.<br /><br />
+      Disk maydonlarida odatda ma'lumotlarning ikkita nusxasi saqlanadi, shuning uchun bitta 
+      disk nosoz bo‘lsa ham, sizda butunligi saqlangan nusxa qoladi. Agar sig‘im tugasa, ombor 
+      havzasiga qo‘shimcha disklarga qo‘shish kifoya.
+    </p>
+  </AboutSection>
+  <AdvantageCard
+    title="Ma'lumotlar omborining afzalliklari"
+    data={storageAdvantages}
+    cardClassName="lg:grid-cols-3"
+  />
+</Layout>

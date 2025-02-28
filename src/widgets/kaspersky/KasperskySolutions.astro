@@ -1,20 +1,61 @@
 ---
 import KasperskyCard from "@/components/kaspersky/KasperskyCard.astro";
+import { getTranslations } from "@/utils/i18n";
+
 import {
   kasperskyEnterprise,
   kasperskyIndividual,
   kasperskyMsb,
 } from "@/lib/data/kaspersky";
+
+import {
+  kasperskyEnterpriseUZ,
+  kasperskyIndividualUZ,
+  kasperskyMsbUZ,
+} from "@/lib/dataUZ/kaspersky";
+
+const locale = Astro.url.pathname.startsWith('/uz') ? 'uz' : 'ru';
+const t = await getTranslations(locale, "KasperskySolutions");
+
+// Выбираем соответствующие данные в зависимости от локали
+const kasperskyData = locale === "uz"
+  ? {
+      enterprise: kasperskyEnterpriseUZ,
+      individual: kasperskyIndividualUZ,
+      msb: kasperskyMsbUZ,
+    }
+  : {
+      enterprise: kasperskyEnterprise,
+      individual: kasperskyIndividual,
+      msb: kasperskyMsb,
+    };
 ---
 
 <div class="mb-40">
-  <h2 class="text-center text-2xl font-medium mb-20 lg:text-4xl">
-    Передовые решения <br /> для защиты малого и среднего бизнеса
+  <h2 class="text-center text-2xl font-medium mb-20 lg:text-4xl whitespace-pre-line">
+    {t.title}
   </h2>
 
   <div class="grid grid-cols-1 gap-5 lg:grid-cols-3">
     {
-      kasperskyMsb.map((item) => (
+      kasperskyData.msb.map((item) => (
+        <KasperskyCard
+          title={item.title}
+          desc={item.desc}
+          list={item.list}
+          listClassName="h-[130px]"
+        />
+      ))
+    }
+  </div>
+
+  <h2 class="text-center text-2xl font-medium mb-20 mt-40 lg:text-4xl whitespace-pre-line">
+    {t.descriptionFirstPart}
+  </h2>
+
+  <div class="grid grid-cols-1 gap-5 lg:grid-cols-3">
+    {
+      kasperskyData.enterprise.map((item) => (
         <KasperskyCard
           title={item.title}
           desc={item.desc}
@@ -26,29 +67,12 @@ import {
   </div>
 
   <h2 class="text-center text-2xl font-medium mb-20 mt-40 lg:text-4xl">
-    Индивидуальные решения <br /> для крупного предпринимательства
-  </h2>
-
-  <div class="grid grid-cols-1 gap-5 lg:grid-cols-3">
-    {
-      kasperskyEnterprise.map((item) => (
-        <KasperskyCard
-          title={item.title}
-          desc={item.desc}
-          list={item.list}
-          listClassName="h-[130px]"
-        />
-      ))
-    }
-  </div>
-
-  <h2 class="text-center text-2xl font-medium mb-20 mt-40 lg:text-4xl">
-    Подберите решение для вашего бизнеса
+    {t.descriptionSecondPart}
   </h2>
 
   <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
     {
-      kasperskyIndividual.map((item) => (
+      kasperskyData.individual.map((item) => (
         <KasperskyCard
           title={item.title}
           desc={item.desc}

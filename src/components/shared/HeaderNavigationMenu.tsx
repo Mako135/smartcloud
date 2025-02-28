@@ -7,20 +7,30 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui";
 import { headerData } from "@/lib/data/headerData";
-import { cn } from "@/lib/utils";
+import { useEffect, useState } from "react";
 
 export default function HeaderNavigationMenu() {
+  const [currentLocale, setCurrentLocale] = useState("ru");
+
+  useEffect(() => {
+    if (window.location.pathname.startsWith("/uz")) {
+      setCurrentLocale("uz");
+    } else {
+      setCurrentLocale("ru");
+    }
+  }, []);
+
   return (
     <NavigationMenu delayDuration={0}>
       <NavigationMenuList>
         {headerData.map((item) => (
           <NavigationMenuItem key={item.label}>
             <NavigationMenuTrigger className="bg-transparent text-white">
-              {item.label}
+              {currentLocale === "uz" ? item.labelUZ : item.label}
             </NavigationMenuTrigger>
             <NavigationMenuContent>
               <nav className="grid grid-cols-2 p-4 gap-2 w-[500px] 2xl:w-[600px] ">
-                {item.links.map((link) => (
+              {(currentLocale === "uz" ? item.linksUZ : item.links).map((link) => (
                   <NavigationMenuLink
                     href={link.href}
                     key={link.label}

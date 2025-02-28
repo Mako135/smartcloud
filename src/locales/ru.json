@@ -1,0 +1,105 @@
+{
+    "aboutUs": {
+      "title": "О компании",
+      "descriptionFirstPart": "Команда SmartCloud – часть международного провайдера ИКТ-инфраструктуры — АО",
+      "descriptionSecondPart": "предоставляет на территории Узбекистана услуги облачных вычислений, хранения данных, резервирования и кибербезопасности.\n\nНаша отказоустойчивая физическая и виртуальная инфраструктура, опытная команда инженеров и широкий выбор технологий гарантируют клиентам стабильность и доступность критически важных процессов, а также гибкость в масштабировании бизнеса в любой момент.",
+      "stats": {
+        "experience": "лет опыта в сфере ИКТ",
+        "partners": "проверенных партнеров",
+        "clients": "постоянных заказчиков \n доверяют нам",
+        "employees": "сертифицированных \n сотрудников"
+      },
+      "contacts": "",
+      "addresses": {
+            "label": "",
+            "address1": "",
+            "address2": ""
+       }
+    },
+    "services":{
+        "title": "Наши услуги",
+        "descriptionFirstPart": "",
+        "descriptionSecondPart": "",
+        "stats": {
+            "experience": "",
+            "partners": "",
+            "clients": "",
+            "employees": ""
+        },
+        "contacts": "",
+        "addresses": {
+            "label": "",
+            "address1": "",
+            "address2": ""
+        }
+    },
+    "footer":{
+        "title": "",
+        "descriptionFirstPart": "",
+        "descriptionSecondPart": "",
+        "stats": {
+            "experience": "",
+            "partners": "",
+            "clients": "",
+            "employees": ""
+        },
+        "contacts": "Контакты",
+        "addresses": {
+            "label": "Адреса",
+            "address1": "100070, г. Ташкент, Яккасарайский район, ул. Шота Руставели, 12",
+            "address2": "100187, г. Ташкент, Карасу-3, улица Мингбулок, 38"
+        }
+    },
+    "trialSection":{
+        "title": "дней бесплатно без обязательств!",
+        "descriptionFirstPart": "Погрузитесь в использование нашего сервиса без затрат.\n Активируйте бесплатный период и оцените преимущества уже сегодня!",
+        "descriptionSecondPart": "",
+        "stats": {
+            "experience": "",
+            "partners": "",
+            "clients": "",
+            "employees": ""
+        },
+        "contacts": "",
+        "addresses": {
+            "label": "",
+            "address1": "",
+            "address2": ""
+        }
+    },
+    "hero":{
+        "title": "Перейти к заказу",
+        "descriptionFirstPart": "",
+        "descriptionSecondPart": "",
+        "stats": {
+            "experience": "",
+            "partners": "",
+            "clients": "",
+            "employees": ""
+        },
+        "contacts": "",
+        "addresses": {
+            "label": "",
+            "address1": "",
+            "address2": ""
+        }
+    },
+    "KasperskySolutions":{
+        "title": "Передовые решения\n для защиты малого и среднего бизнеса",
+        "descriptionFirstPart": "Индивидуальные решения\n для крупного предпринимательства",
+        "descriptionSecondPart": "Подберите решение для вашего бизнеса",
+        "stats": {
+            "experience": "",
+            "partners": "",
+            "clients": "",
+            "employees": ""
+        },
+        "contacts": "",
+        "addresses": {
+            "label": "",
+            "address1": "",
+            "address2": ""
+        }
+    }
+  }
+  

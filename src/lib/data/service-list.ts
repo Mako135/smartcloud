@@ -15,75 +15,183 @@ import {
 
 export const service_list = [
   {
-    label: "IaaS - инфраструктура как услуга",
-    desc: "Модель, при которой ключевые компоненты облачной инфраструктуры -  серверы, хранилища данных, операционные системы и сетевые ресурсы - предоставляются в виде единой  подключаемой услуги.",
+    label: {
+      ru: "IaaS - инфраструктура как услуга",
+      uz: "IaaS – xizmat sifatida infratuzilma"
+    },
+    desc: {
+      ru: "Модель, при которой ключевые компоненты облачной инфраструктуры - серверы, хранилища данных, операционные системы и сетевые ресурсы - предоставляются в виде единой подключаемой услуги.",
+      uz: "Model, unda bulutli infratuzilmaning asosiy komponentlari - serverlar, ma'lumotlar omborlari, operatsion tizimlar va tarmoq resurslari yagona ulangan xizmat sifatida taqdim etiladi."
+    },
     icon: Server,
-    link: "/cloud-services/iaas",
+    link: {
+      ru: "/cloud-services/iaas",
+      uz: "/uz/cloud-services/iaas"
+    },
   },
   {
-    label: "BaaS – резервное копирование как услуга",
-    desc: "Выручит при случайном удалении важных файлов, поломках оборудования, сбоях программного обеспечения, форс-мажорах, злонамеренных атаках, заражениями вирусами.",
+    label: {
+      ru: "BaaS – резервное копирование как услуга",
+      uz: "BaaS – xizmat sifatida zaxiralash"
+    },
+    desc: {
+      ru: "Выручит при случайном удалении важных файлов, поломках оборудования, сбоях программного обеспечения, форс-мажорах, злонамеренных атаках, заражениями вирусами.",
+      uz: "Muhim fayllarni tasodifan o‘chirish, uskuna nosozliklari, dasturiy ta'minotdagi xatoliklar, favqulodda holatlar, zararli hujumlar va viruslar tufayli zaruriy ma'lumotlar zaxiralash xizmati yordamida tiklanadi."
+    },
     icon: DatabaseBackup,
-    link: "/cloud-services/baas",
+    link: {
+      ru: "/cloud-services/baas",
+      uz: "/uz/cloud-services/baas"
+    },
   },
   {
-    label: "Storage – облачное хранилище в аренду",
-    desc: "Быстро масштабируемое, гибкое облачное хранилище. Хранение любых объемов структурированных и неструктурированных данных, надежная защита от сбоев дисков.",
+    label: {
+      ru: "Storage – облачное хранилище в аренду",
+      uz: "Storage – ijaraga bulutli saqlash"
+    },
+    desc: {
+      ru: "Быстро масштабируемое, гибкое облачное хранилище. Хранение любых объемов структурированных и неструктурированных данных, надежная защита от сбоев дисков.",
+      uz: "Tez kengaytiriladigan, moslashuvchan bulutli saqlash. Har qanday hajmdagi tuzilgan va tuzilmagan ma'lumotlarni saqlash, disk xatoliklaridan himoya."
+    },
     icon: HardDrive,
-    link: "/cloud-services/storage",
+    link: {
+      ru: "/cloud-services/storage",
+      uz: "/uz/cloud-services/storage"
+    },
   },
   {
-    label: "VDS – виртуальный выделенный сервер",
-    desc: "Возможности VDS полностью соответствуют функционалу реального физического сервера.",
+    label: {
+      ru: "VDS – виртуальный выделенный сервер",
+      uz: "VDS – virtual ajratilgan server"
+    },
+    desc: {
+      ru: "Возможности VDS полностью соответствуют функционалу реального физического сервера.",
+      uz: "VDS imkoniyatlari to'liq real fizik serverning funktsiyalariga mos keladi."
+    },
     icon: ServerCog,
-    link: "/cloud-services/vds",
+    link: {
+      ru: "/cloud-services/vds",
+      uz: "/uz/cloud-services/vds"
+    },
   },
   {
-    label: "Kaspersky",
-    desc: "«Лаборатория Касперского» предлагает современные решения для защиты Вашего бизнеса от киберугроз, позволяя сосредоточиться на его развитии.",
+    label: {
+      ru: "Kaspersky",
+      uz: "Kaspersky"
+    },
+    desc: {
+      ru: "«Лаборатория Касперского» предлагает современные решения для защиты Вашего бизнеса от киберугроз, позволяя сосредоточиться на его развитии.",
+      uz: "«Kaspersky Lab» sizning biznesingizni kiberxavf-xatarlardan himoya qilish uchun zamonaviy yechimlarni taqdim etadi va sizni uning rivojlanishiga e'tibor qaratsirishga imkon beradi."
+    },
     icon: ShieldCheck,
-    link: "/kaspersky",
+    link: {
+      ru: "/kaspersky",
+      uz: "/uz/kaspersky"
+    },
   },
   {
-    label: "Virtual Network Firewall – полный модуль защиты",
-    desc: "Безопасность и надежность цифровой инфраструктуры, защита данных от киберугроз и несанкционированного доступа.",
+    label: {
+      ru: "Virtual Network Firewall – полный модуль защиты",
+      uz: "Virtual Network Firewall – to'liq himoya moduli"
+    },
+    desc: {
+      ru: "Безопасность и надежность цифровой инфраструктуры, защита данных от киберугроз и несанкционированного доступа.",
+      uz: "Raqamli infratuzilmaning xavfsizligi va ishonchliligi, kiberxavflardan va ruxsatsiz kirishdan ma'lumotlarni himoya qilish."
+    },
     icon: GlobeLock,
-    link: "/cloud-services/vnf",
+    link: {
+      ru: "/cloud-services/vnf",
+      uz: "/uz/cloud-services/vnf"
+    },
   },
   {
-    label: "Защита от DDoS атак",
-    desc: "Осуществляется в виде защищенного IP-транзита для комплексной безопасности сети (серверов) клиента.",
+    label: {
+      ru: "Защита от DDoS атак",
+      uz: "DDoS hujumlardan himoya"
+    },
+    desc: {
+      ru: "Осуществляется в виде защищенного IP-транзита для комплексной безопасности сети (серверов) клиента.",
+      uz: "Mijozning tarmog'ining (serverlar) to'liq xavfsizligi uchun himoyalangan IP-transit sifatida amalga oshiriladi."
+    },
     icon: ShieldBan,
-    link: "/security/ddos",
+    link: {
+      ru: "/security/ddos",
+      uz: "/uz/security/ddos"
+    },
   },
   {
-    label: "Security Оperations Сenter (SOC)",
-    desc: "Центр оперативного реагирования решает широкий спектр задач по оптимизации системы управления информационной безопасностью.",
+    label: {
+      ru: "Security Оperations Сenter (SOC)",
+      uz: "Xavfsizlik operatsiyalari markazi (SOC)"
+    },
+    desc: {
+      ru: "Центр оперативного реагирования решает широкий спектр задач по оптимизации системы управления информационной безопасностью.",
+      uz: "Operatsion javob berish markazi axborot xavfsizligini boshqarish tizimini optimallashtirish bo'yicha keng doiradagi vazifalarni hal qiladi."
+    },
     icon: FileKey,
-    link: "/security/soc",
+    link: {
+      ru: "/security/soc",
+      uz: "/uz/security/soc"
+    },
   },
   {
-    label: "Защита веб приложений (WAF)",
-    desc: "Особый тип брандмауэра, который узконаправленно работает с веб-приложениями: защиту развертывают между конечным пользователем и web-приложением для анализа двунаправленного веб-трафика (HTTP).",
+    label: {
+      ru: "Защита веб приложений (WAF)",
+      uz: "Veb ilovalarini himoya qilish (WAF)"
+    },
+    desc: {
+      ru: "Особый тип брандмауэра, который узконаправленно работает с веб-приложениями: защиту развертывают между конечным пользователем и web-приложением для анализа двунаправленного веб-трафика (HTTP).",
+      uz: "Veb-ilovalar bilan maxsus ishlaydigan brendmauerning o'ziga xos turi: himoya foydalanuvchi va veb-ilova o'rtasida joylashtiriladi va ikki tomonlama veb-trafigini (HTTP) tahlil qilish uchun foydalaniladi."
+    },
     icon: Siren,
-    link: "/security/waf",
+    link: {
+      ru: "/security/waf",
+      uz: "/uz/security/waf"
+    },
   },
   {
-    label: "Pentest (тестирование на проникновение)",
-    desc: "Проведение внешнего/внутреннего сканирования специализированным ПО на наличие уязвимостей в сети клиента, а также тестирование на проникновение.",
+    label: {
+      ru: "Pentest (тестирование на проникновение)",
+      uz: "Pentest (kirish sinovlari)"
+    },
+    desc: {
+      ru: "Проведение внешнего/внутреннего сканирования специализированным ПО на наличие уязвимостей в сети клиента, а также тестирование на проникновение.",
+      uz: "Mijoz tarmog‘ida zaifliklarni aniqlash uchun maxsus dasturiy ta’minot yordamida tashqi/ichki skanerlashni o‘tkazish hamda kirish sinovlarini amalga oshirish."
+    },
     icon: DoorOpen,
-    link: "/security/pentest",
+    link: {
+      ru: "/security/pentest",
+      uz: "/uz/security/pentest"
+    },
   },
   {
-    label: "Техническая поддержка систем информационной безопасности",
-    desc: "В рамках сервиса проводится мониторинг текущего состояния защищенности компании, ведение аналитики в режиме реального времени, поддержка комплексных защитных решений. Информационная безопасность поддерживается по строгим международным стандартам и нормативам.",
+    label: {
+      ru: "Техническая поддержка систем информационной безопасности",
+      uz: "Axborot xavfsizligi tizimlarini texnik qo'llab-quvvatlash"
+    },
+    desc: {
+      ru: "В рамках сервиса проводится мониторинг текущего состояния защищенности компании, ведение аналитики в режиме реального времени, поддержка комплексных защитных решений. Информационная безопасность поддерживается по строгим международным стандартам и нормативам.",
+      uz: "Xizmat doirasida kompaniyaning himoya holatini monitoring qilish, real vaqt rejimida tahlil yuritish va kompleks himoya yechimlarini qo‘llab-quvvatlash amalga oshiriladi. Axborot xavfsizligi qat'iy xalqaro standartlar va normativlarga muvofiq qo'llab-quvvatlanadi."
+    },
     icon: BotMessageSquare,
-    link: "/security/support",
+    link: {
+      ru: "/security/support",
+      uz: "/uz/security/support"
+    },
   },
   {
-    label: "Аренда программного обеспечения",
-    desc: "Аренда программного обеспечения предоставляется по методу лицензирования Microsoft CSP (Cloud Solution Provider). Microsoft Office, Windows, Exchange, SQL Server, Power BI можно арендовать на гибких условиях для любых нужд. Масштабируйте ресурсы по мере роста вашего бизнеса",
+    label: {
+      ru: "Аренда программного обеспечения",
+      uz: "Dasturiy ta'minotni ijaraga olish"
+    },
+    desc: {
+      ru: "Аренда программного обеспечения предоставляется по методу лицензирования Microsoft CSP (Cloud Solution Provider). Microsoft Office, Windows, Exchange, SQL Server, Power BI можно арендовать на гибких условиях для любых нужд. Масштабируйте ресурсы по мере роста вашего бизнеса.",
+      uz: "Dasturiy ta’minotni ijaraga olish Microsoft CSP (Cloud Solution Provider) litsenziyalash usuli orqali taqdim etiladi. Microsoft Office, Windows, Exchange, SQL Server, Power BI dasturlarini har qanday ehtiyojlar uchun moslashuvchan shartlarda ijaraga olish mumkin. Biznesingiz o'sishi bilan resurslaringizni kengaytiring."
+    },
     icon: AppWindow,
-    link: "/cloud-services/asp",
+    link: {
+      ru: "/cloud-services/asp",
+      uz: "/uz/cloud-services/asp"
+    },
   },
 ] as const;

@@ -1,5 +1,23 @@
 import { Button } from "@/components/ui";
 import { Cpu, Gauge, HardDrive, LocateFixed, MemoryStick } from "lucide-react";
+import { useState, useEffect } from "react";
+
+const translations: Record<"ru" | "uz", { 
+  storage: string;
+  ip: string;
+  detaileButton: string;
+}> = {
+  ru: {
+    storage: "Дисковое хранилище",
+    ip: "Публичный IP",
+    detaileButton: "Подробнее"
+  },
+  uz: {
+    storage: "Disk xotirasi",
+    ip: "Ommaviy IP",
+    detaileButton: "Batafsil"
+  }
+};
 
 interface Props {
   title: string;
@@ -21,6 +39,13 @@ export default function VdsCard({
   internet,
   period,
 }: Props) {
+  const [currentLocale, setCurrentLocale] = useState<"ru" | "uz">("ru");
+  
+  useEffect(() => {
+    setCurrentLocale(window.location.pathname.startsWith("/uz") ? "uz" : "ru");
+  }, []);
+  
+  const t = translations[currentLocale];
   return (
     <div className="shadow-lg rounded-lg border border-secondary/30 px-6 py-4 hover:border-secondary duration-150">
       <div>
@@ -46,11 +71,11 @@ export default function VdsCard({
         </div>
         <div className="flex gap-2">
           <HardDrive />
-          <p className=" text-base">Дисковое хранилище: {storage}</p>
+          <p className=" text-base">{t.storage}: {storage}</p>
         </div>
         <div className="flex gap-2">
           <LocateFixed />
-          <p className=" text-base">Публичный IP: {ip}</p>
+          <p className=" text-base">{t.ip}: {ip}</p>
         </div>
         <div className="flex gap-2">
           <Gauge />
@@ -66,7 +91,7 @@ export default function VdsCard({
           href="https://portal.smartcloud.uz/index.php?/products/"
           target="_blank"
         >
-          Подробнее
+          {t.detaileButton}
         </a>
       </Button>
     </div>

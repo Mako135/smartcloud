@@ -4,168 +4,188 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui";
+import { useState, useEffect } from "react";
+
+const translations = {
+  ru: {
+    title: "Для кого подходит?",
+    question1: "Почему WAF важeн для бизнеса?",
+    answer1_header1: "Защита репутации: ",
+    answer1_header2: "Сохранение данных: ",
+    answer1_header3: "Снижение финансовых рисков: ",
+    answer1_header4: "Обеспечение непрерывности бизнеса: ",
+    answer1_header5: "Соответствие требованиям регуляторов: ",
+    answer1_part1: "Защита от кибератак укрепляет доверие клиентов и партнеров.",
+    answer1_part2: "Предотвращение утечки конфиденциальной информации.",
+    answer1_part3: "Минимизация убытков от инцидентов информационной безопасности.",
+    answer1_part4: "Защита от атак, которые могут привести к простоям и сбоям в работе.",
+    answer1_part5: "Соблюдение законодательства и отраслевых стандартов в области информационной безопасности.",
+
+    question2: "Какие атаки отражает WAF?",
+    answer2: "10 самых распространенных атак, которые блокирует WAF:",
+    answer2_header1: "1. Инъекции SQL: ",
+    answer2_header2: "2. Межсайтовый скриптинг (XSS): ",
+    answer2_header3: "3. Межсайтовая подделка запросов (CSRF): ",
+    answer2_header4: "4. Незащищенные прямые объекты (IDOR): ",
+    answer2_header5: "5. Утечки чувствительной информации: ",
+    answer2_header6: "6. Недостаточная защита компонентов безопасности: ",
+    answer2_header7: "7. Недостаточная защита от перенаправления: ",
+    answer2_header8: "8. Некорректная обработка ошибок: ",
+    answer2_header9: "9. Незащищенные сессии: ",
+    answer2_header10: "10. Компрометация компонентов с открытым исходным кодом: ",
+    answer2_part1: "Злоумышленник вводит специальный код в поля веб-формы для несанкционированного доступа к базе данных. WAF блокирует такие попытки, защищая конфиденциальную информацию вашей компании.",
+    answer2_part2: "Вредоносный код внедряется на ваш сайт, чтобы украсть пользовательские данные или выполнить другие вредоносные действия. WAF предотвращает выполнение такого кода.",
+    answer2_part3: "Злоумышленник заставляет пользователя выполнить нежелательные действия на вашем сайте от его имени. WAF защищает от таких атак, требуя дополнительной проверки пользователя.",
+    answer2_part4: "Злоумышленник получает доступ к данным, к которым не должен иметь доступа, используя уязвимости в механизмах авторизации и аутентификации. WAF ограничивает доступ к данным в соответствии с правами пользователей.",
+    answer2_part5: "Конфиденциальные данные, такие как номера кредитных карт или пароли, могут быть случайно раскрыты в ответах сервера. WAF предотвращает утечку такой информации.",
+    answer2_part6: "Уязвимости в сторонних компонентах, используемых в вашем веб-приложении, могут быть использованы для атак. WAF помогает обнаружить и устранить такие уязвимости.",
+    answer2_part7: "Злоумышленник может перенаправить пользователя на вредоносный сайт. WAF контролирует все перенаправления и блокирует подозрительные.",
+    answer2_part8: "Ошибки в обработке исключительных ситуаций могут раскрыть конфиденциальную информацию или позволить злоумышленнику выполнить произвольный код. WAF помогает предотвратить такие ошибки.",
+    answer2_part9: "Если сессии не защищены должным образом, злоумышленник может украсть сессионные куки и получить доступ к учетной записи пользователя. WAF защищает сессии, используя различные механизмы защиты.",
+    answer2_part10: "Уязвимости в компонентах с открытым исходным кодом, используемых в вашем веб-приложении, могут быть использованы для атак. WAF помогает обнаружить и устранить такие уязвимости.",
+    
+    question3: "По какому принципу работает защита веб-приложений WAF?",
+    answer3_part1: "WAF (Web Application Firewall) — это специализированный инструмент, который защищает веб-приложения от различных видов атак. Его работа основана на анализе входящего и исходящего трафика.",
+    answer3_part2: "Комбинированный подход с использованием положительной и отрицательной моделей безопасности позволяет WAF работать более эффективно:",
+    answer3_header3: "Позитивная модель: ",
+    answer3_part3: "Определяет, какие действия разрешены на веб-сайте. Для этого создаются детальные правила, описывающие допустимые запросы, ответы и поведение пользователей. Такая модель обеспечивает высокую точность, но требует значительных затрат времени на обучение и настройку.",
+    answer3_header4: "Отрицательная модель: ",
+    answer3_part4: "Определяет, какие действия запрещены. В этой модели создается список известных атак и уязвимостей, которые блокируются по умолчанию. Такая модель позволяет быстро развернуть защиту и не требует длительной настройки.",
+    answer3_part5: "Преимущества комбинированного подхода:",
+    answer3_part5_header1: "Быстрое развертывание: ",
+    answer3_part5_sub1: "Отрицательная модель позволяет сразу начать защищать веб-приложение, пока настраивается положительная.",
+    answer3_part5_header2: "Высокая эффективность: ",
+    answer3_part5_sub2: "Комбинация двух моделей обеспечивает более надежную защиту от широкого спектра угроз.",
+    answer3_part5_header3: "Гибкость: ",
+    answer3_part5_sub3: "Возможность настройки правил под конкретные требования веб-приложения.",
+    
+  },
+  uz: {
+    title: "Kimlar uchun mos keladi?",
+    question1: "Nega WAF biznes uchun muhim?",
+    answer1_header1: "Obro‘ni himoya qilish: ",
+    answer1_header2: "Ma’lumotlarni saqlash: ",
+    answer1_header3: "Moliyaviy tavakkalchilikni kamaytirish: ",
+    answer1_header4: "Biznesning uzluksizligini ta’minlash: ",
+    answer1_header5: "Regulyator talablarga muvofiqlik: ",
+    answer1_part1: "Kiberhujumlarning oldini olish mijozlar va hamkorlarning ishonchini mustahkamlaydi.",
+    answer1_part2: "Maxfiy ma’lumotlarning sizib chiqishining oldini olish.",
+    answer1_part3: "Axborot xavfsizligi hodisalari tufayli yo‘qotishlarni minimallashtirish.",
+    answer1_part4: "Ish faoliyatidagi uzilish va nosozliklarni keltirib chiqaradigan hujumlardan himoya.",
+    answer1_part5: "Ish faoliyatidagi uzilish va nosozliklarni keltirib chiqaradigan hujumlardan himoya.",
+
+    question2: "WAF qanday hujumlarni qaytaradi?",
+    answer2: "WAF bloklaydigan eng keng tarqalgan 10 ta hujum:",
+    answer2_header1: "1. SQL in’ektsiyasi: ",
+    answer2_header2: "2. Saytlararo skriptlash (XSS): ",
+    answer2_header3: "3. Saytlararo so‘rovlarni soxtalashtirish (CSRF): ",
+    answer2_header4: "4. Himoyasiz to‘g‘ridan-to‘g‘ri ob’ektlarga kirish (IDOR): ",
+    answer2_header5: "5. Maxfiy ma’lumotlarning sizib chiqishi: ",
+    answer2_header6: "6. Xavfsizlik komponentlarining yetarli darajada himoya qilinmagani: ",
+    answer2_header7: "7. Xavfsiz bo‘lmagan yo‘naltirishlar: ",
+    answer2_header8: "8. Xatolarni noto‘g‘ri qayta ishlash: ",
+    answer2_header9: "9. Himoyasiz sessiyalar: ",
+    answer2_header10: "10. Ochiq kodli komponentlarning buzilishi: ",
+    answer2_part1: "Xavfli shaxs veb-shakl maydonlariga maxsus kod kiritib, ma’lumotlar bazasiga ruxsatsiz kirishga harakat qiladi. WAF bunday urinishlarni bloklab, kompaniyangizning maxfiy ma’lumotlarini himoya qiladi.",
+    answer2_part2: "Zararli kod saytingizga joylashtiriladi, bu orqali foydalanuvchi ma’lumotlari o‘g‘irlanishi yoki boshqa zararli harakatlar amalga oshirilishi mumkin. WAF bunday kodlarning bajarilishini oldini oladi.",
+    answer2_part3: "Xavfli shaxs foydalanuvchini uning nomidan saytingizda nomaqbul harakatlarni amalga oshirishga majburlaydi. WAF bunday hujumlardan himoya qiladi, foydalanuvchini qo‘shimcha tekshirish talab qiladi.",
+    answer2_part4: "Xavfli shaxs autentifikatsiya va avtorizatsiya mexanizmlaridagi zaifliklardan foydalanib, ruxsati bo‘lmagan ma’lumotlarga kirishga harakat qiladi. WAF foydalanuvchilar huquqlariga muvofiq kirishni cheklaydi.",
+    answer2_part5: "Kredit karta raqamlari yoki parollar kabi maxfiy ma’lumotlar server javoblarida tasodifan oshkor bo‘lishi mumkin. WAF bunday ma’lumotlarning sizib chiqishini oldini oladi.",
+    answer2_part6: "Sizning veb-ilovangizda ishlatilayotgan uchinchi tomon komponentlaridagi zaifliklar hujumlar uchun foydalanilishi mumkin. WAF bunday zaifliklarni aniqlash va bartaraf etishga yordam beradi.",
+    answer2_part7: "Xavfli shaxs foydalanuvchini zararli saytga yo‘naltirishi mumkin. WAF barcha yo‘naltirishlarni nazorat qiladi va shubhali holatlarni bloklaydi.",
+    answer2_part8: "Istisno holatlarni noto‘g‘ri qayta ishlash maxfiy ma’lumotlarning oshkor bo‘lishiga yoki xavfli shaxs tomonidan o‘z kodini bajarishiga sabab bo‘lishi mumkin. WAF bunday xatoliklarning oldini olishga yordam beradi.",
+    answer2_part9: "Agar sessiyalar yetarlicha himoyalanmagan bo‘lsa, xavfli shaxs sessiya cookie-fayllarini o‘g‘irlashi va foydalanuvchi hisobiga kirishi mumkin. WAF sessiyalarni turli himoya mexanizmlari yordamida himoya qiladi.",
+    answer2_part10: "Veb-ilovangizda ishlatilayotgan ochiq kodli komponentlardagi zaifliklar hujumlar uchun foydalanilishi mumkin. WAF bunday zaifliklarni aniqlash va bartaraf etishga yordam beradi.",
+
+    question3: "Veb-ilovalarni himoya qilish qanday ishlaydi?",
+    answer3_part1: "WAF (Web Application Firewall) - bu veb-ilovalarni turli xil hujumlardan himoya qiluvchi maxsus vosita. U kelayotgan va chiqayotgan tarmoqlarni tahlil qiladi.",
+    answer3_part2: "WAF xavfsizlikning ijobiy va salbiy modellaridan foydalanish orqali samarali ishlaydi:",
+    answer3_header3: "Ijobiy model: ",
+    answer3_part3: "Veb-saytda ruxsat etilgan harakatlarni belgilaydi. Bu model aniqroq himoya ta’minlaydi, ammo sozlash va o‘rganish uchun ko‘proq vaqt talab etadi.",
+    answer3_header4: "Salbiy model: ",
+    answer3_part4: "Ta’qiqlangan harakatlarni aniqlaydi. Ushbu model hujumlarni oldindan bloklashga yordam beradi.",
+    answer3_part5: "Kombinatsiyalangan yondashuvning afzalliklari:",
+    answer3_part5_header1: "Tezkor joriy etish: ",
+    answer3_part5_sub1: "Salbiy model veb-ilovani darhol himoya qilishni boshlash imkonini beradi, shu bilan birga ijobiy model sozlanadi.",
+    answer3_part5_header2: "Yuqori samaradorlik: ",
+    answer3_part5_sub2: "Ikki modelning kombinatsiyasi keng ko‘lamli tahdidlarga qarshi ishonchli himoyani ta’minlaydi.",
+    answer3_part5_header3: "Moslashuvchanlik: ",
+    answer3_part5_sub3: "Veb-ilovaning aniq talablariga mos ravishda qoidalarni sozlash imkoniyati."
+  }
+};
+
 
 export default function WafAccodtion() {
+  const [currentLocale, setCurrentLocale] = useState<"ru" | "uz">("ru");
+      
+  useEffect(() => {
+      setCurrentLocale(window.location.pathname.startsWith("/uz") ? "uz" : "ru");
+  }, []);
+      
+  const t = translations[currentLocale];
   return (
     <div className="my-60">
-      <h2 className="text-center text-4xl font-medium">Для кого подходит?</h2>
+      <h2 className="text-center text-4xl font-medium">{t.title}</h2>
       <Accordion type="single" collapsible className="w-full mt-20">
         <AccordionItem value="first">
           <AccordionTrigger className="text-xl">
-            Почему WAF важeн для бизнеса?
+            {t.question1}
           </AccordionTrigger>
           <AccordionContent className="text-[18px]">
             <ul className="list-disc grid gap-3">
-              <li>
-                <strong>Защита репутации:</strong> Защита от кибератак укрепляет
-                доверие клиентов и партнеров.
-              </li>
-              <li>
-                <strong>Сохранение данных:</strong> Предотвращение утечки
-                конфиденциальной информации.
-              </li>
-              <li>
-                <strong>Снижение финансовых рисков:</strong> Минимизация убытков
-                от инцидентов информационной безопасности.
-              </li>
-              <li>
-                <strong>Обеспечение непрерывности бизнеса:</strong> Защита от
-                атак, которые могут привести к простоям и сбоям в работе.
-              </li>
-              <li>
-                <strong>Соответствие требованиям регуляторов:</strong>{" "}
-                Соблюдение законодательства и отраслевых стандартов в области
-                информационной безопасности.
-              </li>
+              <li><strong>{t.answer1_header1}</strong>{t.answer1_part1}</li>
+              <li><strong>{t.answer1_header2}</strong>{t.answer1_part2}</li>
+              <li><strong>{t.answer1_header3}</strong>{t.answer1_part3}</li>
+              <li><strong>{t.answer1_header4}</strong>{t.answer1_part4}</li>
+              <li><strong>{t.answer1_header5}</strong>{t.answer1_part5}</li>
             </ul>
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="second">
           <AccordionTrigger className="text-xl">
-            Какие атаки отражает WAF?
+            {t.question2}
           </AccordionTrigger>
           <AccordionContent className="grid gap-5 text-[18px]">
             <h1 className="text-xl">
-              10 самых распространенных атак, которые блокирует WAF:
+              {t.answer2}
             </h1>
             <ol className="grid gap-3 list-disc">
-              <li>
-                <strong>1. Инъекции SQL:</strong> Злоумышленник вводит
-                специальный код в поля веб-формы для несанкционированного
-                доступа к базе данных. WAF блокирует такие попытки, защищая
-                конфиденциальную информацию вашей компании.
-              </li>
-              <li>
-                <strong>2. Межсайтовый скриптинг (XSS):</strong> Вредоносный код
-                внедряется на ваш сайт, чтобы украсть пользовательские данные
-                или выполнить другие вредоносные действия. WAF предотвращает
-                выполнение такого кода.
-              </li>
-              <li>
-                <strong>3. Межсайтовая подделка запросов (CSRF):</strong>{" "}
-                Злоумышленник заставляет пользователя выполнить нежелательные
-                действия на вашем сайте от его имени. WAF защищает от таких
-                атак, требуя дополнительной проверки пользователя.
-              </li>
-              <li>
-                <strong>4. Незащищенные прямые объекты (IDOR):</strong>{" "}
-                Злоумышленник получает доступ к данным, к которым не должен
-                иметь доступа, используя уязвимости в механизмах авторизации и
-                аутентификации. WAF ограничивает доступ к данным в соответствии
-                с правами пользователей.
-              </li>
-              <li>
-                <strong>5. Утечки чувствительной информации:</strong>{" "}
-                Конфиденциальные данные, такие как номера кредитных карт или
-                пароли, могут быть случайно раскрыты в ответах сервера. WAF
-                предотвращает утечку такой информации.
-              </li>
-              <li>
-                <strong>
-                  6. Недостаточная защита компонентов безопасности:
-                </strong>{" "}
-                Уязвимости в сторонних компонентах, используемых в вашем
-                веб-приложении, могут быть использованы для атак. WAF помогает
-                обнаружить и устранить такие уязвимости.
-              </li>
-              <li>
-                <strong>7. Недостаточная защита от перенаправления:</strong>{" "}
-                Злоумышленник может перенаправить пользователя на вредоносный
-                сайт. WAF контролирует все перенаправления и блокирует
-                подозрительные.
-              </li>
-              <li>
-                <strong>8. Некорректная обработка ошибок:</strong> Ошибки в
-                обработке исключительных ситуаций могут раскрыть
-                конфиденциальную информацию или позволить злоумышленнику
-                выполнить произвольный код. WAF помогает предотвратить такие
-                ошибки.
-              </li>
-              <li>
-                <strong>9. Незащищенные сессии:</strong> Если сессии не защищены
-                должным образом, злоумышленник может украсть сессионные куки и
-                получить доступ к учетной записи пользователя. WAF защищает
-                сессии, используя различные механизмы защиты.
-              </li>
-              <li>
-                <strong>
-                  10. Компрометация компонентов с открытым исходным кодом:
-                </strong>{" "}
-                Уязвимости в компонентах с открытым исходным кодом, используемых
-                в вашем веб-приложении, могут быть использованы для атак. WAF
-                помогает обнаружить и устранить такие уязвимости.
-              </li>
+              <li><strong>{t.answer2_header1}</strong>{t.answer2_part1}</li>
+              <li><strong>{t.answer2_header2}</strong>{t.answer2_part2}</li>
+              <li><strong>{t.answer2_header3}</strong>{t.answer2_part3}</li>
+              <li><strong>{t.answer2_header4}</strong>{t.answer2_part4}</li>
+              <li><strong>{t.answer2_header5}</strong>{t.answer2_part5}</li>
+              <li><strong>{t.answer2_header6}</strong>{t.answer2_part6}</li>
+              <li><strong>{t.answer2_header7}</strong>{t.answer2_part7}</li>
+              <li><strong>{t.answer2_header8}</strong>{t.answer2_part8}</li>
+              <li><strong>{t.answer2_header9}</strong>{t.answer2_part9}</li>
+              <li><strong>{t.answer2_header10}</strong>{t.answer2_part10}</li>
             </ol>
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="third">
           <AccordionTrigger className="text-xl">
-            По какому принципу работает защита веб-приложений WAF?
+            {t.question3}
           </AccordionTrigger>
           <AccordionContent className="grid gap-5 text-[18px]">
             <p>
-              WAF (Web Application Firewall) — это специализированный
-              инструмент, который защищает веб-приложения от различных видов
-              атак. Его работа основана на анализе входящего и исходящего
-              трафика.{" "}
+              {t.answer3_part1}
             </p>
             <strong>
-              Комбинированный подход с использованием положительной и
-              отрицательной моделей безопасности позволяет WAF работать более
-              эффективно:
+              {t.answer3_part2}
             </strong>
             <div>
-              <strong className="text-secondary">Позитивная модель:</strong>{" "}
-              Определяет, какие действия разрешены на веб-сайте. Для этого
-              создаются детальные правила, описывающие допустимые запросы,
-              ответы и поведение пользователей. Такая модель обеспечивает
-              высокую точность, но требует значительных затрат времени на
-              обучение и настройку.
+              <strong className="text-secondary">{t.answer3_header3}</strong>{" "}{t.answer3_part3}
             </div>{" "}
             <div>
-              <strong className="text-secondary">Отрицательная модель:</strong>{" "}
-              Определяет, какие действия запрещены. В этой модели создается
-              список известных атак и уязвимостей, которые блокируются по
-              умолчанию. Такая модель позволяет быстро развернуть защиту и не
-              требует длительной настройки.
+            <strong className="text-secondary">{t.answer3_header4}</strong>{" "}{t.answer3_part4}
             </div>
             <div>
-              <strong>Преимущества комбинированного подхода:</strong>{" "}
+              <strong>{t.answer3_part5}</strong>{" "}
               <ul className="pl-5 list-disc">
-                <li>
-                  <strong>Быстрое развертывание:</strong> Отрицательная модель
-                  позволяет сразу начать защищать веб-приложение, пока
-                  настраивается положительная.
-                </li>
-                <li>
-                  <strong>Высокая эффективность:</strong> Комбинация двух
-                  моделей обеспечивает более надежную защиту от широкого спектра
-                  угроз.
-                </li>
-                <li>
-                  <strong>Гибкость:</strong> Возможность настройки правил под
-                  конкретные требования веб-приложения.
-                </li>
+                <li><strong>{t.answer3_part5_header1}</strong> {t.answer3_part5_sub1}</li>
+                <li><strong>{t.answer3_part5_header2}</strong> {t.answer3_part5_sub2}</li>
+                <li><strong>{t.answer3_part5_header3}</strong> {t.answer3_part5_sub3}</li>
               </ul>
             </div>
           </AccordionContent>

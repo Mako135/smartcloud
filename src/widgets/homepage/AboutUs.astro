@@ -1,23 +1,20 @@
+---
+import { getTranslations } from "@/utils/i18n";
+
+const locale = Astro.url.pathname.startsWith('/uz') ? 'uz' : 'ru';
+const t = await getTranslations(locale, "aboutUs");
+---
 <div
   class="mb-40 p-10 bg-slate-100 dark:bg-slate-900/50 rounded-xl"
   id="aboutUsContainer"
 >
   <section class="grid grid-cols-1 lg:grid-cols-2 gap-20 justify-between">
     <div class="flex flex-col gap-5">
-      <h2 class="text-4xl font-medium" id="aboutUsTitle">О компании</h2>
-      <p id="aboutUsDesc">
-        Команда SmartCloud – часть международного провайдера ИКТ-инфраструктуры
-        —
-        <br />
-        <a href="https://kazteleport.kz/"> АО "Казтелепорт" </a>, предоставляет
-        на территории Узбекистана услуги облачных вычислений, хранения данных,
-        резервирования и кибербезопасности.
-        <br />
-        <br />
-        Наша отказоустойчивая физическая и виртуальная инфраструктура, опытная команда
-        инженеров и широкий выбор технологий гарантируют клиентам стабильность и
-        доступность критически важных процессов, а также гибкость в масштабировании
-        бизнеса в любой момент.
+      <h2 class="text-4xl font-medium" id="aboutUsTitle">{t.title}</h2>
+      <p id="aboutUsDesc" class="whitespace-pre-line">
+        {t.descriptionFirstPart}
+        <a href="https://kazteleport.kz/">"Kazteleport"</a>
+        {t.descriptionSecondPart}
       </p>
     </div>
     <div
@@ -27,25 +24,29 @@
         <h2 class="text-6xl font-medium">
           25<span class="text-secondary">+</span>
         </h2>
-        <p>лет опыта в сфере ИКТ</p>
+        <p>{t.stats.experience}</p>
       </div>
       <div class="p-5 grid gap-4 rounded-md about-us">
         <h2 class="text-6xl font-medium">
           100<span class="text-secondary">+</span>
         </h2>
-        <p>проверенных партнеров</p>
+        <p>{t.stats.partners}</p>
       </div>
       <div class="p-5 grid gap-4 rounded-md about-us">
         <h2 class="text-6xl font-medium">
           200<span class="text-secondary">+</span>
         </h2>
-        <p>постоянных заказчиков <br /> доверяют нам</p>
+        <p class="whitespace-pre-line">
+          {t.stats.clients}
+        </p>
       </div>
       <div class="p-5 grid gap-4 rounded-md about-us">
         <h2 class="text-6xl font-medium">
           160<span class="text-secondary">+</span>
         </h2>
-        <p>сертифицированных <br /> сотрудников</p>
+        <p class="whitespace-pre-line">
+          {t.stats.employees}
+        </p>
       </div>
     </div>
   </section>

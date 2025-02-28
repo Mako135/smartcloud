@@ -1,16 +1,20 @@
 ---
 import { service_list } from "@/lib/data/service-list";
+import { getTranslations } from "@/utils/i18n";
+
+const locale = Astro.url.pathname.startsWith('/uz') ? 'uz' : 'ru';
+const t = await getTranslations(locale, "services");
 ---
 
 <section id="services" class="my-60">
   <h2 class="text-center text-4xl font-medium mb-20" id="servicesTitle">
-    Наши услуги
+    {t.title}
   </h2>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
     {
       service_list.map((service) => (
         <a
-          href={service.link}
+          href={service.link[locale]}
           class="service-card group p-10 border-[1px] rounded-md border-gray-800 hover:border-secondary  hover:bg-gradient-to-tl from-slate-100  dark:from-[rgba(32,39,57,255)] relative overflow-hidden"
         >
           <service.icon className="mb-4" color="#0c94d4" size={36} />
@@ -18,9 +22,9 @@ import { service_list } from "@/lib/data/service-list";
             className="absolute -z-120 -right-2 -bottom-10 h-52 w-52 opacity-10 group-hover:opacity-50 rotate-12"
             color="#0c94d4"
           />
-          <span class="text-xl font-bold">{service.label}</span>
+          <span class="text-xl font-bold">{service.label[locale]}</span>
           <p class="mt-2 text-gray-400 group-hover:text-black dark:group-hover:text-white">
-            {service.desc}
+            {service.desc[locale]}
           </p>
         </a>
       ))

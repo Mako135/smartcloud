@@ -3,6 +3,9 @@ import { Send, Instagram } from "lucide-react";
 import "@/styles/globals.css";
 import HeaderNavigationMenu from "@/components/shared/HeaderNavigationMenu";
 import { ToggleTheme } from "@/components/shared/ToggleTheme";
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+const currentPath = Astro.url.pathname;
+const homeLink = currentPath.startsWith("/uz") ? "/uz" : "/";
 ---
 
 <nav
@@ -12,7 +15,7 @@ import { ToggleTheme } from "@/components/shared/ToggleTheme";
     class="flex justify-between h-20 max-w-7xl mx-auto py-4 px-4 2xl:px-0 items-center"
   >
     <a
-      href="/"
+      href={homeLink}
       class="tracking-wider h-40 text-2xl w-36 bg-no-repeat bg-left bg-contain"
       id="logo"
     >
@@ -20,6 +23,9 @@ import { ToggleTheme } from "@/components/shared/ToggleTheme";
     <div class="flex items-center gap-2">
       <HeaderNavigationMenu client:idle />
       <ul class="flex gap-2">
+        <li>
+          <LanguageSwitcher />
+        </li>
         <li>
           <a
             href="https://t.me/muradibragimov"

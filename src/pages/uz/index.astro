@@ -1,0 +1,36 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Services from "@/widgets/homepage/Services.astro";
+import AboutUs from "@/widgets/homepage/AboutUs.astro";
+import Hero from "@/widgets/Hero.astro";
+
+import main from "@/assets/main.png";
+
+const seoData = {
+  title: "SmartCloud – Облачные технологии IaaS, VDS, BaaS, SaaS в Узбекистане",
+  description:
+    "Oʻzbekistonda bulut xizmatlari: IaaS, VDS, BaaS, S3-xotira, Kaspersky antivirus, DDoS himoyasi, SOC. SmartCloud’dan ishonchli biznes yechimlari.",
+  keywords:
+    "bulut, bulut xizmatlari, IaaS, VDS, hosting, VPS, SmartCloud, bulut xotirasi, SaaS, xavfsizlik, SOC, DDoS, firewall",
+  url: "https://smartcloud.uz/",
+  image: "https://smartcloud.uz/assets/smartcloud.svg",
+  author: "SmartCloud",
+};
+---
+
+<Layout {...seoData}>
+  <Hero imgSrc={main}>
+    <h1 class="text-[5vw] font-bold leading-none lg:text-[2vw]">
+      Smart<span class="text-secondary">Cloud</span>
+      -ga xush kelibsiz – sizning bulut xizmatlari bozor joyingiz!
+    </h1>
+    <p class="text-md mt-2 lg:mt-10 lg:text-xl">
+      Tasdiqlangan bulut texnologiyalaridan foydalangan holda IT-yechimlar yarating!
+      <br />
+      Tez boshlash, kam xarajatlar, yuqori ishonchlilik!
+    </p>
+  </Hero>
+  <AboutUs />
+
+  <Services />
+</Layout>

@@ -1,16 +1,55 @@
 import { iaasPrice } from "@/lib/data/price";
 import { useIaasStore } from "@/store/iaasStore";
-import { useMemo } from "react";
+import { useMemo, useState, useEffect } from "react";
+
+const translations: Record<"ru" | "uz", { 
+  totalLabel: string;
+  vcpu: string;
+  ram: string;
+  storage: string;
+  backup: string;
+  ip: string;
+  pricePerMonth: string;
+  tryButton: string;
+}> = {
+  ru: {
+    totalLabel: "Итоговый расчет",
+    vcpu: "vCPU",
+    ram: "RAM",
+    storage: "Дисковое хранилище",
+    backup: "Резервное копирование",
+    ip: "Публичный IP адрес",
+    pricePerMonth: "Цена за месяц",
+    tryButton: "Попробовать"
+  },
+  uz: {
+    totalLabel: "Yakuniy hisob-kitob",
+    vcpu: "vCPU",
+    ram: "RAM",
+    storage: "Disk xotirasi",
+    backup: "Zaxira nusxasi",
+    ip: "Ommaviy IP manzil",
+    pricePerMonth: "Oylik narx",
+    tryButton: "Sinab ko'rish"
+  }
+};
 
 const IaasCart = () => {
   const { cpu, ram, storage, backup, ip, type } = useIaasStore();
+  const [currentLocale, setCurrentLocale] = useState<"ru" | "uz">("ru");
+
+  useEffect(() => {
+    setCurrentLocale(window.location.pathname.startsWith("/uz") ? "uz" : "ru");
+  }, []);
+
+  const t = translations[currentLocale];
 
   const items = useMemo(
     () => [
-      { label: "vCPU", count: cpu, price: iaasPrice.cpu },
-      { label: "RAM", count: ram, price: iaasPrice.ram, unit: "ГБ" },
+      { label: t.vcpu, count: cpu, price: iaasPrice.cpu },
+      { label: t.ram, count: ram, price: iaasPrice.ram, unit: "ГБ" },
       {
-        label: `Дисковое хранилище ${type.toUpperCase()}`,
+        label: `${t.storage} ${type.toUpperCase()}`,
         count: storage,
         price: type === "ssd" ? iaasPrice.ssd : iaasPrice.hdd,
         unit: "ГБ",
@@ -18,7 +57,7 @@ const IaasCart = () => {
       ...(backup > 0
         ? [
             {
-              label: "Резервное копирование",
+              label: t.backup,
               count: backup,
               price: iaasPrice.backup,
               unit: "ГБ",
@@ -26,12 +65,12 @@ const IaasCart = () => {
           ]
         : []),
       {
-        label: "Публичный IP адрес",
+        label: t.ip,
         count: ip,
         price: iaasPrice.ipAdress,
       },
     ],
-    [cpu, ram, storage, backup, ip, type]
+    [cpu, ram, storage, backup, ip, type, t]
   );
 
   const total = useMemo(
@@ -51,7 +90,7 @@ const IaasCart = () => {
 
   return (
     <div className="col-span-2 bg-slate-500 dark:bg-slate-700/50 rounded-xl p-4 px-5 flex flex-col justify-between text-white">
-      <h2 className="text-3xl font-medium">Итоговый расчет</h2>
+      <h2 className="text-3xl font-medium">{t.totalLabel}</h2>
 
       <div className="grid gap-2 my-4">
         {items.map(({ label, count, price, unit }) => (
@@ -66,9 +105,7 @@ const IaasCart = () => {
 
       <div>
         <div className="flex justify-between items-center mb-4">
-          <p className="text-sm max-w-20 md:max-w-40">
-            Цена за месяц
-          </p>
+          <p className="text-sm max-w-20 md:max-w-40">{t.pricePerMonth}</p>
           <p className="text-xl font-medium">{formatCurrency(total)}</p>
         </div>
         <a
@@ -76,7 +113,7 @@ const IaasCart = () => {
           target="_blank"
         >
           <button className="w-full p-2 bg-slate-100 text-black rounded-lg dark:bg-[#0f172a80] dark:text-white ">
-            Попробовать
+            {t.tryButton}
           </button>
         </a>
       </div>

@@ -1,0 +1,60 @@
+---
+import AboutSection from "@/components/shared/AboutSection.astro";
+import AdvantageCard from "@/components/shared/AdvantageCard.astro";
+import AdvantageCardWithIcon from "@/components/shared/AdvantageCardWithIcon.astro";
+import Layout from "@/layouts/Layout.astro";
+import { socAdvantages, socAdvantages2 } from "@/lib/dataUZ/socData";
+import Hero from "@/widgets/Hero.astro";
+
+import socImg from "@/assets/waf.svg";
+import SocAccordion from "@/widgets/security/soc/SocAccordion";
+
+const seoData = {
+  title: "Security Operations Center (SOC) – Мониторинг и защита",
+  description:
+    "SOC – kiberxavfsizlik monitoringi va 24/7 himoya.",
+  keywords:
+    "SOC, xavfsizlik markazi, hujum monitoringi, ma’lumotlarni himoya qilish, SmartCloud",
+  url: "https://smartcloud.uz/uz/cloud-services/soc/",
+  image: "https://smartcloud.uz/assets/waf.svg",
+  author: "SmartCloud",
+};
+---
+
+<Layout {...seoData}>
+  <Hero imgSrc={socImg}>
+    <h1 class="text-3xl font-medium lg:text-5xl">
+      <span class="text-secondary">SOC</span>
+      – sizning raqamli aktivlaringizni kompleks himoya qilish
+    </h1>
+    <p class="text-sm mt-2 lg:text-xl">
+      Bizning Operatsion Xavfsizlik Markazimiz (SOC) sizning raqamli ma'lumotlaringizni real vaqt 
+      rejimida himoya qilib, tarmoqqa hujumlarni 24/7 monitoring qilish, tahlil qilish va oldini olishni 
+      ta'minlaydi.
+    </p>
+  </Hero>
+
+  <AboutSection title="SOC qanday ishlaydi?">
+    <p>
+      Operativ javob markazi kompaniyaning axborot xavfsizligini boshqarish tizimini 
+      optimallashtirish bo‘yicha quyidagi kompleks vazifalarni hal qiladi:
+    </p>
+    <ul>
+      <li>- himoya choralari muntazam ravishda tuzatilib va to‘ldirib boriladi;</li>
+      <li>
+        - tayyor javob ssenariylaridan foydalanish orqali kiberhujumlar va axborot xavfsizligi hodisalariga javob berish vaqti qisqartiriladi;
+      </li>
+      <li>
+        - axborot xavfsizligi hodisalarini aniqlash va ularga javob berish uchun avtomatlashtirish vositalari joriy etiladi
+      </li>
+    </ul>
+  </AboutSection>
+
+  <AdvantageCard title="SOC xizmatining afzalliklari" data={socAdvantages} />
+  <AdvantageCardWithIcon
+    title="Siz ushbu xizmat orqali quyidagilarni olasiz"
+    data={socAdvantages2}
+  />
+
+  <SocAccordion client:idle />
+</Layout>

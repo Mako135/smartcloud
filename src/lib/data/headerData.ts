@@ -1,6 +1,7 @@
 export const headerData = [
   {
     label: "Облачные сервисы",
+    labelUZ: "Bulut xizmatlari",
     links: [
       {
         href: "/cloud-services/iaas",
@@ -17,7 +18,6 @@ export const headerData = [
         label: "VDS",
         desc: "Виртуальный выделенный сервер с гарантированными ресурсами на базе физического сервера.",
       },
-
       {
         href: "/cloud-services/storage",
         label: "Дисковое хранилище",
@@ -34,9 +34,42 @@ export const headerData = [
         desc: "Microsoft CSP (Cloud Solution Provider) это гибкая и экономичная модель лицензирования.",
       },
     ],
+    linksUZ: [
+      {
+        href: "/uz/cloud-services/iaas",
+        label: "IaaS",
+        desc: "Moslashuvchan bulutli yechim, bu sizga o'zingizning virtual serverlaringizni yaratish va klonlash imkonini beradi.",
+      },
+      {
+        href: "/uz/cloud-services/baas",
+        label: "Zaxira nusxalash (BaaS)",
+        desc: "IT-infratuzilma zaxira nusxalarini joylashtirish uchun ishonchli bulut xizmati.",
+      },
+      {
+        href: "/uz/cloud-services/vds",
+        label: "VDS",
+        desc: "Jismoniy server asosida kafolatlangan resurslarga ega virtual ajratilgan server.",
+      },
+      {
+        href: "/uz/cloud-services/storage",
+        label: "Disk saqlash",
+        desc: "HDD/SSD da ma'lumotlarni saqlash xizmati.",
+      },
+      {
+        href: "/uz/kaspersky",
+        label: "Kaspersky",
+        desc: "Real vaqt rejimida viruslar, zararli dasturlar va kiber tahdidlardan himoya qilish uchun antivirus.",
+      },
+      {
+        href: "/uz/cloud-services/asp",
+        label: "Dasturiy ta'minot ijarasi",
+        desc: "Microsoft CSP (Cloud Solution Provider) - moslashuvchan va iqtisodiy litsenziyalash modeli.",
+      },
+    ],
   },
   {
     label: "Информационная безопасность",
+    labelUZ: "Axborot xavfsizligi",
     links: [
       {
         href: "/security/ddos",
@@ -63,11 +96,42 @@ export const headerData = [
         label: "Virtual Network Firewall",
         desc: "Брандмауэр для обеспечения безопасности виртуальных сетей и контроля сетевого трафика.",
       },
-
       {
         href: "/security/support",
         label: "Техническая поддержка систем информационной безопасности",
         desc: "Консультации, поставка решений, техническая поддержка и мониторинг безопасности информационных систем.",
+      },
+    ],
+    linksUZ: [
+      {
+        href: "/uz/security/ddos",
+        label: "DDoS hujumlardan himoya",
+        desc: "DDoS hujumlaridan himoya qilish va serverlar hamda ilovalarni ortiqcha yuklashni oldini olish uchun yechim.",
+      },
+      {
+        href: "/uz/security/pentest",
+        label: "Pentest (Penetratsion test)",
+        desc: "Tizim zaifliklarini baholash va real kiberhujumlarni simulyatsiya qilish orqali xavfsizlikni oshirish.",
+      },
+      {
+        href: "/uz/security/waf",
+        label: "Veb ilovalarni himoya qilish (WAF)",
+        desc: "Veb-trafikni filtrlash va veb-ilovalar hamda HTTP zaifliklariga qarshi himoya.",
+      },
+      {
+        href: "/uz/security/soc",
+        label: "Security Operations Center (SOC)",
+        desc: "24/7 xavfsizlikni kuzatish va tahdidlarni boshqarish markazi.",
+      },
+      {
+        href: "/uz/security/vnf",
+        label: "Virtual Network Firewall",
+        desc: "Virtual tarmoqlar xavfsizligini ta'minlash va tarmoq trafigini nazorat qilish uchun xavfsizlik devori.",
+      },
+      {
+        href: "/uz/security/support",
+        label: "Axborot xavfsizligi tizimlarini texnik qo‘llab-quvvatlash",
+        desc: "Konsultatsiyalar, yechimlarni yetkazib berish, texnik qo‘llab-quvvatlash va axborot tizimlarini xavfsizlik monitoringi.",
       },
     ],
   },

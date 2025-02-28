@@ -9,12 +9,28 @@ import {
 } from "@/components/ui";
 import clsx from "clsx";
 import ContactForm from "./ContactForm";
+import { useState, useEffect } from "react";
 
-interface ContactDialogProps {
-  className?: string;
-}
+const translations: Record<"ru" | "uz", { button: string; title: string; description: string }> = {
+  ru: {
+    button: "Оставить заявку",
+    title: "Получить консультацию",
+    description: "Оставьте заявку, и наш менеджер свяжется с вами в ближайшее время",
+  },
+  uz: {
+    button: "Ariza qoldirish",
+    title: "Konsultatsiya olish",
+    description: "Ariza qoldiring, va bizning menejerimiz siz bilan tez orada bog'lanadi",
+  },
+};
 
-export function ContactDialog({ className }: ContactDialogProps) {
+export function ContactDialog({ className }: { className?: string }) {
+  const [currentLocale, setCurrentLocale] = useState<"ru" | "uz">("ru");
+
+  useEffect(() => {
+    setCurrentLocale(window.location.pathname.startsWith("/uz") ? "uz" : "ru");
+  }, []);
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -25,15 +41,17 @@ export function ContactDialog({ className }: ContactDialogProps) {
             className
           )}
         >
-          Оставить заявку
+          {translations[currentLocale].button}
         </Button>
       </DialogTrigger>
-      <DialogContent className="max-w-[320px] sm:max-w-[425px] ">
+      <DialogContent className="max-w-[320px] sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle className="text-xl">Получить консультацию</DialogTitle>
+          <DialogTitle className="text-xl">
+            {translations[currentLocale].title}
+          </DialogTitle>
         </DialogHeader>
         <DialogDescription className="text-md">
-          Оставьте заявку, и наш менеджер свяжется с вами в ближайшее время
+          {translations[currentLocale].description}
         </DialogDescription>
         <ContactForm />
       </DialogContent>

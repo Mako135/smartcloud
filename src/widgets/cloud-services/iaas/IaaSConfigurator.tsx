@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import CpuInput from "@/components/cloud-services/iaas/CpuInput";
 import RamInput from "@/components/cloud-services/iaas/RamInput";
@@ -8,8 +8,29 @@ import BackupInput from "@/components/cloud-services/iaas/BackupInput";
 import IpInput from "@/components/cloud-services/iaas/IpInput";
 import IaasCart from "@/components/cloud-services/iaas/IaasCart";
 
+type Locale = "ru" | "uz";
+
+const translations: Record<Locale, { title: string; description: string }> = {
+  ru: {
+    title: "Рассчитайте стоимость аренды IaaS",
+    description: "Стоимость IaaS зависит от конфигурации вашей системы. Посекундная тарификация, входящий трафик и запросы — бесплатно",
+  },
+  uz: {
+    title: "IaaS ijarasi narxini hisoblang",
+    description: "IaaS narxi sizning tizimingiz konfiguratsiyasiga bog'liq. Sekundlik tarif, kiruvchi trafik va so‘rovlar – bepul",
+  },
+};
+
 const IaaSConfigurator = () => {
   const ref = useRef<HTMLDivElement>(null);
+  const [currentLocale, setCurrentLocale] = useState<Locale>("ru");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const locale = window.location.pathname.startsWith("/uz") ? "uz" : "ru";
+      setCurrentLocale(locale);
+    }
+  }, []);
 
   useEffect(() => {
     if (ref.current) {
@@ -52,11 +73,10 @@ const IaaSConfigurator = () => {
   return (
     <div className="my-60" ref={ref}>
       <h1 className="text-2xl md:text-4xl font-medium" id="iaasConfTitle">
-        Рассчитайте стоимость аренды IaaS
+        {translations[currentLocale].title}
       </h1>
       <p className="text-md mt-5 md:text-2xl md:mt-0" id="iaasDescTitle">
-        Стоимость IaaS зависит от конфигурации вашей системы. Посекундная
-        тарификация, входящий трафик и запросы — бесплатно
+        {translations[currentLocale].description}
       </p>
 
       <div

@@ -1,0 +1,37 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Container from "@/widgets/Container.astro";
+import Hero from "@/widgets/Hero.astro";
+import KasperskySolutions from "@/widgets/kaspersky/KasperskySolutions.astro";
+
+import kaspersky from "@/assets/kaspersky.webp";
+
+const seoData = {
+  title: "Kaspersky Security – Облачный антивирус для бизнеса",
+  description:
+    "Kaspersky bulutli antivirus – biznesingiz uchun xavfsiz himoya.",
+  keywords:
+    "Kaspersky, antivirus, kiberxavfsizlik, bulut texnologiyalari",
+  url: "https://smartcloud.uz/uz/cloud-services/kaspersky-security/",
+  image: "https://smartcloud.uz/assets/kaspersky-security.svg",
+  author: "SmartCloud",
+};
+---
+
+<Layout {...seoData}>
+  <Container>
+    <Hero imgSrc={kaspersky}>
+      <h1 class="text-3xl font-medium lg:text-5xl">
+        <span class="text-secondary">Kaspersky</span> yechimlari – biznesingiz 
+        rivojlanishiga e'tibor qarating, 
+        xavfsizlikni esa biz ta'minlaymiz.
+      </h1>
+      <p class="text-sm mt-2 lg:text-xl">
+        «Kaspersky Laboratoriyasi»  ilg‘or himoya yechimlarini taklif qiladi, shunda siz 
+        tashvishlanmasdan rivojlanishga e’tibor qaratishingiz mumkin.
+      </p>
+    </Hero>
+
+    <KasperskySolutions />
+  </Container>
+</Layout>

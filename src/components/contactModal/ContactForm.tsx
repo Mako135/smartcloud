@@ -1,9 +1,34 @@
-import { useCallback, useState } from "react";
+import { useCallback, useState, useEffect } from "react";
 import { ShadcnPhone } from "../shared/CustomPhoneInput";
 import { toast } from "sonner";
 import { sendEmail } from "@/api";
 import { Button, Input, Label } from "../ui";
 import { validateForm } from "./formValidate";
+
+const translations = {
+  ru: {
+    name: "Ваше имя*",
+    company: "Название компании*",
+    phone: "Контактный телефон*",
+    placeholderName: "Ваше имя",
+    placeholderCompany: "Название компании",
+    submit: "Перезвоните мне",
+    submitting: "Отправка...",
+    success: "В скором времени с вами свяжется наш менеджер",
+    error: "Произошла ошибка сервера, попробуйте позже"
+  },
+  uz: {
+    name: "Ismingiz*",
+    company: "Kompaniya nomi*",
+    phone: "Kontakt telefon*",
+    placeholderName: "Ismingizni kiriting",
+    placeholderCompany: "Kompaniya nomini kiriting",
+    submit: "Menga qo'ng'iroq qiling",
+    submitting: "Yuborilmoqda...",
+    success: "Tez orada menejerimiz siz bilan bog'lanadi",
+    error: "Server xatosi yuz berdi, keyinroq urinib ko'ring"
+  }
+};
 
 export default function ContactForm() {
   const [inputs, setInputs] = useState({
@@ -11,8 +36,15 @@ export default function ContactForm() {
     company: "",
     phone: "",
   });
-
+  
   const [isLoading, setIsLoading] = useState(false);
+  const [currentLocale, setCurrentLocale] = useState<"ru" | "uz">("ru");
+
+  useEffect(() => {
+    setCurrentLocale(window.location.pathname.startsWith("/uz") ? "uz" : "ru");
+  }, []);
+
+  const t = translations[currentLocale];
 
   const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -35,13 +67,13 @@ export default function ContactForm() {
     try {
       const data = await sendEmail(inputs);
       if (data.ok) {
-        toast.success("В скором времени с вами свяжется наш менеджер");
+        toast.success(t.success);
         setInputs({ name: "", company: "", phone: "" });
       } else {
         throw new Error();
       }
     } catch (error) {
-      toast.error("Произошла ошибка сервера, попробуйте позже");
+      toast.error(t.error);
     } finally {
       setIsLoading(false);
     }
@@ -52,13 +84,13 @@ export default function ContactForm() {
       <div className="grid gap-4 py-4">
         <div>
           <Label htmlFor="name" className="text-right text-md">
-            Ваше имя*
+            {t.name}
           </Label>
           <Input
             id="name"
             name="name"
             required
-            placeholder="Ваше имя"
+            placeholder={t.placeholderName}
             type="text"
             autoComplete="off"
             value={inputs.name}
@@ -67,13 +99,13 @@ export default function ContactForm() {
         </div>
         <div>
           <Label htmlFor="company" className="text-right text-md">
-            Название компании*
+            {t.company}
           </Label>
           <Input
             id="company"
             name="company"
             required
-            placeholder="Название компании"
+            placeholder={t.placeholderCompany}
             type="text"
             autoComplete="off"
             value={inputs.company}
@@ -82,7 +114,7 @@ export default function ContactForm() {
         </div>
         <div>
           <Label htmlFor="phone" className="text-right text-md">
-            Контактный телефон*
+            {t.phone}
           </Label>
           <ShadcnPhone value={inputs.phone} onChange={handlePhoneChange} />
         </div>
@@ -94,7 +126,7 @@ export default function ContactForm() {
         disabled={isLoading}
         aria-busy={isLoading}
       >
-        {isLoading ? "Отправка..." : "Перезвоните мне"}
+        {isLoading ? t.submitting : t.submit}
       </Button>
     </form>
   );
