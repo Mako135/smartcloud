@@ -5,17 +5,24 @@ import { Button } from "../ui/button";
 import { ToggleTheme } from "./ToggleTheme";
 import { cn } from "@/lib/utils";
 
-const MobileMenu = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+interface MobileMenuProps {
+  currentPath: string;
+}
 
-  // Блокировка прокрутки при открытом меню
+const MobileMenu = ({ currentPath }: MobileMenuProps) => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState(currentPath.startsWith("/uz") ? "uz" : "ru");
+
   useEffect(() => {
-    if (menuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    document.body.style.overflow = menuOpen ? "hidden" : "";
   }, [menuOpen]);
+
+  const handleLanguageChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const newLang = event.target.value;
+    const newPath = currentPath.replace(/^\/uz/, "");
+    const finalPath = newLang === "uz" ? `/uz${newPath}` : newPath || "/";
+    window.location.href = finalPath;
+  };
 
   return (
     <header className="relative block lg:hidden">
@@ -23,11 +30,7 @@ const MobileMenu = () => {
         <a href="/" className="font-bold tracking-wider text-2xl">
           SMART<span className="text-secondary">CLOUD</span>
         </a>
-        <Button
-          onClick={() => setMenuOpen(true)}
-          className="p-2 h-8 w-8"
-          variant="ghost"
-        >
+        <Button onClick={() => setMenuOpen(true)} className="p-2 h-8 w-8" variant="ghost">
           <Menu strokeWidth={3} size={32} />
         </Button>
       </div>
@@ -40,31 +43,35 @@ const MobileMenu = () => {
         )}
       >
         <div className="relative h-full overflow-y-auto">
-          <Button
-            onClick={() => setMenuOpen(false)}
-            className="absolute top-4 right-8 p-2"
-            variant="ghost"
-          >
+          <Button onClick={() => setMenuOpen(false)} className="absolute top-4 right-8 p-2" variant="ghost">
             <X size={28} strokeWidth={3} />
           </Button>
 
           <nav className="p-8">
-            <div className="flex gap-2 items-center mb-5">
-              <h2>Выбрать тему</h2>
-              <ToggleTheme />
+            <div className="flex flex-col gap-4">
+              <div className="flex gap-2 items-center mb-5">
+                <h2>Выбрать тему</h2>
+                <ToggleTheme />
+              </div>
+              <div className="flex gap-2 items-center">
+                <select
+                  id="language-select"
+                  value={selectedLanguage}
+                  onChange={handleLanguageChange}
+                  className="bg-transparent border border-secondary rounded p-1 text-lg"
+                >
+                  <option value="ru">Русский</option>
+                  <option value="uz">O‘zbekcha</option>
+                </select>
+              </div>
             </div>
             {headerData.map((section, idx) => (
-              <div key={idx} className="mb-8">
-                <h2 className="mb-4 text-xl font-bold text-secondary">
-                  {section.label}
-                </h2>
+              <div key={idx} className="mt-8">
+                <h2 className="mb-4 text-xl font-bold text-secondary">{section.label}</h2>
                 <ul className="space-y-4">
                   {section.links.map((link, index) => (
                     <li key={index}>
-                      <a
-                        href={link.href}
-                        className="block text-lg hover:underline"
-                      >
+                      <a href={link.href} className="block text-lg hover:underline">
                         {link.label}
                       </a>
                     </li>
