@@ -1,0 +1,89 @@
+---
+import { Menu, X } from "lucide-react";
+import { Button } from "../ui";
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+import { ToggleTheme } from "./ToggleTheme";
+import { headerDataUz } from "@/lib/dataUZ/headerData";
+import { headerData } from "@/lib/data/headerData";
+
+const locale = Astro.url.pathname.startsWith("/uz") ? "uz" : "ru";
+const headerDataLocale = locale === "ru" ? headerData : headerDataUz;
+---
+
+<header class="relative block lg:hidden">
+  <div
+    class="fixed flex justify-between h-16 max-w-7xl p-4 px-8 items-center bg-slate-500 w-full bg-opacity-10 backdrop-blur-lg rounded-b-md hover:backdrop-blur z-20"
+  >
+    <a href="/" class="font-bold tracking-wider text-2xl">
+      SMART<span class="text-secondary">CLOUD</span>
+    </a>
+    <Button id="open-menu" className="p-2 h-8 w-8" variant="ghost" client:idle>
+      <Menu strokeWidth={3} size={32} />
+    </Button>
+  </div>
+
+  {/* Мобильное меню */}
+  <div
+    id="mobile-menu"
+    class="fixed inset-0 z-20 bg-slate-300/50 dark:bg-black/90 backdrop-blur-lg transition-transform duration-500 ease-in-out translate-x-full"
+  >
+    <div class="relative h-full overflow-y-auto">
+      <Button
+        id="close-menu"
+        className="absolute top-4 right-8 p-2"
+        variant="ghost"
+        client:idle
+      >
+        <X size={28} strokeWidth={3} />
+      </Button>
+
+      <nav class="p-8">
+        <div class="flex gap-2 items-center mb-5">
+          <h2>Выбрать тему</h2>
+          <ToggleTheme client:idle />
+        </div>
+        <LanguageSwitcher />
+        {
+          headerDataLocale.map((section, idx) => (
+            <div class="mt-8">
+              <h2 class="mb-4 text-xl font-bold text-secondary">
+                {section.label}
+              </h2>
+              <ul class="space-y-4">
+                {section.links.map((link, index) => (
+                  <li>
+                    <a href={link.href} class="block text-lg hover:underline">
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </nav>
+    </div>
+  </div>
+</header>
+
+<script>
+  const openButton = document.getElementById("open-menu");
+  const closeButton = document.getElementById("close-menu");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  function setMenuOpen(isOpen: boolean) {
+    if (mobileMenu) {
+      if (isOpen) {
+        mobileMenu.classList.remove("translate-x-full");
+        mobileMenu.classList.add("translate-x-0");
+      } else {
+        mobileMenu.classList.remove("translate-x-0");
+        mobileMenu.classList.add("translate-x-full");
+      }
+    }
+  }
+
+  if (openButton) openButton.addEventListener("click", () => setMenuOpen(true));
+  if (closeButton)
+    closeButton.addEventListener("click", () => setMenuOpen(false));
+</script>

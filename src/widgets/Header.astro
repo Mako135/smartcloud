@@ -1,8 +1,7 @@
 ---
 import DesktopMenu from "@/components/shared/DesktopMenu.astro";
-import MobileMenu from "@/components/shared/MobileMenu";
-const currentPath = Astro.url.pathname;
+import MobileMenu from "@/components/shared/MobileMenu.astro";
 ---
 
 <DesktopMenu />
-<MobileMenu client:load currentPath={currentPath} />
+<MobileMenu />

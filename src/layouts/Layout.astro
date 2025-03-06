@@ -83,7 +83,7 @@ const {
     {author && <meta name="author" content={author} />}
 
     <!-- JSON-LD структурированные данные -->
-    <script type="application/ld+json">
+    <script type="application/ld+json" is:inline>
       {JSON.stringify({
         "@context": "https://schema.org",
         "@type": "WebSite",

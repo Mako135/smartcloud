@@ -22,31 +22,24 @@ const homeLink = currentPath.startsWith("/uz") ? "/uz" : "/";
     </a>
     <div class="flex items-center gap-2">
       <HeaderNavigationMenu client:idle />
-      <ul class="flex gap-2">
-        <li>
-          <LanguageSwitcher />
-        </li>
-        <li>
-          <a
-            href="https://t.me/muradibragimov"
-            aria-label="Отправить сообщение"
-            title="Отправить сообщение"
-            target="_blank"
-          >
-            <Send size={20} color="#fff" />
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.instagram.com/smartcloud.uz?igsh=MTRrY2UwbXFjdmpodQ=="
-            aria-label="Наш Instagram"
-            title="Следуйте за нами в Instagram"
-            target="_blank"
-          >
-            <Instagram size={20} color="#fff" />
-          </a>
-        </li>
-      </ul>
+      <LanguageSwitcher />
+
+      <a
+        href="https://t.me/muradibragimov"
+        aria-label="Отправить сообщение"
+        title="Отправить сообщение"
+        target="_blank"
+      >
+        <Send size={20} color="#fff" />
+      </a>
+      <a
+        href="https://www.instagram.com/smartcloud.uz?igsh=MTRrY2UwbXFjdmpodQ=="
+        aria-label="Наш Instagram"
+        title="Следуйте за нами в Instagram"
+        target="_blank"
+      >
+        <Instagram size={20} color="#fff" />
+      </a>
       <ToggleTheme client:idle />
     </div>
   </div>

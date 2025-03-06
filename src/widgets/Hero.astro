@@ -3,10 +3,8 @@ import { ContactDialog } from "@/components/contactModal/ContactDialog";
 import { Image } from "astro:assets";
 import { getTranslations } from "@/utils/i18n";
 
-const locale = Astro.url.pathname.startsWith('/uz') ? 'uz' : 'ru';
+const locale = Astro.url.pathname.startsWith("/uz") ? "uz" : "ru";
 const t = await getTranslations(locale, "hero");
-
-const currentPath = Astro.request.url.includes("uz");
 
 const { imgSrc } = Astro.props;
 ---

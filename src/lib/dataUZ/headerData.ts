@@ -1,4 +1,4 @@
-export const headerData = [
+export const headerDataUz = [
   {
     label: "Bulut xizmatlari",
     links: [

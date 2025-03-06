@@ -6,8 +6,6 @@ import { getTranslations } from "@/utils/i18n";
 const locale = Astro.url.pathname.startsWith('/uz') ? 'uz' : 'ru';
 const t = await getTranslations(locale, "trialSection");
 
-const currentPath = Astro.request.url.includes("uz");
-
 interface Props {
   days: number;
 }
