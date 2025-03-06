@@ -13,15 +13,15 @@ const instanceId = Math.random().toString(36).substring(2, 10);
   <button
     class="w-20 lang-toggle bg-transparent flex justify-between items-center gap-1 lg:py-1 lg:px-3 lg:w-auto"
   >
-    <span class="selected-lang text-sm text-white"
+    <span class="selected-lang text-sm lg:text-white"
       >{currentLocale === "ru" ? "Русский" : "O'zbekcha"}</span
     >
     <svg
-      class="w-3 h-3"
+      class="stroke-black lg:stroke-white w-3 h-3"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
-      stroke="white"
+      stroke="currentColor"
     >
       <path
         stroke-linecap="round"
@@ -34,14 +34,14 @@ const instanceId = Math.random().toString(36).substring(2, 10);
   <!-- Выпадающий список -->
   <ul
     class="lang-menu absolute w-fit mt-2 rounded-lg overflow-hidden
-    bg-white/20 dark:bg-black/30 backdrop-blur-md
+    bg-white/40 dark:bg-black/80 backdrop-blur-md
     border border-white/20 dark:border-white/10
     shadow-lg opacity-0 invisible transform -translate-y-3
     transition-all ease-out"
   >
     <li
       class="ru-option px-4 py-1 cursor-pointer border-b border-white/20 dark:border-white/10
-      hover:bg-white/80 dark:hover:bg-black/70 transition-colors"
+      hover:bg-white/80 dark:hover:bg-black/30 transition-colors"
     >
       Русский
     </li>
