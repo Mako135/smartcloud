@@ -44,13 +44,13 @@ const headerDataLocale = locale === "ru" ? headerData : headerDataUz;
         </div>
         <LanguageSwitcher />
         {
-          headerDataLocale.map((section, idx) => (
+          headerDataLocale.map((section) => (
             <div class="mt-8">
               <h2 class="mb-4 text-xl font-bold text-secondary">
                 {section.label}
               </h2>
               <ul class="space-y-4">
-                {section.links.map((link, index) => (
+                {section.links.map((link) => (
                   <li>
                     <a href={link.href} class="block text-lg hover:underline">
                       {link.label}

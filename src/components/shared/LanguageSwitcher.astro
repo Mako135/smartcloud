@@ -54,7 +54,7 @@ const instanceId = Math.random().toString(36).substring(2, 10);
   </ul>
 </div>
 
-<script define:vars={{ ruPath, uzPath, instanceId }}>
+<script define:vars={{ ruPath, uzPath, instanceId }} is:inline>
   document.addEventListener("DOMContentLoaded", function () {
     const container = document.querySelector(
       `.language-switcher[data-instance-id="${instanceId}"]`
