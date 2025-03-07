@@ -82,17 +82,6 @@ const {
     {image && <meta name="twitter:image" content={image} />}
     {author && <meta name="author" content={author} />}
 
-    <!-- JSON-LD структурированные данные -->
-    <script type="application/ld+json" is:inline>
-      {JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        url,
-        name: title,
-        description,
-      })}
-    </script>
-
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript" is:inline>
       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
