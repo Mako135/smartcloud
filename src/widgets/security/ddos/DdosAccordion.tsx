@@ -18,8 +18,8 @@ const translations = {
     list2: " - L2/L3-каналы через сторонних операторов и партнеров DDoS-GUARD",
     list3:
       " - Прямое подключение к оборудованию DDoS-GUARD в одной из точек присутствия",
-    question2: "В скором времени с вами свяжется наш менеджер",
-    answer2: "Произошла ошибка сервера, попробуйте позже",
+    question2: "Как вносятся адреса в белый список: автоматически или вручную?",
+    answer2: "Адреса вносятся вручную.",
   },
   uz: {
     title: "Kimlar uchun mos?",
@@ -33,8 +33,9 @@ const translations = {
     list2: "L2/L3 kanallari (DDoS-GUARD hamkorlari orqali)",
     list3:
       "DDoS-GUARD uskunasiga to‘g‘ridan-to‘g‘ri ulanish mavjud nuqtalardan birida",
-    question2: "Tez orada menejerimiz siz bilan bog‘lanadi",
-    answer2: "Server xatosi yuz berdi, keyinroq urinib ko‘ring",
+    question2:
+      "Oq ro'yxatga manzillar qanday qo'shiladi: avtomatik yoki qo'lda?",
+    answer2: "Manzillar qo'lda qo'shiladi.",
   },
 };
 
