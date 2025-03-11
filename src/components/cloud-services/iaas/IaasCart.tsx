@@ -2,16 +2,19 @@ import { iaasPrice } from "@/lib/data/price";
 import { useIaasStore } from "@/store/iaasStore";
 import { useMemo, useState, useEffect } from "react";
 
-const translations: Record<"ru" | "uz", { 
-  totalLabel: string;
-  vcpu: string;
-  ram: string;
-  storage: string;
-  backup: string;
-  ip: string;
-  pricePerMonth: string;
-  tryButton: string;
-}> = {
+const translations: Record<
+  "ru" | "uz",
+  {
+    totalLabel: string;
+    vcpu: string;
+    ram: string;
+    storage: string;
+    backup: string;
+    ip: string;
+    pricePerMonth: string;
+    tryButton: string;
+  }
+> = {
   ru: {
     totalLabel: "Итоговый расчет",
     vcpu: "vCPU",
@@ -20,7 +23,7 @@ const translations: Record<"ru" | "uz", {
     backup: "Резервное копирование",
     ip: "Публичный IP адрес",
     pricePerMonth: "Цена за месяц",
-    tryButton: "Попробовать"
+    tryButton: "Попробовать",
   },
   uz: {
     totalLabel: "Yakuniy hisob-kitob",
@@ -30,8 +33,8 @@ const translations: Record<"ru" | "uz", {
     backup: "Zaxira nusxasi",
     ip: "Ommaviy IP manzil",
     pricePerMonth: "Oylik narx",
-    tryButton: "Sinab ko'rish"
-  }
+    tryButton: "Sinab ko'rish",
+  },
 };
 
 const IaasCart = () => {
