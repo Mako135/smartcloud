@@ -34,15 +34,8 @@ const InputIaaS = ({
           type="tel"
           onChange={(e) => {
             const value = e.target.value;
-            // Проверяем, что введены только цифры
             if (/^\d*$/.test(value)) {
               setData(value ? Number(value) : 0);
-            }
-          }}
-          onKeyPress={(e) => {
-            // Дополнительная проверка при нажатии клавиши
-            if (!/\d/.test(e.key)) {
-              e.preventDefault();
             }
           }}
         />

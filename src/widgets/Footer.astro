@@ -4,11 +4,13 @@ import Container from "./Container.astro";
 import { Send, Instagram } from "lucide-react";
 import { getTranslations } from "@/utils/i18n";
 
-const locale = Astro.url.pathname.startsWith('/uz') ? 'uz' : 'ru';
+const locale = Astro.url.pathname.startsWith("/uz") ? "uz" : "ru";
+
+console.log(locale, Astro.url.pathname);
+
 const t = await getTranslations(locale, "footer");
 
 const currentPath = Astro.request.url.includes("uz");
-
 ---
 
 <footer class="mt-20 py-10">
@@ -36,7 +38,9 @@ const currentPath = Astro.request.url.includes("uz");
       {
         headerData.map((item) => (
           <div class="flex flex-col">
-            <h2 class="h-10 text-sm">{currentPath ? item.labelUZ : item.label}</h2>
+            <h2 class="h-10 text-sm">
+              {currentPath ? item.labelUZ : item.label}
+            </h2>
             <ul class="flex flex-col gap-2">
               {(currentPath ? item.linksUZ : item.links).map((link) => (
                 <li class="ml-1">
@@ -44,9 +48,9 @@ const currentPath = Astro.request.url.includes("uz");
                     <h3>{link.label}</h3>
                   </a>
                 </li>
-              ))} 
+              ))}
             </ul>
-           </div>
+          </div>
         ))
       }
     </div>
