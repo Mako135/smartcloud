@@ -32,7 +32,19 @@ const InputIaaS = ({
           value={data}
           className="text-center px-6 focus:outline-0"
           type="tel"
-          onChange={(e) => setData(Number(e.target.value))}
+          onChange={(e) => {
+            const value = e.target.value;
+            // Проверяем, что введены только цифры
+            if (/^\d*$/.test(value)) {
+              setData(value ? Number(value) : 0);
+            }
+          }}
+          onKeyPress={(e) => {
+            // Дополнительная проверка при нажатии клавиши
+            if (!/\d/.test(e.key)) {
+              e.preventDefault();
+            }
+          }}
         />
         <button className="absolute right-3" onClick={increaseData}>
           <Plus className="h-4 w-4" />
