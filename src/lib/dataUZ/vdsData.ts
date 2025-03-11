@@ -116,34 +116,34 @@ export const vdsAdvantages = [
 export const operatingSystems = [
   {
     title: "Ubuntu",
-    version: ["Versiya 20.04", "Versiya 22.04"],
+    version: ["Версия 20.04", "Версия 22.04"],
     icon: "https://cdn-icons-png.flaticon.com/512/888/888879.png",
   },
   {
     title: "CentOS",
-    version: ["Versiya 7", "Versiya 8", "Versiya 8-Stream", "Versiya 9-Stream"],
+    version: ["Версия 7", "Версия 8", "Версия 8-Stream", "Версия 9-Stream"],
     icon: "https://cdn-icons-png.flaticon.com/512/5969/5969091.png",
   },
   {
     title: "Debian",
-    version: ["Versiya 10", "Versiya 11"],
+    version: ["Версия 10", "Версия 11"],
     icon: "https://cdn-icons-png.flaticon.com/512/246/246118.png",
   },
   {
     title: "Windows Server",
     version: [
-      "Versiya 2016-x64-Eng-DRIVERS.iso",
-      "Versiya 2016-x64-Rus-DRIVERS.iso",
-      "Versiya 2019-x64-Eng-DRIVERS.iso",
-      "Versiya 2019-x64-Rus-DRIVERS.iso",
-      "Versiya 2022-x64-Eng-DRIVERS.iso",
-      "Versiya 2022-x64-Rus-DRIVERS.iso",
+      "Версия 2016-x64-Eng-DRIVERS.iso",
+      "Версия 2016-x64-Rus-DRIVERS.iso",
+      "Версия 2019-x64-Eng-DRIVERS.iso",
+      "Версия 2019-x64-Rus-DRIVERS.iso",
+      "Версия 2022-x64-Eng-DRIVERS.iso",
+      "Версия 2022-x64-Rus-DRIVERS.iso",
     ],
     icon: "https://cdn-icons-png.flaticon.com/512/732/732225.png",
   },
   {
     title: "Mikrotik",
-    version: ["Versiya CHR7", "Versiya CHR"],
+    version: ["Версия CHR7", "Версия CHR"],
     icon: "https://www.mywifinetworks.com/wp-content/uploads/2019/03/microtik-logo.svg",
   },
 ];

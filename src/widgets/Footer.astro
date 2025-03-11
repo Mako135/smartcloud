@@ -4,26 +4,24 @@ import Container from "./Container.astro";
 import { Send, Instagram } from "lucide-react";
 import { getTranslations } from "@/utils/i18n";
 
-const locale = Astro.url.pathname.startsWith('/uz') ? 'uz' : 'ru';
+const locale = Astro.url.pathname.startsWith("/uz") ? "uz" : "ru";
+
 const t = await getTranslations(locale, "footer");
-
-const currentPath = Astro.request.url.includes("uz");
-
 ---
 
 <footer class="mt-20 py-10">
   <Container>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-      <div class="flex flex-col">
-        <h2 class="h-10 text-sm">{t.contacts}</h2>
+      <div class="flex flex-col gap-3">
+        <h2 class="text-sm text-bold uppercase">{t.contacts}</h2>
         <ul class="flex flex-col gap-2">
           <li class="ml-1">+998 95 195 75 75</li>
           <li class="ml-1">+998 90 359 89 67</li>
           <li class="ml-1">info@smartcloud.uz</li>
         </ul>
       </div>
-      <div class="flex flex-col">
-        <h2 class="h-10 text-sm">{t.addresses.label}</h2>
+      <div class="flex flex-col gap-3">
+        <h2 class="text-sm text-bold uppercase">{t.addresses.label}</h2>
         <ul class="flex flex-col gap-2">
           <li class="ml-1">
             {t.addresses.address1}
@@ -35,18 +33,20 @@ const currentPath = Astro.request.url.includes("uz");
       </div>
       {
         headerData.map((item) => (
-          <div class="flex flex-col">
-            <h2 class="h-10 text-sm">{currentPath ? item.labelUZ : item.label}</h2>
+          <div class="flex flex-col gap-3">
+            <h2 class="text-sm text-bold uppercase">
+              {locale === "uz" ? item.labelUZ : item.label}
+            </h2>
             <ul class="flex flex-col gap-2">
-              {(currentPath ? item.linksUZ : item.links).map((link) => (
+              {(locale === "uz" ? item.linksUZ : item.links).map((link) => (
                 <li class="ml-1">
                   <a href={link.href}>
                     <h3>{link.label}</h3>
                   </a>
                 </li>
-              ))} 
+              ))}
             </ul>
-           </div>
+          </div>
         ))
       }
     </div>

@@ -117,17 +117,17 @@ export const operatingSystems = [
   {
     title: "Ubuntu",
     version: ["Версия 20.04", "Версия 22.04"],
-    icon: "/src/assets/vds/ubuntu.svg",
+    icon: "/vds/ubuntu.svg", // обновленный путь
   },
   {
     title: "CentOS",
     version: ["Версия 7", "Версия 8", "Версия 8-Stream", "Версия 9-Stream"],
-    icon: "/src/assets/vds/centos.svg",
+    icon: "/vds/centos.svg",
   },
   {
     title: "Debian",
     version: ["Версия 10", "Версия 11"],
-    icon: "/src/assets/vds/debian.svg",
+    icon: "/vds/debian.svg",
   },
   {
     title: "Windows Server",
@@ -139,12 +139,12 @@ export const operatingSystems = [
       "Версия 2022-x64-Eng-DRIVERS.iso",
       "Версия 2022-x64-Rus-DRIVERS.iso",
     ],
-    icon: "/src/assets/vds/windows.svg",
+    icon: "/vds/windows.svg",
   },
   {
     title: "Mikrotik",
     version: ["Версия CHR7", "Версия CHR"],
-    icon: "/src/assets/vds/mikrotik.svg",
+    icon: "/vds/mikrotik.svg",
   },
 ];
 
