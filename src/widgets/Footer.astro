@@ -5,7 +5,6 @@ import { Send, Instagram } from "lucide-react";
 import { getTranslations } from "@/utils/i18n";
 
 const locale = Astro.url.pathname.startsWith("/uz") ? "uz" : "ru";
-
 const t = await getTranslations(locale, "footer");
 ---
 
