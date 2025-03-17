@@ -42,10 +42,10 @@ const seoData = {
           <MoveRight className="group-hover:translate-x-2 transition-all" />
         </div>
       </a>
-      <h1 class="text-3xl font-medium lg:text-5xl mt-10">
+      <h1 class="text-dynamic font-medium leading-none mt-10"> 
         <span class="text-secondary">IaaS</span> (xizmat sifatida infratuzilma)
       </h1>
-      <p class="text-sm mt-2 lg:text-xl">
+      <p class="text-medium mt-2">
         Bulutli muhitda mustaqil ravishda virtual serverlarni yaratish va klonlash, ularning 
         konfiguratsiyasini o'zgartirish, sozlamalarni boshqarish imkonini beruvchi biznes modeli.
       </p>
@@ -60,8 +60,8 @@ const seoData = {
     </p>
   </AboutSection>
 
-  <div class="my-60 md:my-60">
-    <h1 class="text-2xl md:text-4xl font-medium text-center mb-20">
+  <div class="my-dynamic">
+    <h1 class="text-extra-large font-medium text-center mb-dynamic">
       IaaS va o‘z infratuzilmasi: qanday foyda bor?
     </h1>
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
@@ -75,11 +75,11 @@ const seoData = {
 
   <IaaSConfigurator client:idle />
 
-  <h1 class="text-2xl md:text-4xl font-medium text-center mb-20">
+  <h1 class="text-extra-large font-medium text-center mb-dynamic">
     IaaS dan foydalanish ssenariylari
   </h1>
 
-  <div class="grid md:grid-cols-2 gap-10">
+  <div class="grid md:grid-cols-2 gap-dynamic10">
     {iaas_advantages.map((item) => <IaasUseCaseCard title={item} />)}
   </div>
   <AdvantageCard

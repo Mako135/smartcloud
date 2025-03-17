@@ -6,22 +6,23 @@ import { getTranslations } from "@/utils/i18n";
 
 const locale = Astro.url.pathname.startsWith("/uz") ? "uz" : "ru";
 const t = await getTranslations(locale, "footer");
+const currentPath = Astro.url.pathname.startsWith("/uz")
 ---
 
 <footer class="mt-20 py-10">
   <Container>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-      <div class="flex flex-col gap-3">
-        <h2 class="text-sm text-bold uppercase">{t.contacts}</h2>
-        <ul class="flex flex-col gap-2">
+      <div class="flex flex-col">
+        <h2 class="h-10 text-small">{t.contacts}</h2>
+        <ul class="flex flex-col gap-2 text-small">
           <li class="ml-1">+998 95 195 75 75</li>
           <li class="ml-1">+998 90 359 89 67</li>
           <li class="ml-1">info@smartcloud.uz</li>
         </ul>
       </div>
-      <div class="flex flex-col gap-3">
-        <h2 class="text-sm text-bold uppercase">{t.addresses.label}</h2>
-        <ul class="flex flex-col gap-2">
+      <div class="flex flex-col">
+        <h2 class="h-10 text-small">{t.addresses.label}</h2>
+        <ul class="flex flex-col gap-2 text-small">
           <li class="ml-1">
             {t.addresses.address1}
           </li>
@@ -32,12 +33,10 @@ const t = await getTranslations(locale, "footer");
       </div>
       {
         headerData.map((item) => (
-          <div class="flex flex-col gap-3">
-            <h2 class="text-sm text-bold uppercase">
-              {locale === "uz" ? item.labelUZ : item.label}
-            </h2>
-            <ul class="flex flex-col gap-2">
-              {(locale === "uz" ? item.linksUZ : item.links).map((link) => (
+          <div class="flex flex-col">
+            <h2 class="h-10 text-small">{currentPath ? item.labelUZ : item.label}</h2>
+            <ul class="flex flex-col gap-2 text-small">
+              {(currentPath ? item.linksUZ : item.links).map((link) => (
                 <li class="ml-1">
                   <a href={link.href}>
                     <h3>{link.label}</h3>
@@ -53,7 +52,7 @@ const t = await getTranslations(locale, "footer");
   <div class="border-[1px] border-gray-300/50 mb-10 mt-20"></div>
   <Container>
     <div class="flex justify-between items-center">
-      <p class="text-sm text-gray-400">
+      <p class="text-small text-gray-400">
         © 2021 SmartCloud. All rights reserved.
       </p>
       <ul class="flex gap-2">

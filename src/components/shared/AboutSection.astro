@@ -10,17 +10,17 @@ const { title, className } = Astro.props;
 ---
 
 <div
-  class={clsx("grid md:grid-cols-6 gap-10", className)}
+  class={clsx("grid lg:grid-cols-6 gap-dynamic10", className)}
   id="aboutSectionContainer"
 >
   <h2
-    class="md:col-span-2 text-2xl md:text-4xl font-medium"
+    class="lg:col-span-2 text-extra-large font-medium"
     id="aboutSectionTitle"
   >
     {title}
   </h2>
   <div
-    class="md:col-span-4 text-md mt-10 md:text-2xl md:mt-0"
+    class="lg:col-span-4 mt-dynamic10 text-large lg:mt-0"
     id="aboutSectionChildren"
   >
     <slot />

@@ -37,7 +37,7 @@ export default function HeaderNavigationMenu() {
                     className="flex flex-col p-2 hover:text-secondary  rounded-sm"
                   >
                     <h3>{link.label}</h3>
-                    <p className="text-sm">{link.desc || ""}</p>
+                    <p className="text-small">{link.desc || ""}</p>
                   </NavigationMenuLink>
                 ))}
               </nav>

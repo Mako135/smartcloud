@@ -10,7 +10,7 @@ import {
 import Hero from "@/widgets/Hero.astro";
 
 import securitySupportImg from "@/assets/support.png";
-import SupportAccordion from "@/widgets/security/support/SupportAccordion";
+import SupportAccordion from "@/widgets/security/support/SupportAccordion.astro";
 
 const seoData = {
   title: "Техническая поддержка SmartCloud – Поддержка 24/7",
@@ -28,12 +28,12 @@ const seoData = {
 
 <Layout {...seoData}>
   <Hero imgSrc={securitySupportImg}>
-    <h1 class="text-3xl font-medium lg:text-5xl">
+    <h1 class="text-dynamic font-medium leading-none"> 
       Профессиональная <br />
       <span class="text-secondary"> Поддержка ИБ </span>
       <br /> Мониторинг и Управление Безопасностью
     </h1>
-    <p class="text-xl mt-6 hidden sm:block">
+    <p class="text-medium mt-6 hidden sm:block">
       Наш сервис предоставляет комплексную техническую поддержку ИБ, включая
       мониторинг, анализ проблем и разработку персональных программ управления
       информационной безопасностью для максимальной защиты ваших данных

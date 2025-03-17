@@ -1,11 +1,5 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui";
-import { useState, useEffect } from "react";
-
+---
+import Accordion from "@/components/ui/Accordion.astro";
 const translations = {
   ru: {
     title: "Для кого подходит?",
@@ -113,84 +107,54 @@ const translations = {
     answer3_part5_sub3: "Veb-ilovaning aniq talablariga mos ravishda qoidalarni sozlash imkoniyati."
   }
 };
+const curretLocal = Astro.url.pathname.startsWith("/uz")? "uz":"ru";
+const t = translations[curretLocal];
+---
 
-
-export default function WafAccodtion() {
-  const [currentLocale, setCurrentLocale] = useState<"ru" | "uz">("ru");
-      
-  useEffect(() => {
-      setCurrentLocale(window.location.pathname.startsWith("/uz") ? "uz" : "ru");
-  }, []);
-      
-  const t = translations[currentLocale];
-  return (
-    <div className="my-60">
-      <h2 className="text-center text-4xl font-medium">{t.title}</h2>
-      <Accordion type="single" collapsible className="w-full mt-20">
-        <AccordionItem value="first">
-          <AccordionTrigger className="text-xl">
-            {t.question1}
-          </AccordionTrigger>
-          <AccordionContent className="text-[18px]">
-            <ul className="list-disc grid gap-3">
-              <li><strong>{t.answer1_header1}</strong>{t.answer1_part1}</li>
-              <li><strong>{t.answer1_header2}</strong>{t.answer1_part2}</li>
-              <li><strong>{t.answer1_header3}</strong>{t.answer1_part3}</li>
-              <li><strong>{t.answer1_header4}</strong>{t.answer1_part4}</li>
-              <li><strong>{t.answer1_header5}</strong>{t.answer1_part5}</li>
-            </ul>
-          </AccordionContent>
-        </AccordionItem>
-        <AccordionItem value="second">
-          <AccordionTrigger className="text-xl">
-            {t.question2}
-          </AccordionTrigger>
-          <AccordionContent className="grid gap-5 text-[18px]">
-            <h1 className="text-xl">
-              {t.answer2}
-            </h1>
-            <ol className="grid gap-3 list-disc">
-              <li><strong>{t.answer2_header1}</strong>{t.answer2_part1}</li>
-              <li><strong>{t.answer2_header2}</strong>{t.answer2_part2}</li>
-              <li><strong>{t.answer2_header3}</strong>{t.answer2_part3}</li>
-              <li><strong>{t.answer2_header4}</strong>{t.answer2_part4}</li>
-              <li><strong>{t.answer2_header5}</strong>{t.answer2_part5}</li>
-              <li><strong>{t.answer2_header6}</strong>{t.answer2_part6}</li>
-              <li><strong>{t.answer2_header7}</strong>{t.answer2_part7}</li>
-              <li><strong>{t.answer2_header8}</strong>{t.answer2_part8}</li>
-              <li><strong>{t.answer2_header9}</strong>{t.answer2_part9}</li>
-              <li><strong>{t.answer2_header10}</strong>{t.answer2_part10}</li>
-            </ol>
-          </AccordionContent>
-        </AccordionItem>
-        <AccordionItem value="third">
-          <AccordionTrigger className="text-xl">
-            {t.question3}
-          </AccordionTrigger>
-          <AccordionContent className="grid gap-5 text-[18px]">
-            <p>
-              {t.answer3_part1}
-            </p>
-            <strong>
-              {t.answer3_part2}
-            </strong>
-            <div>
-              <strong className="text-secondary">{t.answer3_header3}</strong>{" "}{t.answer3_part3}
-            </div>{" "}
-            <div>
-            <strong className="text-secondary">{t.answer3_header4}</strong>{" "}{t.answer3_part4}
-            </div>
-            <div>
-              <strong>{t.answer3_part5}</strong>{" "}
-              <ul className="pl-5 list-disc">
-                <li><strong>{t.answer3_part5_header1}</strong> {t.answer3_part5_sub1}</li>
-                <li><strong>{t.answer3_part5_header2}</strong> {t.answer3_part5_sub2}</li>
-                <li><strong>{t.answer3_part5_header3}</strong> {t.answer3_part5_sub3}</li>
-              </ul>
-            </div>
-          </AccordionContent>
-        </AccordionItem>
-      </Accordion>
+<div class="my-dynamic">
+  <h2 class="text-center text-extra-large font-medium">{t.title}</h2>
+  <Accordion title={t.question1}>
+    <ul class="list-disc grid gap-3">
+      <li><strong>{t.answer1_header1}</strong>{t.answer1_part1}</li>
+      <li><strong>{t.answer1_header2}</strong>{t.answer1_part2}</li>
+      <li><strong>{t.answer1_header3}</strong>{t.answer1_part3}</li>
+      <li><strong>{t.answer1_header4}</strong>{t.answer1_part4}</li>
+      <li><strong>{t.answer1_header5}</strong>{t.answer1_part5}</li>
+    </ul>
+  </Accordion>
+  <Accordion title={t.question2}>
+    <h1 class="text-xl">
+      {t.answer2}
+    </h1>
+    <ol class="grid gap-3 list-disc">
+      <li><strong>{t.answer2_header1}</strong>{t.answer2_part1}</li>
+      <li><strong>{t.answer2_header2}</strong>{t.answer2_part2}</li>
+      <li><strong>{t.answer2_header3}</strong>{t.answer2_part3}</li>
+      <li><strong>{t.answer2_header4}</strong>{t.answer2_part4}</li>
+      <li><strong>{t.answer2_header5}</strong>{t.answer2_part5}</li>
+      <li><strong>{t.answer2_header6}</strong>{t.answer2_part6}</li>
+      <li><strong>{t.answer2_header7}</strong>{t.answer2_part7}</li>
+      <li><strong>{t.answer2_header8}</strong>{t.answer2_part8}</li>
+      <li><strong>{t.answer2_header9}</strong>{t.answer2_part9}</li>
+      <li><strong>{t.answer2_header10}</strong>{t.answer2_part10}</li>
+    </ol>
+  </Accordion>
+  <Accordion title={t.question3}>
+    <p>{t.answer3_part1}</p>
+    <strong>{t.answer3_part2}</strong>
+    <div>
+      <strong class="text-secondary">{t.answer3_header3}</strong>{" "}{t.answer3_part3}
+    </div>{" "}
+    <div>
+    <strong class="text-secondary">{t.answer3_header4}</strong>{" "}{t.answer3_part4}
     </div>
-  );
-}
+    <div>
+      <strong>{t.answer3_part5}</strong>{" "}
+      <ul class="pl-5 list-disc">
+        <li><strong>{t.answer3_part5_header1}</strong> {t.answer3_part5_sub1}</li>
+        <li><strong>{t.answer3_part5_header2}</strong> {t.answer3_part5_sub2}</li>
+        <li><strong>{t.answer3_part5_header3}</strong> {t.answer3_part5_sub3}</li>
+      </ul>
+    </div>
+  </Accordion>
+</div>

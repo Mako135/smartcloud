@@ -7,7 +7,7 @@ import { socAdvantages, socAdvantages2 } from "@/lib/dataUZ/socData";
 import Hero from "@/widgets/Hero.astro";
 
 import socImg from "@/assets/waf.svg";
-import SocAccordion from "@/widgets/security/soc/SocAccordion";
+import SocAccordion from "@/widgets/security/soc/SocAccordion.astro";
 
 const seoData = {
   title: "Security Operations Center (SOC) – Мониторинг и защита",
@@ -23,11 +23,11 @@ const seoData = {
 
 <Layout {...seoData}>
   <Hero imgSrc={socImg}>
-    <h1 class="text-3xl font-medium lg:text-5xl">
+    <h1 class="text-dynamic font-medium leading-none"> 
       <span class="text-secondary">SOC</span>
       – sizning raqamli aktivlaringizni kompleks himoya qilish
     </h1>
-    <p class="text-sm mt-2 lg:text-xl">
+    <p class="text-medium mt-2">
       Bizning Operatsion Xavfsizlik Markazimiz (SOC) sizning raqamli ma'lumotlaringizni real vaqt 
       rejimida himoya qilib, tarmoqqa hujumlarni 24/7 monitoring qilish, tahlil qilish va oldini olishni 
       ta'minlaydi.

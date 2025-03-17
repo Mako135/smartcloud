@@ -1,11 +1,6 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui";
-import { useState, useEffect } from "react";
-
+---
+import Accordion from "@/components/ui/Accordion.astro";
+import { transformer } from "astro:schema";
 const translations = {
   ru: {
     title: "Для кого подходит?",
@@ -34,58 +29,27 @@ const translations = {
     answer3_part5: "onlayn savdo kanallarini rivojlantirayotgan, qisman yoki to‘liq bulutga o‘tayotgan kompaniyalar uchun."
   }
 };
+const currentLocale = Astro.url.pathname.startsWith("/uz") ? "uz" : "ru";
+const t = translations[currentLocale];
+---
 
-export default function SocAccordion() {
-  const [currentLocale, setCurrentLocale] = useState<"ru" | "uz">("ru");
-    
-  useEffect(() => {
-    setCurrentLocale(window.location.pathname.startsWith("/uz") ? "uz" : "ru");
-  }, []);
-    
-  const t = translations[currentLocale];
-  return (
-    <div className="my-60">
-      <h2 className="text-center text-4xl font-medium">{t.title}</h2>
-      <Accordion type="single" collapsible className="w-full mt-20">
-        <AccordionItem value="first">
-          <AccordionTrigger className="text-xl">
-            {t.question1}
-          </AccordionTrigger>
-          <AccordionContent className="text-[18px]">
-            {t.answer1}
-          </AccordionContent>
-        </AccordionItem>
-        <AccordionItem value="second">
-          <AccordionTrigger className="text-xl">
-            {t.question2}
-          </AccordionTrigger>
-          <AccordionContent className="grid gap-5 text-[18px]">
-            {t.answer2}
-          </AccordionContent>
-        </AccordionItem>
-        <AccordionItem value="third">
-          <AccordionTrigger className="text-xl">
-            {t.question3}
-          </AccordionTrigger>
-          <AccordionContent className="grid gap-5 text-[18px]">
-            {t.answer3_part1}
-            <ul className="list-disc pl-5">
-              <li>
-                {t.answer3_part2}
-              </li>
-              <li>
-              {t.answer3_part3}
-              </li>
-              <li>
-              {t.answer3_part4}
-              </li>
-              <li>
-              {t.answer3_part5}
-              </li>
-            </ul>
-          </AccordionContent>
-        </AccordionItem>
-      </Accordion>
-    </div>
-  );
-}
+
+<div class="my-dynamic">
+  <h2 class="text-center text-extra-large font-medium">{t.title}</h2>
+  <Accordion title={t.question1}>
+    {t.answer1}
+  </Accordion>
+  <Accordion title={t.question2}>
+    {t.answer2}
+  </Accordion>
+  <Accordion title={t.question3}>
+    {t.answer3_part1}
+    <ul class="list-disc pl-5">
+      <li>{t.answer3_part2}</li>
+      <li>{t.answer3_part3}</li>
+      <li>{t.answer3_part4}</li>
+      <li>{t.answer3_part5}</li>
+    </ul>
+  </Accordion>
+
+</div>

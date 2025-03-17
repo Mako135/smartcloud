@@ -53,3 +53,8 @@ const AccordionContent = React.forwardRef<
 AccordionContent.displayName = AccordionPrimitive.Content.displayName
 
 export { Accordion, AccordionItem, AccordionTrigger, AccordionContent }
+
+{/* <div>
+  <header></header>
+<footer h-full || h-0></footer>
+</div> */}

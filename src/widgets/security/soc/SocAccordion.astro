@@ -1,11 +1,5 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui";
-import { useState, useEffect } from "react";
-
+---
+import Accordion from "@/components/ui/Accordion.astro";
 const translations = {
   ru: {
     title: "Для кого подходит?",
@@ -32,50 +26,24 @@ const translations = {
         answer3: "Yagona to‘g‘ri variant yo‘q. SOC axborot xavfsizligi operatsion modeli har bir biznesning ehtiyoj va imkoniyatlariga qarab tanlanadi: - o‘ziga tegishli. Eng qimmat va tashkil etish hamda ishga tushirish bo‘yicha eng uzoq davom etadigan variant. Uning ustunligi – axborot xavfsizligini kuzatish markazi to‘liq kompaniyaga tegishli bo‘ladi; - autsorsing. Kiberxavfsizlik xizmatlari orasida eng istiqbolli yo‘nalishlardan biri. SOCni xizmat sifatida ijaraga olganda barcha ish jarayonlarini operator o‘z zimmasiga oladi. Mijozga kadrlarni qidirish va ularni saqlash, reglamentlarni ishlab chiqish va joriy etish shart emas. - gibrid. Hamkorlik modeli. Buyurtmachi IT-infrastrukturasiga joriy qilish uchun apparat-texnik qismini o‘zi sotib oladi, boshqaruv esa provayder bilan birgalikda amalga oshiriladi. Uskuna hajmi, xizmatlar va funksiyalar soni har bir aniq holatda hisoblab chiqiladi."
     }
 };
-
-
-export default function SocAccordion() {
-  const [currentLocale, setCurrentLocale] = useState<"ru" | "uz">("ru");
-    
-      useEffect(() => {
-        setCurrentLocale(window.location.pathname.startsWith("/uz") ? "uz" : "ru");
-      }, []);
-    
-      const t = translations[currentLocale];
-  return (
-    <div className="my-60">
-      <h2 className="text-center text-4xl font-medium">{t.title}</h2>
-      <Accordion type="single" collapsible className="w-full mt-20">
-        <AccordionItem value="first">
-          <AccordionTrigger className="text-xl">
-            {t.question1}
-          </AccordionTrigger>
-          <AccordionContent className="text-[18px]">
-            {t.answer1}
-          </AccordionContent>
-        </AccordionItem>
-        <AccordionItem value="second">
-          <AccordionTrigger className="text-xl">
-            {t.question2}
-          </AccordionTrigger>
-          <AccordionContent className="grid gap-5 text-[18px]">
-            {t.answer2_part1}
-            <ul className="pl-5 list-disc">
-              <li>{t.answer2_part1}</li>
-              <li>{t.answer2_part2}</li>
-              <li>{t.answer2_part3}</li>
-            </ul>
-          </AccordionContent>
-        </AccordionItem>
-        <AccordionItem value="third">
-          <AccordionTrigger className="text-xl">
-            {t.question3}
-          </AccordionTrigger>
-          <AccordionContent className="grid gap-5 text-[18px]">
-            {t.answer3}
-          </AccordionContent>
-        </AccordionItem>
-      </Accordion>
-    </div>
-  );
-}
+const currentLocale = Astro.url.pathname.startsWith("/uz") ? "uz" : "ru";
+const t = translations[currentLocale];
+---
+<div class="my-dynamic">
+  <h2 class="text-center text-extra-large font-medium">{t.title}</h2>
+  <Accordion title={t.question1}>
+    <p>{t.answer1}</p>
+  </Accordion>
+  <Accordion title={t.question2}>
+    {t.answer2_part1}
+    <ul class="pl-5 list-disc">
+      <li>{t.answer2_part1}</li>
+      <li>{t.answer2_part2}</li>
+      <li>{t.answer2_part3}</li>
+    </ul>
+  </Accordion>
+  <Accordion title={t.question3}>
+    {t.answer3}
+  </Accordion>
+  
+</div>

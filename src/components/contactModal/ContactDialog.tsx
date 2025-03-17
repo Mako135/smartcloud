@@ -37,7 +37,7 @@ export function ContactDialog({ className }: { className?: string }) {
         <Button
           variant="outline"
           className={clsx(
-            "rounded-3xl bg-transparent border-secondary hover:bg-secondary hover:text-white text-md",
+            "rounded-3xl bg-transparent border-secondary hover:bg-secondary hover:text-white text-regular",
             className
           )}
         >
@@ -46,7 +46,7 @@ export function ContactDialog({ className }: { className?: string }) {
       </DialogTrigger>
       <DialogContent className="max-w-[320px] sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle className="text-xl">
+          <DialogTitle className="text-medium">
             {translations[currentLocale].title}
           </DialogTitle>
         </DialogHeader>

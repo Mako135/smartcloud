@@ -23,10 +23,10 @@ export default function VdsCards() {
 
   return (
     <div>
-      <h1 className="text-center text-4xl font-medium mb-20">
+      <h1 className="text-center text-extra-large font-medium mb-dynamic">
         {translations[currentLocale].label}
       </h1>
-      <Tabs defaultValue="ssd" className="flex flex-col mb-40">
+      <Tabs defaultValue="ssd" className="flex flex-col mb-dynamic40">
         <TabsList className="w-full grid grid-cols-2 max-w-[400px] mb-10 mx-auto">
           <TabsTrigger value="ssd">SSD</TabsTrigger>
           <TabsTrigger value="hdd">HDD</TabsTrigger>
