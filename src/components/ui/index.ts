@@ -1,22 +1,5 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "./accordion";
-import { Button } from "./button";
 
-import {
-  Command,
-  CommandDialog,
-  CommandInput,
-  CommandList,
-  CommandEmpty,
-  CommandGroup,
-  CommandItem,
-  CommandShortcut,
-  CommandSeparator,
-} from "./command";
+import { Button } from "./button";
 
 import {
   Dialog,
@@ -85,20 +68,9 @@ import {
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "./tabs";
 
 export {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
+
   Button,
-  Command,
-  CommandDialog,
-  CommandInput,
-  CommandList,
-  CommandEmpty,
-  CommandGroup,
-  CommandItem,
-  CommandShortcut,
-  CommandSeparator,
+
   Dialog,
   DialogPortal,
   DialogOverlay,
