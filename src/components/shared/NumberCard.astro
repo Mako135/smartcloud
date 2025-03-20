@@ -9,10 +9,10 @@ const { title, description } = Astro.props as NumberCardProps;
 <div
   class="p-5 border-[1px] border-secondary/30 rounded-md hover:-translate-y-2 hover:border-secondary duration-200 number-card"
 >
-  <h3 class="mt-2 mb-6 text-xl font-semibold break-words hyphens-manual">
+  <h3 class="mt-2 mb-6 text-medium font-semibold break-words hyphens-manual">
     {title}
   </h3>
-  <p>
+  <p class="text-regular">
     {description}
   </p>
 </div>

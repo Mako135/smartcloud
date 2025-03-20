@@ -110,3 +110,57 @@ ul > li > strong {
 option {
   background-color: black !important; /* Не всегда срабатывает */
 }
+
+.my-dynamic {
+  margin-top: clamp(2rem, 15vw, 15rem); /* Минимум 2rem, динамический отступ 10vw, максимум 15rem == 60 */
+  margin-bottom: clamp(2rem, 15vw, 15rem);
+}
+.mb-dynamic {
+  margin-bottom: clamp(1rem, 5vw, 5rem); /* 1rem = 4, 5rem = mb-20 */
+}
+.mb-dynamic40{
+  margin-bottom: clamp(2rem, 10vw, 10rem); /* 1rem = 4, 5rem = mb-40 */
+}
+.mb-dynamic60{
+  margin-bottom: clamp(2rem, 10vw, 15rem); /* 1rem = 4, 5rem = mb-60 */
+}
+.mt-dynamic {
+  margin-top: clamp(2rem, 10vw, 10rem); /* 2rem = 8, 10rem = mt-40 */
+}
+.mt-dynamic20 {
+  margin-top: clamp(1rem, 5vw, 5rem); /* 1rem = 4, 5rem = mt-20 */
+}
+.mt-dynamic10 {
+  margin-top: clamp(0.5rem, 1.5vw, 2.5rem); /* 1rem = 4, 5rem = mt-10 */
+}
+
+
+.gap-dynamic10 {
+  gap: clamp(1rem, 2.5vw, 2.5rem);
+}
+.gap-dynamic20 {
+  gap: clamp(1rem, 5vw, 5rem);
+}
+
+
+.text-dynamicNumber {
+  font-size: clamp(2.5rem, 5vw, 4rem);/* text-md lg:text-xl */
+}
+.text-small {
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem); /* От 12px до 14px */
+}
+.text-regular {
+  font-size: clamp(0.875rem, 2vw, 1rem); /* От 14px до 16px */
+}
+.text-medium {
+  font-size: clamp(1rem, 2.5vw, 1.25rem); /* От 16px до 20px */
+}
+.text-large {
+  font-size: clamp(1.25rem, 3vw, 1.5rem); /* От 20px до 24px */
+}
+.text-extra-large {
+  font-size: clamp(1.5rem, 4vw, 2rem); /* От 24px до 32px */
+}
+.text-dynamic {
+  font-size: clamp(1.875rem, 5vw, 3rem); /* Title text-3xl = 1.875rem, lg:text-5xl = 3rem */
+}

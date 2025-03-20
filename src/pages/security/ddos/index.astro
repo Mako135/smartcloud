@@ -7,7 +7,7 @@ import { ddosData, ddosData2 } from "@/lib/data/ddosData";
 import Hero from "@/widgets/Hero.astro";
 
 import ddosImg from "@/assets/ddos.png";
-import DdosAccordion from "@/widgets/security/ddos/DdosAccordion";
+import DdosAccordion from "@/widgets/security/ddos/DdosAccordion.astro";
 
 const seoData = {
   title: "DDoS Protection – Защита от DDoS-атак от SmartCloud",
@@ -27,11 +27,11 @@ const seoData = {
 
 <Layout {...seoData}>
   <Hero imgSrc={ddosImg}>
-    <h1 class="text-3xl font-medium lg:text-5xl">
+    <h1 class="text-dynamic font-medium leading-none"> 
       Не дайте <span class="text-secondary">DDoS</span>-атаке остановить Ваш
       бизнес!
     </h1>
-    <p class="text-sm mt-2 lg:text-xl">
+    <p class="text-medium mt-2">
       Передовые решения для защиты ваших ресурсов от DDoS атак на уровнях L3, L4
       и L7 модели OSI. Обеспечьте непрерывную работу сервиса и доступность для
       клиентов <br /> с нашими надежными услугами
@@ -56,5 +56,5 @@ const seoData = {
     data={ddosData2}
   />
 
-  <DdosAccordion client:idle />
+  <DdosAccordion/>
 </Layout>

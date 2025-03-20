@@ -17,10 +17,10 @@ const { days } = Astro.props;
   className="bg-slate-100 dark:bg-slate-900/50 p-5 rounded-2xl lg:py-20"
 >
   <div class="text-center m-4">
-    <h2 class="text-3xl font-medium lg:text-4xl flex flex-wrap justify-center">
+    <h2 class="text-extra-large font-medium flex flex-wrap justify-center">
       {days} {t.title}
     </h2>
-    <p class="mt-4 mb-8 whitespace-pre-line">
+    <p class="mt-4 mb-8 whitespace-pre-line text-regular">
       {t.descriptionFirstPart}
     </p>
     <ContactDialog client:idle />

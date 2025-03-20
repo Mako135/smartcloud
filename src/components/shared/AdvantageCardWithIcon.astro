@@ -11,20 +11,20 @@ interface Props {
 const { data, title, cardClassName } = Astro.props;
 ---
 
-<div class="bg-slate-100 dark:bg-[#0f172a80] p-10 rounded-xl" id="advIconCardsContainer">
-  <h2 class="text-center text-4xl font-medium" id="advIconsTitle">
+<div class="bg-slate-100 dark:bg-[#0f172a80] p-4 lg:p-10 rounded-xl" id="advIconCardsContainer">
+  <h2 class="text-center text-extra-large font-medium" id="advIconsTitle">
     {title}
   </h2>
 
   <div
     class={clsx(
-      "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mt-20",
+      "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 lg:gap-10 mt-dynamic20",
       cardClassName
     )}
   >
     {
       data.map((desc) => (
-        <div class="flex gap-2 advIconCards">
+        <div class="flex gap-2 advIconCards text-regular">
           <div>
             <CircleCheck size={36} color="#3b82f6" />
           </div>

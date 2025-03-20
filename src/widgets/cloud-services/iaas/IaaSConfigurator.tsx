@@ -71,11 +71,11 @@ const IaaSConfigurator = () => {
   }, []);
 
   return (
-    <div className="my-60" ref={ref}>
-      <h1 className="text-2xl md:text-4xl font-medium" id="iaasConfTitle">
+    <div className="my-dynamic" ref={ref}>
+      <h1 className="text-extra-large font-medium" id="iaasConfTitle">
         {translations[currentLocale].title}
       </h1>
-      <p className="text-md mt-5 md:text-2xl md:mt-0" id="iaasDescTitle">
+      <p className="text-medium mt-5 md:mt-0" id="iaasDescTitle">
         {translations[currentLocale].description}
       </p>
 
@@ -84,7 +84,7 @@ const IaaSConfigurator = () => {
         id="iaasConf"
       >
         <div className="col-span-4 pt-4 pr-5 pb-6 pl-3">
-          <h2 className="text-3xl font-medium">Infrastructure as a Service</h2>
+          <h2 className="text-large font-medium">Infrastructure as a Service</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-stretch mt-5">
             <CpuInput />
             <RamInput />

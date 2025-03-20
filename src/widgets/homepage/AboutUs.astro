@@ -5,13 +5,13 @@ const locale = Astro.url.pathname.startsWith('/uz') ? 'uz' : 'ru';
 const t = await getTranslations(locale, "aboutUs");
 ---
 <div
-  class="mb-40 p-10 bg-slate-100 dark:bg-slate-900/50 rounded-xl"
+  class="mb-dynamic40 p-10 bg-slate-100 dark:bg-slate-900/50 rounded-xl"
   id="aboutUsContainer"
 >
-  <section class="grid grid-cols-1 lg:grid-cols-2 gap-20 justify-between">
+  <section class="grid grid-cols-1 lg:grid-cols-2 gap-dynamic20 justify-between">
     <div class="flex flex-col gap-5">
-      <h2 class="text-4xl font-medium" id="aboutUsTitle">{t.title}</h2>
-      <p id="aboutUsDesc" class="whitespace-pre-line">
+      <h2 class="text-extra-large font-medium" id="aboutUsTitle">{t.title}</h2>
+      <p id="aboutUsDesc" class="whitespace-pre-line text-regular">
         {t.descriptionFirstPart}
         <a href="https://kazteleport.kz/">"Kazteleport"</a>
         {t.descriptionSecondPart}
@@ -21,32 +21,28 @@ const t = await getTranslations(locale, "aboutUs");
       class="grid grid-cols-1 items-stretch justify-center gap-5 sm:grid-cols-2"
     >
       <div class="p-5 grid gap-4 rounded-md about-us">
-        <h2 class="text-6xl font-medium">
+        <h2 class="text-dynamicNumber font-medium">
           25<span class="text-secondary">+</span>
         </h2>
-        <p>{t.stats.experience}</p>
+        <p class="text-regular">{t.stats.experience}</p>
       </div>
       <div class="p-5 grid gap-4 rounded-md about-us">
-        <h2 class="text-6xl font-medium">
+        <h2 class="text-dynamicNumber font-medium">
           100<span class="text-secondary">+</span>
         </h2>
-        <p>{t.stats.partners}</p>
+        <p class="text-regular">{t.stats.partners}</p>
       </div>
       <div class="p-5 grid gap-4 rounded-md about-us">
-        <h2 class="text-6xl font-medium">
+        <h2 class="text-dynamicNumber font-medium">
           200<span class="text-secondary">+</span>
         </h2>
-        <p class="whitespace-pre-line">
-          {t.stats.clients}
-        </p>
+        <p class="text-regular">{t.stats.clients}</p>
       </div>
       <div class="p-5 grid gap-4 rounded-md about-us">
-        <h2 class="text-6xl font-medium">
+        <h2 class="text-dynamicNumber font-medium">
           160<span class="text-secondary">+</span>
         </h2>
-        <p class="whitespace-pre-line">
-          {t.stats.employees}
-        </p>
+        <p class="text-regular">{t.stats.employees}</p>
       </div>
     </div>
   </section>

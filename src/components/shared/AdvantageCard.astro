@@ -12,12 +12,12 @@ interface Props {
 const { dataArray, title, cardClassName, data } = Astro.props;
 ---
 
-<section class="my-60">
-  <h2 class="text-center text-4xl font-medium" id="advantageTitle">{title}</h2>
+<section class="my-dynamic">
+  <h2 class="text-center text-extra-large font-medium" id="advantageTitle">{title}</h2>
 
   <div
     class={clsx(
-      "grid grid-cols-1 md:grid-cols-2 items-stretch gap-10 mt-20",
+      "grid grid-cols-1 md:grid-cols-2 items-stretch gap-dynamic10 mt-dynamic20",
       cardClassName
     )}
     id="advantageCards"

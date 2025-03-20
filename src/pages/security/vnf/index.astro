@@ -5,6 +5,7 @@ import { vnfAdvantages } from "@/lib/data/vnfData";
 import Hero from "@/widgets/Hero.astro";
 import vnf from "@/assets/vnf.webp";
 import AdvantageCard from "@/components/shared/AdvantageCard.astro";
+
 const seoData = {
   title: "Техническая поддержка SmartCloud – Поддержка 24/7",
   description:
@@ -21,11 +22,11 @@ const seoData = {
 
 <Layout {...seoData}>
   <Hero imgSrc={vnf}>
-    <h1 class="text-3xl font-medium lg:text-5xl">
+    <h1 class="text-dynamic font-medium leading-none"> 
       <span class="text-secondary">Virtual Network Firewall</span>
       – межсетевой экран следующего поколения
     </h1>
-    <p class="text-xl mt-6">
+    <p class="text-medium mt-6">
       Полный контроль над вашей сетью. Минимизируйте риски, максимизируйте
       производительность
     </p>

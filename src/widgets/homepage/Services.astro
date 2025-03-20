@@ -6,8 +6,8 @@ const locale = Astro.url.pathname.startsWith('/uz') ? 'uz' : 'ru';
 const t = await getTranslations(locale, "services");
 ---
 
-<section id="services" class="my-60">
-  <h2 class="text-center text-4xl font-medium mb-20" id="servicesTitle">
+<section id="services" class="my-dynamic">
+  <h2 class="text-center text-extra-large font-medium mb-dynamic" id="servicesTitle">
     {t.title}
   </h2>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -22,8 +22,8 @@ const t = await getTranslations(locale, "services");
             className="absolute -z-120 -right-2 -bottom-10 h-52 w-52 opacity-10 group-hover:opacity-50 rotate-12"
             color="#0c94d4"
           />
-          <span class="text-xl font-bold">{service.label[locale]}</span>
-          <p class="mt-2 text-gray-400 group-hover:text-black dark:group-hover:text-white">
+          <span class="text-medium font-bold">{service.label[locale]}</span>
+          <p class="mt-2 text-gray-400 group-hover:text-black dark:group-hover:text-white text-regular">
             {service.desc[locale]}
           </p>
         </a>

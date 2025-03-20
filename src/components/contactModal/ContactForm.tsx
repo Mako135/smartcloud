@@ -83,7 +83,7 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit}>
       <div className="grid gap-4 py-4">
         <div>
-          <Label htmlFor="name" className="text-right text-md">
+          <Label htmlFor="name" className="text-right text-regular">
             {t.name}
           </Label>
           <Input
@@ -98,7 +98,7 @@ export default function ContactForm() {
           />
         </div>
         <div>
-          <Label htmlFor="company" className="text-right text-md">
+          <Label htmlFor="company" className="text-right text-regular">
             {t.company}
           </Label>
           <Input
@@ -113,7 +113,7 @@ export default function ContactForm() {
           />
         </div>
         <div>
-          <Label htmlFor="phone" className="text-right text-md">
+          <Label htmlFor="phone" className="text-right text-regular">
             {t.phone}
           </Label>
           <ShadcnPhone value={inputs.phone} onChange={handlePhoneChange} />

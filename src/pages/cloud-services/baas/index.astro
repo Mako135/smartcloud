@@ -26,21 +26,21 @@ const seoData = {
 
 <Layout {...seoData}>
   <Hero imgSrc={baasImg}>
-    <h1 class="text-3xl font-medium lg:text-5xl">
+    <h1 class="text-dynamic font-medium leading-none"> 
       Надежные <span class="text-secondary">BaaS</span> решения для роста вашего
       предприятия
     </h1>
-    <p class="text-sm mt-2 lg:text-xl">
+    <p class="text-large mt-2">
       Подключите облачное хранение копий виртуальных машин для быстрого
       восстановления первичной информации независимо от причины сбоя.
     </p>
   </Hero>
 
-  <h1 class="text-2xl md:text-4xl font-medium text-center mb-20">
+  <h1 class="text-extra-large font-medium text-center mb-dynamic">
     Сценарии использования BaaS
   </h1>
 
-  <div class="grid md:grid-cols-2 gap-10">
+  <div class="grid md:grid-cols-2 gap-dynamic10">
     {baasUseCases.map((item) => <IaasUseCaseCard title={item} />)}
   </div>
 
@@ -49,23 +49,23 @@ const seoData = {
     title="Преимущества BaaS"
     data={baasAdvantages}
   />
-  <AboutSection title="Наше уникальное предложение" className="my-60">
+  <AboutSection title="Наше уникальное предложение" className="text-extra-large">
     <div>
-      <h1 class="font-bold">Проверенные решения</h1>
-      <p class="text-[21px]">
+      <h1 class="text-large font-bold">Проверенные решения</h1>
+      <p class="text-medium">
         От лидеров в области резервного копирования, репликации и восстановления
         данных
       </p>
     </div>
     <div class="my-10">
-      <h1 class="font-bold">Надежная инфраструктура</h1>
-      <p class="text-[21px]">
+      <h1 class="text-large font-bold">Надежная инфраструктура</h1>
+      <p class="text-medium">
         Резервные копии хранятся в высокозащищенном дата-центре Ташкента
       </p>
     </div>
     <div>
-      <h1 class="font-bold">Всегда на связи</h1>
-      <p class="text-[21px]">
+      <h1 class="text-large font-bold">Всегда на связи</h1>
+      <p class="text-medium">
         Индивидуальная консультация и обслуживание, круглосуточная техническая
         поддержка
       </p>

@@ -9,7 +9,7 @@ import Hero from "@/widgets/Hero.astro";
 
 import wafImg from "@/assets/waf.svg";
 import IaasUseCaseCard from "@/components/cloud-services/iaas/IaasUseCaseCard.astro";
-import WafAccodtion from "@/widgets/security/waf/WafAccodtion";
+import WafAccodtion from "@/widgets/security/waf/WafAccodtion.astro";
 
 const seoData = {
   title: "WAF (Web Application Firewall) – Защита веб-приложений",
@@ -30,10 +30,10 @@ const seoData = {
 <Layout {...seoData}>
   <Container>
     <Hero imgSrc={wafImg}>
-      <h1 class="text-3xl font-medium lg:text-5xl">
+      <h1 class="text-dynamic font-medium leading-none"> 
         <span class="text-secondary">WAF</span> - Надежная защита <br /> веб-приложений
       </h1>
-      <p class="text-sm mt-2 lg:text-xl">
+      <p class="text-medium mt-2">
         Наш Web Application Firewall (WAF) анализирует веб-трафик в реальном
         времени, обнаруживая и блокируя вредоносные активности для надежной
         защиты ваших веб-приложений
@@ -54,12 +54,12 @@ const seoData = {
       cardClassName="mt-0"
     />
 
-    <section class="my-60">
-      <h1 class="text-2xl md:text-4xl font-medium text-center mb-20">
+    <section class="my-dynamic">
+      <h1 class="text-extra-large font-medium text-center mb-dynamic">
         Cферы применения WAF
       </h1>
 
-      <div class="grid lg:grid-cols-3 gap-10">
+      <div class="grid lg:grid-cols-3 gap-dynamic10">
         {
           wafUseCases.map((item) => (
             <IaasUseCaseCard
@@ -78,6 +78,6 @@ const seoData = {
   />
 
   <Container>
-    <WafAccodtion client:idle />
+    <WafAccodtion/>
   </Container>
 </Layout>

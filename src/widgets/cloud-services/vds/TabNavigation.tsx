@@ -46,14 +46,14 @@ const TabsComponent = ({
   const [activeTab, setActiveTab] = useState<"os" | "marketplace">("os");
 
   return (
-    <section className="my-60">
-      <h1 className="text-center text-4xl font-medium mb-20">{title}</h1>
+    <section className="my-dynamic">
+      <h1 className="text-center text-extra-large font-medium mb-dynamic">{title}</h1>
       <div className="flex justify-center border-b border-gray-200 dark:border-gray-500 mb-6">
         {tabKeys.map((tabKey) => (
           <div
             key={tabKey}
             onClick={() => setActiveTab(tabKey)}
-            className={`relative pb-2 px-3 transition-all duration-150 cursor-pointer ${
+            className={`text-regular relative pb-2 px-3 transition-all duration-150 cursor-pointer ${
               activeTab === tabKey
                 ? "text-blue-600 dark:text-white"
                 : "text-gray-600 hover:text-gray-800 dark:hover:text-gray-200"

@@ -23,15 +23,15 @@ const { title, desc, list, cardClassName, buttonClassName, listClassName } =
   )}
 >
   <div>
-    <h3 class="text-xl font-medium h-10 mb-5">{title}</h3>
-    <p class="text-sm">{desc}</p>
+    <h3 class="text-medium font-medium h-10 mb-5">{title}</h3>
+    <p class="text-small">{desc}</p>
   </div>
 
   <div class="mt-5">
     <ul class={clsx("", listClassName)}>
       {
         list.map((item) => (
-          <li class="text-sm mt-2 list-none flex gap-2 ">
+          <li class="text-small mt-2 list-none flex gap-2 ">
             <div class="w-5 h-5">
               <CircleCheck  className="h-5 w-5 text-secondary" />
             </div>
