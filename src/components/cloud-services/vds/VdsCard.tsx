@@ -74,11 +74,15 @@ export default function VdsCard({
         </div>
         <div className="flex gap-2">
           <HardDrive />
-          <p className=" text-base text-regular">{t.storage}: {storage}</p>
+          <p className=" text-base text-regular">
+            {t.storage}: {storage}
+          </p>
         </div>
         <div className="flex gap-2">
           <LocateFixed />
-          <p className=" text-base text-regular">{t.ip}: {ip}</p>
+          <p className=" text-base text-regular">
+            {t.ip}: {ip}
+          </p>
         </div>
         <div className="flex gap-2">
           <Gauge />

@@ -7,15 +7,12 @@
   src: url("../fonts/NeoSansProRegular.woff") format("woff");
 }
 
-body {
-  font-family: "Neo Sans";
-}
-
 html,
 body {
   overscroll-behavior: none;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  font-family: "Neo Sans";
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -112,16 +109,20 @@ option {
 }
 
 .my-dynamic {
-  margin-top: clamp(2rem, 15vw, 15rem); /* Минимум 2rem, динамический отступ 10vw, максимум 15rem == 60 */
+  margin-top: clamp(
+    2rem,
+    15vw,
+    15rem
+  ); /* Минимум 2rem, динамический отступ 10vw, максимум 15rem == 60 */
   margin-bottom: clamp(2rem, 15vw, 15rem);
 }
 .mb-dynamic {
   margin-bottom: clamp(1rem, 5vw, 5rem); /* 1rem = 4, 5rem = mb-20 */
 }
-.mb-dynamic40{
+.mb-dynamic40 {
   margin-bottom: clamp(2rem, 10vw, 10rem); /* 1rem = 4, 5rem = mb-40 */
 }
-.mb-dynamic60{
+.mb-dynamic60 {
   margin-bottom: clamp(2rem, 10vw, 15rem); /* 1rem = 4, 5rem = mb-60 */
 }
 .mt-dynamic {
@@ -134,7 +135,6 @@ option {
   margin-top: clamp(0.5rem, 1.5vw, 2.5rem); /* 1rem = 4, 5rem = mt-10 */
 }
 
-
 .gap-dynamic10 {
   gap: clamp(1rem, 2.5vw, 2.5rem);
 }
@@ -142,9 +142,8 @@ option {
   gap: clamp(1rem, 5vw, 5rem);
 }
 
-
 .text-dynamicNumber {
-  font-size: clamp(2.5rem, 5vw, 4rem);/* text-md lg:text-xl */
+  font-size: clamp(2.5rem, 5vw, 4rem); /* text-md lg:text-xl */
 }
 .text-small {
   font-size: clamp(0.75rem, 1.5vw, 0.875rem); /* От 12px до 14px */
@@ -162,5 +161,97 @@ option {
   font-size: clamp(1.5rem, 4vw, 2rem); /* От 24px до 32px */
 }
 .text-dynamic {
-  font-size: clamp(1.875rem, 5vw, 3rem); /* Title text-3xl = 1.875rem, lg:text-5xl = 3rem */
+  font-size: clamp(
+    1.875rem,
+    5vw,
+    3rem
+  ); /* Title text-3xl = 1.875rem, lg:text-5xl = 3rem */
+}
+
+.stock-ticker {
+  position: relative;
+  padding-block: 8px;
+  overflow: hidden;
+  user-select: none;
+  --gap: 4rem;
+  display: flex;
+  gap: var(--gap);
+  height: 120px; /* Увеличил высоту */
+}
+
+.stock-ticker ul {
+  list-style: none;
+  flex-shrink: 0;
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around; /* Изменил с space-between на space-around */
+  align-items: center;
+  gap: var(--gap);
+  animation: scroll 20s linear infinite;
+}
+
+.stock-ticker ul li {
+  height: 80px; /* Фиксированная высота для элементов списка */
+  display: flex;
+  align-items: center;
+}
+
+.stock-ticker ul img {
+  max-width: 100%;
+  max-height: 100%; /* Ограничиваем максимальную высоту */
+  width: auto; /* Позволяем ширине быть авто */
+  height: auto; /* Позволяем высоте быть авто */
+  object-fit: contain;
+  filter: brightness(1);
+}
+
+.stock-ticker:hover ul {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+.stock-ticker::after,
+.stock-ticker::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 15%;
+  z-index: 1;
+  height: 100%;
+}
+
+.stock-ticker::after {
+  right: 0;
+}
+
+.stock-ticker::before {
+  left: 0;
+}
+.stock-ticker::after {
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.stock-ticker::before {
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+}
+.dark .stock-ticker::after {
+  background: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+.dark .stock-ticker::before {
+  background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }

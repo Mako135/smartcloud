@@ -1,14 +1,17 @@
 ---
 import { getTranslations } from "@/utils/i18n";
 
-const locale = Astro.url.pathname.startsWith('/uz') ? 'uz' : 'ru';
-const t = await getTranslations(locale, "aboutUs");
+const locale = Astro.url.pathname.startsWith("/uz") ? "uz" : "ru";
+const t = getTranslations(locale, "aboutUs");
 ---
+
 <div
   class="mb-dynamic40 p-10 bg-slate-100 dark:bg-slate-900/50 rounded-xl"
   id="aboutUsContainer"
 >
-  <section class="grid grid-cols-1 lg:grid-cols-2 gap-dynamic20 justify-between">
+  <section
+    class="grid grid-cols-1 lg:grid-cols-2 gap-dynamic20 justify-between"
+  >
     <div class="flex flex-col gap-5">
       <h2 class="text-extra-large font-medium" id="aboutUsTitle">{t.title}</h2>
       <p id="aboutUsDesc" class="whitespace-pre-line text-regular">

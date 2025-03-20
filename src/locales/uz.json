@@ -1,107 +1,47 @@
 {
-    "aboutUs": {
-      "title": "Kompaniya haqida",
-      "descriptionFirstPart": "SmartCloud jamoasi xalqaro ICT infratuzilma provayderining bir qismi — ",
-      "descriptionSecondPart": "AJ bo‘lib, O‘zbekiston hududida bulutli hisoblash, ma'lumotlarni saqlash, zaxiralash va kiberxavfsizlik xizmatlarini taqdim etadi.\n\nBizning ishonchli jismoniy va virtual infratuzilmamiz, tajribali muhandislar jamoamiz va keng tanlovdagi texnologiyalar mijozlarga barqarorlik va muhim jarayonlarning mavjudligini kafolatlaydi, shuningdek, biznesni istalgan vaqtda kengaytirish imkoniyatini beradi.",
-      "stats": {
-        "experience": "yillik tajriba ICT sohasida",
-        "partners": "ishonchli hamkorlar",
-        "clients": "muntazam mijozlar bizga ishonadi",
-        "employees": "sertifikatlangan xodimlar"
-    },
-    "contacts": "",
-    "addresses": {
-          "label": "",
-          "address1": "",
-          "address2": ""
-     }
-    },
-    "services":{
-        "title": "Bizning xizmatlarimiz",
-        "descriptionFirstPart": "",
-        "descriptionSecondPart": "",
-        "stats": {
-            "experience": "",
-            "partners": "",
-            "clients": "",
-            "employees": ""
-        },
-        "contacts": "",
-        "addresses": {
-            "label": "",
-            "address1": "",
-            "address2": ""
-        }
-    },
-    "footer":{
-        "title": "",
-        "descriptionFirstPart": "",
-        "descriptionSecondPart": "",
-        "stats": {
-            "experience": "",
-            "partners": "",
-            "clients": "",
-            "employees": ""
-        },
-        "contacts": "Aloqa",
-        "addresses": {
-            "label": "Manzillar",
-            "address1": "100070, Toshkent sh., Yakkasaroy tuman, Shota Rustaveli ko'chasi, 12",
-            "address2": "100187, Toshkent sh., Karasu-3, Mingbulok ko'chasi, 38"
-        }
-    },
-    "trialSection":{
-        "title": "kun bepul, majburiyatsiz!",
-        "descriptionFirstPart": "Xizmatimizdan bepul foydalanishni boshlang.\n Bepul davrni faollashtiring va afzalliklarini bugunoq baholang!",
-        "descriptionSecondPart": "",
-        "stats": {
-            "experience": "",
-            "partners": "",
-            "clients": "",
-            "employees": ""
-        },
-        "contacts": "",
-        "addresses": {
-            "label": "",
-            "address1": "",
-            "address2": ""
-        }
-    },
-    "hero":{
-        "title": "Buyurtmaga o'tish",
-        "descriptionFirstPart": "",
-        "descriptionSecondPart": "",
-        "stats": {
-            "experience": "",
-            "partners": "",
-            "clients": "",
-            "employees": ""
-        },
-        "contacts": "",
-        "addresses": {
-            "label": "",
-            "address1": "",
-            "address2": ""
-        }
-    },
-    "KasperskySolutions":{
-        "title": "Kichik va o'rta biznesni himoya qilish uchun ilg'or yechimlar",
-        "descriptionFirstPart": "Yirik biznes uchun individual yechimlar",
-        "descriptionSecondPart": "Biznesingiz uchun mos yechimni tanlang",
-        "stats": {
-            "experience": "",
-            "partners": "",
-            "clients": "",
-            "employees": ""
-        },
-        "contacts": "",
-        "addresses": {
-            "label": "",
-            "address1": "",
-            "address2": ""
-        }
+  "sponsors": {
+    "title": "Homiylarimiz"
+  },
+  "aboutUs": {
+    "title": "Kompaniya haqida",
+    "descriptionFirstPart": "SmartCloud jamoasi xalqaro ICT infratuzilma provayderining bir qismi — ",
+    "descriptionSecondPart": "AJ bo‘lib, O‘zbekiston hududida bulutli hisoblash, ma'lumotlarni saqlash, zaxiralash va kiberxavfsizlik xizmatlarini taqdim etadi.\n\nBizning ishonchli jismoniy va virtual infratuzilmamiz, tajribali muhandislar jamoamiz va keng tanlovdagi texnologiyalar mijozlarga barqarorlik va muhim jarayonlarning mavjudligini kafolatlaydi, shuningdek, biznesni istalgan vaqtda kengaytirish imkoniyatini beradi.",
+    "stats": {
+      "experience": "yillik tajriba ICT sohasida",
+      "partners": "ishonchli hamkorlar",
+      "clients": "muntazam mijozlar bizga ishonadi",
+      "employees": "sertifikatlangan xodimlar"
     }
+  },
+  "services": {
+    "title": "Bizning xizmatlarimiz",
+    "descriptionFirstPart": "",
+    "descriptionSecondPart": ""
+  },
+  "footer": {
+    "contacts": "Aloqa",
+    "addresses": {
+      "label": "Manzillar",
+      "address1": "100070, Toshkent sh., Yakkasaroy tuman, Shota Rustaveli ko'chasi, 12",
+      "address2": "100187, Toshkent sh., Karasu-3, Mingbulok ko'chasi, 38"
+    }
+  },
+  "trialSection": {
+    "title": "kun bepul, majburiyatsiz!",
+    "descriptionFirstPart": "Xizmatimizdan bepul foydalanishni boshlang.\n Bepul davrni faollashtiring va afzalliklarini bugunoq baholang!"
+  },
+  "hero": {
+    "title": "Buyurtmaga o'tish"
+  },
+  "KasperskySolutions": {
+    "title": "Kichik va o'rta biznesni himoya qilish uchun ilg'or yechimlar",
+    "descriptionFirstPart": "Yirik biznes uchun individual yechimlar",
+    "descriptionSecondPart": "Biznesingiz uchun mos yechimni tanlang"
+  },
+  "WAF": {
+    "title": "<span class='text-secondary'>WAF</span> - Veb-ilovalar uchun ishonchli himoya",
+    "description": "Bizning Web Application Firewall (WAF) real vaqt rejimida veb-trafikni tahlil qiladi, zararli faoliyatni aniqlaydi va bloklaydi, veb-ilovalaringizni ishonchli himoya qiladi.",
+    "aboutTitle": "Bizning noyob taklifimiz",
+    "aboutDescription": "Veb-ilovangizni keng ko‘lamli tahdidlardan har tomonlama himoya qiling bizning WAF yordamida. Tizimimiz ilova darajasida ishlaydi, barcha trafikni tahlil qiladi va xavfli so‘rovlarni serveringizga yetib borishidan oldin bloklaydi. Moslashuvchan siyosat sozlamalari himoyani sizning o‘ziga xos ehtiyojlaringizga moslashtirish imkonini beradi."
   }
-  
-  
-  
+}

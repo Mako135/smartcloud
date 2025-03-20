@@ -3,8 +3,8 @@ import { ContactDialog } from "@/components/contactModal/ContactDialog";
 import Container from "./Container.astro";
 import { getTranslations } from "@/utils/i18n";
 
-const locale = Astro.url.pathname.startsWith('/uz') ? 'uz' : 'ru';
-const t = await getTranslations(locale, "trialSection");
+const locale = Astro.url.pathname.startsWith("/uz") ? "uz" : "ru";
+const t = getTranslations(locale, "trialSection");
 
 interface Props {
   days: number;
@@ -18,7 +18,8 @@ const { days } = Astro.props;
 >
   <div class="text-center m-4">
     <h2 class="text-extra-large font-medium flex flex-wrap justify-center">
-      {days} {t.title}
+      {days}
+      {t.title}
     </h2>
     <p class="mt-4 mb-8 whitespace-pre-line text-regular">
       {t.descriptionFirstPart}

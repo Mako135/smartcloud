@@ -1,0 +1,32 @@
+---
+type Props = {
+  text: string;
+  type?: "highlight" | "regular";
+  variant?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+};
+
+const { text, type = "regular", variant } = Astro.props;
+
+const varVlassNames = {
+  h1: "text-extra-large font-medium",
+  h2: "text-large font-medium",
+  h3: "text-medium font-medium",
+  h4: "text-regular font-medium",
+  h5: "text-small font-medium",
+  h6: "text-extra-small font-medium",
+};
+
+const defaultClass = "text-dynamic font-medium";
+---
+
+{
+  type === "highlight" ? (
+    <h1
+      class={variant ? varVlassNames[variant] : defaultClass}
+      set:html={text}
+      class="leading-none"
+    />
+  ) : (
+    <h1 class="text-dynamic font-medium leading-none">{text}</h1>
+  )
+}

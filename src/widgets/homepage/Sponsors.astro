@@ -1,0 +1,49 @@
+---
+import { getTranslations } from "@/utils/i18n";
+
+const sponsors = [
+  "/sponsors/dell.svg",
+  "/sponsors/ddos-guard.svg",
+  "/sponsors/fortinet.svg",
+  "/sponsors/huawei.svg",
+  "/sponsors/kaspersky.svg",
+  "/sponsors/lenovo.svg",
+  "/sponsors/microsoft.svg",
+  "/sponsors/milestone.svg",
+  "/sponsors/pan.svg",
+];
+
+const locale = Astro.url.pathname.startsWith("/uz") ? "uz" : "ru";
+const t = getTranslations(locale, "sponsors");
+---
+
+<section class="my-dynamic space-y-10">
+  <h2
+    class="text-center text-extra-large font-medium mb-dynamic"
+    id="servicesTitle"
+  >
+    {t.title}
+  </h2>
+
+  <div class="stock-ticker">
+    <ul>
+      {
+        sponsors.map((sponsor, index) => (
+          <li>
+            <img src={sponsor} alt="sponsor" />
+          </li>
+        ))
+      }
+    </ul>
+
+    <ul aria-hidden="true">
+      {
+        sponsors.map((sponsor, index) => (
+          <li>
+            <img src={sponsor} alt="sponsor" />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

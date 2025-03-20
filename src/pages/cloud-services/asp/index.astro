@@ -7,6 +7,7 @@ import Hero from "@/widgets/Hero.astro";
 import aspImg from "@/assets/asp.svg";
 import { aspAdvantages, aspUseCases } from "@/lib/data/aspData";
 import AdvantageCardWithIcon from "@/components/shared/AdvantageCardWithIcon.astro";
+import Text from "@/components/ui/Text.astro";
 
 // SEO-данные для страницы
 const seoData = {
@@ -27,10 +28,8 @@ const seoData = {
 
 <Layout {...seoData}>
   <Hero imgSrc={aspImg}>
-    <h1 class="text-dynamic font-medium leading-none"> 
-      Снизьте ИТ-расходы с помощью аренды программного обеспечения
-    </h1>
-    <p class="text-medium mt-2">
+    <Text text="Снизьте ИТ-расходы с помощью аренды программного обеспечения" />
+    <p class="text-medium mt-4">
       Аренда программного обеспечения предоставляется по методу лицензирования
       Microsoft CSP (Cloud Solution Provider). Microsoft Office, Windows,
       Exchange, SQL Server, Power BI можно арендовать на гибких условиях для

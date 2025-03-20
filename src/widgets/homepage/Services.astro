@@ -2,12 +2,15 @@
 import { service_list } from "@/lib/data/service-list";
 import { getTranslations } from "@/utils/i18n";
 
-const locale = Astro.url.pathname.startsWith('/uz') ? 'uz' : 'ru';
-const t = await getTranslations(locale, "services");
+const locale = Astro.url.pathname.startsWith("/uz") ? "uz" : "ru";
+const t = getTranslations(locale, "services");
 ---
 
 <section id="services" class="my-dynamic">
-  <h2 class="text-center text-extra-large font-medium mb-dynamic" id="servicesTitle">
+  <h2
+    class="text-center text-extra-large font-medium mb-dynamic"
+    id="servicesTitle"
+  >
     {t.title}
   </h2>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">

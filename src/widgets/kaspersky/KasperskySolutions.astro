@@ -14,25 +14,28 @@ import {
   kasperskyMsbUZ,
 } from "@/lib/dataUZ/kaspersky";
 
-const locale = Astro.url.pathname.startsWith('/uz') ? 'uz' : 'ru';
-const t = await getTranslations(locale, "KasperskySolutions");
+const locale = Astro.url.pathname.startsWith("/uz") ? "uz" : "ru";
+const t = getTranslations(locale, "KasperskySolutions");
 
 // Выбираем соответствующие данные в зависимости от локали
-const kasperskyData = locale === "uz"
-  ? {
-      enterprise: kasperskyEnterpriseUZ,
-      individual: kasperskyIndividualUZ,
-      msb: kasperskyMsbUZ,
-    }
-  : {
-      enterprise: kasperskyEnterprise,
-      individual: kasperskyIndividual,
-      msb: kasperskyMsb,
-    };
+const kasperskyData =
+  locale === "uz"
+    ? {
+        enterprise: kasperskyEnterpriseUZ,
+        individual: kasperskyIndividualUZ,
+        msb: kasperskyMsbUZ,
+      }
+    : {
+        enterprise: kasperskyEnterprise,
+        individual: kasperskyIndividual,
+        msb: kasperskyMsb,
+      };
 ---
 
 <div class="mb-dynamic40">
-  <h2 class="text-center text-extra-large font-medium mb-dynamic whitespace-pre-line">
+  <h2
+    class="text-center text-extra-large font-medium mb-dynamic whitespace-pre-line"
+  >
     {t.title}
   </h2>
 
@@ -49,7 +52,9 @@ const kasperskyData = locale === "uz"
     }
   </div>
 
-  <h2 class="text-center text-extra-large font-medium mb-dynamic mt-dynamic whitespace-pre-line">
+  <h2
+    class="text-center text-extra-large font-medium mb-dynamic mt-dynamic whitespace-pre-line"
+  >
     {t.descriptionFirstPart}
   </h2>
 

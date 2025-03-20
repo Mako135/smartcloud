@@ -3,10 +3,13 @@ import AboutSection from "@/components/shared/AboutSection.astro";
 import AdvantageCard from "@/components/shared/AdvantageCard.astro";
 import AdvantageCardWithIcon from "@/components/shared/AdvantageCardWithIcon.astro";
 import Layout from "@/layouts/Layout.astro";
-import { wafAdvantages, wafAdvantages2, wafUseCases } from "@/lib/dataUZ/wafData";
+import {
+  wafAdvantages,
+  wafAdvantages2,
+  wafUseCases,
+} from "@/lib/dataUZ/wafData";
 import Container from "@/widgets/Container.astro";
 import Hero from "@/widgets/Hero.astro";
-
 import wafImg from "@/assets/waf.svg";
 import IaasUseCaseCard from "@/components/cloud-services/iaas/IaasUseCaseCard.astro";
 import WafAccodtion from "@/widgets/security/waf/WafAccodtion.astro";
@@ -26,21 +29,23 @@ const seoData = {
 <Layout {...seoData}>
   <Container>
     <Hero imgSrc={wafImg}>
-      <h1 class="text-dynamic font-medium leading-none"> 
-        <span class="text-secondary">WAF</span> - Veb-ilovalar uchun <br/>ishonchli himoya
+      <h1 class="text-dynamic font-medium leading-none">
+        <span class="text-secondary">WAF</span> - Veb-ilovalar uchun <br
+        />ishonchli himoya
       </h1>
-      <p class="text-medium mt-2">
-        Bizning Web Application Firewall (WAF) real vaqt rejimida veb-trafikni tahlil qiladi, zararli 
-        faoliyatni aniqlaydi va bloklaydi, veb-ilovalaringizni ishonchli himoya qiladi.
+      <p class="text-medium mt-4">
+        Bizning Web Application Firewall (WAF) real vaqt rejimida veb-trafikni
+        tahlil qiladi, zararli faoliyatni aniqlaydi va bloklaydi,
+        veb-ilovalaringizni ishonchli himoya qiladi.
       </p>
     </Hero>
 
     <AboutSection title="Bizning noyob taklifimiz">
-      Veb-ilovangizni keng ko‘lamli tahdidlardan har tomonlama himoya qiling bizning WAF 
-      yordamida. Tizimimiz ilova darajasida ishlaydi, barcha trafikni tahlil qiladi va xavfli 
-      so‘rovlarni serveringizga yetib borishidan oldin bloklaydi. Moslashuvchan siyosat 
-      sozlamalari himoyani sizning o‘ziga xos ehtiyojlaringizga moslashtirish imkonini 
-      beradi.
+      Veb-ilovangizni keng ko‘lamli tahdidlardan har tomonlama himoya qiling
+      bizning WAF yordamida. Tizimimiz ilova darajasida ishlaydi, barcha
+      trafikni tahlil qiladi va xavfli so‘rovlarni serveringizga yetib
+      borishidan oldin bloklaydi. Moslashuvchan siyosat sozlamalari himoyani
+      sizning o‘ziga xos ehtiyojlaringizga moslashtirish imkonini beradi.
     </AboutSection>
 
     <AdvantageCard
@@ -73,6 +78,6 @@ const seoData = {
   />
 
   <Container>
-    <WafAccodtion/>
+    <WafAccodtion />
   </Container>
 </Layout>
