@@ -6,6 +6,8 @@ import Hero from "@/widgets/Hero.astro";
 
 import storageImg from "@/assets/storage.webp";
 import { storageAdvantages } from "@/lib/data/storageData";
+import { getTranslations } from "@/utils/i18n";
+import Text from "@/components/ui/Text.astro";
 
 const seoData = {
   title: "Облачное хранилище в Узбекистане – S3 Storage от SmartCloud",
@@ -21,30 +23,21 @@ const seoData = {
   image: "https://smartcloud.uz/assets/s3-storage.svg",
   author: "SmartCloud",
 };
+
+const t = getTranslations("ru", "Storage");
 ---
 
 <Layout {...seoData}>
   <Hero imgSrc={storageImg}>
-    <h1 class="text-dynamic font-medium leading-none"> 
-      <span class="text-secondary">Хранилище данных</span> – дисковое пространство
-      для хранения данных
-    </h1>
-    <p class="text-medium mt-6">Уверенная защита от сбоев дисков.</p>
+    <Text text={t.title} type="highlight"/>
+    <Text text={t.description} variant="h4" class="mt-6"/>
   </Hero>
-
-  <AboutSection title="Что такое Хранилище данных?">
-    <p>
-      Услуга предоставляет доступ к удалённому дисковому пространству через
-      Интернет. Она позволяет сгруппировать несколько физических дисков (два и
-      более) в пул носителей, а затем использовать их ёмкость для создания
-      виртуальных дисков –— дисковых пространств. <br /><br />
-      В дисковых пространствах обычнохранятся две копии данных, поэтому в случае
-      сбоя одного из дисков у вас по-прежнему будет неповреждённая копия. Если ёмкость
-      заканчивается, в пул носителей можно просто добавить другие диски.
-    </p>
+ 
+  <AboutSection title={t.AboutSection.title}>
+    <Text text={t.AboutSection.description} variant="h3" type="highlight"/>
   </AboutSection>
   <AdvantageCard
-    title="Преимущества Хранилища данных"
+    title={t.AdvantageCard.title}
     data={storageAdvantages}
     cardClassName="lg:grid-cols-3"
   />

@@ -3,44 +3,49 @@ import { headerData } from "@/lib/data/headerData";
 import Container from "./Container.astro";
 import { Send, Instagram } from "lucide-react";
 import { getTranslations } from "@/utils/i18n";
+import Text from "@/components/ui/Text.astro";
 
 const locale = Astro.url.pathname.startsWith("/uz") ? "uz" : "ru";
-const t = getTranslations(locale, "footer");
+const t = getTranslations(locale, "Footer");
 ---
 
 <footer class="mt-20 py-10">
   <Container>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
       <div class="flex flex-col gap-3">
-        <h2 class="text-sm text-bold uppercase">{t.contacts}</h2>
+        <Text text={t.contacts.title} variant="h6" class="text-bold uppercase" />
         <ul class="flex flex-col gap-2">
-          <li class="ml-1">+998 95 195 75 75</li>
-          <li class="ml-1">+998 90 359 89 67</li>
-          <li class="ml-1">info@smartcloud.uz</li>
+          <li class="ml-1">
+            <Text text={t.contacts.number1} variant="h5" class="text-bold uppercase" />
+          </li>
+          <li class="ml-1">
+            <Text text={t.contacts.number2} variant="h5" class="text-bold uppercase" />
+          </li>
+          <li class="ml-1">
+            <Text text={t.contacts.email} variant="h5" class="text-bold" />
+          </li>
         </ul>
       </div>
       <div class="flex flex-col gap-3">
-        <h2 class="text-sm text-bold uppercase">{t.addresses.label}</h2>
+        <Text text={t.addresses.label} variant="h6" class="text-bold uppercase" />
         <ul class="flex flex-col gap-2">
           <li class="ml-1">
-            {t.addresses.address1}
+            <Text text={t.addresses.address1} variant="h5" class="text-bold" />
           </li>
           <li class="ml-1">
-            {t.addresses.address2}
+            <Text text={t.addresses.address2} variant="h5" class="text-bold" />
           </li>
         </ul>
       </div>
       {
         headerData.map((item) => (
           <div class="flex flex-col gap-3">
-            <h2 class="text-sm text-bold uppercase">
-              {locale === "uz" ? item.labelUZ : item.label}
-            </h2>
+            <Text text={locale === "uz" ? item.labelUZ : item.label} variant="h6" class="text-bold uppercase" />
             <ul class="flex flex-col gap-2">
               {(locale === "uz" ? item.linksUZ : item.links).map((link) => (
                 <li class="ml-1">
                   <a href={link.href}>
-                    <h3>{link.label}</h3>
+                    <Text text={link.label} variant="h5" class="text-bold" />
                   </a>
                 </li>
               ))}
@@ -53,9 +58,7 @@ const t = getTranslations(locale, "footer");
   <div class="border-[1px] border-gray-300/50 mb-10 mt-20"></div>
   <Container>
     <div class="flex justify-between items-center">
-      <p class="text-sm text-gray-400">
-        © 2021 SmartCloud. All rights reserved.
-      </p>
+      <Text text={t.SmartCloud} variant="h6" class="text-gray-400" />
       <ul class="flex gap-2">
         <li>
           <a

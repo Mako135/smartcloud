@@ -1,7 +1,7 @@
 ---
 import clsx from "clsx";
 import NumberCard from "./NumberCard.astro";
-
+import Text from "../ui/Text.astro";
 interface Props {
   title: string;
   dataArray?: { title: string; description?: string }[];
@@ -13,8 +13,7 @@ const { dataArray, title, cardClassName, data } = Astro.props;
 ---
 
 <section class="my-dynamic">
-  <h2 class="text-center text-extra-large font-medium" id="advantageTitle">{title}</h2>
-
+  <Text text={title} variant="h2" class="text-center" id="advantageTitle"/>
   <div
     class={clsx(
       "grid grid-cols-1 md:grid-cols-2 items-stretch gap-dynamic10 mt-dynamic20",

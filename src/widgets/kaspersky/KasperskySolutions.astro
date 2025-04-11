@@ -1,6 +1,7 @@
 ---
 import KasperskyCard from "@/components/kaspersky/KasperskyCard.astro";
 import { getTranslations } from "@/utils/i18n";
+import Text from "@/components/ui/Text.astro";
 
 import {
   kasperskyEnterprise,
@@ -33,12 +34,7 @@ const kasperskyData =
 ---
 
 <div class="mb-dynamic40">
-  <h2
-    class="text-center text-extra-large font-medium mb-dynamic whitespace-pre-line"
-  >
-    {t.title}
-  </h2>
-
+  <Text text={t.firstTitle} variant="h2" class="text-center mb-dynamic whitespace-pre-line"/>
   <div class="grid grid-cols-1 gap-5 lg:grid-cols-3">
     {
       kasperskyData.msb.map((item) => (
@@ -52,11 +48,7 @@ const kasperskyData =
     }
   </div>
 
-  <h2
-    class="text-center text-extra-large font-medium mb-dynamic mt-dynamic whitespace-pre-line"
-  >
-    {t.descriptionFirstPart}
-  </h2>
+  <Text text={t.secondTitle} variant="h2" class="text-center mb-dynamic mt-dynamic whitespace-pre-line"/>
 
   <div class="grid grid-cols-1 gap-5 lg:grid-cols-3">
     {
@@ -71,9 +63,7 @@ const kasperskyData =
     }
   </div>
 
-  <h2 class="text-center text-extra-large font-medium mb-dynamic mt-dynamic">
-    {t.descriptionSecondPart}
-  </h2>
+  <Text text={t.thirdTitle} variant="h2" class="text-center mb-dynamic mt-dynamic"/>
 
   <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
     {

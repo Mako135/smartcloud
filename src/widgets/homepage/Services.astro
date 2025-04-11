@@ -1,18 +1,14 @@
 ---
 import { service_list } from "@/lib/data/service-list";
 import { getTranslations } from "@/utils/i18n";
+import Text from "@/components/ui/Text.astro";
 
 const locale = Astro.url.pathname.startsWith("/uz") ? "uz" : "ru";
-const t = getTranslations(locale, "services");
+const t = getTranslations(locale, "Services");
 ---
 
 <section id="services" class="my-dynamic">
-  <h2
-    class="text-center text-extra-large font-medium mb-dynamic"
-    id="servicesTitle"
-  >
-    {t.title}
-  </h2>
+  <Text text={t.title} variant="h2" class="text-center mb-dynamic" id="servicesTitle"/>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
     {
       service_list.map((service) => (
@@ -25,10 +21,8 @@ const t = getTranslations(locale, "services");
             className="absolute -z-120 -right-2 -bottom-10 h-52 w-52 opacity-10 group-hover:opacity-50 rotate-12"
             color="#0c94d4"
           />
-          <span class="text-medium font-bold">{service.label[locale]}</span>
-          <p class="mt-2 text-gray-400 group-hover:text-black dark:group-hover:text-white text-regular">
-            {service.desc[locale]}
-          </p>
+          <Text text={service.label[locale]} variant="h4" class="font-bold"/>
+          <Text text={service.desc[locale]} variant="h5" class="mt-2 text-gray-400 group-hover:text-black dark:group-hover:text-white"/>
         </a>
       ))
     }

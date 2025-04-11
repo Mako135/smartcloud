@@ -5,10 +5,10 @@ import AdvantageCardWithIcon from "@/components/shared/AdvantageCardWithIcon.ast
 import Layout from "@/layouts/Layout.astro";
 import { ddosData, ddosData2 } from "@/lib/dataUZ/ddosData";
 import Hero from "@/widgets/Hero.astro";
-
+import Text from "@/components/ui/Text.astro";
 import ddosImg from "@/assets/ddos.png";
 import DdosAccordion from "@/widgets/security/ddos/DdosAccordion.astro";
-
+import { getTranslations } from "@/utils/i18n";
 const seoData = {
   title: "DDoS Protection – Защита от DDoS-атак от SmartCloud",
   description:
@@ -19,35 +19,21 @@ const seoData = {
   image: "https://smartcloud.uz/assets/ddos-protection.svg",
   author: "SmartCloud",
 };
+const t = getTranslations("uz", "DDoS")
 ---
 
 <Layout {...seoData}>
   <Hero imgSrc={ddosImg}>
-    <h1 class="text-dynamic font-medium leading-none"> 
-      <span class="text-secondary">DDoS</span>-hujumlarga biznesingizni to‘xtatishiga yo‘l qo‘ymang!
-    </h1>
-    <p class="text-medium mt-4">
-      Sizning resurslaringizni OSI modeli L3, L4 va L7 darajalarida DDoS hujumlaridan himoya qilish 
-      uchun ilg‘or yechimlar. Xizmatlarning uzluksiz ishlashi va mijozlar uchun doimiy mavjudligini 
-      bizning ishonchli xizmatlarimiz bilan ta’minlang.
-    </p>
+    <Text text={t.title} type="highlight"/>
+    <Text text={t.description} variant="h4" class="mt-4" type="highlight"/>
   </Hero>
-  <AboutSection title="Serverni DDoS hujumlaridan himoya qilish">
-    <p>
-      Himoya xavfsiz IP-tranzit shaklida amalga oshiriladi, mijozning tarmog‘i (serveri) uchun 
-      kompleks xavfsizlikni ta’minlaydi. Xizmat doirasida quyidagi himoya taqdim etiladi:
-    </p>
-    <br />
-    <ul>
-      <li>- Mijoz kanallari</li>
-      <li>- Kommutatsiya uskunalari</li>
-      <li>- Onlayn xizmatlar, ishlatilayotgan protokollardan qat'i nazar</li>
-    </ul>
+  <AboutSection title={t.AboutSection.title}>
+    <Text text={t.AboutSection.description} variant="h3" type="highlight"/>
   </AboutSection>
-  <AdvantageCard title="DDoS hujumlaridan himoya afzalliklari" data={ddosData} />
+  <AdvantageCard title={t.AdvantageCard.title} data={ddosData} />
 
   <AdvantageCardWithIcon
-    title="DDoS hujumlaridan himoya afzalliklari"
+    title={t.AdvantageCardWithIcon.title}
     data={ddosData2}
   />
 

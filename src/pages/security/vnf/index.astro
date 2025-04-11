@@ -5,6 +5,8 @@ import { vnfAdvantages } from "@/lib/data/vnfData";
 import Hero from "@/widgets/Hero.astro";
 import vnf from "@/assets/vnf.webp";
 import AdvantageCard from "@/components/shared/AdvantageCard.astro";
+import Text from "@/components/ui/Text.astro";
+import { getTranslations } from "@/utils/i18n";
 
 const seoData = {
   title: "Техническая поддержка SmartCloud – Поддержка 24/7",
@@ -18,30 +20,20 @@ const seoData = {
   image: "https://smartcloud.uz/assets/support.svg",
   author: "SmartCloud",
 };
+const t = getTranslations("ru", "VNF")
 ---
 
 <Layout {...seoData}>
   <Hero imgSrc={vnf}>
-    <h1 class="text-dynamic font-medium leading-none"> 
-      <span class="text-secondary">Virtual Network Firewall</span>
-      – межсетевой экран следующего поколения
-    </h1>
-    <p class="text-medium mt-6">
-      Полный контроль над вашей сетью. Минимизируйте риски, максимизируйте
-      производительность
-    </p>
+    <Text text={t.title} type="highlight"/>
+    <Text text={t.description} variant="h4" class="mt-6"/>
   </Hero>
 
-  <AboutSection title="Что такое Virtual Network Firewall?">
-    <p>
-      Виртуальный сетевой брандмауэр, который обеспечивает передовую защиту от
-      широкого спектра сетевых угроз. Он позволяет вам применять согласованные
-      политики безопасности в частных, публичных облаках через создание
-      индивидуальных правил фильтрации
-    </p>
+  <AboutSection title={t.AboutSection.title}>
+    <Text text={t.AboutSection.description} variant="h3"/>
   </AboutSection>
   <AdvantageCard
-    title="Преимущества Virtual Network Firewall"
+    title={t.AdvantageCard.title}
     data={vnfAdvantages}
     cardClassName="xl:grid-cols-3"
   />

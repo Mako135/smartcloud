@@ -5,10 +5,10 @@ import AdvantageCardWithIcon from "@/components/shared/AdvantageCardWithIcon.ast
 import Layout from "@/layouts/Layout.astro";
 import { socAdvantages, socAdvantages2 } from "@/lib/dataUZ/socData";
 import Hero from "@/widgets/Hero.astro";
-
+import Text from "@/components/ui/Text.astro";
 import socImg from "@/assets/waf.svg";
 import SocAccordion from "@/widgets/security/soc/SocAccordion.astro";
-
+import { getTranslations } from "@/utils/i18n";
 const seoData = {
   title: "Security Operations Center (SOC) – Мониторинг и защита",
   description:
@@ -19,40 +19,22 @@ const seoData = {
   image: "https://smartcloud.uz/assets/waf.svg",
   author: "SmartCloud",
 };
+const t = getTranslations("uz", "SOC")
 ---
 
 <Layout {...seoData}>
   <Hero imgSrc={socImg}>
-    <h1 class="text-dynamic font-medium leading-none"> 
-      <span class="text-secondary">SOC</span>
-      – sizning raqamli aktivlaringizni kompleks himoya qilish
-    </h1>
-    <p class="text-medium mt-4">
-      Bizning Operatsion Xavfsizlik Markazimiz (SOC) sizning raqamli ma'lumotlaringizni real vaqt 
-      rejimida himoya qilib, tarmoqqa hujumlarni 24/7 monitoring qilish, tahlil qilish va oldini olishni 
-      ta'minlaydi.
-    </p>
+    <Text text={t.title} type="highlight"/>
+    <Text text={t.description} variant="h4" class="mt-4" />
   </Hero>
 
-  <AboutSection title="SOC qanday ishlaydi?">
-    <p>
-      Operativ javob markazi kompaniyaning axborot xavfsizligini boshqarish tizimini 
-      optimallashtirish bo‘yicha quyidagi kompleks vazifalarni hal qiladi:
-    </p>
-    <ul>
-      <li>- himoya choralari muntazam ravishda tuzatilib va to‘ldirib boriladi;</li>
-      <li>
-        - tayyor javob ssenariylaridan foydalanish orqali kiberhujumlar va axborot xavfsizligi hodisalariga javob berish vaqti qisqartiriladi;
-      </li>
-      <li>
-        - axborot xavfsizligi hodisalarini aniqlash va ularga javob berish uchun avtomatlashtirish vositalari joriy etiladi
-      </li>
-    </ul>
+  <AboutSection title={t.AboutSection.title}>
+    <Text text={t.AboutSection.description} variant="h3" type="highlight"/>
   </AboutSection>
 
-  <AdvantageCard title="SOC xizmatining afzalliklari" data={socAdvantages} />
+  <AdvantageCard title={t.AdvantageCard.title} data={socAdvantages} />
   <AdvantageCardWithIcon
-    title="Siz ushbu xizmat orqali quyidagilarni olasiz"
+    title={t.AdvantageCardWithIcon.title}
     data={socAdvantages2}
   />
 

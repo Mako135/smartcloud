@@ -1,54 +1,21 @@
 ---
 import Accordion from "@/components/ui/Accordion.astro";
-const translations = {
-  ru: {
-    title: "Для кого подходит?",
-    question1: "Какое оборудование нужно, чтобы воспользоваться сервисом информационной безопасности?",
-    answer1: "Особенность услуги в том, что клиенту не нужно наращивать собственные технологические мощности, для поддержания максимального уровня защиты. Разрабатываемые индивидуальные и комплексные решения базируются на ресурсном потенциале провайдера.",
-    question2: "Нужно ли заказчику содержать собственного системного администратора?",
-    answer2: "Специально нанимать IT-специалиста нет необходимости. Наша команда поможет проанализировать текущее состояние информационной защищенности компании и разработает предложения для ее совершенствования и ликвидации уязвимостей.",
-    question3:"На кого ориентирован сервис по обеспечению ИБ?",
-    answer3_part1: "Услуга рассчитана:",
-    answer3_part2: "на помощь компаниям, которые испытывают повышенную нагрузку на корпоративную IT-инфраструктуру;",
-    answer3_part3: "на всех, кто не успевает модернизировать и обновлять собственные системы безопасности на фоне постоянно растущих и совершенствующихся инфоугроз;",
-    answer3_part4: "на компании, оказывающие дистанционные онлайн-услуги и работающие с удаленными сотрудниками;",
-    answer3_part5: "для тех, кто развивает каналы онлайн-продаж, частично или полностью мигрирует в облако",
-  },
-  uz: {
-    title: "Kimlar uchun mos?",
-    question1: "Axborot xavfsizligi xizmatidan foydalanish uchun qanday uskunalar kerak?",
-    answer1: "Xizmatning o‘ziga xosligi shundaki, mijoz o‘zining texnologik imkoniyatlarini kengaytirishga hojat yo‘q, chunki maksimal darajadagi himoyani ta’minlash provayderning resurslari asosida amalga oshiriladi. Ishlab chiqilayotgan individual va kompleks yechimlar aynan shu resurs imkoniyatlariga tayanadi.",
-    question2: "Buyurtmachi o‘zining tizim administratorini ishga olishi shartmi?",
-    answer2: "Maxsus IT-mutaxassisni yollash shart emas. Bizning jamoamiz kompaniyaning joriy axborot xavfsizligi holatini tahlil qilishga va uni takomillashtirish hamda zaifliklarni bartaraf etish bo‘yicha takliflar ishlab chiqishga yordam beradi.",
-    question3: "Axborot xavfsizligini ta’minlash xizmati kimlar uchun mo‘ljallangan?",
-    answer3_part1: "Xizmat quyidagilar uchun mo‘ljallangan:",
-    answer3_part2: "korporativ IT-infrastrukturasiga yuqori yuklama tushayotgan kompaniyalarga yordam berish uchun;",
-    answer3_part3: "o‘z xavfsizlik tizimlarini doimiy ravishda o‘sib borayotgan va takomillashayotgan axborot tahdidlariga mos ravishda yangilashga ulgurmayotganlar uchun;",
-    answer3_part4: "masofaviy onlayn xizmatlar ko‘rsatayotgan va uzoqdan ishlaydigan xodimlar bilan ishlovchi kompaniyalar uchun;",
-    answer3_part5: "onlayn savdo kanallarini rivojlantirayotgan, qisman yoki to‘liq bulutga o‘tayotgan kompaniyalar uchun."
-  }
-};
+import Text from "@/components/ui/Text.astro";
+import { getTranslations } from "@/utils/i18n";
+
 const currentLocale = Astro.url.pathname.startsWith("/uz") ? "uz" : "ru";
-const t = translations[currentLocale];
+const t = getTranslations(currentLocale, "Support");
 ---
 
-
 <div class="my-dynamic">
-  <h2 class="text-center text-extra-large font-medium">{t.title}</h2>
-  <Accordion title={t.question1}>
-    {t.answer1}
+  <Text text={t.SupportAccordion.title} variant="h2" class="text-center"/>
+  <Accordion title={t.SupportAccordion.question1}>
+    <Text text={t.SupportAccordion.answer1} variant="h5"/>
   </Accordion>
-  <Accordion title={t.question2}>
-    {t.answer2}
+  <Accordion title={t.SupportAccordion.question2}>
+    <Text text={t.SupportAccordion.answer2} variant="h5"/>
   </Accordion>
-  <Accordion title={t.question3}>
-    {t.answer3_part1}
-    <ul class="list-disc pl-5">
-      <li>{t.answer3_part2}</li>
-      <li>{t.answer3_part3}</li>
-      <li>{t.answer3_part4}</li>
-      <li>{t.answer3_part5}</li>
-    </ul>
+  <Accordion title={t.SupportAccordion.question3}>
+    <Text text={t.SupportAccordion.answer3} variant="h5" type="highlight" />
   </Accordion>
-
 </div>

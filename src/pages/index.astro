@@ -3,9 +3,10 @@ import Layout from "../layouts/Layout.astro";
 import Services from "@/widgets/homepage/Services.astro";
 import AboutUs from "@/widgets/homepage/AboutUs.astro";
 import Hero from "@/widgets/Hero.astro";
-
+import Text from "@/components/ui/Text.astro";
 import main from "@/assets/main.png";
 import Sponsors from "@/widgets/homepage/Sponsors.astro";
+import { getTranslations } from "@/utils/i18n";
 
 const seoData = {
   title: "SmartCloud – Облачные технологии IaaS, VDS, BaaS, SaaS в Узбекистане",
@@ -21,19 +22,13 @@ const seoData = {
   image: "https://smartcloud.uz/assets/smartcloud.svg",
   author: "SmartCloud",
 };
+const t = getTranslations("ru", "HomePage");
 ---
 
 <Layout {...seoData}>
   <Hero imgSrc={main}>
-    <h1 class="text-dynamic font-medium leading-none">
-      Добро пожаловать в Smart<span class="text-secondary">Cloud</span>
-      - Ваш маркетплейс облачных услуг!
-    </h1>
-    <p class="text-medium mt-4 lg:mt-10">
-      Создавайте ИТ-решения с использованием проверенных облачных технологий!
-      <br />
-      Быстрый старт, меньше расходов, высокая надежность!
-    </p>
+    <Text text={t.title} type="highlight"/>
+    <Text text={t.description} variant="h4" class="mt-4 lg:mt-10" type="highlight" />
   </Hero>
   <AboutUs />
 
