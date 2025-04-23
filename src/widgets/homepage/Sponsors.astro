@@ -1,6 +1,6 @@
 ---
 import { getTranslations } from "@/utils/i18n";
-
+import Text from "@/components/ui/Text.astro";
 const sponsors = [
   "/sponsors/dell.svg",
   "/sponsors/ddos-guard.svg",
@@ -14,17 +14,11 @@ const sponsors = [
 ];
 
 const locale = Astro.url.pathname.startsWith("/uz") ? "uz" : "ru";
-const t = getTranslations(locale, "sponsors");
+const t = getTranslations(locale, "Sponsors");
 ---
 
 <section class="my-dynamic space-y-10">
-  <h2
-    class="text-center text-extra-large font-medium mb-dynamic"
-    id="servicesTitle"
-  >
-    {t.title}
-  </h2>
-
+  <Text text={t.title} variant="h2" class="text-center mb-dynamic" id="servicesTitle"/>
   <div class="stock-ticker">
     <ul>
       {

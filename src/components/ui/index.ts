@@ -1,18 +1,6 @@
 
 import { Button } from "./button";
 
-import {
-  Dialog,
-  DialogPortal,
-  DialogOverlay,
-  DialogTrigger,
-  DialogClose,
-  DialogContent,
-  DialogHeader,
-  DialogFooter,
-  DialogTitle,
-  DialogDescription,
-} from "./dialog";
 import { Input } from "./input";
 
 import {
@@ -71,16 +59,7 @@ export {
 
   Button,
 
-  Dialog,
-  DialogPortal,
-  DialogOverlay,
-  DialogTrigger,
-  DialogClose,
-  DialogContent,
-  DialogHeader,
-  DialogFooter,
-  DialogTitle,
-  DialogDescription,
+
   Input,
   DropdownMenu,
   DropdownMenuTrigger,

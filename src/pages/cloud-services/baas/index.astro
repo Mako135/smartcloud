@@ -3,11 +3,11 @@ import Layout from "@/layouts/Layout.astro";
 import AdvantageCard from "@/components/shared/AdvantageCard.astro";
 import AboutSection from "@/components/shared/AboutSection.astro";
 import Hero from "@/widgets/Hero.astro";
-
+import Text from "@/components/ui/Text.astro";
 import baasImg from "@/assets/baas.png";
 import { baasAdvantages, baasUseCases } from "@/lib/data/baasData";
 import IaasUseCaseCard from "@/components/cloud-services/iaas/IaasUseCaseCard.astro";
-
+import { getTranslations } from "@/utils/i18n";
 const seoData = {
   title: "BaaS – Облачные резервные копии от SmartCloud",
   description:
@@ -22,23 +22,19 @@ const seoData = {
   image: "https://smartcloud.uz/assets/baas.svg",
   author: "SmartCloud",
 };
+
+const t = getTranslations("ru", "BaaS");
+
 ---
 
 <Layout {...seoData}>
   <Hero imgSrc={baasImg}>
-    <h1 class="text-dynamic font-medium leading-none"> 
-      Надежные <span class="text-secondary">BaaS</span> решения для роста вашего
-      предприятия
-    </h1>
-    <p class="text-large mt-2">
-      Подключите облачное хранение копий виртуальных машин для быстрого
-      восстановления первичной информации независимо от причины сбоя.
-    </p>
+    <Text text={t.title} type="highlight"/>
+    
+    <Text text={t.description} variant="h3" class="mt-2"/>
   </Hero>
 
-  <h1 class="text-extra-large font-medium text-center mb-dynamic">
-    Сценарии использования BaaS
-  </h1>
+  <Text text={t.subTitle} variant="h2" class="text-center mb-dynamic"/>
 
   <div class="grid md:grid-cols-2 gap-dynamic10">
     {baasUseCases.map((item) => <IaasUseCaseCard title={item} />)}
@@ -46,29 +42,21 @@ const seoData = {
 
   <AdvantageCard
     cardClassName="xl:grid-cols-3"
-    title="Преимущества BaaS"
+    title={t.AdvantageCard.title}
     data={baasAdvantages}
   />
-  <AboutSection title="Наше уникальное предложение" className="text-extra-large">
+  <AboutSection title={t.AboutSection.title} className="text-extra-large">
     <div>
-      <h1 class="text-large font-bold">Проверенные решения</h1>
-      <p class="text-medium">
-        От лидеров в области резервного копирования, репликации и восстановления
-        данных
-      </p>
+      <Text text={t.AboutSection.firstSubTitle} variant="h3" class="font-bold"/>
+      <Text text={t.AboutSection.descriptionFirstPart} variant="h4"/>
     </div>
     <div class="my-10">
-      <h1 class="text-large font-bold">Надежная инфраструктура</h1>
-      <p class="text-medium">
-        Резервные копии хранятся в высокозащищенном дата-центре Ташкента
-      </p>
+      <Text text={t.AboutSection.secondSubTitle} variant="h3" class="font-bold"/>
+      <Text text={t.AboutSection.descriptionSecondPart} variant="h4"/>
     </div>
     <div>
-      <h1 class="text-large font-bold">Всегда на связи</h1>
-      <p class="text-medium">
-        Индивидуальная консультация и обслуживание, круглосуточная техническая
-        поддержка
-      </p>
+      <Text text={t.AboutSection.thirdSubTitle} variant="h3" class="font-bold"/>
+      <Text text={t.AboutSection.descriptionThirdPart} variant="h4"/>
     </div>
   </AboutSection>
 </Layout>

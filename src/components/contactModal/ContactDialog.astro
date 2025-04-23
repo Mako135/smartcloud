@@ -1,0 +1,28 @@
+---
+import { Button } from '@/components/ui';
+import clsx from 'clsx';
+import ContactForm from './ContactForm.astro';
+import { getTranslations } from '@/utils/i18n';
+import Dialog from '../ui/Dialog.astro';
+import Text from '../ui/Text.astro';
+const currentLocale = Astro.url.pathname.startsWith("/uz") ? "uz" : "ru";
+const translations = getTranslations(currentLocale, "ContactDialog");
+const className = "";
+---
+
+<Dialog>
+  <Button slot="trigger" data-dialog-trigger
+    variant="outline"
+    className={clsx(
+      "rounded-3xl bg-transparent border-secondary hover:bg-secondary hover:text-white text-regular",
+      typeof className !== "undefined" ? className : ""
+    )}
+  >
+    {translations.button}
+  </Button>
+  <div>
+      <Text text={translations.title} variant='h4' class='font-semibold leading-none tracking-tight text-center sm:text-left'/><br />
+      <Text text={translations.description} variant='h5' class='text-muted-foreground text-left'/>
+    <ContactForm />
+  </div>
+</Dialog>

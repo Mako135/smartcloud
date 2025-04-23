@@ -1,0 +1,56 @@
+---
+import { getTranslations } from "../../utils/i18n.js";
+
+interface Props {
+  name?: string;
+  placeholder?: string;
+  className?: string;
+}
+
+const {
+  name = "phone",
+  className = "",
+} = Astro.props;
+
+const locale = Astro.url.pathname.startsWith("/uz") ? "uz" : "ru";
+const t = getTranslations(locale, "ContactForm");
+---
+
+<input
+  placeholder={t.placeholderPhone}
+  name={name}
+  type="tel"
+  class={"flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"}
+  id="phone-input"
+/>
+
+<script>
+  import IMask from "imask";
+
+  // Initialize IMask when component mounts
+  document.addEventListener('DOMContentLoaded', () => {
+    const input = document.getElementById('phone-input');
+    if (input) {
+      const maskOptions = {
+        mask: "+{998} (00) 000-00-00",
+      };
+      const mask = IMask(input, maskOptions);
+      
+      input.addEventListener('accept', () => {
+        const event = new Event('input', { bubbles: true });
+        input.dispatchEvent(event);
+      });
+
+      const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          if (!document.body.contains(input)) {
+            mask.destroy();
+            observer.disconnect();
+          }
+        });
+      });
+
+      observer.observe(document.body, { childList: true, subtree: true });
+    }
+  });
+</script>

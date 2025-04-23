@@ -1,4 +1,5 @@
 ---
+import Text from './Text.astro';
 export interface Props {
   title: string;
 }
@@ -69,7 +70,7 @@ const instanceId = Math.random().toString(36).substring(2, 10);
 
 <div class="accordion-wrapper" data-accordion>
   <button id={`accordion-btn-${instanceId}`} class="accordion-button" data-accordion-button>
-    <span>{title}</span>
+    <Text text={title} variant='h4'/>
     <svg class="icon" width="20" height="20" viewBox="0 0 24 24" stroke="black" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
     </svg>

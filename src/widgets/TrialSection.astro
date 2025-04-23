@@ -1,10 +1,11 @@
 ---
-import { ContactDialog } from "@/components/contactModal/ContactDialog";
+import ContactDialog from "@/components/contactModal/ContactDialog.astro";
 import Container from "./Container.astro";
 import { getTranslations } from "@/utils/i18n";
+import Text from "@/components/ui/Text.astro";
 
 const locale = Astro.url.pathname.startsWith("/uz") ? "uz" : "ru";
-const t = getTranslations(locale, "trialSection");
+const t = getTranslations(locale, "TrialSection");
 
 interface Props {
   days: number;
@@ -17,13 +18,8 @@ const { days } = Astro.props;
   className="bg-slate-100 dark:bg-slate-900/50 p-5 rounded-2xl lg:py-20"
 >
   <div class="text-center m-4">
-    <h2 class="text-extra-large font-medium flex flex-wrap justify-center">
-      {days}
-      {t.title}
-    </h2>
-    <p class="mt-4 mb-8 whitespace-pre-line text-regular">
-      {t.descriptionFirstPart}
-    </p>
-    <ContactDialog client:idle />
+    <Text text={`${days} ${t.title}`} variant="h2" class="flex flex-wrap justify-center"/>
+    <Text text={t.descriptionFirstPart} variant="h5" class="mt-4 mb-8 whitespace-pre-line"/>
+    <ContactDialog/>
   </div>
 </Container>

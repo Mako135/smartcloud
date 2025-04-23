@@ -1,8 +1,9 @@
 ---
 import { getTranslations } from "@/utils/i18n";
+import Text from "@/components/ui/Text.astro";
 
 const locale = Astro.url.pathname.startsWith("/uz") ? "uz" : "ru";
-const t = getTranslations(locale, "aboutUs");
+const t = getTranslations(locale, "AboutUs");
 ---
 
 <div
@@ -13,12 +14,8 @@ const t = getTranslations(locale, "aboutUs");
     class="grid grid-cols-1 lg:grid-cols-2 gap-dynamic20 justify-between"
   >
     <div class="flex flex-col gap-5">
-      <h2 class="text-extra-large font-medium" id="aboutUsTitle">{t.title}</h2>
-      <p id="aboutUsDesc" class="whitespace-pre-line text-regular">
-        {t.descriptionFirstPart}
-        <a href="https://kazteleport.kz/">"Kazteleport"</a>
-        {t.descriptionSecondPart}
-      </p>
+      <Text text={t.title} variant="h2" id="aboutUsTitle"/>
+      <Text text={t.description} variant="h5" class="whitespace-pre-line" id="aboutUsDesc" type="highlight"/>
     </div>
     <div
       class="grid grid-cols-1 items-stretch justify-center gap-5 sm:grid-cols-2"
@@ -27,25 +24,25 @@ const t = getTranslations(locale, "aboutUs");
         <h2 class="text-dynamicNumber font-medium">
           25<span class="text-secondary">+</span>
         </h2>
-        <p class="text-regular">{t.stats.experience}</p>
+        <Text text={t.stats.experience} variant="h5"/>
       </div>
       <div class="p-5 grid gap-4 rounded-md about-us">
         <h2 class="text-dynamicNumber font-medium">
           100<span class="text-secondary">+</span>
         </h2>
-        <p class="text-regular">{t.stats.partners}</p>
+        <Text text={t.stats.partners} variant="h5"/>
       </div>
       <div class="p-5 grid gap-4 rounded-md about-us">
         <h2 class="text-dynamicNumber font-medium">
           200<span class="text-secondary">+</span>
         </h2>
-        <p class="text-regular">{t.stats.clients}</p>
+        <Text text={t.stats.clients} variant="h5"/>
       </div>
       <div class="p-5 grid gap-4 rounded-md about-us">
         <h2 class="text-dynamicNumber font-medium">
           160<span class="text-secondary">+</span>
         </h2>
-        <p class="text-regular">{t.stats.employees}</p>
+        <Text text={t.stats.employees} variant="h5"/>
       </div>
     </div>
   </section>

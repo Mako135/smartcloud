@@ -5,9 +5,10 @@ import AdvantageCardWithIcon from "@/components/shared/AdvantageCardWithIcon.ast
 import Layout from "@/layouts/Layout.astro";
 import { ddosData, ddosData2 } from "@/lib/data/ddosData";
 import Hero from "@/widgets/Hero.astro";
-
+import Text from "@/components/ui/Text.astro";
 import ddosImg from "@/assets/ddos.png";
 import DdosAccordion from "@/widgets/security/ddos/DdosAccordion.astro";
+import { getTranslations } from "@/utils/i18n";
 
 const seoData = {
   title: "DDoS Protection – Защита от DDoS-атак от SmartCloud",
@@ -23,36 +24,21 @@ const seoData = {
   image: "https://smartcloud.uz/assets/ddos-protection.svg",
   author: "SmartCloud",
 };
+const t = getTranslations("ru", "DDoS")
 ---
 
 <Layout {...seoData}>
   <Hero imgSrc={ddosImg}>
-    <h1 class="text-dynamic font-medium leading-none"> 
-      Не дайте <span class="text-secondary">DDoS</span>-атаке остановить Ваш
-      бизнес!
-    </h1>
-    <p class="text-medium mt-4">
-      Передовые решения для защиты ваших ресурсов от DDoS атак на уровнях L3, L4
-      и L7 модели OSI. Обеспечьте непрерывную работу сервиса и доступность для
-      клиентов <br /> с нашими надежными услугами
-    </p>
+    <Text text={t.title} type="highlight"/>
+    <Text text={t.description} variant="h4" class="mt-4" type="highlight"/>
   </Hero>
-  <AboutSection title="Защита от DDOS-атак сервера">
-    <p>
-      Осуществляется в виде защищенного IP-транзита для комплексной безопасности
-      сети (сервера) клиента. В рамках услуги предоставляется защита:
-    </p>
-    <br />
-    <ul>
-      <li>- Каналов клиента</li>
-      <li>- Коммутационного оборудования</li>
-      <li>- Онлайн-сервисов, вне зависимости от используемых протоколов</li>
-    </ul>
+  <AboutSection title={t.AboutSection.title}>
+    <Text text={t.AboutSection.description} variant="h3" type="highlight"/>
   </AboutSection>
-  <AdvantageCard title="Преимущества Защиты от DDoS-атак" data={ddosData} />
+  <AdvantageCard title={t.AdvantageCard.title} data={ddosData} />
 
   <AdvantageCardWithIcon
-    title="Преимущества защиты от DDoS-атак"
+    title={t.AdvantageCardWithIcon.title}
     data={ddosData2}
   />
 

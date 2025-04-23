@@ -3,11 +3,11 @@ import Layout from "@/layouts/Layout.astro";
 import AdvantageCard from "@/components/shared/AdvantageCard.astro";
 import AboutSection from "@/components/shared/AboutSection.astro";
 import Hero from "@/widgets/Hero.astro";
-
+import Text from "@/components/ui/Text.astro";
 import baasImg from "@/assets/baas.png";
 import { baasAdvantages, baasUseCases } from "@/lib/dataUZ/baasData";
 import IaasUseCaseCard from "@/components/cloud-services/iaas/IaasUseCaseCard.astro";
-
+import { getTranslations } from "@/utils/i18n";
 
 const seoData = {
   title: "BaaS – Облачные резервные копии от SmartCloud",
@@ -19,49 +19,40 @@ const seoData = {
   image: "https://smartcloud.uz/assets/baas.svg",
   author: "SmartCloud",
 };
+
+const t = getTranslations("uz", "BaaS");
 ---
 
 <Layout {...seoData}>
   <Hero imgSrc={baasImg}>
-    <h1 class="text-dynamic font-medium leading-none"> 
-      <span class="text-secondary">BaaS</span> – SmartCloud’dan bulutli zaxira nusxalari
-    </h1>
-    <p class="text-large mt-2">
-      BaaS – biznes uchun bulutli zaxira nusxalari. Ma'lumotlarni avtomatik saqlash va yo‘qotishdan himoya.
-    </p>
+    <Text text={t.title} type="highlight"/>
+    
+    <Text text={t.description} variant="h3" class="mt-2"/>
   </Hero>
 
-  <h1 class="text-extra-large font-medium text-center mb-dynamic">
-    BaaS dan foydalanish stsenariylari
-  </h1>
+  <Text text={t.subTitle} variant="h2" class="text-center mb-dynamic"/>
 
-  <div class="grid md:grid-cols-2 gap-10">
+  <div class="grid md:grid-cols-2 gap-dynamic10">
     {baasUseCases.map((item) => <IaasUseCaseCard title={item} />)}
   </div>
 
   <AdvantageCard
     cardClassName="xl:grid-cols-3"
-    title="BaaS afzalliklari"
+    title={t.AdvantageCard.title}
     data={baasAdvantages}
   />
-  <AboutSection title="Bizning noyob taklifimiz" className="my-dynamic">
+  <AboutSection title={t.AboutSection.title} className="text-extra-large">
     <div>
-      <h1 class="text-large font-bold">Ishonchli yechimlar</h1>
-      <p class="text-medium">
-        Zaxira nusxalash, replikatsiya va ma’lumotlarni tiklash sohasidagi yetakchilardan
-      </p>
+      <Text text={t.AboutSection.firstSubTitle} variant="h3" class="font-bold"/>
+      <Text text={t.AboutSection.descriptionFirstPart} variant="h4"/>
     </div>
     <div class="my-10">
-      <h1 class="text-large font-bold">Ishonchli infratuzilma</h1>
-      <p class="text-medium">
-        Zaxira nusxalar yuqori himoyalangan Toshkentdagi ma’lumotlar markazida saqlanadi
-      </p>
+      <Text text={t.AboutSection.secondSubTitle} variant="h3" class="font-bold"/>
+      <Text text={t.AboutSection.descriptionSecondPart} variant="h4"/>
     </div>
     <div>
-      <h1 class="text-large font-bold">Doimiy aloqa</h1>
-      <p class="text-medium">
-        Individual maslahat va xizmat ko‘rsatish, 24/7 texnik qo‘llab-quvvatlash
-      </p>
+      <Text text={t.AboutSection.thirdSubTitle} variant="h3" class="font-bold"/>
+      <Text text={t.AboutSection.descriptionThirdPart} variant="h4"/>
     </div>
   </AboutSection>
 </Layout>

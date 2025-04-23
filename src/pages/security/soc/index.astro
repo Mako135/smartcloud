@@ -5,9 +5,10 @@ import AdvantageCardWithIcon from "@/components/shared/AdvantageCardWithIcon.ast
 import Layout from "@/layouts/Layout.astro";
 import { socAdvantages, socAdvantages2 } from "@/lib/data/socData";
 import Hero from "@/widgets/Hero.astro";
-
+import Text from "@/components/ui/Text.astro";
 import socImg from "@/assets/waf.svg";
 import SocAccordion from "@/widgets/security/soc/SocAccordion.astro";
+import { getTranslations } from "@/utils/i18n";
 
 const seoData = {
   title: "Security Operations Center (SOC) – Мониторинг и защита",
@@ -22,42 +23,22 @@ const seoData = {
   image: "https://smartcloud.uz/assets/waf.svg",
   author: "SmartCloud",
 };
+const t = getTranslations("ru", "SOC")
 ---
 
 <Layout {...seoData}>
   <Hero imgSrc={socImg}>
-    <h1 class="text-dynamic font-medium leading-none"> 
-      <span class="text-secondary">SOC</span>
-      – комплексная защита Ваших цифровых активов
-    </h1>
-    <p class="text-medium mt-4">
-      Наш Центр Операционной Безопасности (SOC) обеспечивает круглосуточный
-      мониторинг, анализ и противодействие сетевым атакам, защищая ваши цифровые
-      данные в режиме реального времени
-    </p>
+    <Text text={t.title} type="highlight"/>
+    <Text text={t.description} variant="h4" class="mt-4" />
   </Hero>
 
-  <AboutSection title="Как работает SOC?">
-    <p>
-      Центр оперативного реагирования решает комплекс задач по оптимизации
-      системы менеджмента ИБ компании за счет:
-    </p>
-    <ul>
-      <li>- регулярной коррекции и дополнения мер защиты;</li>
-      <li>
-        - уменьшения времени реакции на атаки и инциденты инфобезопасности за
-        счет использования готовых сценариев реагирования;
-      </li>
-      <li>
-        - внедрения средств автоматизации для выявления инцидентов
-        информационной безопасности и реагирования
-      </li>
-    </ul>
+  <AboutSection title={t.AboutSection.title}>
+    <Text text={t.AboutSection.description} variant="h3" type="highlight"/>
   </AboutSection>
 
-  <AdvantageCard title="Преимущества услуги SOC" data={socAdvantages} />
+  <AdvantageCard title={t.AdvantageCard.title} data={socAdvantages} />
   <AdvantageCardWithIcon
-    title="Что вы получаете с этой услугой"
+    title={t.AdvantageCardWithIcon.title}
     data={socAdvantages2}
   />
 

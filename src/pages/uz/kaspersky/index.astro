@@ -3,8 +3,9 @@ import Layout from "@/layouts/Layout.astro";
 import Container from "@/widgets/Container.astro";
 import Hero from "@/widgets/Hero.astro";
 import KasperskySolutions from "@/widgets/kaspersky/KasperskySolutions.astro";
-
+import Text from "@/components/ui/Text.astro";
 import kaspersky from "@/assets/kaspersky.webp";
+import { getTranslations } from "@/utils/i18n";
 
 const seoData = {
   title: "Kaspersky Security – Облачный антивирус для бизнеса",
@@ -16,20 +17,14 @@ const seoData = {
   image: "https://smartcloud.uz/assets/kaspersky-security.svg",
   author: "SmartCloud",
 };
+const t = getTranslations("uz", "Kaspersky")
 ---
 
 <Layout {...seoData}>
   <Container>
     <Hero imgSrc={kaspersky}>
-      <h1 class="text-dynamic font-medium leading-none"> 
-        <span class="text-secondary">Kaspersky</span> yechimlari – biznesingiz 
-        rivojlanishiga e'tibor qarating, 
-        xavfsizlikni esa biz ta'minlaymiz.
-      </h1>
-      <p class="text-medium mt-4">
-        «Kaspersky Laboratoriyasi»  ilg‘or himoya yechimlarini taklif qiladi, shunda siz 
-        tashvishlanmasdan rivojlanishga e’tibor qaratishingiz mumkin.
-      </p>
+      <Text text={t.title} type="highlight"/>
+      <Text text={t.description} variant="h4" class="mt-4"/>
     </Hero>
 
     <KasperskySolutions />

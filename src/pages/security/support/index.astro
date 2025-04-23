@@ -8,9 +8,10 @@ import {
   securitySupportData2,
 } from "@/lib/data/securitySupportData";
 import Hero from "@/widgets/Hero.astro";
-
+import Text from "@/components/ui/Text.astro";
 import securitySupportImg from "@/assets/support.png";
 import SupportAccordion from "@/widgets/security/support/SupportAccordion.astro";
+import { getTranslations } from "@/utils/i18n";
 
 const seoData = {
   title: "Техническая поддержка SmartCloud – Поддержка 24/7",
@@ -24,42 +25,26 @@ const seoData = {
   image: "https://smartcloud.uz/assets/support.svg",
   author: "SmartCloud",
 };
+const t = getTranslations("ru","Support")
 ---
 
 <Layout {...seoData}>
   <Hero imgSrc={securitySupportImg}>
-    <h1 class="text-dynamic font-medium leading-none"> 
-      Профессиональная <br />
-      <span class="text-secondary"> Поддержка ИБ </span>
-      <br /> Мониторинг и Управление Безопасностью
-    </h1>
-    <p class="text-medium mt-6 hidden sm:block">
-      Наш сервис предоставляет комплексную техническую поддержку ИБ, включая
-      мониторинг, анализ проблем и разработку персональных программ управления
-      информационной безопасностью для максимальной защиты ваших данных
-    </p>
+    <Text text={t.title} type="highlight"/>
+    <Text text={t.description} variant="h4" class="mt-6 hidden sm:block" />
   </Hero>
 
-  <AboutSection title="Наше уникальное предложение">
-    <p>
-      Для наших клиентов информационная безопасность в Казахстане поддерживается
-      по строгим международным стандартам и нормативам. В сервисе задействованы
-      физические и информационные ресурсы провайдера и актуальные технологии. Мы
-      помогаем создать и поддерживать максимально возможный уровень защиты
-      рабочих операций и процессов без непосильных инвестиций. Многоэлементная
-      защита выстраивается с учетом уязвимостей физического оборудования,
-      человеческого фактора и информационно-технологической архитектуры
-      IT-системы
-    </p>
+  <AboutSection title={t.AboutSection.title}>
+    <Text text={t.AboutSection.description} variant="h3"/>
   </AboutSection>
 
   <AdvantageCard
-    title="Преимущества услуг по информационной безопасности"
+    title={t.AdvantageCard.title}
     data={securitySupportData}
   />
   <AdvantageCardWithIcon
     cardClassName="xl:grid-cols-3"
-    title="Что вы получаете с этой услугой?"
+    title={t.AdvantageCardWithIcon.title}
     data={securitySupportData2}
   />
 

@@ -4,7 +4,7 @@ import AdvantageCard from "@/components/shared/AdvantageCard.astro";
 import Layout from "@/layouts/Layout.astro";
 import VdsCards from "@/widgets/cloud-services/vds/VdsCards";
 import Hero from "@/widgets/Hero.astro";
-
+import Text from "@/components/ui/Text.astro";
 import vdsImg from "@/assets/vds.svg";
 import {
   operatingSystems,
@@ -14,7 +14,7 @@ import {
 import TabNavigation from "@/widgets/cloud-services/vds/TabNavigation";
 import { MoveRight } from "lucide-react";
 import TrialSection from "@/widgets/TrialSection.astro";
-
+import { getTranslations } from "@/utils/i18n";
 const seoData = {
   title: "VDS (VPS) в Узбекистане – Виртуальные серверы SmartCloud",
   description:
@@ -26,6 +26,7 @@ const seoData = {
   image: "https://smartcloud.uz/assets/vds.svg",
   author: "SmartCloud",
 };
+const t = getTranslations("uz", "VDS")
 ---
 
 <Layout {...seoData}>
@@ -39,32 +40,17 @@ const seoData = {
         <div
           class="p-2 px-6 bg-secondary/10 flex items-center gap-2 hover:bg-secondary/50 rounded-md text-regular"
         >
-          10 kun davomida kuchli bulut infratuzilmasiga bepul kirish
+          <Text text={t.days} variant="h5"/>
           <MoveRight className="group-hover:translate-x-2 transition-all" />
         </div>
       </a>
-      <h1 class="text-dynamic font-medium leading-none mt-10"> 
-        <span class="text-secondary">Virtual Dedicated Server</span> – virtual 
-        ajratilgan server
-      </h1>
-      <p class="text-medium mt-6">
-        Server ustidan to‘liq nazorat, izolatsiyalangan infratuzilma va 24/7 qo‘llab-quvvatlashni 
-        <br/>
-        oling. Uskunaga xarajatlarni tejang va serveringizni masofadan boshqaring.
-        <br />
-        Loyihangiz uchun ishonchlilik, tezlik va xavfsizlik!
-      </p>
+      <Text text={t.title} type="highlight" class="mt-10"/>
+      <Text text={t.description} variant="h4" class="mt-6" type="highlight"/>
     </div>
   </Hero>
 
-  <AboutSection title="VDS imkoniyatlari">
-    <p>
-      VDS turli vazifalarni bajaradi – vizitka saytlarni joylashtirishdan tortib, katta texnik 
-      resurslarni talab qiladigan veb-portalgacha. Moslashuvchan masshtablash imkoniyati 
-      tufayli VDS IT-infrastrukturani tez va tejamkor tarzda qurishga yordam beradi, bu esa 
-      yirik kompaniyalar, startaplar, dasturchilar va DevOps muhandislari uchun qulay yechim 
-      hisoblanadi.
-    </p>
+  <AboutSection title={t.AboutSection.title}>
+    <Text text={t.AboutSection.description} variant="h3"/>
   </AboutSection>
 
   <TabNavigation
@@ -76,7 +62,7 @@ const seoData = {
   <VdsCards client:idle />
 
   <AdvantageCard
-    title="VDS ning afzalliklari"
+    title={t.AdvantageCard.title}
     data={vdsAdvantages}
     cardClassName="lg:grid-cols-3"
   />

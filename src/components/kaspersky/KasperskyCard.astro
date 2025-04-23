@@ -1,8 +1,8 @@
 ---
 import { CircleCheck } from "lucide-react";
-import { ContactDialog } from "../contactModal/ContactDialog";
+import ContactDialog from "../contactModal/ContactDialog.astro";
 import clsx from "clsx";
-
+import Text from "../ui/Text.astro";
 interface Props {
   title: string;
   desc: string;
@@ -23,8 +23,8 @@ const { title, desc, list, cardClassName, buttonClassName, listClassName } =
   )}
 >
   <div>
-    <h3 class="text-medium font-medium h-10 mb-5">{title}</h3>
-    <p class="text-small">{desc}</p>
+    <Text text={title} variant="h4" class="h-10 mb-5"/>
+    <Text text={desc} variant="h6"/>
   </div>
 
   <div class="mt-5">
@@ -35,13 +35,12 @@ const { title, desc, list, cardClassName, buttonClassName, listClassName } =
             <div class="w-5 h-5">
               <CircleCheck  className="h-5 w-5 text-secondary" />
             </div>
-            {item}
+            <Text text={item} variant="h6"/>
           </li>
         ))
       }
     </ul>
     <ContactDialog
-      client:idle 
       className={clsx("w-full rounded-md mt-5", buttonClassName)}
     />
   </div>

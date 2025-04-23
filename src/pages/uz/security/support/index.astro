@@ -8,9 +8,10 @@ import {
   securitySupportData2,
 } from "@/lib/dataUZ/securitySupportData";
 import Hero from "@/widgets/Hero.astro";
-
+import Text from "@/components/ui/Text.astro";
 import securitySupportImg from "@/assets/support.png";
 import SupportAccordion from "@/widgets/security/support/SupportAccordion.astro";
+import { getTranslations } from "@/utils/i18n";
 
 const seoData = {
   title: "Техническая поддержка SmartCloud – Поддержка 24/7",
@@ -21,40 +22,26 @@ const seoData = {
   image: "https://smartcloud.uz/assets/support.svg",
   author: "SmartCloud",
 };
+const t = getTranslations("uz","Support")
 ---
 
 <Layout {...seoData}>
   <Hero imgSrc={securitySupportImg}>
-    <h1 class="text-dynamic font-medium leading-none"> 
-      Professional <br />
-      <span class="text-secondary"> IT xavfsizlikni qo‘llab-quvvatlash </span>
-      <br /> Monitoring va xavfsizlikni boshqarish
-    </h1>
-    <p class="text-medium mt-6 hidden sm:block">
-      Xizmatimiz axborot xavfsizligini kompleks texnik qo‘llab-quvvatlashni taqdim etadi, jumladan 
-      monitoring, muammolarni tahlil qilish va ma’lumotlaringizni maksimal himoya qilish uchun 
-      shaxsiy xavfsizlik boshqaruv dasturlarini ishlab chiqish.
-    </p>
+    <Text text={t.title} type="highlight"/>
+    <Text text={t.description} variant="h4" class="mt-6 hidden sm:block" />
   </Hero>
 
-  <AboutSection title="Bizning noyob taklifimiz">
-    <p>
-      Bizning mijozlarimiz uchun Qozog‘istonda axborot xavfsizligi xalqaro standartlar va 
-      normalarga qat’iy rioya qilgan holda ta’minlanadi. Xizmat provayderning jismoniy va 
-      axborot resurslari hamda zamonaviy texnologiyalar asosida ishlaydi. Biz ish jarayonlari 
-      va operatsiyalarini ortiqcha investitsiyalarsiz maksimal darajada himoya qilishga yordam 
-      beramiz. Ko‘p elementli himoya jismoniy uskunalarning zaifliklari, inson omili va IT-
-      tizimning axborot-texnologik arxitekturasi hisobga olingan holda shakllantiriladi.
-    </p>
+  <AboutSection title={t.AboutSection.title}>
+    <Text text={t.AboutSection.description} variant="h3"/>
   </AboutSection>
 
   <AdvantageCard
-    title="Axborot xavfsizligi xizmatlarining afzalliklari"
+    title={t.AdvantageCard.title}
     data={securitySupportData}
   />
   <AdvantageCardWithIcon
     cardClassName="xl:grid-cols-3"
-    title="Siz ushbu xizmat bilan nimaga ega bo'lasiz?"
+    title={t.AdvantageCardWithIcon.title}
     data={securitySupportData2}
   />
 

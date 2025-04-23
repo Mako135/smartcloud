@@ -1,0 +1,91 @@
+---
+import PhoneInput from "../shared/PhoneInput.astro"; 
+import { Button, Label } from "../ui";
+import Input from "../ui/Input.astro";
+import { getTranslations } from "@/utils/i18n";
+
+const currentLocale = Astro.url.pathname.startsWith("/uz") ? "uz" : "ru";
+const t = getTranslations(currentLocale, "ContactForm");
+---
+
+<form 
+  class="w-full"
+  id="contactForm"
+>
+  <div class="grid gap-4 py-4">
+    <div>
+      <Label htmlFor="name" className="text-left text-regular">
+        {t.name}
+      </Label>
+      <Input
+        id="name"
+        name="name"
+        required
+        placeholder={t.placeholderName}
+        type="text"
+      />
+    </div>
+    <div>
+      <Label htmlFor="company" className="text-left text-regular">
+        {t.company}
+      </Label>
+      <Input
+        id="company"
+        name="company"
+        required
+        placeholder={t.placeholderCompany}
+        type="text"
+      />
+    </div>
+    <div>
+      <Label htmlFor="phone" className="text-left text-regular">
+        {t.phone}
+      </Label>
+      <PhoneInput name="phone"/>
+    </div>
+  </div>
+  <Button
+    type="submit"
+    className="w-full text-md"
+    variant="default"
+  >
+    {t.submit}
+  </Button>
+</form>
+
+<script>
+  import { toast } from "sonner";
+  import { validateForm } from "./formValidate";
+  import { sendEmail } from "@/api";
+  import { getTranslations } from "@/utils/i18n";
+  
+  const form = document.getElementById("contactForm");
+  if (form && form instanceof HTMLFormElement) {
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      
+      const currentLocale = window.location.pathname.startsWith("/uz") ? "uz" : "ru";
+      const t = getTranslations(currentLocale, "ContactForm");
+
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries()) as { name: string; company: string; phone: string };
+      
+      const isValid = validateForm(data);
+      if (isValid) { 
+        toast.error(isValid);
+        return;
+      }
+
+      try {
+        const response = await sendEmail(data); 
+        if (response.ok) {
+          form.reset();
+        } else {
+          throw new Error();
+        }
+      } catch (error) {
+        toast.error(t.error);
+      }
+    });
+  }
+</script>

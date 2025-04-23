@@ -1,10 +1,10 @@
 ---
-import { ContactDialog } from "@/components/contactModal/ContactDialog";
+import ContactDialog from "@/components/contactModal/ContactDialog.astro";
 import { Image } from "astro:assets";
 import { getTranslations } from "@/utils/i18n";
 
 const locale = Astro.url.pathname.startsWith("/uz") ? "uz" : "ru";
-const t = getTranslations(locale, "hero");
+const t = getTranslations(locale, "Hero");
 
 const { imgSrc } = Astro.props;
 ---
@@ -21,7 +21,7 @@ const { imgSrc } = Astro.props;
         class="h-9 flex items-center justify-center px-6 bg-secondary text-white dark:bg-white dark:text-black rounded-3xl font-medium text-md"
         >{t.title}</a
       >
-      <ContactDialog client:idle />
+      <ContactDialog/>
     </div>
   </div>
 

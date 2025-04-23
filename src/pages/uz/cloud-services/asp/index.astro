@@ -7,8 +7,8 @@ import Hero from "@/widgets/Hero.astro";
 import aspImg from "@/assets/asp.svg";
 import { aspAdvantages, aspUseCases } from "@/lib/dataUZ/aspData";
 import AdvantageCardWithIcon from "@/components/shared/AdvantageCardWithIcon.astro";
-
-
+import Text from "@/components/ui/Text.astro";
+import { getTranslations } from "@/utils/i18n";
 
 // SEO-данные для страницы
 const seoData = {
@@ -22,49 +22,30 @@ const seoData = {
   author: "SmartCloud",
 };
 
-
-
+const t = getTranslations("uz", "ASP");
 ---
 
 <Layout {...seoData}>
   <Hero imgSrc={aspImg}>
-    <h1 class="text-dynamic font-medium leading-none"> 
-      IT xarajatlarini dasturiy ta'minotni ijaraga olish orqali kamaytiring
-    </h1>
-    <p class="text-medium mt-4">
-      Dasturiy ta'minotni ijaraga olish Microsoft CSP (Cloud Solution Provider) litsenziyalash usuli 
-      orqali taqdim etiladi. Microsoft Office, Windows, Exchange, SQL Server va Power BI-ni har 
-      qanday ehtiyoj uchun moslashuvchan shartlarda ijaraga olish mumkin. Biznesingiz o‘sishi bilan 
-      resurslarni kengaytiring.
-    </p>
+    <Text text={t.title}/>
+
+    <Text text={t.description} variant="h4" class="mt-4"/>
   </Hero>
 
   <AboutSection
-    title="Legitim kirish va malakali qo‘llab-quvvatlash"
-    className="mb-60"
+    title={t.AboutSection.title}
+    className="mb-dynamic60"
   >
     <div>
-      <strong>
-        CSP litsenziyalash modeli yordamida sizning kompaniyangiz Microsoft dasturiy ta’minoti 
-        uchun rasmiy litsenziyalarga ega bo‘ladi. Bu sizning dasturiy ta’minotdan litsenziya 
-        shartnomalariga muvofiq foydalanishingizni kafolatlaydi, bu esa huquqiy normalarga 
-        rioya qilish uchun muhimdir.
-      </strong>
+      <Text text={t.AboutSection.description_first_part} variant="h3" class="font-extrabold"/>
     </div>
-    <p class="my-10">
-      Litsenziyalarga tezkor kirish, shuningdek, MS Office, Office 365, Exchange Server, 
-      SharePoint, BizTalk, MS Dynamics, Power BI, Azure, Azure Stack Hub kabi ko‘plab 
-      mahsulotlar. Ilgari faqat sotib olish mumkin bo‘lgan qimmat dasturiy mahsulotlar endi 
-      CSP orqali ijaraga olish uchun ham mavjud. Xizmat tarkibiga texnik qo‘llab-quvvatlash, 
-      litsenziyalash bo‘yicha maslahatlar va dasturiy ta’minot bilan bog‘liq muammolarni hal 
-      qilishga yordam berish kiradi.
-    </p>
+    <Text text={t.AboutSection.description_second_part} variant="h3" class="my-10"/>
   </AboutSection>
 
-  <AdvantageCard title="Afzalliklar" dataArray={aspUseCases} />
+  <AdvantageCard title={t.AdvantageCard.title} dataArray={aspUseCases} />
 
   <AdvantageCardWithIcon
-    title="Ushbu xizmat sizga nima beradi?"
+    title={t.AdvantageCardWithIcon.title}
     data={aspAdvantages}
   />
 </Layout>

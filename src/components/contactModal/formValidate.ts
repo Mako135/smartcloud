@@ -1,5 +1,3 @@
-import { isValidPhoneNumber } from "@/lib/isNumber";
-
 const uzbekistanPhoneRegex = /^998(90|91|93|94|95|97|98|99|33|88|50|55|77|71|78|79)\d{7}$/;
 
 const messages = {
@@ -36,8 +34,6 @@ export function validateForm({
   if (phone.startsWith("+998") && !uzbekistanPhoneRegex.test(phone.replace(/\D/g, ""))) {
     return t.invalidPhone;
   }
-
-  if (!isValidPhoneNumber(phone)) return t.invalidPhone;
 
   return null;
 }

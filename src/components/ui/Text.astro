@@ -3,30 +3,32 @@ type Props = {
   text: string;
   type?: "highlight" | "regular";
   variant?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  class?: string;
+  id?: string;
 };
 
-const { text, type = "regular", variant } = Astro.props;
+const { text, type = "regular", variant, class: className, id} = Astro.props;
 
-const varVlassNames = {
-  h1: "text-extra-large font-medium",
-  h2: "text-large font-medium",
-  h3: "text-medium font-medium",
-  h4: "text-regular font-medium",
-  h5: "text-small font-medium",
-  h6: "text-extra-small font-medium",
+const varClassNames = {
+  h1: "text-dynamic leading-none",
+  h2: "text-extra-large",
+  h3: "text-large",
+  h4: "text-medium",
+  h5: "text-regular",
+  h6: "text-small",
 };
 
-const defaultClass = "text-dynamic font-medium";
+const dynamicClass = variant ? varClassNames[variant] : varClassNames.h1;
+
+const finalClass = /font-(thin|light|normal|medium|semibold|bold|extrabold|black)/.test(className || "")
+  ? `${dynamicClass} ${className || ""}`
+  : `${dynamicClass} font-medium ${className || ""}`;
 ---
 
 {
   type === "highlight" ? (
-    <h1
-      class={variant ? varVlassNames[variant] : defaultClass}
-      set:html={text}
-      class="leading-none"
-    />
+    <h1 id={id} class={finalClass} set:html={text} />
   ) : (
-    <h1 class="text-dynamic font-medium leading-none">{text}</h1>
+    <h1 id={id} class={finalClass}>{text}</h1>
   )
 }

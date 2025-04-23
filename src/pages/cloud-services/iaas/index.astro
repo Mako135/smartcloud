@@ -3,7 +3,6 @@ import Layout from "@/layouts/Layout.astro";
 import IaaSConfigurator from "@/widgets/cloud-services/iaas/IaaSConfigurator";
 import Hero from "@/widgets/Hero.astro";
 import AboutSection from "@/components/shared/AboutSection.astro";
-
 import iaasImg from "@/assets/iaas.png";
 import { iaas_advantages, iaas_advantages_2 } from "@/lib/data/iaasData";
 import IaasCard from "@/components/cloud-services/iaas/IaasCard.astro";
@@ -12,6 +11,8 @@ import AdvantageCard from "@/components/shared/AdvantageCard.astro";
 import { smartcloudAdvantages } from "@/lib/data/homeData";
 import TrialSection from "@/widgets/TrialSection.astro";
 import { MoveRight } from "lucide-react";
+import { getTranslations } from "@/utils/i18n";
+import Text from "@/components/ui/Text.astro";
 
 const seoData = {
   title: "IaaS в Узбекистане – Виртуальная инфраструктура от SmartCloud",
@@ -27,6 +28,7 @@ const seoData = {
   image: "https://smartcloud.uz/assets/iaas.svg",
   author: "SmartCloud",
 };
+const t = getTranslations("ru", "IaaS")
 ---
 
 <Layout {...seoData}>
@@ -40,33 +42,21 @@ const seoData = {
         <div
           class="p-2 px-6 bg-secondary/10 flex items-center gap-2 hover:bg-secondary/50 rounded-md text-regular"
         >
-          14 дней бесплатного доступа к мощной облачной инфраструктуре
+        <Text text={t.days} variant="h5"/>
           <MoveRight className="group-hover:translate-x-2 transition-all" />
         </div>
       </a>
-      <h1 class="text-dynamic font-medium leading-none mt-10"> 
-        <span class="text-secondary">IaaS</span> (инфраструктура как услуга)
-      </h1>
-      <p class="text-medium mt-4">
-        Бизнес-модель, позволяющая в облачной среде самостоятельно создавать и
-        клонировать виртуальные серверы, менять их конфигурацию, управлять
-        настройками
-      </p>
+      <Text text={t.title} type="highlight" class="mt-10"/>
+      <Text text={t.description} variant="h4" class="mt-4"/>
     </div>
   </Hero>
 
-  <AboutSection title="Что такое IaaS?">
-    <p>
-      IaaS (инфраструктура как услуга) – это гибкое облачное решение, которое
-      позволяет самостоятельно создавать и клонировать виртуальные сервера,
-      менять их конфигурацию, а также управлять настройками
-    </p>
+  <AboutSection title={t.AboutSection.title}>
+    <Text text={t.AboutSection.description} variant="h3"/>
   </AboutSection>
 
   <div class="my-dynamic">
-    <h1 class="text-extra-large font-medium text-center mb-dynamic">
-      IaaS vs собственная инфраструктура: в чем выгода?
-    </h1>
+    <Text text={t.firstSubTitle} variant="h2" class="text-center mb-dynamic"/>
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
       {
         iaas_advantages_2.map((item) => (
@@ -78,15 +68,14 @@ const seoData = {
 
   <IaaSConfigurator client:idle />
 
-  <h1 class="text-extra-large font-medium text-center mb-dynamic">
-    Сценарии использования IaaS
-  </h1>
+
+  <Text text={t.secondSubTitle} variant="h2" class="text-center mb-dynamic"/>
 
   <div class="grid md:grid-cols-2 gap-dynamic10">
     {iaas_advantages.map((item) => <IaasUseCaseCard title={item} />)}
   </div>
   <AdvantageCard
-    title="Преимущества IaaS SmartCloud"
+    title={t.AdvantageCard.title}
     dataArray={smartcloudAdvantages}
     cardClassName="xl:grid-cols-3"
   />
