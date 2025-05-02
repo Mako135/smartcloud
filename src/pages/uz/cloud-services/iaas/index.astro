@@ -13,6 +13,7 @@ import TrialSection from "@/widgets/TrialSection.astro";
 import { MoveRight } from "lucide-react";
 import { getTranslations } from "@/utils/i18n";
 import Text from "@/components/ui/Text.astro";
+import Container from "@/widgets/Container.astro";
 
 const seoData = {
   title: "IaaS в Узбекистане – Виртуальная инфраструктура от SmartCloud",
@@ -69,6 +70,28 @@ const t = getTranslations("uz", "IaaS");
   <div class="grid md:grid-cols-2 gap-dynamic10">
     {iaas_advantages.map((item) => <IaasUseCaseCard title={item} />)}
   </div>
+
+  <Container className="p-5 rounded-2xl my-40 text-center">
+    <div class="text-center m-4">
+      <Text
+        text={t.highAvailability.title}
+        variant="h2"
+        class="flex flex-wrap justify-center"
+      />
+      <div class="mt-4 mb-8 whitespace-pre-line max-w-3xl mx-auto">
+        <Text text={t.highAvailability.subtitle} variant="h5" />
+        <Text text={t.highAvailability.desc} variant="h5" />
+      </div>
+    </div>
+    <a
+      href="https://portal.smartcloud.uz/index.php?/products/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="py-2 px-10 rounded-3xl bg-transparent border border-secondary hover:bg-secondary hover:text-white text-regular"
+    >
+      {t.highAvailability.cta}
+    </a>
+  </Container>
 
   <AdvantageCard
     title={t.AdvantageCard.title}

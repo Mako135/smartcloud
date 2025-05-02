@@ -113,7 +113,7 @@ option {
     2rem,
     15vw,
     15rem
-  ); /* Минимум 2rem, динамический отступ 10vw, максимум 15rem == 60 */
+  ); 
   margin-bottom: clamp(2rem, 15vw, 15rem);
 }
 .mb-dynamic {
