@@ -3,7 +3,8 @@ import translationsUz from "@/locales/uz.json";
 
 type TranslationKeys = keyof typeof translationsRu;
 
-type TranslationSection<K extends TranslationKeys> = (typeof translationsRu)[K];
+export type TranslationSection<K extends TranslationKeys> =
+  (typeof translationsRu)[K];
 
 export function getTranslations<K extends TranslationKeys>(
   locale: "ru" | "uz",

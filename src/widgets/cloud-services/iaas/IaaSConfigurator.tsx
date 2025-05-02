@@ -7,17 +7,20 @@ import StorageInput from "@/components/cloud-services/iaas/StorageInput";
 import BackupInput from "@/components/cloud-services/iaas/BackupInput";
 import IpInput from "@/components/cloud-services/iaas/IpInput";
 import IaasCart from "@/components/cloud-services/iaas/IaasCart";
+import { CityTabs } from "@/components/cloud-services/iaas/CityTabs";
 
 type Locale = "ru" | "uz";
 
 const translations: Record<Locale, { title: string; description: string }> = {
   ru: {
     title: "Рассчитайте стоимость аренды IaaS",
-    description: "Стоимость IaaS зависит от конфигурации вашей системы. Посекундная тарификация, входящий трафик и запросы — бесплатно",
+    description:
+      "Стоимость IaaS зависит от конфигурации вашей системы. Посекундная тарификация, входящий трафик и запросы — бесплатно",
   },
   uz: {
     title: "IaaS ijarasi narxini hisoblang",
-    description: "IaaS narxi sizning tizimingiz konfiguratsiyasiga bog'liq. Sekundlik tarif, kiruvchi trafik va so‘rovlar – bepul",
+    description:
+      "IaaS narxi sizning tizimingiz konfiguratsiyasiga bog'liq. Sekundlik tarif, kiruvchi trafik va so‘rovlar – bepul",
   },
 };
 
@@ -84,8 +87,11 @@ const IaaSConfigurator = () => {
         id="iaasConf"
       >
         <div className="col-span-4 pt-4 pr-5 pb-6 pl-3">
-          <h2 className="text-large font-medium">Infrastructure as a Service</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-stretch mt-5">
+            <h2 className="text-large font-medium col-span-2 h-fit">
+              Infrastructure as a Service
+            </h2>
+            <CityTabs />
             <CpuInput />
             <RamInput />
             <StorageType />

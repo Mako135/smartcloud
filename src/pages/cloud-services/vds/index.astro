@@ -30,7 +30,7 @@ const seoData = {
   image: "https://smartcloud.uz/assets/vds.svg",
   author: "SmartCloud",
 };
-const t = getTranslations("ru", "VDS")
+const t = getTranslations("ru", "VDS");
 ---
 
 <Layout {...seoData}>
@@ -44,17 +44,17 @@ const t = getTranslations("ru", "VDS")
         <div
           class="p-2 px-6 bg-secondary/10 flex items-center gap-2 hover:bg-secondary/50 rounded-md text-regular"
         >
-          <Text text={t.days} variant="h5"/>
+          <Text text={t.days} variant="h5" />
           <MoveRight className="group-hover:translate-x-2 transition-all" />
         </div>
       </a>
-      <Text text={t.title} type="highlight" class="mt-10"/>
-      <Text text={t.description} variant="h4" class="mt-6" type="highlight"/>
+      <Text text={t.title} type="highlight" class="mt-10" />
+      <Text text={t.description} variant="h4" class="mt-6" type="highlight" />
     </div>
   </Hero>
 
   <AboutSection title={t.AboutSection.title}>
-    <Text text={t.AboutSection.description} variant="h3"/>
+    <Text text={t.AboutSection.description} variant="h3" />
   </AboutSection>
 
   <TabNavigation

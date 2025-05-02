@@ -47,7 +47,9 @@ const TabsComponent = ({
 
   return (
     <section className="my-dynamic">
-      <h1 className="text-center text-extra-large font-medium mb-dynamic">{title}</h1>
+      <h1 className="text-center text-extra-large font-medium mb-dynamic">
+        {title}
+      </h1>
       <div className="flex justify-center border-b border-gray-200 dark:border-gray-500 mb-6">
         {tabKeys.map((tabKey) => (
           <div

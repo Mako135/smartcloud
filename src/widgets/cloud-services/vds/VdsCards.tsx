@@ -3,6 +3,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui";
 import { vdsDataHdd, vdsDataSsd } from "@/lib/data/vdsData";
 import { vdsDataHddUZ, vdsDataSsdUZ } from "@/lib/dataUZ/vdsData";
 import { useState, useEffect } from "react";
+import { CityCard } from "./CityCard";
 
 const translations: Record<"ru" | "uz", { label: string }> = {
   ru: { label: "Доступные конфигурации" },
@@ -14,7 +15,9 @@ export default function VdsCards() {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      setCurrentLocale(window.location.pathname.startsWith("/uz") ? "uz" : "ru");
+      setCurrentLocale(
+        window.location.pathname.startsWith("/uz") ? "uz" : "ru"
+      );
     }
   }, []);
 
@@ -23,7 +26,7 @@ export default function VdsCards() {
 
   return (
     <div>
-      <h1 className="text-center text-extra-large font-medium mb-dynamic">
+      <h1 className="text-center text-extra-large font-medium mb-10">
         {translations[currentLocale].label}
       </h1>
       <Tabs defaultValue="ssd" className="flex flex-col mb-dynamic40">
@@ -33,6 +36,7 @@ export default function VdsCards() {
         </TabsList>
         <TabsContent value="ssd">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <CityCard />
             {vdsSsdData.map((vds) => (
               <VdsCard
                 key={vds.title}
@@ -50,6 +54,7 @@ export default function VdsCards() {
         </TabsContent>
         <TabsContent value="hdd">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <CityCard />
             {vdsHddData.map((vds) => (
               <VdsCard
                 key={vds.title}

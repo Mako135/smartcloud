@@ -24,7 +24,7 @@ const seoData = {
   image: "https://smartcloud.uz/assets/iaas.svg",
   author: "SmartCloud",
 };
-const t = getTranslations("uz", "IaaS")
+const t = getTranslations("uz", "IaaS");
 ---
 
 <Layout {...seoData}>
@@ -38,21 +38,21 @@ const t = getTranslations("uz", "IaaS")
         <div
           class="p-2 px-6 bg-secondary/10 flex items-center gap-2 hover:bg-secondary/50 rounded-md text-regular"
         >
-        <Text text={t.days} variant="h5"/>
+          <Text text={t.days} variant="h5" />
           <MoveRight className="group-hover:translate-x-2 transition-all" />
         </div>
       </a>
-      <Text text={t.title} type="highlight" class="mt-10"/>
-      <Text text={t.description} variant="h4" class="mt-4"/>
+      <Text text={t.title} type="highlight" class="mt-10" />
+      <Text text={t.description} variant="h4" class="mt-4" />
     </div>
   </Hero>
 
   <AboutSection title={t.AboutSection.title}>
-    <Text text={t.AboutSection.description} variant="h3"/>
+    <Text text={t.AboutSection.description} variant="h3" />
   </AboutSection>
 
   <div class="my-dynamic">
-    <Text text={t.firstSubTitle} variant="h2" class="text-center mb-dynamic"/>
+    <Text text={t.firstSubTitle} variant="h2" class="text-center mb-dynamic" />
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
       {
         iaas_advantages_2.map((item) => (
@@ -64,11 +64,12 @@ const t = getTranslations("uz", "IaaS")
 
   <IaaSConfigurator client:idle />
 
-  <Text text={t.secondSubTitle} variant="h2" class="text-center mb-dynamic"/>
+  <Text text={t.secondSubTitle} variant="h2" class="text-center mb-dynamic" />
 
   <div class="grid md:grid-cols-2 gap-dynamic10">
     {iaas_advantages.map((item) => <IaasUseCaseCard title={item} />)}
   </div>
+
   <AdvantageCard
     title={t.AdvantageCard.title}
     dataArray={smartcloudAdvantages}

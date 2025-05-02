@@ -9,10 +9,10 @@ const translations: Record<"ru" | "uz", { label: string }> = {
 const StorageType = () => {
   const { type, setType } = useIaasStore();
   const [currentLocale, setCurrentLocale] = useState<"ru" | "uz">("ru");
-  
-    useEffect(() => {
-      setCurrentLocale(window.location.pathname.startsWith("/uz") ? "uz" : "ru");
-    }, []);
+
+  useEffect(() => {
+    setCurrentLocale(window.location.pathname.startsWith("/uz") ? "uz" : "ru");
+  }, []);
 
   const onTabChange = (value: string) => {
     if (value === "ssd" || value === "hdd") {
@@ -24,7 +24,7 @@ const StorageType = () => {
     <div className="col-span-2">
       {translations[currentLocale].label}
       <Tabs
-        defaultValue="account"
+        defaultValue="ssd"
         value={type}
         onValueChange={onTabChange}
         className="mt-5"

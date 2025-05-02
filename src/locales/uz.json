@@ -2,13 +2,13 @@
   "Sponsors": {
     "title": "Hamkorlarimiz"
   },
-  "MobileMenu":{
+  "MobileMenu": {
     "title": "<a href='/' class='font-bold tracking-wider'>SMART<span class='text-secondary'>CLOUD</span></a>",
     "chooseTheme": "Выбрать тему"
   },
   "AboutUs": {
     "title": "Kompaniya haqida",
-    "description":"SmartCloud jamoasi xalqaro ICT infratuzilma provayderining bir qismi — <a href='https://kazteleport.kz/'>\"Kazteleport\" AJ</a> bo‘lib, O‘zbekiston hududida bulutli hisoblash, ma'lumotlarni saqlash, zaxiralash va kiberxavfsizlik xizmatlarini taqdim etadi.<br/><br/>Bizning ishonchli jismoniy va virtual infratuzilmamiz, tajribali muhandislar jamoamiz va keng tanlovdagi texnologiyalar mijozlarga barqarorlik va muhim jarayonlarning mavjudligini kafolatlaydi, shuningdek, biznesni istalgan vaqtda kengaytirish imkoniyatini beradi.",
+    "description": "SmartCloud jamoasi xalqaro ICT infratuzilma provayderining bir qismi — <a href='https://kazteleport.kz/'>\"Kazteleport\" AJ</a> bo‘lib, O‘zbekiston hududida bulutli hisoblash, ma'lumotlarni saqlash, zaxiralash va kiberxavfsizlik xizmatlarini taqdim etadi.<br/><br/>Bizning ishonchli jismoniy va virtual infratuzilmamiz, tajribali muhandislar jamoamiz va keng tanlovdagi texnologiyalar mijozlarga barqarorlik va muhim jarayonlarning mavjudligini kafolatlaydi, shuningdek, biznesni istalgan vaqtda kengaytirish imkoniyatini beradi.",
     "stats": {
       "experience": "yillik tajriba ICT sohasida",
       "partners": "ishonchli hamkorlar",
@@ -62,7 +62,7 @@
     "title": "Konsultatsiya olish",
     "description": "Ariza qoldiring, va bizning menejerimiz siz bilan tez orada bog'lanadi"
   },
-  "HomePage":{
+  "HomePage": {
     "title": "Smart<span class='text-secondary'>Cloud</span>-ga xush kelibsiz – sizning bulut xizmatlari bozor joyingiz!",
     "description": "Tasdiqlangan bulut texnologiyalaridan foydalangan holda IT-yechimlar yarating!<br />Tez boshlash, kam xarajatlar, yuqori ishonchlilik!"
   },
@@ -78,7 +78,7 @@
       "title": "Afzalliklar"
     },
     "AdvantageCardWithIcon": {
-      "title": "Ushbu xizmat sizga nima beradi?"    
+      "title": "Ushbu xizmat sizga nima beradi?"
     }
   },
   "BaaS": {
@@ -94,15 +94,15 @@
       "descriptionFirstPart": "Zaxira nusxalash, replikatsiya va ma’lumotlarni tiklash sohasidagi yetakchilardan",
       "secondSubTitle": "Ishonchli infratuzilma",
       "descriptionSecondPart": "Zaxira nusxalar yuqori himoyalangan Toshkentdagi ma’lumotlar markazida saqlanadi",
-      "thirdSubTitle": "Doimiy aloqa",  
+      "thirdSubTitle": "Doimiy aloqa",
       "descriptionThirdPart": "Individual maslahat va xizmat ko‘rsatish, 24/7 texnik qo‘llab-quvvatlash"
     }
   },
-  "IaaS":{
+  "IaaS": {
     "days": "14 kun davomida kuchli bulutli infratuzilmadan bepul foydalanish",
     "title": "<span class='text-secondary'>IaaS</span> (xizmat sifatida infratuzilma)",
-    "description":"Bulutli muhitda mustaqil ravishda virtual serverlarni yaratish va klonlash, ularning konfiguratsiyasini o'zgartirish, sozlamalarni boshqarish imkonini beruvchi biznes modeli.",
-    "AboutSection":{
+    "description": "Bulutli muhitda mustaqil ravishda virtual serverlarni yaratish va klonlash, ularning konfiguratsiyasini o'zgartirish, sozlamalarni boshqarish imkonini beruvchi biznes modeli.",
+    "AboutSection": {
       "title": "IaaS nima?",
       "description": "IaaS (Infrastrukturia sifatida xizmat) – bu moslashuvchan bulutli yechim bo‘lib, u mustaqil ravishda virtual serverlarni yaratish va klonlash, ularning konfiguratsiyasini o‘zgartirish hamda sozlamalarni boshqarish imkonini beradi."
     },
@@ -110,9 +110,17 @@
     "secondSubTitle": "IaaS dan foydalanish ssenariylari",
     "AdvantageCard": {
       "title": "IaaS SmartCloud’ning afzalliklari"
-    }
+    },
+    "highAvailability": {
+      "title": "Hududlararo zaxiralash",
+      "subtitle": "Infratuzilmani Qarasu yoki Yunusoboddagi data-markazlarda joylashtiring",
+      "desc": "Ma'lumotlarni maksimal darajada himoya qilish uchun zaxira nusxalarni boshqa mavjudlik zonasida saqlang",
+      "cta": "Server buyurtma qilish"
+    },
+    "city1": "Qarasu",
+    "city2": "Yunusobod"
   },
-  "Storage":{
+  "Storage": {
     "title": "<span class='text-secondary'>Ma'lumotlar ombori</span> – ma'lumotlarni saqlash uchun disk maydoni",
     "description": "Disk nosozliklaridan ishonchli himoya.",
     "AboutSection": {
@@ -142,7 +150,7 @@
   "DDoS": {
     "title": "<span class='text-secondary'>DDoS</span>-hujumlarga biznesingizni to‘xtatishiga yo‘l qo‘ymang!",
     "description": "Sizning resurslaringizni OSI modeli L3, L4 va L7 darajalarida DDoS hujumlaridan himoya qilish uchun ilg‘or yechimlar. Xizmatlarning uzluksiz ishlashi va mijozlar uchun doimiy mavjudligini bizning ishonchli xizmatlarimiz bilan ta’minlang.",
-    "AboutSection":{
+    "AboutSection": {
       "title": "Serverni DDoS hujumlaridan himoya qilish",
       "description": "Himoya xavfsiz IP-tranzit shaklida amalga oshiriladi, mijozning tarmog‘i (serveri) uchun kompleks xavfsizlikni ta’minlaydi. Xizmat doirasida quyidagi himoya taqdim etiladi:<br/><br/><ul><li>- Mijoz kanallari</li><li>- Kommutatsiya uskunalari</li><li>- Onlayn xizmatlar, ishlatilayotgan protokollardan qat'i nazar</li></ul>"
     },
@@ -152,7 +160,7 @@
     "AdvantageCardWithIcon": {
       "title": "DDoS hujumlaridan himoya afzalliklari"
     },
-    "DDoSAccordion":{
+    "DDoSAccordion": {
       "title": "Kimlar uchun mos?",
       "question1": "Siz qanday DDoS hujumlariga qarshi himoya modelidan foydalanasiz?",
       "answer1": "Saytni himoya qilish xizmati Reverse Proxy texnologiyasidan foydalangan holda ishlaydi. DNS-serverda A-yozuvlarini o‘zgartirgandan so‘ng, tashrif buyuruvchilarning so‘rovlari DDoS-GUARD himoyalangan IP-manziliga yo‘naltiriladi. Kiruvchi trafik anomaliyalar (soxta TCP-sessiyalar hujumi, bir nechta SYN-ACK bilan soxta TCP hujumi, Slowloris sessiya hujumi, bir nechta ACK bilan soxta TCP sessiyalari hujumi, bo‘laklangan HTTP-paketlar hujumi, HTTP-flood, yakka sessiyalar orqali HTTP-flood, yakka so‘rovlarga asoslangan HTTP-flood, rekursiv HTTP GET flood, tasodifiy so‘rovlarga asoslangan rekursiv HTTP GET flood, ilovalarni ishdan chiqarish hujumi, UDP-flood, bo‘laklangan UDP-flood, DNS-flood, VoIP-flood, media ma’lumotlari bilan flood, botnet orqali UDP-flood, ICMP-flood, bo‘laklangan ICMP-flood, nol kunlik DDoS-hujumi, NTP-flood, TOS maydonini o‘zgartirish hujumi, IP Null hujumi, TCP Null hujumi, Smurf-hujumi, UDP translyatsiya hujumi, Apache-killer, odam orasida hujum (MITM), SIP Register Flood hujumi, typo-squatting, SNMP Reflection hujumi, CharGEN-flood, SYN Flood hujumi, SYN-ACK Flood hujumi, ACK va PUSH ACK Flood hujumi, bo‘laklangan ACK Flood, RST va FIN Flood hujumi, Misused Application hujumi, NTP-kuchaytirish hujumi, DNS-kuchaytirish hujumi, past darajadagi hujum (Naptha Attack), MS SQL DDoS-hujumi, SIP so‘rovlarini bog‘lash orqali flood, O‘lim Ping hujumi, ARP-spoofing, LAND hujumi, Teardrop hujumi, SSL Flood, Memcached DDoS-hujumi, SIP Malformed hujumi, kuchaytirish orqali DDoS-hujumlar) dan tozalanib, maqsadli veb-serverga yuboriladi. Agar sayt trafikini qayta ishlash qoidalarida keshlash va kontentni yetkazib berish opsiyasi yoqilgan bo‘lsa, statik kontent tashrif buyuruvchilarning so‘rovlariga eng yaqin trafikni qayta ishlash tugunidan yetkazib beriladi. Ko‘pgina saytlarda ushbu opsiyani yoqish maqsadli veb-serverga tushadigan yukni sezilarli darajada kamaytirish va veb-sahifalarni yuklash tezligini oshirish imkonini beradi. <br /> Tarmoqni himoya qilish xizmati bir necha tashkil etish variantlariga ega: u mijoz tarmog‘iga trafik yetkazib berish usuli, filtrlash sxemasi, ulanish nuqtalarining soni va joylashuvi hamda boshqa variantlarga bog‘liq ravishda moslashtirilishi mumkin.<ul><li>- Ochiq tarmoq orqali tunnel (GRE, IPIP)</li><li>- L2/L3 kanallari orqali (DDoS-GUARD hamkorlari va operatorlari yordamida)</li><li>- DDoS-GUARD uskunasiga to‘g‘ridan-to‘g‘ri ulanish (mavjud nuqtalardan birida)</li></ul>",
@@ -160,10 +168,10 @@
       "answer2": "Manzillar qo'lda qo'shiladi."
     }
   },
-  "Pentest":{
+  "Pentest": {
     "title": "<span class='text-secondary'>Pentest</span> (penetratsion sinov)",
     "description": "Pentestning maqsadi – kompaniyaning axborot tizimlaridagi zaifliklarni aniqlash. Tanqidiy zaifliklarni aniqlash va tuzatish haqiqiy tajovuzkorlar tomonidan muvaffaqiyatli hujum qilish xavfini kamaytiradi.",
-    "AboutSection":{
+    "AboutSection": {
       "title": "Pentest qanday o'tkaziladi?",
       "description": "<ul class='list-disc'><li>Buyurtmachining infratuzilmasi, xizmatlari va tizimlari haqida ma'lumot to'plash</li><li>Test o'tkazish usullari va maqsadlarini aniqlash</li><li>Tarmoqlar va xizmatlarni zaifliklarga tekshirish, tajovuzkorlarning vositalari va qo‘lda usullarni qo‘llash</li><li>Zaifliklarni aniqlash uchun professional vositalar va ilg‘or usullardan foydalanish</li><li>Mijoz bilan birgalikda zaifliklar bo‘yicha hisobot tayyorlash va tahlil qilish</li></ul>"
     },
@@ -187,10 +195,10 @@
       "answer5": "Axborot tizimlaringiz xavfsizligini baholash va uni yaxshilash bo‘yicha chora-tadbirlarni belgilashga yordam beruvchi batafsil hisobot."
     }
   },
-  "SOC":{
+  "SOC": {
     "title": "<span class='text-secondary'>SOC</span>– sizning raqamli aktivlaringizni kompleks himoya qilish",
     "description": "Bizning Operatsion Xavfsizlik Markazimiz (SOC) sizning raqamli ma'lumotlaringizni real vaqt rejimida himoya qilib, tarmoqqa hujumlarni 24/7 monitoring qilish, tahlil qilish va oldini olishni ta'minlaydi.",
-    "AboutSection":{
+    "AboutSection": {
       "title": "SOC qanday ishlaydi?",
       "description": "Operativ javob markazi kompaniyaning axborot xavfsizligini boshqarish tizimini optimallashtirish bo‘yicha quyidagi kompleks vazifalarni hal qiladi:<ul><li>- himoya choralari muntazam ravishda tuzatilib va to‘ldirib boriladi;</li><li>- tayyor javob ssenariylaridan foydalanish orqali kiberhujumlar va axborot xavfsizligi hodisalariga javob berish vaqti qisqartiriladi;</li><li>- axborot xavfsizligi hodisalarini aniqlash va ularga javob berish uchun avtomatlashtirish vositalari joriy etiladi</li></ul>"
     },
@@ -210,10 +218,10 @@
       "answer3": "Yagona to‘g‘ri variant yo‘q. SOC axborot xavfsizligi operatsion modeli har bir biznesning ehtiyoj va imkoniyatlariga qarab tanlanadi: - o‘ziga tegishli. Eng qimmat va tashkil etish hamda ishga tushirish bo‘yicha eng uzoq davom etadigan variant. Uning ustunligi – axborot xavfsizligini kuzatish markazi to‘liq kompaniyaga tegishli bo‘ladi; - autsorsing. Kiberxavfsizlik xizmatlari orasida eng istiqbolli yo‘nalishlardan biri. SOCni xizmat sifatida ijaraga olganda barcha ish jarayonlarini operator o‘z zimmasiga oladi. Mijozga kadrlarni qidirish va ularni saqlash, reglamentlarni ishlab chiqish va joriy etish shart emas. - gibrid. Hamkorlik modeli. Buyurtmachi IT-infrastrukturasiga joriy qilish uchun apparat-texnik qismini o‘zi sotib oladi, boshqaruv esa provayder bilan birgalikda amalga oshiriladi. Uskuna hajmi, xizmatlar va funksiyalar soni har bir aniq holatda hisoblab chiqiladi."
     }
   },
-  "Support":{
+  "Support": {
     "title": " Professional <br /><span class='text-secondary'> IT xavfsizlikni qo‘llab-quvvatlash </span><br /> Monitoring va xavfsizlikni boshqarish",
     "description": "Xizmatimiz axborot xavfsizligini kompleks texnik qo‘llab-quvvatlashni taqdim etadi, jumladan monitoring, muammolarni tahlil qilish va ma’lumotlaringizni maksimal himoya qilish uchun shaxsiy xavfsizlik boshqaruv dasturlarini ishlab chiqish.",
-    "AboutSection":{
+    "AboutSection": {
       "title": "Bizning noyob taklifimiz",
       "description": "Bizning mijozlarimiz uchun Qozog‘istonda axborot xavfsizligi xalqaro standartlar va normalarga qat’iy rioya qilgan holda ta’minlanadi. Xizmat provayderning jismoniy va axborot resurslari hamda zamonaviy texnologiyalar asosida ishlaydi. Biz ish jarayonlari va operatsiyalarini ortiqcha investitsiyalarsiz maksimal darajada himoya qilishga yordam beramiz. Ko‘p elementli himoya jismoniy uskunalarning zaifliklari, inson omili va IT-tizimning axborot-texnologik arxitekturasi hisobga olingan holda shakllantiriladi."
     },
@@ -233,10 +241,10 @@
       "answer3": "Xizmat quyidagilar uchun mo‘ljallangan:<ul class='list-disc pl-5'><li>korporativ IT-infrastrukturasiga yuqori yuklama tushayotgan kompaniyalarga yordam berish uchun;</li><li>o‘z xavfsizlik tizimlarini doimiy ravishda o‘sib borayotgan va takomillashayotgan axborot tahdidlariga mos ravishda yangilashga ulgurmayotganlar uchun;</li><li>masofaviy onlayn xizmatlar ko‘rsatayotgan va uzoqdan ishlaydigan xodimlar bilan ishlovchi kompaniyalar uchun;</li><li>onlayn savdo kanallarini rivojlantirayotgan, qisman yoki to‘liq bulutga o‘tayotgan kompaniyalar uchun.</li></ul>"
     }
   },
-  "VNF":{
+  "VNF": {
     "title": "<span class='text-secondary'>Virtual Network Firewall</span>– keyingi avlod tarmoq xavfsizlik devori",
     "description": " Tarmog‘ingiz ustidan to‘liq nazorat. Xavflarni minimallashtiring, unumdorlikni oshiring.",
-    "AboutSection":{
+    "AboutSection": {
       "title": "Virtual Network Firewall nima?",
       "description": "Virtual Network Firewall – keng turdagi tarmoq tahdidlaridan ilg‘or himoya ta’minlovchi virtual tarmoq devori. U xususiy va ommaviy bulutlarda xavfsizlik siyosatlarini muvofiqlashtirilgan tarzda qo‘llashga imkon beradi hamda individual filtratsiya qoidalarini yaratish imkoniyatini taqdim etadi."
     },
@@ -247,14 +255,14 @@
   "WAF": {
     "title": "<span class='text-secondary'>WAF</span> - Veb-ilovalar uchun <br/>ishonchli himoya",
     "description": "Bizning Web Application Firewall (WAF) real vaqt rejimida veb-trafikni tahlil qiladi, zararli faoliyatni aniqlaydi va bloklaydi, veb-ilovalaringizni ishonchli himoya qiladi.",
-    "AboutSection":{
+    "AboutSection": {
       "title": "Bizning noyob taklifimiz",
       "description": "Veb-ilovangizni keng ko‘lamli tahdidlardan har tomonlama himoya qiling bizning WAF yordamida. Tizimimiz ilova darajasida ishlaydi, barcha trafikni tahlil qiladi va xavfli so‘rovlarni serveringizga yetib borishidan oldin bloklaydi. Moslashuvchan siyosat sozlamalari himoyani sizning o‘ziga xos ehtiyojlaringizga moslashtirish imkonini beradi."
     },
     "AdvantageCard": {
       "title": "WAF bilan Veb-ilovalaringizning Ishonchli Himoyasi"
     },
-    "Selection":{
+    "Selection": {
       "title": "WAF qo‘llanilish sohalari"
     },
     "AdvantageCardWithIcon": {
