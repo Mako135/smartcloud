@@ -1,6 +1,6 @@
 import { useIaasStore } from "@/store/iaasStore";
 import InputIaaS from "./InputIaaS";
-import { useState, useEffect } from "react";
+import { useLocale } from "@/lib/useLocale";
 
 const translations: Record<"ru" | "uz", { label: string }> = {
   ru: { label: "Количество IP-адресов" },
@@ -9,11 +9,8 @@ const translations: Record<"ru" | "uz", { label: string }> = {
 
 const IpInput = () => {
   const { ip, increaseIp, decreaseIp, setIp } = useIaasStore();
-  const [currentLocale, setCurrentLocale] = useState<"ru" | "uz">("ru");
-
-  useEffect(() => {
-    setCurrentLocale(window.location.pathname.startsWith("/uz") ? "uz" : "ru");
-  }, []);
+  const { currentLocale } = useLocale();
+  
   return (
     <InputIaaS
       label={translations[currentLocale].label}

@@ -1,6 +1,6 @@
 import { useIaasStore } from "@/store/iaasStore";
 import InputIaaS from "./InputIaaS";
-import { useState, useEffect } from "react";
+import { useLocale } from "@/lib/useLocale";
 
 const translations: Record<"ru" | "uz", { label: string }> = {
   ru: { label: "Резервное копирование, ГБ" },
@@ -9,11 +9,9 @@ const translations: Record<"ru" | "uz", { label: string }> = {
 
 const BackupInput = () => {
   const { backup, increaseBackup, decreaseBackup, setBackup } = useIaasStore();
-  const [currentLocale, setCurrentLocale] = useState<"ru" | "uz">("ru");
+  const { currentLocale } = useLocale();
 
-  useEffect(() => {
-    setCurrentLocale(window.location.pathname.startsWith("/uz") ? "uz" : "ru");
-  }, []);
+
   return (
     <InputIaaS
       label={translations[currentLocale].label}

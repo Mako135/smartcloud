@@ -1,6 +1,5 @@
-import { Button, Tabs, TabsList, TabsTrigger } from "@/components/ui";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui";
 import { useLocale } from "@/lib/useLocale";
-import { getTranslations } from "@/utils/i18n";
 
 const translations: Record<
   "ru" | "uz",

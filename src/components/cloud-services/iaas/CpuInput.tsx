@@ -1,6 +1,6 @@
 import { useIaasStore } from "@/store/iaasStore";
 import InputIaaS from "./InputIaaS";
-import { useState, useEffect } from "react";
+import { useLocale } from "@/lib/useLocale";
 
 const translations: Record<"ru" | "uz", { label: string }> = {
   ru: { label: "Количество vCPU" },
@@ -9,11 +9,7 @@ const translations: Record<"ru" | "uz", { label: string }> = {
 
 const CpuInput = () => {
   const { cpu, increaseCpu, decreaseCpu, setCpu } = useIaasStore();
-  const [currentLocale, setCurrentLocale] = useState<"ru" | "uz">("ru");
-
-  useEffect(() => {
-    setCurrentLocale(window.location.pathname.startsWith("/uz") ? "uz" : "ru");
-  }, []);
+  const { currentLocale } = useLocale();
 
   return (
     <InputIaaS

@@ -278,5 +278,10 @@
       "question3": "Veb-ilovalarni himoya qilish qanday ishlaydi?",
       "answer3": "WAF (Web Application Firewall) - bu veb-ilovalarni turli xil hujumlardan himoya qiluvchi maxsus vosita. U kelayotgan va chiqayotgan tarmoqlarni tahlil qiladi.<br/><strong>WAF xavfsizlikning ijobiy va salbiy modellaridan foydalanish orqali samarali ishlaydi:</strong><div><strong class='text-secondary'>Ijobiy model:</strong> Veb-saytda ruxsat etilgan harakatlarni belgilaydi. Bu model aniqroq himoya ta’minlaydi, ammo sozlash va o‘rganish uchun ko‘proq vaqt talab etadi.</div><div><strong class='text-secondary'>Salbiy model:</strong> Ta’qiqlangan harakatlarni aniqlaydi. Ushbu model hujumlarni oldindan bloklashga yordam beradi.</div><div><strong>Kombinatsiyalangan yondashuvning afzalliklari:</strong><ul class='pl-5 list-disc'><li><strong>Tezkor joriy etish:</strong> Salbiy model veb-ilovani darhol himoya qilishni boshlash imkonini beradi, shu bilan birga ijobiy model sozlanadi.</li><li><strong>Yuqori samaradorlik:</strong> Ikki modelning kombinatsiyasi keng ko‘lamli tahdidlarga qarshi ishonchli himoyani ta’minlaydi.</li><li><strong>Moslashuvchanlik:</strong> Veb-ilovaning aniq talablariga mos ravishda qoidalarni sozlash imkoniyati.</li></ul></div>"
     }
+  },
+  "Submitted": {
+    "title": "So'rovingiz yuborildi",
+    "description": "Bizning mutaxassislarimiz siz bilan tez orada bog'lanishadi.",
+    "buttonText": "Bosh sahifaga qaytish"
   }
 }

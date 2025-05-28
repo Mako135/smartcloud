@@ -6,15 +6,16 @@ import Text from "@/components/ui/Text.astro";
 const currentLocale = Astro.url.pathname.startsWith("/uz") ? "uz" : "ru";
 const t = getTranslations(currentLocale, "SOC");
 ---
+
 <div class="my-dynamic">
-  <Text text={t.SOCAccordion.title} variant="h2" class="text-center"/>
+  <Text text={t.SOCAccordion.title} variant="h2" class="text-center" />
   <Accordion title={t.SOCAccordion.question1}>
-    <Text text={t.SOCAccordion.answer1} variant="h5"/>
+    <Text text={t.SOCAccordion.answer1} variant="h5" />
   </Accordion>
   <Accordion title={t.SOCAccordion.question2}>
-    <Text text={t.SOCAccordion.answer2} variant="h5" type="highlight"/>
+    <Text text={t.SOCAccordion.answer2} variant="h5" type="highlight" />
   </Accordion>
   <Accordion title={t.SOCAccordion.question3}>
-    <Text text={t.SOCAccordion.answer3} variant="h5"/>
+    <Text text={t.SOCAccordion.answer3} variant="h5" />
   </Accordion>
 </div>

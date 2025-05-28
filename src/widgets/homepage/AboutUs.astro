@@ -14,8 +14,14 @@ const t = getTranslations(locale, "AboutUs");
     class="grid grid-cols-1 lg:grid-cols-2 gap-dynamic20 justify-between"
   >
     <div class="flex flex-col gap-5">
-      <Text text={t.title} variant="h2" id="aboutUsTitle"/>
-      <Text text={t.description} variant="h5" class="whitespace-pre-line" id="aboutUsDesc" type="highlight"/>
+      <Text text={t.title} variant="h2" id="aboutUsTitle" />
+      <Text
+        text={t.description}
+        variant="h5"
+        class="whitespace-pre-line"
+        id="aboutUsDesc"
+        type="highlight"
+      />
     </div>
     <div
       class="grid grid-cols-1 items-stretch justify-center gap-5 sm:grid-cols-2"
@@ -24,25 +30,25 @@ const t = getTranslations(locale, "AboutUs");
         <h2 class="text-dynamicNumber font-medium">
           25<span class="text-secondary">+</span>
         </h2>
-        <Text text={t.stats.experience} variant="h5"/>
+        <Text text={t.stats.experience} variant="h5" />
       </div>
       <div class="p-5 grid gap-4 rounded-md about-us">
         <h2 class="text-dynamicNumber font-medium">
           100<span class="text-secondary">+</span>
         </h2>
-        <Text text={t.stats.partners} variant="h5"/>
+        <Text text={t.stats.partners} variant="h5" />
       </div>
       <div class="p-5 grid gap-4 rounded-md about-us">
         <h2 class="text-dynamicNumber font-medium">
           200<span class="text-secondary">+</span>
         </h2>
-        <Text text={t.stats.clients} variant="h5"/>
+        <Text text={t.stats.clients} variant="h5" />
       </div>
       <div class="p-5 grid gap-4 rounded-md about-us">
         <h2 class="text-dynamicNumber font-medium">
           160<span class="text-secondary">+</span>
         </h2>
-        <Text text={t.stats.employees} variant="h5"/>
+        <Text text={t.stats.employees} variant="h5" />
       </div>
     </div>
   </section>

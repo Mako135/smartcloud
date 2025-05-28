@@ -7,10 +7,7 @@ interface Props {
   className?: string;
 }
 
-const {
-  name = "phone",
-  className = "",
-} = Astro.props;
+const { name = "phone" } = Astro.props;
 
 const locale = Astro.url.pathname.startsWith("/uz") ? "uz" : "ru";
 const t = getTranslations(locale, "ContactForm");
@@ -28,21 +25,21 @@ const t = getTranslations(locale, "ContactForm");
   import IMask from "imask";
 
   // Initialize IMask when component mounts
-  document.addEventListener('DOMContentLoaded', () => {
-    const input = document.getElementById('phone-input');
+  document.addEventListener("DOMContentLoaded", () => {
+    const input = document.getElementById("phone-input");
     if (input) {
       const maskOptions = {
         mask: "+{998} (00) 000-00-00",
       };
       const mask = IMask(input, maskOptions);
-      
-      input.addEventListener('accept', () => {
-        const event = new Event('input', { bubbles: true });
+
+      input.addEventListener("accept", () => {
+        const event = new Event("input", { bubbles: true });
         input.dispatchEvent(event);
       });
 
       const observer = new MutationObserver((mutations) => {
-        mutations.forEach((mutation) => {
+        mutations.forEach(() => {
           if (!document.body.contains(input)) {
             mask.destroy();
             observer.disconnect();

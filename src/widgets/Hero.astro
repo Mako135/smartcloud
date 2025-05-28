@@ -21,18 +21,21 @@ const { imgSrc } = Astro.props;
         class="h-9 flex items-center justify-center px-6 bg-secondary text-white dark:bg-white dark:text-black rounded-3xl font-medium text-md"
         >{t.title}</a
       >
-      <ContactDialog/>
+      <ContactDialog />
     </div>
   </div>
 
   <div class="w-full hidden lg:block col-span-2">
     <Image
       src={imgSrc}
-      alt="Описание изображения"
+      alt="Изображение услуги"
       loading="lazy"
       class="max-h-[480px]"
       width={500}
       height={500}
+      fit="contain"
+      format="webp"
+      quality={80}
     />
   </div>
 </div>

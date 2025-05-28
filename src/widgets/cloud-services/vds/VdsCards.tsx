@@ -2,8 +2,8 @@ import VdsCard from "@/components/cloud-services/vds/VdsCard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui";
 import { vdsDataHdd, vdsDataSsd } from "@/lib/data/vdsData";
 import { vdsDataHddUZ, vdsDataSsdUZ } from "@/lib/dataUZ/vdsData";
-import { useState, useEffect } from "react";
 import { CityCard } from "./CityCard";
+import { useLocale } from "@/lib/useLocale";
 
 const translations: Record<"ru" | "uz", { label: string }> = {
   ru: { label: "Доступные конфигурации" },
@@ -11,15 +11,7 @@ const translations: Record<"ru" | "uz", { label: string }> = {
 };
 
 export default function VdsCards() {
-  const [currentLocale, setCurrentLocale] = useState<"ru" | "uz">("ru");
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setCurrentLocale(
-        window.location.pathname.startsWith("/uz") ? "uz" : "ru"
-      );
-    }
-  }, []);
+  const { currentLocale } = useLocale();
 
   const vdsSsdData = currentLocale === "uz" ? vdsDataSsdUZ : vdsDataSsd;
   const vdsHddData = currentLocale === "uz" ? vdsDataHddUZ : vdsDataHdd;

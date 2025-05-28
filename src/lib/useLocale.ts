@@ -1,4 +1,3 @@
-import { getTranslations } from "@/utils/i18n";
 import { useEffect, useState } from "react";
 
 export const useLocale = () => {

@@ -14,7 +14,12 @@ const { title, className } = Astro.props;
   class={clsx("grid lg:grid-cols-6 gap-dynamic10", className)}
   id="aboutSectionContainer"
 >
-  <Text text={title} variant="h2" class="lg:col-span-2" id="aboutSectionTitle"/>
+  <Text
+    text={title}
+    variant="h2"
+    class="lg:col-span-2"
+    id="aboutSectionTitle"
+  />
   <div
     class="lg:col-span-4 mt-dynamic10 text-large lg:mt-0"
     id="aboutSectionChildren"
@@ -26,27 +31,23 @@ const { title, className } = Astro.props;
 <script>
   import { gsapTrigger } from "@/lib/gsapTrigger";
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const aboutSectionContainer = document.getElementById(
-      "aboutSectionContainer"
-    );
-    const aboutSectionTitle = document.getElementById("aboutSectionTitle");
-    const aboutSectionChildren = document.getElementById(
-      "aboutSectionChildren"
-    );
+  const aboutSectionContainer = document.getElementById(
+    "aboutSectionContainer"
+  );
+  const aboutSectionTitle = document.getElementById("aboutSectionTitle");
+  const aboutSectionChildren = document.getElementById("aboutSectionChildren");
 
-    if (aboutSectionContainer) {
-      const tl = gsapTrigger(aboutSectionContainer);
-      tl.fromTo(
-        aboutSectionTitle,
-        { y: 50, opacity: 0, scale: 0.8 },
-        { y: 0, opacity: 1, scale: 1, duration: 0.5 }
-      ).fromTo(
-        aboutSectionChildren,
-        { y: 50, opacity: 0, scale: 0.8 },
-        { y: 0, opacity: 1, scale: 1, duration: 0.5 },
-        "<"
-      );
-    }
-  });
+  if (aboutSectionContainer) {
+    const tl = gsapTrigger(aboutSectionContainer);
+    tl.fromTo(
+      aboutSectionTitle,
+      { y: 50, opacity: 0, scale: 0.8 },
+      { y: 0, opacity: 1, scale: 1, duration: 0.5 }
+    ).fromTo(
+      aboutSectionChildren,
+      { y: 50, opacity: 0, scale: 0.8 },
+      { y: 0, opacity: 1, scale: 1, duration: 0.5 },
+      "<"
+    );
+  }
 </script>

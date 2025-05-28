@@ -16,7 +16,11 @@ const t = getTranslations(locale, "MobileMenu");
   <div
     class="fixed flex justify-between h-16 max-w-7xl p-4 px-8 items-center bg-slate-500 w-full bg-opacity-10 backdrop-blur-lg rounded-b-md hover:backdrop-blur z-20"
   >
-    <Text text={t.title}  class="!text-2xl font-bold tracking-wider" type="highlight"/>
+    <Text
+      text={t.title}
+      class="!text-2xl font-bold tracking-wider"
+      type="highlight"
+    />
     <Button id="open-menu" className="p-2 h-8 w-8" variant="ghost" client:idle>
       <Menu strokeWidth={3} size={32} />
     </Button>
@@ -39,19 +43,25 @@ const t = getTranslations(locale, "MobileMenu");
 
       <nav class="p-8">
         <div class="flex gap-2 items-center mb-5">
-          <Text text={t.chooseTheme} variant="h4"/>
-          <ToggleTheme client:idle />
+          <Text text={t.chooseTheme} variant="h4" />
+          <ToggleTheme client:load />
         </div>
         <LanguageSwitcher />
         {
           headerDataLocale.map((section) => (
             <div class="mt-8">
-              <Text text={section.label} class="!text-lg mb-4 font-bold text-secondary"/>
+              <Text
+                text={section.label}
+                class="!text-lg mb-4 font-bold text-secondary"
+              />
               <ul class="space-y-4">
                 {section.links.map((link) => (
                   <li>
-                    <Text text={`<a href="${link.href}" class="block hover:underline">${link.label}</a>`}
-                      variant="h5" type="highlight"/>      
+                    <Text
+                      text={`<a href="${link.href}" class="block hover:underline">${link.label}</a>`}
+                      variant="h5"
+                      type="highlight"
+                    />
                   </li>
                 ))}
               </ul>
@@ -63,12 +73,12 @@ const t = getTranslations(locale, "MobileMenu");
   </div>
 </header>
 
-<script>
+<script is:inline>
   const openButton = document.getElementById("open-menu");
   const closeButton = document.getElementById("close-menu");
   const mobileMenu = document.getElementById("mobile-menu");
 
-  function setMenuOpen(isOpen: boolean) {
+  function setMenuOpen(isOpen) {
     if (mobileMenu) {
       if (isOpen) {
         mobileMenu.classList.remove("translate-x-full");

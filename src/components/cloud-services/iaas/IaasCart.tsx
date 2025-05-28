@@ -1,6 +1,7 @@
 import { iaasPrice } from "@/lib/data/price";
+import { useLocale } from "@/lib/useLocale";
 import { useIaasStore } from "@/store/iaasStore";
-import { useMemo, useState, useEffect } from "react";
+import { useMemo } from "react";
 
 const translations: Record<
   "ru" | "uz",
@@ -39,11 +40,7 @@ const translations: Record<
 
 const IaasCart = () => {
   const { cpu, ram, storage, backup, ip, type } = useIaasStore();
-  const [currentLocale, setCurrentLocale] = useState<"ru" | "uz">("ru");
-
-  useEffect(() => {
-    setCurrentLocale(window.location.pathname.startsWith("/uz") ? "uz" : "ru");
-  }, []);
+  const { currentLocale } = useLocale();
 
   const t = translations[currentLocale];
 
@@ -59,13 +56,13 @@ const IaasCart = () => {
       },
       ...(backup > 0
         ? [
-            {
-              label: t.backup,
-              count: backup,
-              price: iaasPrice.backup,
-              unit: "ГБ",
-            },
-          ]
+          {
+            label: t.backup,
+            count: backup,
+            price: iaasPrice.backup,
+            unit: "ГБ",
+          },
+        ]
         : []),
       {
         label: t.ip,

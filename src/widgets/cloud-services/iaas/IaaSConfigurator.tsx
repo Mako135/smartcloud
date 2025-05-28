@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import CpuInput from "@/components/cloud-services/iaas/CpuInput";
 import RamInput from "@/components/cloud-services/iaas/RamInput";
@@ -8,6 +8,7 @@ import BackupInput from "@/components/cloud-services/iaas/BackupInput";
 import IpInput from "@/components/cloud-services/iaas/IpInput";
 import IaasCart from "@/components/cloud-services/iaas/IaasCart";
 import { CityTabs } from "@/components/cloud-services/iaas/CityTabs";
+import { useLocale } from "@/lib/useLocale";
 
 type Locale = "ru" | "uz";
 
@@ -26,14 +27,7 @@ const translations: Record<Locale, { title: string; description: string }> = {
 
 const IaaSConfigurator = () => {
   const ref = useRef<HTMLDivElement>(null);
-  const [currentLocale, setCurrentLocale] = useState<Locale>("ru");
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const locale = window.location.pathname.startsWith("/uz") ? "uz" : "ru";
-      setCurrentLocale(locale);
-    }
-  }, []);
+  const { currentLocale } = useLocale();
 
   useEffect(() => {
     if (ref.current) {

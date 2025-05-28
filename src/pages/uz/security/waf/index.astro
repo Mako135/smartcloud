@@ -13,8 +13,6 @@ import Hero from "@/widgets/Hero.astro";
 import wafImg from "@/assets/waf.svg";
 import IaasUseCaseCard from "@/components/cloud-services/iaas/IaasUseCaseCard.astro";
 import WafAccodtion from "@/widgets/security/waf/WafAccodtion.astro";
-import { getTranslations } from "@/utils/i18n";
-import Text from "@/components/ui/Text.astro";
 
 const seoData = {
   title: "WAF (Web Application Firewall) – Защита веб-приложений",
@@ -26,7 +24,6 @@ const seoData = {
   image: "https://smartcloud.uz/assets/waf.svg",
   author: "SmartCloud",
 };
-const t = getTranslations("uz", "WAF");
 ---
 
 <Layout {...seoData}>

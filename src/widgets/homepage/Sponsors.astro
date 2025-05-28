@@ -18,11 +18,16 @@ const t = getTranslations(locale, "Sponsors");
 ---
 
 <section class="my-dynamic space-y-10">
-  <Text text={t.title} variant="h2" class="text-center mb-dynamic" id="servicesTitle"/>
+  <Text
+    text={t.title}
+    variant="h2"
+    class="text-center mb-dynamic"
+    id="servicesTitle"
+  />
   <div class="stock-ticker">
     <ul>
       {
-        sponsors.map((sponsor, index) => (
+        sponsors.map((sponsor) => (
           <li>
             <img src={sponsor} alt="sponsor" />
           </li>
@@ -32,7 +37,7 @@ const t = getTranslations(locale, "Sponsors");
 
     <ul aria-hidden="true">
       {
-        sponsors.map((sponsor, index) => (
+        sponsors.map((sponsor) => (
           <li>
             <img src={sponsor} alt="sponsor" />
           </li>

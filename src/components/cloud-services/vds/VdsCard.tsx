@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui";
+import { useLocale } from "@/lib/useLocale";
 import { Cpu, Gauge, HardDrive, LocateFixed, MemoryStick } from "lucide-react";
-import { useState, useEffect } from "react";
 
 const translations: Record<
   "ru" | "uz",
@@ -42,11 +42,7 @@ export default function VdsCard({
   internet,
   period,
 }: Props) {
-  const [currentLocale, setCurrentLocale] = useState<"ru" | "uz">("ru");
-
-  useEffect(() => {
-    setCurrentLocale(window.location.pathname.startsWith("/uz") ? "uz" : "ru");
-  }, []);
+  const { currentLocale } = useLocale();
 
   const t = translations[currentLocale];
   return (
